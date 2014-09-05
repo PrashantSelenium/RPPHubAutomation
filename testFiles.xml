@@ -1,0 +1,52 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel test runs" parallel="tests" thread-count="2">
+ 
+<test name="T_01">
+    <classes>
+        <class name="hub.test.endtoend.EndToEnd_SmokeTest" ></class>
+    </classes>
+</test>
+
+<test name="T_02">
+    <classes>
+        <class name="hub.test.endtoend.EndToEnd_SmokeTest_Part2" ></class>
+    </classes>
+</test>
+ <!--
+<test name="T_03">
+    <classes>
+        <class name="com.hub.test.smoke.stage.SmokeWpcbroker" ></class>
+    </classes>
+</test>
+<test name="T_04">
+    <classes>
+        <class name="com.hub.test.smoke.stage.SmokeBankmelbourne" ></class>
+    </classes>
+</test> -->
+
+<!-- 
+<test name="T_02">
+    <classes>
+        <class name="com.hub.test.productmapping.hubetetd2" ></class>
+    </classes>
+</test>
+
+<test name="T_03">
+    <classes>
+        <class name="com.hub.test.productmapping.hubetetd3" ></class>
+    </classes>
+</test>
+
+<test name="T_04">
+    <classes>
+        <class name="com.hub.test.productmapping.hubetetd5" ></class>
+    </classes>
+</test>
+
+<test name="T_05">
+    <classes>
+        <class name="com.hub.test.productmapping.hubetetd6" ></class>
+    </classes>
+</test>
+-->
+</suite>

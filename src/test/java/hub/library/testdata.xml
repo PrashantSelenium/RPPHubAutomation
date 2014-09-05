@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Browser and Environment variables</comment>
+	<!--<entry key="browser">Firefox</entry>-->
+	<!--<entry key="browser">Chrome</entry>-->
+	<!--<entry key="browser">Remote</entry>-->
+	<!--<entry key="browser">HTMLUnit</entry>-->
+	<!--<entry key="browser">InternetExplorer</entry>-->
+	<!-- <entry key="browser">Safari</entry> -->
+	<!-- <entry key="browser">WinChrome</entry> -->
+	<entry key="browser">Firefox</entry>
+	<entry key="record">No</entry>
+	
+<!--local -->
+ 	<entry key="remoteUrl">http://10.0.1.206:4444/wd/hub</entry>
+ 	<entry key="chromeDriverPath">/tooltwist/eclipse/Selenium/chromedriver</entry>
+ 	
+	<entry key="screen_shot_location">\Screenshots</entry>
+	<!--remote -->
+	<entry key="environment">Prod</entry>
+<!-- 	<entry key="remoteUrl">http://10.0.1.138:8080/wd/hub</entry> -->
+	<!-- 	<entry key="local_url">http://192.168.0.20:8080/</entry> -->
+	<entry key="prod_url">https://stage.rppropertyhub.com</entry>
+	<entry key="devtest_url"></entry>	
+	
+<!-- 	<entry key="stage_admin_url">https://stage.rppropertyhub.com/n/Admin-Console/myrp-872</entry> -->
+	<entry key="stage_admin_url">https://olddev.rppropertyhub.com/n/Admin-Console/myrp-872</entry>
+	<entry key="adminUsername">Tehani.Maher@rpdata.com</entry>
+	<entry key="adminPassword">Maher482Center</entry>
+	
+	<entry key="userUsername">q2t3st</entry>
+	<entry key="userPassword">1234567890plm</entry>
+	
+	<entry key="userUsername2">onetimetest001</entry>
+	<entry key="userEmail">jennifer.maglaque@twistresources.com</entry>
+	
+	<entry key="userOEVPPvalue">550000</entry>
+	
+	<entry key="cartCountNumber">1</entry>
+	
+	<entry key="customerFName">Jennifer</entry>	
+	<entry key="customerLName">Qatester</entry>
+	<entry key="customerContact">1234567890</entry>
+	<entry key="customerEmail">twistqatest@gmail.com</entry>
+	
+	<entry key="passOneNumber">Test!ng</entry>	
+	<entry key="passLowerCase">TEST!NG123</entry>
+	<entry key="passUpperCase">test!ng123</entry>
+	<entry key="passSpecial">Testing123</entry>
+	<entry key="oneTimePass">Test!ng123</entry>
+	
+	<entry key="datePickerMonth">Jan</entry>
+	<entry key="datePickerYear">2013</entry>
+	<entry key="datePickerDay">3</entry>
+	<entry key="bedroomValue">3</entry>
+	<entry key="bathroomValue">2</entry>
+	<entry key="carspaceValue">1</entry>
+	<entry key="rpDataRed">rgba(193, 39, 45, 1)</entry>
+	
+	<entry key="retroAvmTabName">Retro Reports</entry>
+	
+	<entry key="loginEmptyErrorMessage">Username and/or Password should not be empty.</entry>
+	<entry key="loginInvalidErrorMessage">Invalid Username and/or Password, please try again.</entry>
+	<entry key="loginFlashMessage">Please complete all mandatory fields.</entry>
+	
+	<entry key="invalidUserName">invalid101</entry>
+	<entry key="invalidPassword">invalidpassword</entry>
+	
+	<entry key="exceedUserName">automationxpired</entry>
+	<entry key="exceedPassword">1234test</entry>
+	
+</properties>

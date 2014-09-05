@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
+              <span class="suite-name border-failed">Default suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
+                    <span>testng-customsuite.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">18 methods, 3 failed,   15 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [CFA, 8.0, 36.0, Bastings, Street, Northcote VIC 3070, 8/36 Bastings Street,...)">testLogin(class java.lang.String, [CFA, 8.0, 36.0, Bastings, Street, Northcote VIC 3070, 8/36 Bastings Street,...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [AussieSelect, arvin, 123456Aa, 4 Sundridge Street Taringa QLD 4068, 4 Sundr...)">testLogin(class java.lang.String, [AussieSelect, arvin, 123456Aa, 4 Sundridge Street Taringa QLD 4068, 4 Sundr...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [BankMelbourne, arvin, 123456Aa, 8 Philden Way Spring Gully VIC 3550, 8 Phil...)">testLogin(class java.lang.String, [BankMelbourne, arvin, 123456Aa, 8 Philden Way Spring Gully VIC 3550, 8 Phil...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [PaymentDetails, 123456Aa, 123456.0])">testLogin(class java.lang.String, [PaymentDetails, 123456Aa, 123456.0])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [AdminPromotion, https://stage-class.rppropertyhub.com/Admin, Portia.canlas@...)">testLogin(class java.lang.String, [AdminPromotion, https://stage-class.rppropertyhub.com/Admin, Portia.canlas@...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [MyTransaction, QA TwistResources, 19 Gascoyne Avenue Woodvale WA 6026, CBA ...)">testLogin(class java.lang.String, [MyTransaction, QA TwistResources, 19 Gascoyne Avenue Woodvale WA 6026, CBA ...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [WPCBroker, arvin, 123456Aa, 56 Maxweld Street, Ardeer, VIC, 3022, 56 Maxwel...)">testLogin(class java.lang.String, [WPCBroker, arvin, 123456Aa, 56 Maxweld Street, Ardeer, VIC, 3022, 56 Maxwel...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [InstructionDetails, QA, TwistResources, 1.23456789E9,  ,  ,  ,  ,  ,  ,  , ...)">testLogin(class java.lang.String, [InstructionDetails, QA, TwistResources, 1.23456789E9,  ,  ,  ,  ,  ,  ,  , ...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [MyAccount, arvin, 123456Aa, Twist, QA])">testLogin(class java.lang.String, [MyAccount, arvin, 123456Aa, Twist, QA])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [OrderConfirmation, QA, TwistResources, the Owner, 1.23456789E9, arvin.twano...)">testLogin(class java.lang.String, [OrderConfirmation, QA, TwistResources, the Owner, 1.23456789E9, arvin.twano...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [ProductSelection, 8/36 Bastings Street,
+Northcote, VIC, 3070, rgba(255, 255...)">testLogin(class java.lang.String, [ProductSelection, 8/36 Bastings Street,
+Northcote, VIC, 3070, rgba(255, 255...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [HealthCheck, &quot;database&quot;: 1,, &quot;bsgv2&quot;: 1,, &quot;sharedstorage&quot;: 1,, &quot;merchantgat...)">testLogin(class java.lang.String, [HealthCheck, "database": 1,, "bsgv2": 1,, "sharedstorage": 1,, "merchantgat...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [LOGOUT])">testLogin(class java.lang.String, [LOGOUT])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [ProductSelectionValuation, 19 Gascoyne Avenue,
+Woodvale, WA, 6026, 315000.0...)">testLogin(class java.lang.String, [ProductSelectionValuation, 19 Gascoyne Avenue,
+Woodvale, WA, 6026, 315000.0...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [SingleLineAddress, 19 Gascoyne Avenue Woodvale WA 6026, 19 Gascoyne Avenue,...)">testLogin(class java.lang.String, [SingleLineAddress, 19 Gascoyne Avenue Woodvale WA 6026, 19 Gascoyne Avenue,...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [Login, arvin, 123456Aa,  ,  ,  , , ,  ,  ,  ,  ,  , ,  ,  ,  ,  , , ,  ,  ,...)">testLogin(class java.lang.String, [Login, arvin, 123456Aa,  ,  ,  , , ,  ,  ,  ,  ,  , ,  ,  ,  ,  , , ,  ,  ,...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [DeepLink, http://stage-class.rppropertyhub.com/ProductSelection?propertyId=...)">testLogin(class java.lang.String, [DeepLink, http://stage-class.rppropertyhub.com/ProductSelection?propertyId=...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="hub.test.endtoend.EndToEnd_SmokeTest" hash-for-method="testLogin(class java.lang.String, [MenuNavigation, Home, RP Professional, My Account,  My Transaction])">testLogin(class java.lang.String, [MenuNavigation, Home, RP Professional, My Account,  My Transaction])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">hub.test.endtoend.EndToEnd_SmokeTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [CFA, 8.0, 36.0, Bastings, Street, Northcote VIC 3070, 8/36 Bastings Street,...)">
+                  </a> <!-- testLogin(class java.lang.String, [CFA, 8.0, 36.0, Bastings, Street, Northcote VIC 3070, 8/36 Bastings Street,...) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [CFA, 8.0, 36.0, Bastings, Street, Northcote VIC 3070, 8/36 Bastings Street,
+Northcote, VIC, 3070,  ,  ,  ,  ,  ,  , ,  ,  ,  ,  , , ,  ,  , ,  , , , ])</span>
+                  <div class="stack-trace">java.lang.AssertionError: Exception was thrown
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:151)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+</div> <!-- stack-trace -->
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [AussieSelect, arvin, 123456Aa, 4 Sundridge Street Taringa QLD 4068, 4 Sundr...)">
+                  </a> <!-- testLogin(class java.lang.String, [AussieSelect, arvin, 123456Aa, 4 Sundridge Street Taringa QLD 4068, 4 Sundr...) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [AussieSelect, arvin, 123456Aa, 4 Sundridge Street Taringa QLD 4068, 4 Sundridge Street,
+Taringa, QLD, 4068, (1)a, Added to cart, QA, TwistResources, 123456Aa, 123456.0, 750000.0, 1234567890a])</span>
+                  <div class="stack-trace">java.lang.AssertionError: Exception was thrown
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:151)
+	at sun.reflect.GeneratedMethodAccessor8.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+</div> <!-- stack-trace -->
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [BankMelbourne, arvin, 123456Aa, 8 Philden Way Spring Gully VIC 3550, 8 Phil...)">
+                  </a> <!-- testLogin(class java.lang.String, [BankMelbourne, arvin, 123456Aa, 8 Philden Way Spring Gully VIC 3550, 8 Phil...) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [BankMelbourne, arvin, 123456Aa, 8 Philden Way Spring Gully VIC 3550, 8 Philden Way,
+Spring Gully, VIC, 3550, (1)a, Added to cart, QA, TwistResources, 123456Aa, 123456.0])</span>
+                  <div class="stack-trace">java.lang.AssertionError: Exception was thrown
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:151)
+	at sun.reflect.GeneratedMethodAccessor8.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+</div> <!-- stack-trace -->
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">hub.test.endtoend.EndToEnd_SmokeTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [PaymentDetails, 123456Aa, 123456.0])">
+                  </a> <!-- testLogin(class java.lang.String, [PaymentDetails, 123456Aa, 123456.0]) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [PaymentDetails, 123456Aa, 123456.0])</span>
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [AdminPromotion, https://stage-class.rppropertyhub.com/Admin, Portia.canlas@...)">
+                  </a> <!-- testLogin(class java.lang.String, [AdminPromotion, https://stage-class.rppropertyhub.com/Admin, Portia.canlas@...) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [AdminPromotion, https://stage-class.rppropertyhub.com/Admin, Portia.canlas@twistresources.com, 482Center, PromoName, Promo Description Smoke Test, Promo, 1.0, 50.0])</span>
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [MyTransaction, QA TwistResources, 19 Gascoyne Avenue Woodvale WA 6026, CBA ...)">
+                  </a> <!-- testLogin(class java.lang.String, [MyTransaction, QA TwistResources, 19 Gascoyne Avenue Woodvale WA 6026, CBA ...) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [MyTransaction, QA TwistResources, 19 Gascoyne Avenue Woodvale WA 6026, CBA Lender - Automated Valuation Model])</span>
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [WPCBroker, arvin, 123456Aa, 56 Maxweld Street, Ardeer, VIC, 3022, 56 Maxwel...)">
+                  </a> <!-- testLogin(class java.lang.String, [WPCBroker, arvin, 123456Aa, 56 Maxweld Street, Ardeer, VIC, 3022, 56 Maxwel...) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [WPCBroker, arvin, 123456Aa, 56 Maxweld Street, Ardeer, VIC, 3022, 56 Maxweld Street,
+Ardeer, VIC, 3022, (1)a, Added to cart, QA, TwistResources, 123456Aa, 123456.0])</span>
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [InstructionDetails, QA, TwistResources, 1.23456789E9,  ,  ,  ,  ,  ,  ,  , ...)">
+                  </a> <!-- testLogin(class java.lang.String, [InstructionDetails, QA, TwistResources, 1.23456789E9,  ,  ,  ,  ,  ,  ,  , ...) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [InstructionDetails, QA, TwistResources, 1.23456789E9,  ,  ,  ,  ,  ,  ,  ,  ,  , ,  ,  ,  ,  , , ,  ,  ,  ,  , , , ])</span>
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [MyAccount, arvin, 123456Aa, Twist, QA])">
+                  </a> <!-- testLogin(class java.lang.String, [MyAccount, arvin, 123456Aa, Twist, QA]) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [MyAccount, arvin, 123456Aa, Twist, QA])</span>
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [OrderConfirmation, QA, TwistResources, the Owner, 1.23456789E9, arvin.twano...)">
+                  </a> <!-- testLogin(class java.lang.String, [OrderConfirmation, QA, TwistResources, the Owner, 1.23456789E9, arvin.twano...) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [OrderConfirmation, QA, TwistResources, the Owner, 1.23456789E9, arvin.twano@cba.com.au])</span>
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [ProductSelection, 8/36 Bastings Street,
+Northcote, VIC, 3070, rgba(255, 255...)">
+                  </a> <!-- testLogin(class java.lang.String, [ProductSelection, 8/36 Bastings Street,
+Northcote, VIC, 3070, rgba(255, 255...) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [ProductSelection, 8/36 Bastings Street,
+Northcote, VIC, 3070, rgba(255, 255, 51, 1), CBA Lender Empowerment Report, We cannot provide an estimate value for this property as there is insufficient property sales data at the moment.,  ,  ,  ,  ,  ,  ,  ,  , ,  ,  ,  ,  , , ,  ,  , ])</span>
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [HealthCheck, &quot;database&quot;: 1,, &quot;bsgv2&quot;: 1,, &quot;sharedstorage&quot;: 1,, &quot;merchantgat...)">
+                  </a> <!-- testLogin(class java.lang.String, [HealthCheck, "database": 1,, "bsgv2": 1,, "sharedstorage": 1,, "merchantgat...) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [HealthCheck, "database": 1,, "bsgv2": 1,, "sharedstorage": 1,, "merchantgateway": 1,, "hub.invoicefolder": 1,, "hub.titledocumentservice": 1,, "hub.titleauthservice": 1,, "hub.valex": 1,, "hub.bre": 1,, "cba.multiavm.ws": 1, "property.profile.v3": 1, "location.based.pricing": 1,  ,  ,  ,  ,  , , ,  ,  , ])</span>
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [LOGOUT])">
+                  </a> <!-- testLogin(class java.lang.String, [LOGOUT]) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [LOGOUT])</span>
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [ProductSelectionValuation, 19 Gascoyne Avenue,
+Woodvale, WA, 6026, 315000.0...)">
+                  </a> <!-- testLogin(class java.lang.String, [ProductSelectionValuation, 19 Gascoyne Avenue,
+Woodvale, WA, 6026, 315000.0...) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [ProductSelectionValuation, 19 Gascoyne Avenue,
+Woodvale, WA, 6026, 315000.0, Added to cart, (1)a,  ,  ,  ,  ,  , ,  ,  ,  ,  ,  ,  ,  , , ,  ,  , ])</span>
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [SingleLineAddress, 19 Gascoyne Avenue Woodvale WA 6026, 19 Gascoyne Avenue,...)">
+                  </a> <!-- testLogin(class java.lang.String, [SingleLineAddress, 19 Gascoyne Avenue Woodvale WA 6026, 19 Gascoyne Avenue,...) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [SingleLineAddress, 19 Gascoyne Avenue Woodvale WA 6026, 19 Gascoyne Avenue,
+Woodvale, WA, 6026,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , , ,  ,  , ])</span>
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [Login, arvin, 123456Aa,  ,  ,  , , ,  ,  ,  ,  ,  , ,  ,  ,  ,  , , ,  ,  ,...)">
+                  </a> <!-- testLogin(class java.lang.String, [Login, arvin, 123456Aa,  ,  ,  , , ,  ,  ,  ,  ,  , ,  ,  ,  ,  , , ,  ,  ,...) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [Login, arvin, 123456Aa,  ,  ,  , , ,  ,  ,  ,  ,  , ,  ,  ,  ,  , , ,  ,  , ,  , , , ])</span>
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [DeepLink, http://stage-class.rppropertyhub.com/ProductSelection?propertyId=...)">
+                  </a> <!-- testLogin(class java.lang.String, [DeepLink, http://stage-class.rppropertyhub.com/ProductSelection?propertyId=...) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [DeepLink, http://stage-class.rppropertyhub.com/ProductSelection?propertyId=1976129,  , ])</span>
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(class java.lang.String, [MenuNavigation, Home, RP Professional, My Account,  My Transaction])">
+                  </a> <!-- testLogin(class java.lang.String, [MenuNavigation, Home, RP Professional, My Account,  My Transaction]) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(class java.lang.String, [MenuNavigation, Home, RP Professional, My Account,  My Transaction])</span>
+                  <em>
+(End To End Smoke Test)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+        </div> <!-- panel Default_suite -->
+        <div panel-name="test-xml-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/private/var/folders/m3/yp5nzb1x7ws0r04q712pqj3w0000gp/T/testng-eclipse-1251965555/testng-customsuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot;&gt;
+  &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;hub.test.endtoend.EndToEnd_SmokeTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test --&gt;
+&lt;/suite&gt; &lt;!-- Default suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Default test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Default_suite');
+function tableData_Default_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(18);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testLogin')
+data.setCell(0, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(0, 3, 106804);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testLogin')
+data.setCell(1, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(1, 3, 82916);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testLogin')
+data.setCell(2, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(2, 3, 53973);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testLogin')
+data.setCell(3, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(3, 3, 51819);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testLogin')
+data.setCell(4, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(4, 3, 44883);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testLogin')
+data.setCell(5, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(5, 3, 44222);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testLogin')
+data.setCell(6, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(6, 3, 39043);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'testLogin')
+data.setCell(7, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(7, 3, 31983);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'testLogin')
+data.setCell(8, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(8, 3, 29258);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testLogin')
+data.setCell(9, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(9, 3, 16390);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'testLogin')
+data.setCell(10, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(10, 3, 16190);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'testLogin')
+data.setCell(11, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(11, 3, 15168);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'testLogin')
+data.setCell(12, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(12, 3, 14497);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'testLogin')
+data.setCell(13, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(13, 3, 12406);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'testLogin')
+data.setCell(14, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(14, 3, 10581);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'testLogin')
+data.setCell(15, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(15, 3, 3388);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'testLogin')
+data.setCell(16, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(16, 3, 3199);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'testLogin')
+data.setCell(17, 2, 'hub.test.endtoend.EndToEnd_SmokeTest')
+data.setCell(17, 3, 1953);
+window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 9 minutes</span>
+              <div id="times-div-Default_suite">
+              </div> <!-- times-div-Default_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">hub.test.endtoend.EndToEnd_SmokeTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">Startup(null)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">init</span>
+                <span class="method-start">9351 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testLogin(class java.lang.String, [HealthCheck, "database": 1,, "bsgv2": 1,, "sharedstorage": 1,, "merchantgat...)</span>
+                <span class="method-start">15686 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(class java.lang.String, [Login, arvin, 123456Aa,  ,  ,  , , ,  ,  ,  ,  ,  , ,  ,  ,  ,  , , ,  ,  ,...)</span>
+                <span class="method-start">18885 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testLogin(class java.lang.String, [CFA, 8.0, 36.0, Bastings, Street, Northcote VIC 3070, 8/36 Bastings Street,...)</span>
+                <span class="method-start">34054 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(class java.lang.String, [ProductSelection, 8/36 Bastings Street,
+Northcote, VIC, 3070, rgba(255, 255...)</span>
+                <span class="method-start">66041 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(class java.lang.String, [SingleLineAddress, 19 Gascoyne Avenue Woodvale WA 6026, 19 Gascoyne Avenue,...)</span>
+                <span class="method-start">110264 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(class java.lang.String, [ProductSelectionValuation, 19 Gascoyne Avenue,
+Woodvale, WA, 6026, 315000.0...)</span>
+                <span class="method-start">126455 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(class java.lang.String, [InstructionDetails, QA, TwistResources, 1.23456789E9,  ,  ,  ,  ,  ,  ,  , ...)</span>
+                <span class="method-start">171339 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(class java.lang.String, [PaymentDetails, 123456Aa, 123456.0])</span>
+                <span class="method-start">174728 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(class java.lang.String, [OrderConfirmation, QA, TwistResources, the Owner, 1.23456789E9, arvin.twano...)</span>
+                <span class="method-start">185309 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(class java.lang.String, [MyTransaction, QA TwistResources, 19 Gascoyne Avenue Woodvale WA 6026, CBA ...)</span>
+                <span class="method-start">201700 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(class java.lang.String, [LOGOUT])</span>
+                <span class="method-start">214107 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(class java.lang.String, [DeepLink, http://stage-class.rppropertyhub.com/ProductSelection?propertyId=...)</span>
+                <span class="method-start">216060 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(class java.lang.String, [AdminPromotion, https://stage-class.rppropertyhub.com/Admin, Portia.canlas@...)</span>
+                <span class="method-start">230558 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(class java.lang.String, [MyAccount, arvin, 123456Aa, Twist, QA])</span>
+                <span class="method-start">269601 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(class java.lang.String, [MenuNavigation, Home, RP Professional, My Account,  My Transaction])</span>
+                <span class="method-start">323575 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(class java.lang.String, [WPCBroker, arvin, 123456Aa, 56 Maxweld Street, Ardeer, VIC, 3022, 56 Maxwel...)</span>
+                <span class="method-start">352834 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testLogin(class java.lang.String, [AussieSelect, arvin, 123456Aa, 4 Sundridge Street Taringa QLD 4068, 4 Sundr...)</span>
+                <span class="method-start">435750 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testLogin(class java.lang.String, [BankMelbourne, arvin, 123456Aa, 8 Philden Way Spring Gully VIC 3550, 8 Phil...)</span>
+                <span class="method-start">487571 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">594377 ms</span>
+              </div> <!-- configuration-class after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>
