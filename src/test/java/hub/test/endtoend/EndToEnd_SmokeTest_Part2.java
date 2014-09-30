@@ -5,7 +5,12 @@ import hub.library.TestInitReferenceSmokeTest;
 import hub.utilities.EndToEnd.*;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -80,12 +85,25 @@ public class EndToEnd_SmokeTest_Part2 extends TestInitReferenceSmokeTest {
 		data = rxd.getData();
 		return data;
 	}
-    
+	
     @BeforeClass
-    public void init() {
+    public void init() throws MalformedURLException {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
-           driver.navigate().to("https://stage-cbalender.rppropertyhub.com");
+           //driver.navigate().to("https://stage-cbalender.rppropertyhub.com");
+           
+           
+        String USERNAME = "tooltwist";
+       	String AUTOMATE_KEY = "9quC1U5hBNqMfkAByiyp";
+       	String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
+        DesiredCapabilities caps = new DesiredCapabilities();
+   	    caps.setCapability("browser", "IE");
+   	    caps.setCapability("browser_version", "8.0");
+   	    caps.setCapability("os", "Windows");
+   	    caps.setCapability("os_version", "7");
+   	    caps.setCapability("browserstack.debug", "true");
+           WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
+   	    driver.get("https://stage-cbalender.rppropertyhub.com/Login");
     }
     
     private void setIndexPageDescription() {

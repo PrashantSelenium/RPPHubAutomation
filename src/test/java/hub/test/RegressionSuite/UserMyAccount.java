@@ -24,7 +24,7 @@ public class UserMyAccount extends TestInitReference {
     public void init() {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
-           driver.navigate().to("https://dev-acme.rppropertyhub.com/login");
+           driver.navigate().to("https://stage-acme.rppropertyhub.com/login");
     }
     
     private void setIndexPageDescription() {
