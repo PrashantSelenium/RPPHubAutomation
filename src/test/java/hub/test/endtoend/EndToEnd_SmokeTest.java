@@ -6,7 +6,9 @@ import hub.utilities.EndToEnd.*;
 
 import java.io.IOException;
 
+import org.junit.AfterClass;
 import org.testng.Assert;
+//import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
@@ -17,6 +19,16 @@ import atu.testng.reports.listeners.ATUReportsListener;
 import atu.testng.reports.listeners.ConfigurationListener;
 import atu.testng.reports.listeners.MethodListener;
 import atu.testng.reports.utils.Utils;
+
+
+//************************************************************************************************************************//
+//THINGS TO CONSIDER BEFORE RUNNING THE SCRIPT																		      //
+//																														  //
+//Change EndToEnd_SmokeTest.java @BeforeClass URL - "Stage-" for stage "Dev-" for dev and "https://CHANNEL" for production//
+//Update UserHubEndToEndUtil_smoketest.java - Set environment string based from the list								  //
+//Update EndToEnd_smoketest.xls based - Search for the BuildVersion and update to current Version name					  //
+//																														  //
+//************************************************************************************************************************//
 
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
 public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
@@ -140,6 +152,19 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
 			        if (resultcount != 0) { fail(input[0]); } 
 			        	else { pass(input[0]); }
 		        break;
+		        
+			case "CBABROKER":
+				resultcount = endtoend.EndToEndCBABroker();
+			        if (resultcount != 0) { fail(input[0]); } 
+			        	else { pass(input[0]); }
+		        break;
+		        
+			case "BUILDVERSION":
+				resultcount = endtoend.BuildVersion();
+			        if (resultcount != 0) { fail(input[0]); } 
+			        	else { pass(input[0]); }
+		        break;
+		        
 			default:
 				fail(testcase);
 		        Assert.fail("Invalid Test Data");
@@ -161,12 +186,18 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
 		data = rxd.getData();
 		return data;
 	}
-    
+
     @BeforeClass
     public void init() {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
-           driver.navigate().to("https://dev-cbalender.rppropertyhub.com/login");
+           driver.navigate().to("https://stage-cbalender.rppropertyhub.com/login");
+           //driver.get("https://stage-cbalender.rppropertyhub.com/login");
+    }
+    
+    @AfterClass
+    public void closedriver(){
+    	driver.quit();
     }
     
     private void setIndexPageDescription() {

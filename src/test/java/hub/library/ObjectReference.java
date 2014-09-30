@@ -632,6 +632,7 @@ public class ObjectReference {
     public static String feedbackerrorMsgEmail = "//*[@class='feedbackErrorMessage feedbackEmail']";
     public static String feedbackerrorMsgContactNumber = "//*[@class='feedbackErrorMessage feedbackContactNumber']";
     public static String feedbackerrorMsgNotes = "//*[@class='feedbackErrorMessage feedbackNotes']";
+    public static String feedbackclose = "(//*[@class='simplemodal-close'])[2]";
     
   //HealthCheck
     public static String dbConnection = "(//*[@class='type-number'])[1]";
@@ -676,7 +677,8 @@ public class ObjectReference {
     public static String confirmbtnSearchAddress = "//*[@id='proceedBtn']";
     public static String changeAddressLink = "//*[@id='changeAddressLink']/a[2]";
     public static String proceedNextLink = "//a[text()='Proceed to product selection']";
-    public static String completeAddress = "//*[@id='propdetails']/div[1]/div/table/tbody/tr/td[3]/table/tbody/tr[1]/td/div";
+    //public static String completeAddress = "//*[@id='propdetails']/div[1]/div/table/tbody/tr/td[3]/table/tbody/tr[1]/td/div";
+    public static String completeAddress = "//*[@class='bold hubHeaderBodyText']";
     public static String propertySearch = "//*[@id='hubSearchAddress']";
     public static String propertySearchbtn = "//*[@id='hubSearchButton']";
     public static String changePropertyPopupOK = "(//a[@class='hubButtonText'])[7]";
@@ -714,6 +716,7 @@ public class ObjectReference {
     public static String noneApplyCheckboxValuation = "//*[@id='26']";
     public static String avm = "//*[@id='6']";
     public static String proceedToProductValuation = "//*[text()='Proceed to product selection']";
+    public static String combanklabel = "//*[text()='CommBank Property Report']";
     
   //Instruction Details
     public static String FnameInstructionDetails = "//*[@id='1_1_value']";
@@ -750,7 +753,7 @@ public class ObjectReference {
     public static String lNameInfoOrderConfirmationAussie = "(//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[2]/div[2])[1]";
     public static String mobileInfoOrderConfirmationAussie = "(//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[5]/div[2])[2]";
   //My Transaction
-    public static String customerName= "//th[@class='customerName']";
+    public static String customerName= "//*[text()='Customer Name']";
     public static String address = "//th[@class='address']";
     public static String serviceType = "//th[@class='serviceType']";
     public static String referenceNumberTransaction = "//th[@class='referenceNumber']";
@@ -868,6 +871,8 @@ public class ObjectReference {
   //CBA Multi AVM 
   public static String CBANotAvailableAVMBtn = "//*[@class='cartButtonDisabled purchaseButton_69']";
   
+  //BUILD VERSION
+  public static String BuildVersion = "//*[@id='poweredby']";
 }
 
 

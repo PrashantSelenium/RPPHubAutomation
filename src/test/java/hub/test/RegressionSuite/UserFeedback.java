@@ -35,7 +35,7 @@ public class UserFeedback extends TestInitReference {
 	public void RT_06786_Feedback_Validation_Messages() throws Exception {
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-		//util.validation_Message_Feedback();
+		util.validation_Message_Feedback();
 	}
 	
 	@Test(description="User - Feedback", priority=1)
@@ -43,6 +43,34 @@ public class UserFeedback extends TestInitReference {
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.Successfully_Sent_Feedback();
+	}
+	
+	@Test(description="User - Feedback", priority=2)
+	public void RT_06785_Fields_Validation_Feedback() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.validation_Feedback_Fields();
+	}
+	
+	@Test(description="User - Feedback", priority=3)
+	public void RT_06794_Check_Close_button() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.validate_close();
+	}
+	
+	@Test(description="User - Feedback", priority=4)
+	public void RT_06788_Contact_Validation() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.Contact_Validation();
+	}
+	
+	@Test(description="User - Feedback", priority=5)
+	public void RT_06787_Email_Validation() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.Email_Validation();
 	}
 }
 

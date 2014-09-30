@@ -28,7 +28,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		//Dev = https://dev-
 		//Production = https://www.
 		
-		public String environment = "https://dev-";
+		public String environment = "https://stage-";
 	
 	public void BranchIDvalidation() throws Exception{
 		
@@ -2178,9 +2178,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		
 		
 		Assert.assertEquals(getText(xpath(feedbackerrorMsgName)), getDataFromxls(0, "User_Feedback.xls", 1, 0), "Name validation message");
-		Assert.assertEquals(getText(xpath(feedbackerrorMsgEmail)), getDataFromxls(0, "User_Feedback.xls", 1, 0), "Name validation message");
-		Assert.assertEquals(getText(xpath(feedbackerrorMsgContactNumber)), getDataFromxls(0, "User_Feedback.xls", 1, 0), "Name validation message");
-		Assert.assertEquals(getText(xpath(feedbackerrorMsgNotes)), getDataFromxls(0, "User_Feedback.xls", 1, 0), "Name validation message");
+		Assert.assertEquals(getText(xpath(feedbackerrorMsgEmail)), getDataFromxls(0, "User_Feedback.xls", 1, 0), "Email validation message");
+		Assert.assertEquals(getText(xpath(feedbackerrorMsgContactNumber)), getDataFromxls(0, "User_Feedback.xls", 1, 0), "Contact validation message");
+		Assert.assertEquals(getText(xpath(feedbackerrorMsgNotes)), getDataFromxls(0, "User_Feedback.xls", 1, 0), "Notes validation message");
 	}
 	
 	public void Successfully_Sent_Feedback() throws Exception{
@@ -2200,12 +2200,82 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		type(xpath(feedbackContactNumber), getDataFromxls(0, "User_Feedback.xls", 3, 1));
 		type(xpath(feedbackNotes), getDataFromxls(0, "User_Feedback.xls", 4, 1));
 		click(xpath(feedbackSendButton));
-		//waitForElementVisible(xpath(feedbackSuccessMsg));
-		System.out.println(getText(xpath(feedbackSuccessMsg)));
-		System.out.println("////////");
-		System.out.println(getDataFromxls(0, "User_Feedback.xls", 5, 1));
-		Assert.assertTrue(getText(xpath(feedbackSuccessMsg)).contains(getDataFromxls(0, "User_Feedback.xls", 5, 1)));
 	}	
+	
+	public void validation_Feedback_Fields() throws Exception{
+		
+		waitForElementPresent(xpath(userLoginUsername));
+		waitForElementVisible(xpath(userLoginUsername));
+		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
+		click(xpath(feedback));
+		waitForElementPresent(xpath(feedbackName));
+		waitForElementVisible(xpath(feedbackName));
+		if(!isElementPresent(xpath(feedbackName))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath(feedbackName))){ Thread.sleep(2000); }
+
+		Assert.assertTrue(isElementPresent(xpath(feedbackName)));
+		Assert.assertTrue(isElementPresent(xpath(feedbackEmail)));
+		Assert.assertTrue(isElementPresent(xpath(feedbackContactNumber)));
+		Assert.assertTrue(isElementPresent(xpath(feedbackNotes)));
+	}
+	
+	public void validate_close() throws Exception{
+		
+		waitForElementPresent(xpath(userLoginUsername));
+		waitForElementVisible(xpath(userLoginUsername));
+		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
+		click(xpath(feedback));
+		waitForElementPresent(xpath(feedbackName));
+		waitForElementVisible(xpath(feedbackName));
+		if(!isElementPresent(xpath(feedbackName))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath(feedbackName))){ Thread.sleep(2000); }
+
+		Assert.assertTrue(isElementPresent(xpath(feedbackName)));				
+		click(xpath(feedbackclose));
+
+	}
+	
+	public void Contact_Validation() throws Exception{
+		
+		waitForElementPresent(xpath(userLoginUsername));
+		waitForElementVisible(xpath(userLoginUsername));
+		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
+		click(xpath(feedback));
+		waitForElementPresent(xpath(feedbackName));
+		waitForElementVisible(xpath(feedbackName));
+		if(!isElementPresent(xpath(feedbackName))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath(feedbackName))){ Thread.sleep(2000); }
+
+		Assert.assertTrue(isElementPresent(xpath(feedbackName)));				
+		type(xpath(feedbackContactNumber),"123456");
+		driver.findElement(By.id("feedbackContactNumber")).sendKeys(Keys.TAB);
+		Assert.assertEquals(getText(xpath(feedbackerrorMsgContactNumber)), getDataFromxls(0, "User_Feedback.xls", 1, 2), "Contact validation message");
+
+	}
+	
+	public void Email_Validation() throws Exception{
+		
+		waitForElementPresent(xpath(userLoginUsername));
+		waitForElementVisible(xpath(userLoginUsername));
+		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
+		click(xpath(feedback));
+		waitForElementPresent(xpath(feedbackName));
+		waitForElementVisible(xpath(feedbackName));
+		if(!isElementPresent(xpath(feedbackName))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath(feedbackName))){ Thread.sleep(2000); }
+
+		Assert.assertTrue(isElementPresent(xpath(feedbackName)));				
+		type(xpath(feedbackEmail),"123456");
+		driver.findElement(By.id("feedbackContactNumber")).sendKeys(Keys.TAB);
+		Assert.assertEquals(getText(xpath(feedbackerrorMsgEmail)), getDataFromxls(0, "User_Feedback.xls", 1, 3), "Email validation message");
+
+	}
+	
+	
 	
 
 }

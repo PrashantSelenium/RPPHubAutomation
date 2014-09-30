@@ -41,6 +41,11 @@ public class TestInitReferenceSmokeTest extends FunctionReference {
 
     public String record = rxml.data("record");
     public static String environment = rxml.data("environment");
+    
+    
+    public static final String USERNAME = "tooltwist";
+	public static final String AUTOMATE_KEY = "9quC1U5hBNqMfkAByiyp";
+   // public static final String remoteUrl = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
     public String remoteUrl = rxml.data("remoteUrl");
     
     public String url = environment.equalsIgnoreCase("Prod") ? prod_url : local_url;
@@ -55,6 +60,16 @@ public class TestInitReferenceSmokeTest extends FunctionReference {
             FirefoxProfile profile = new FirefoxProfile();
             profile.setEnableNativeEvents(true);
             driver = new FirefoxDriver(new FirefoxBinary(), profile);
+            
+           /* DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setCapability("browser", "Firefox");
+            caps.setCapability("browser_version", "28.0");
+            caps.setCapability("os", "Windows");
+            caps.setCapability("os_version", "7");
+    	    caps.setCapability("browserstack.debug", "true");
+
+    	    driver = new RemoteWebDriver(new URL(remoteUrl), caps);*/
+
         }
         if (browser.contains("HTMLUnit")) {
             DesiredCapabilities capabilities = DesiredCapabilities.htmlUnit();
@@ -80,7 +95,7 @@ public class TestInitReferenceSmokeTest extends FunctionReference {
             }
             driver.manage().deleteAllCookies();
         }
-        //driver.get(url);
+        driver.get(url);
         driver.manage().window().maximize();
         if (record.equalsIgnoreCase("Yes")) {
             startRecording();
