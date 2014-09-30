@@ -166,7 +166,7 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
     public void init() {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
-           driver.navigate().to("https://dev-cbalender.rppropertyhub.com/login");
+           driver.navigate().to("https://stage-cbalender.rppropertyhub.com/login");
     }
     
     private void setIndexPageDescription() {

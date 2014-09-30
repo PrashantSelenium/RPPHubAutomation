@@ -29,7 +29,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	//Dev = https://dev-
 	//Production = https://
 	
-	public String environment = "https://dev-";
+	public String environment = "https://stage-";
 	
 	public UserHubEndToEndUtil_SmokeTest() {
 	}

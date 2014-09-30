@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="3" total="18" passed="15">
+<testng-results skipped="0" failed="15" total="17" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="594559" started-at="2014-09-04T07:45:26Z" finished-at="2014-09-04T07:55:20Z">
+  <suite name="Default suite" duration-ms="411702" started-at="2014-09-17T05:42:04Z" finished-at="2014-09-17T05:48:56Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="594559" started-at="2014-09-04T07:45:26Z" finished-at="2014-09-04T07:55:20Z">
+    <test name="Default test" duration-ms="411702" started-at="2014-09-17T05:42:04Z" finished-at="2014-09-17T05:48:56Z">
       <class name="hub.test.endtoend.EndToEnd_SmokeTest">
-        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="Startup" is-config="true" duration-ms="9351" started-at="2014-09-04T15:45:26Z" finished-at="2014-09-04T15:45:35Z">
+        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="Startup" is-config="true" duration-ms="9848" started-at="2014-09-17T13:42:04Z" finished-at="2014-09-17T13:42:14Z">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -16,11 +16,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Startup -->
-        <test-method status="PASS" signature="init()[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="init" is-config="true" duration-ms="6088" started-at="2014-09-04T15:45:35Z" finished-at="2014-09-04T15:45:41Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="init" is-config="true" duration-ms="8968" started-at="2014-09-17T13:42:14Z" finished-at="2014-09-17T13:42:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="3199" started-at="2014-09-04T15:45:42Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:45:45Z">
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="47" started-at="2014-09-17T13:42:23Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:42:23Z">
           <params>
             <param index="0">
               <value>
@@ -29,14 +29,728 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@1fb0c0ef]]>
+                <![CDATA[[Ljava.lang.String;@7f47e354]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="55" started-at="2014-09-17T13:42:23Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:42:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@489de114]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="78" started-at="2014-09-17T13:42:23Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:42:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@75240d4a]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="51" started-at="2014-09-17T13:42:23Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:42:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@3d37d68a]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="88" started-at="2014-09-17T13:42:23Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:42:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@1ce61d6c]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="60" started-at="2014-09-17T13:42:23Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:42:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@4795ac46]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="33" started-at="2014-09-17T13:42:23Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:42:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@33614c61]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="37" started-at="2014-09-17T13:42:23Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:42:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@38dd8ea1]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="58" started-at="2014-09-17T13:42:23Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:42:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@59bf0931]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="49" started-at="2014-09-17T13:42:24Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:42:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@cf49dff]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="45" started-at="2014-09-17T13:42:24Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:42:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@fb0d6fe]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="44" started-at="2014-09-17T13:42:24Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:42:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@22f2c5be]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="35" started-at="2014-09-17T13:42:24Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:42:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@70944ede]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="163" started-at="2014-09-17T13:42:24Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:42:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@18c60a90]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="106331" started-at="2014-09-17T13:42:24Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:44:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@876c964]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="15168" started-at="2014-09-04T15:45:45Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:46:00Z">
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="64917" started-at="2014-09-17T13:44:10Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:45:15Z">
           <params>
             <param index="0">
               <value>
@@ -45,23 +759,7 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@d4a9b2a]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="31983" started-at="2014-09-04T15:46:00Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:46:32Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@5aa4fbb2]]>
+                <![CDATA[[Ljava.lang.String;@71df80a4]]>
               </value>
             </param>
           </params>
@@ -103,7 +801,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="44222" started-at="2014-09-04T15:46:32Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:47:16Z">
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="testLogin" duration-ms="220297" started-at="2014-09-17T13:45:15Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-17T13:48:55Z">
           <params>
             <param index="0">
               <value>
@@ -112,306 +810,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@1d10e937]]>
+                <![CDATA[[Ljava.lang.String;@2e9fc893]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="16190" started-at="2014-09-04T15:47:16Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:47:32Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@198ec596]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="44883" started-at="2014-09-04T15:47:32Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:48:17Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@6c4e07f5]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="3388" started-at="2014-09-04T15:48:17Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:48:21Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@76ec9d5f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="10581" started-at="2014-09-04T15:48:21Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:48:31Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@285004f8]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="16390" started-at="2014-09-04T15:48:31Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:48:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@1d764a75]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="12406" started-at="2014-09-04T15:48:48Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:49:00Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@4112566f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="1953" started-at="2014-09-04T15:49:00Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:49:02Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@1ae8b2c9]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="14497" started-at="2014-09-04T15:49:02Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:49:16Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@2331b7ec]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="39043" started-at="2014-09-04T15:49:16Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:49:55Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@1521f901]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="53973" started-at="2014-09-04T15:49:55Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:50:49Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@6962bb7d]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="29258" started-at="2014-09-04T15:50:49Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:51:19Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@51034198]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="82916" started-at="2014-09-04T15:51:19Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:52:42Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@2cc78bb5]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="51819" started-at="2014-09-04T15:52:42Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:53:33Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@588919c]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Exception was thrown]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Exception was thrown
-	at org.testng.Assert.fail(Assert.java:94)
-	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:151)
-	at sun.reflect.GeneratedMethodAccessor8.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="testLogin" duration-ms="106804" started-at="2014-09-04T15:53:33Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-09-04T15:55:20Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@490f9b9a]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Exception was thrown]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Exception was thrown
-	at org.testng.Assert.fail(Assert.java:94)
-	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:151)
-	at sun.reflect.GeneratedMethodAccessor8.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@25744a9c]" name="teardown" is-config="true" duration-ms="171" started-at="2014-09-04T15:55:20Z" finished-at="2014-09-04T15:55:20Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@816fc8b]" name="teardown" is-config="true" duration-ms="121" started-at="2014-09-17T13:48:55Z" finished-at="2014-09-17T13:48:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
