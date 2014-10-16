@@ -153,7 +153,7 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
 			        	else { pass(input[0]); }
 		        break;
 		        
-			case "CBABROKER":
+			case "CBABROKERx":
 				resultcount = endtoend.EndToEndCBABroker();
 			        if (resultcount != 0) { fail(input[0]); } 
 			        	else { pass(input[0]); }
@@ -191,7 +191,7 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
     public void init() {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
-           driver.navigate().to("https://stage-cbalender.rppropertyhub.com/login");
+           driver.navigate().to("https://dev-cbalender.rppropertyhub.com/login");
            //driver.get("https://stage-cbalender.rppropertyhub.com/login");
     }
     

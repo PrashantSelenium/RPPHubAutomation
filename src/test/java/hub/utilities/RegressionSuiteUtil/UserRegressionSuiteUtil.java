@@ -1,6 +1,9 @@
 package hub.utilities.RegressionSuiteUtil;
 
 import static org.openqa.selenium.By.xpath;
+
+import java.beans.PropertyDescriptor;
+
 import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
 
@@ -28,7 +31,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		//Dev = https://dev-
 		//Production = https://www.
 		
-		public String environment = "https://stage-";
+		public String environment = "https://dev-";
 	
 	public void BranchIDvalidation() throws Exception{
 		
@@ -2275,9 +2278,276 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 
 	}
 	
-	
-	
+	public void CFA_Back_To_Search_Button_back_CFA() throws Exception{
+		
+		click(xpath(home));
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
+		
+		
+		click(xpath(userCFAButton));
+		Thread.sleep(1000);
+		click(xpath(userCFAConfirm));
+		Thread.sleep(1000);
+		click(xpath(userCFABackSearch));
+		Thread.sleep(1000);
+		
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000);}
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)));
+		
+		click(xpath(userCFAButton));
 
+		Thread.sleep(1000);
+		String styleval = driver.findElement(By.xpath(UnitErrorMessageHidden)).getAttribute("style");
+		Assert.assertTrue(styleval.contains("display: none;"), "Unit number error still displayed");
+		
+		styleval = driver.findElement(By.xpath(StreetNameErrorMessageHidden)).getAttribute("style");
+		Assert.assertTrue(styleval.contains("display: none;"), "Street number error still displayed");
+		
+		styleval = driver.findElement(By.xpath(StreetTypeErrorMessageHidden)).getAttribute("style");
+		Assert.assertTrue(styleval.contains("display: none;"), "Street Type error still displayed");
+		
+		styleval = driver.findElement(By.xpath(SuburbErrorMessageHidden)).getAttribute("style");
+		Assert.assertTrue(styleval.contains("display: none;"), "Suburb error still displayed");
+		
+	}
+	
+	public void CFA_mandatory_validation() throws Exception{
+		
+		click(xpath(home));
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
+
+		Thread.sleep(1000);
+		click(xpath(userCFAButton));
+		type(xpath(userCFAUnitNumber), getDataFromxls(0, "User_PropertySearch.xls", 1, 3));
+		type(xpath(userCFAStreetNumber), getDataFromxls(0, "User_PropertySearch.xls", 2, 3));
+		type(xpath(userCFAStreetName), getDataFromxls(0, "User_PropertySearch.xls", 3, 3));
+		type(xpath(userCFAStreetType), getDataFromxls(0, "User_PropertySearch.xls", 4, 3));
+		type(xpath(userCFASuburbList), getDataFromxls(0, "User_PropertySearch.xls", 5, 3));
+		
+		Thread.sleep(3000);
+		String styleval = driver.findElement(By.xpath(IncorrectSuburb)).getAttribute("style");
+		Assert.assertFalse(styleval.contains("display: none;"), "Incorrect Suburb validation not displayed");
+		
+		click(xpath(userCFAClear));
+		Thread.sleep(1000);
+		type(xpath(userCFAUnitNumber), getDataFromxls(0, "User_PropertySearch.xls", 1, 3));
+		type(xpath(userCFAStreetNumber), getDataFromxls(0, "User_PropertySearch.xls", 2, 3));
+		type(xpath(userCFAStreetType), getDataFromxls(0, "User_PropertySearch.xls", 4, 3));
+		type(xpath(userCFASuburbList), getDataFromxls(0, "User_PropertySearch.xls", 6, 3));
+		click(xpath(userCFAConfirm));
+		Assert.assertTrue(isElementVisible(xpath(cfaErrorMessageStreetName)), "Street Name");
+		
+		click(xpath(userCFAClear));
+		Thread.sleep(1000);
+		type(xpath(userCFAUnitNumber), getDataFromxls(0, "User_PropertySearch.xls", 1, 3));
+		type(xpath(userCFAStreetNumber), getDataFromxls(0, "User_PropertySearch.xls", 2, 3));
+		type(xpath(userCFAStreetName), getDataFromxls(0, "User_PropertySearch.xls", 3, 3));
+		type(xpath(userCFASuburbList), getDataFromxls(0, "User_PropertySearch.xls", 6, 3));
+		click(xpath(userCFAConfirm));
+		Assert.assertTrue(isElementVisible(xpath(cfaErrorMessageStreetType)), "Street Type");
+		
+		click(xpath(userCFAClear));
+		Thread.sleep(1000);
+		type(xpath(userCFAStreetName), getDataFromxls(0, "User_PropertySearch.xls", 3, 3));
+		type(xpath(userCFAStreetType), getDataFromxls(0, "User_PropertySearch.xls", 4, 3));
+		type(xpath(userCFASuburbList), getDataFromxls(0, "User_PropertySearch.xls", 6, 3));
+		click(xpath(userCFAConfirm));
+		Assert.assertTrue(isElementVisible(xpath(cfaErrorMessageUnitNumber)), "Unit,Street,Lot Number");
+		
+	}
+	
+	
+	public void CFA_No_address_Matched() throws Exception{
+		
+		click(xpath(home));
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
+
+		Thread.sleep(1000);
+		click(xpath(userCFAButton));
+		type(xpath(userCFAUnitNumber), getDataFromxls(0, "User_PropertySearch.xls", 1, 4));
+		type(xpath(userCFAStreetNumber), getDataFromxls(0, "User_PropertySearch.xls", 2, 4));
+		type(xpath(userCFAStreetName), getDataFromxls(0, "User_PropertySearch.xls", 3, 4));
+		type(xpath(userCFAStreetType), getDataFromxls(0, "User_PropertySearch.xls", 4, 4));
+		Thread.sleep(1000);
+		type(xpath(userCFASuburbList), getDataFromxls(0, "User_PropertySearch.xls", 5, 4));
+		Thread.sleep(3000);
+
+		driver.findElement(By.id("hubSearchAddress_suburbStatePostcode")).sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		driver.findElement(By.id("hubSearchAddress_suburbStatePostcode")).sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		Assert.assertEquals(getText(xpath(SorryCFA)), getDataFromxls(0, "User_PropertySearch.xls", 1, 5));
+		
+	}
+	
+	public void CFA_Form_validation() throws Exception{
+		
+		click(xpath(home));
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
+
+		Thread.sleep(1000);
+		click(xpath(userCFAButton));
+		Assert.assertTrue(isElementPresent(xpath(userCFALotNumber)), "Lot Number");
+		Assert.assertTrue(isElementPresent(xpath(userCFAStreetNumber)), "Street Number");
+		Assert.assertTrue(isElementPresent(xpath(userCFAUnitNumber)), "Unit Number");
+		Assert.assertTrue(isElementPresent(xpath(userCFAStreetName)), "Street Name");
+		Assert.assertTrue(isElementPresent(xpath(userCFAStreetType)), "Street Type");
+		Assert.assertTrue(isElementPresent(xpath(userCFASuburbList)), "Suburb List");
+		Assert.assertTrue(isElementPresent(xpath(userCFABackSearch)), "Back to Search");
+		Assert.assertTrue(isElementPresent(xpath(userCFAClear)), "Clear button");
+		Assert.assertTrue(isElementPresent(xpath(userCFAConfirm)), "Confirm Button");
+	}
+	
+	public void CFA_Searching_UI() throws Exception{
+		
+		click(xpath(home));
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
+
+		Thread.sleep(1000);
+		click(xpath(userCFAButton));
+		type(xpath(userCFAStreetNumber), getDataFromxls(0, "User_PropertySearch.xls", 1, 6));
+		type(xpath(userCFAStreetName), getDataFromxls(0, "User_PropertySearch.xls", 2, 6));
+		Thread.sleep(1500);
+		
+		String styleval = driver.findElement(By.xpath(CFAIndicatorSearching)).getAttribute("style");
+ 		Assert.assertFalse(styleval.contains("display: none;"), "Searching not displayed");
+	}
+	
+	public void CFA_Different_Property_Type() throws Exception{
+		
+		click(xpath(home));
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
+		Thread.sleep(1000);
+		click(xpath(userCFAButton));
+		
+		int x = 0, y = 7;
+		do{
+			type(xpath(userCFAUnitNumber), getDataFromxls(0, "User_PropertySearch.xls", 2, y));
+			type(xpath(userCFAStreetName), getDataFromxls(0, "User_PropertySearch.xls", 3, y));
+			type(xpath(userCFAStreetType), getDataFromxls(0, "User_PropertySearch.xls", 4, y));
+			type(xpath(userCFASuburbList), getDataFromxls(0, "User_PropertySearch.xls", 5, y));
+			Thread.sleep(2000);
+			driver.findElement(By.xpath(userCFASuburbList)).sendKeys(Keys.ENTER);
+			Assert.assertEquals(getText(xpath(IncorrectSuburb)), getDataFromxls(0, "User_PropertySearch.xls", 5, y));
+			
+			Thread.sleep(500);
+			click(xpath(userCFAClear));
+			x++;
+			y++;
+		}while(x<=15);
+	}
+	
+	public void CFA_Branding() throws Exception{
+		
+		click(xpath(home));
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
+		Thread.sleep(1000);
+		click(xpath(userCFAButton));
+
+		Thread.sleep(2000);
+		String styleval = driver.findElement(By.xpath(CFABorderColor)).getCssValue("background-color");
+ 		Assert.assertEquals(styleval, "rgba(254, 254, 213, 1)");
+	}
+	
+	public void CFA_Suburb_Suggestion() throws Exception{
+		
+		click(xpath(home));
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
+		Thread.sleep(1000);
+		click(xpath(userCFAButton));
+
+		type(xpath(userCFASuburbList), getDataFromxls(0, "User_PropertySearch.xls", 1, 23));
+		Thread.sleep(3000);
+
+		Assert.assertTrue(getText(xpath(IncorrectSuburb)).contains(getDataFromxls(0, "User_PropertySearch.xls", 2, 23)));
+		Assert.assertTrue(getText(xpath(IncorrectSuburb)).contains(getDataFromxls(0, "User_PropertySearch.xls", 3, 23)));
+		Assert.assertTrue(getText(xpath(IncorrectSuburb)).contains(getDataFromxls(0, "User_PropertySearch.xls", 4, 23)));
+		Assert.assertTrue(getText(xpath(IncorrectSuburb)).contains(getDataFromxls(0, "User_PropertySearch.xls", 5, 23)));
+		Assert.assertTrue(getText(xpath(IncorrectSuburb)).contains(getDataFromxls(0, "User_PropertySearch.xls", 6, 23)));
+	}
+	
+	public void Property_Search_Did_You_Mean() throws Exception{
+		
+		click(xpath(home));
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
+		
+		String styleval = driver.findElement(By.xpath(DidYouMean)).getAttribute("style");
+ 		Assert.assertTrue(styleval.contains("display: none;"), "Searching not displayed");
+ 		
+ 		type(xpath(propertySearch),getDataFromxls(0, "User_PropertySearch.xls", 1, 24));
+ 		click(xpath(propertySearchbtn));
+ 		Thread.sleep(3000);
+ 		
+ 		styleval = driver.findElement(By.xpath(DidYouMean)).getAttribute("style");
+ 		Assert.assertFalse(styleval.contains("display: none;"), "Searching not displayed");
+ 		
+ 		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 3, 24)));
+ 		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 4, 24)));
+ 		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 5, 24)));
+ 		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 6, 24)));
+ 		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 7, 24)));
+ 		
+ 		click(xpath(NundraLink));
+ 		waitForElementPresent(xpath(DidYouMeanListWithPicture));
+		waitForElementVisible(xpath(DidYouMeanListWithPicture));
+		if(!isElementPresent(xpath(DidYouMeanListWithPicture))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(DidYouMeanListWithPicture))){ Thread.sleep(2000); }
+		
+		Assert.assertTrue(isElementPresent(xpath(DidYouMeanListWithPicture)));
+ 		
+		click(xpath(NundraLinkWithPicture));
+		Thread.sleep(3000);
+		waitForElementPresent(xpath(NundraLotProperty));
+		waitForElementVisible(xpath(NundraLotProperty));
+		if(!isElementPresent(xpath(NundraLotProperty))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(NundraLotProperty))){ Thread.sleep(2000); }
+		
+		Assert.assertTrue(isElementPresent(xpath(NundraLotProperty)));
+	}
+	
+	public void Property_Search_Ghost_Text() throws Exception{
+		
+		click(xpath(home));
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
+		
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)));
+		Assert.assertEquals(getValue(xpath(propertySearch)), getDataFromxls(0, "User_PropertySearch.xls", 1, 25));
+		click(xpath(propertySearch));
+		Assert.assertEquals(getValue(xpath(propertySearch)), "");
+	}
 }
 
 

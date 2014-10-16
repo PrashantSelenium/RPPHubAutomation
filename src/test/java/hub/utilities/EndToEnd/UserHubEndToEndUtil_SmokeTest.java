@@ -35,7 +35,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	//*************************//
 
 	//Set Enviroment to the list above depending from what environment you want to run the test	
-	public String environment = "https://stage-";
+	public String environment = "https://dev-";
 	
 	public UserHubEndToEndUtil_SmokeTest() {
 	}
@@ -215,6 +215,14 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		    }
 		    catch(AssertionError e){
 		    	fail(input[0] + " - Property Profiler BSGv3 Connection label is not ok");
+		    	resultcount++;
+		    	}
+		
+		try{
+			Assert.assertTrue(getText(xpath(HealthCheck)).contains(input[13]));
+		    }
+		    catch(AssertionError e){
+		    	fail(input[0] + " - EVR Service Connection label is not ok");
 		    	resultcount++;
 		    	}
 
@@ -734,7 +742,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 				resultcount++;
 	    		}
 		try{
-	    	Assert.assertEquals(getText(xpath(mobileInfoOrderConfirmation)), input[4].substring(0, 10));
+	    	Assert.assertTrue(isElementPresent(xpath(mobileInfoOrderConfirmation)));
 			}
 			catch(AssertionError e){
 				fail(input[0] + " - Mobile is not Displayed");
@@ -868,9 +876,9 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	
 	public int deepLink() throws Exception{
 		
-		driver.navigate().to(input[1]);
+		String Url = environment.concat("class.rppropertyhub.com/ProductSelection?propertyId=1976129");
+		driver.navigate().to(Url);
 		waitForElementPresent(xpath(userLoginUsername));
-		waitForElementVisible(xpath(userLoginUsername));
 		
 		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000);}
 	    if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000);}
@@ -922,7 +930,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	
 	public int adminPromotion() throws Exception{
 		
-		driver.navigate().to(input[1]);
+		driver.navigate().to(environment.concat("class.rppropertyhub.com/Admin"));
 		waitForElementPresent(xpath(loginAdminUsername));
 		waitForElementVisible(xpath(loginAdminUsername));
 		
@@ -1171,10 +1179,9 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	Thread.sleep(12000);
 	}
 	
-	
 	public int EndToEnd(String channel) throws Exception{		
 		resultcount = 0;	
-		if(channel.equals("wpcbroker")){
+		if(channel.equals("wpcbroker")){			
 			driver.navigate().to(environment.concat("wpcbroker.rppropertyhub.com"));
 		}
 		if(channel.equals("bankmelbourne")){
@@ -1222,6 +1229,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	
 		waitForElementPresent(xpath(proceedNextLink));
 		waitForElementVisible(xpath(proceedNextLink));
+		Thread.sleep(10000);
 		click(xpath(proceedNextLink));
 		Thread.sleep(10000);
 		waitForElementPresent(xpath(productNavBar));
@@ -1266,14 +1274,18 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
 		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		if(channel.equals("wpcbroker")){
 			click(xpath(pruchaseBtnSingle));
+			Thread.sleep(5000);
 		}
 		if(channel.equals("bankmelbourne")){
 			click(xpath(pruchaseBtnSecondLine));
+			Thread.sleep(5000);
 		}
-		Thread.sleep(5000);
+		
+		if(!isElementVisible(xpath(addToCartLabel))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(addToCartLabel))){ Thread.sleep(7000); }
 		try{
 			Assert.assertEquals(getText(xpath(addToCartLabel)), input[6]);
 			}
@@ -1331,7 +1343,8 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		waitForElementVisible(xpath(NextBtnInstructionDetails));
 		click(xpath(NextBtnInstructionDetails));
 		waitfor();
-		
+		if(!isElementVisible(xpath(LabelPaymentDetails))){ Thread.sleep(2000); }
+		if(!isElementVisible(xpath(LabelPaymentDetails))){ Thread.sleep(5000); }
 		try{
 	    	Assert.assertTrue(isElementPresent(xpath(LabelPaymentDetails)));
 			}
@@ -1363,7 +1376,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 					fail(input[0] + " - Account ID is not Displayed");
 					resultcount++;
 		    		}
-			
+		
 			waitForElementPresent(xpath(AccountIDPaymentDetails));
 			waitForElementVisible(xpath(AccountIDPaymentDetails));
 			click(xpath(TermsandConditionPaymentDetails));
@@ -1371,6 +1384,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 			type(xpath(AccountPasswordPaymentDetails), input[9].substring(0,8));
 			type(xpath(AccountIDPaymentDetails), input[10].substring(0, 6));
 		}
+		
 		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
 		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
 		click(xpath(ConfirmBtnPaymentDetails));
@@ -1972,6 +1986,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		driver.navigate().to(environment.concat("cbabroker.rppropertyhub.com"));
 		alertvalidation();
 		alertAccept();
+		Thread.sleep(3000);
 		
 		try{
 	    	Assert.assertTrue(getText(xpath(BuildVersion)).contains(input[1]));

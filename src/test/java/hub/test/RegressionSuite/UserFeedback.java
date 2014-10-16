@@ -1,4 +1,4 @@
-package hub.test.RegressionSuite;
+	package hub.test.RegressionSuite;
 
 import hub.library.TestInitReference;
 import hub.utilities.RegressionSuiteUtil.UserRegressionSuiteUtil;

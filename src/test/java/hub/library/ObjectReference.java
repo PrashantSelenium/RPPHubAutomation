@@ -685,6 +685,20 @@ public class ObjectReference {
     public static String changePropertyAddress = "//a[text()='Change property address']";
     public static String CFASearchtrigger = "//*[@class='hubResults cantfindAddListContainer']";
     public static String CFASearchinglabel = "//*[@class='cantFindAddIndicator']";
+    public static String UnitErrorMessageHidden = "//*[@class='addressDesignator errorMessage']";
+    public static String StreetNameErrorMessageHidden = "//*[@class='hubSearchAddress_streetName errorMessage']";
+    public static String StreetTypeErrorMessageHidden = "//*[@class='hubSearchAddress_street_Type errorMessage']";
+    public static String SuburbErrorMessageHidden = "//*[@class='hubSearchAddress_suburbStatePostcode errorMessage']";
+    public static String IncorrectSuburb = "(//*[@class='acResults'])[2]";
+    public static String SorryCFA = "//*[contains(text(),'Sorry, we are still unable to find an address match.')]";
+    public static String CFAIndicatorSearching = "//*[@class='cantFindAddIndicator']";
+    public static String SuggestedList = "//*[@class='jquery-autocomplete-selected-item acSelect']";
+    public static String CFABorderColor = "//*[@class='cantFindAddressContainer roundedYellowBg']";
+    public static String DidYouMean = "//*[@class='searchMessage roundedYellowBg']";
+    public static String NundraLink = "//a[text()='Nundah Street Brighton QLD 4017']";
+    public static String DidYouMeanListWithPicture = "//*[@class='fontStyle5 hubHeaderBodyText']";
+    public static String NundraLinkWithPicture = "//*[text()='10 Nundah Street,']";
+    public static String NundraLotProperty = "//*[contains(text(),'236/RP76332')]";
     
   //Menu
     public static String home = "//a[text()='HOME >']";
@@ -743,7 +757,7 @@ public class ObjectReference {
     public static String fNameInfoOrderConfirmation = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[1]/div[2]";
     public static String lNameInfoOrderConfirmation = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[2]/div[2]";
     public static String theCustomer = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[4]/div[2]";
-    public static String mobileInfoOrderConfirmation = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[5]/div[2]";
+    public static String mobileInfoOrderConfirmation = "(//*[@class='hubHeaderBodyText'])[10]";
     public static String startNewOrderBTN = "//*[@id='workspace']/table/tbody/tr[2]/td[2]/div[2]/img";
     public static String openReportpopup = "//*[@id='hubCboxLoadedContent']/div/table[1]/tbody/tr[2]/td";
     public static String yesBTN = "//*[text()='Yes']";
