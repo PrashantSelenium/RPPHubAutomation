@@ -45,8 +45,8 @@ public class TestInitReferenceSmokeTest extends FunctionReference {
     
     public static final String USERNAME = "tooltwist";
 	public static final String AUTOMATE_KEY = "9quC1U5hBNqMfkAByiyp";
-    //public static final String remoteUrl = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
-    public String remoteUrl = rxml.data("remoteUrl");
+    public static final String remoteUrl = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
+    //public String remoteUrl = rxml.data("remoteUrl");
     
     public String url = environment.equalsIgnoreCase("Prod") ? prod_url : local_url;
     protected String ipAddress;
@@ -61,14 +61,16 @@ public class TestInitReferenceSmokeTest extends FunctionReference {
             profile.setEnableNativeEvents(true);
             driver = new FirefoxDriver(new FirefoxBinary(), profile);
             
-            /*DesiredCapabilities caps = new DesiredCapabilities();
+            DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability("browser", "Firefox");
             caps.setCapability("browser_version", "28.0");
             caps.setCapability("os", "Windows");
             caps.setCapability("os_version", "7");
     	    caps.setCapability("browserstack.debug", "true");
+    	    caps.setCapability("build", "v4.11.1");
+    	    caps.setCapability("project", "Hub");
 
-    	    driver = new RemoteWebDriver(new URL(remoteUrl), caps);*/
+    	    driver = new RemoteWebDriver(new URL(remoteUrl), caps);
 
         }
         if (browser.contains("HTMLUnit")) {

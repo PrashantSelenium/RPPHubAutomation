@@ -1,15 +1,13 @@
 package hub.utilities.RegressionSuiteUtil;
 
 import static org.openqa.selenium.By.xpath;
-
-import java.beans.PropertyDescriptor;
-
 import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
+
 
 import com.thoughtworks.selenium.Selenium;
 
@@ -2447,8 +2445,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			type(xpath(userCFAStreetName), getDataFromxls(0, "User_PropertySearch.xls", 3, y));
 			type(xpath(userCFAStreetType), getDataFromxls(0, "User_PropertySearch.xls", 4, y));
 			type(xpath(userCFASuburbList), getDataFromxls(0, "User_PropertySearch.xls", 5, y));
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			driver.findElement(By.xpath(userCFASuburbList)).sendKeys(Keys.ENTER);
+			Thread.sleep(1000);
 			Assert.assertEquals(getText(xpath(IncorrectSuburb)), getDataFromxls(0, "User_PropertySearch.xls", 5, y));
 			
 			Thread.sleep(500);
@@ -2548,6 +2547,61 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(propertySearch));
 		Assert.assertEquals(getValue(xpath(propertySearch)), "");
 	}
+	
+	public void Property_Search_copy_paste() throws Exception{
+		
+		click(xpath(home));
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)));
+		int x=1,y=0;
+		
+		do{
+			type(xpath(propertySearch), getDataFromxls(0, "User_PropertySearch.xls", x, 26));
+			Thread.sleep(3000);
+			Assert.assertEquals(getText(xpath(SuggestedList)), getDataFromxls(0, "User_PropertySearch.xls", x, 26));
+			x++;
+			y++;
+		}while(y!=3);
+	}	
+	
+	public void Property_Search_Invalid_Property() throws Exception{
+		
+		click(xpath(home));
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)));
+        type(xpath(propertySearch), getDataFromxls(0, "User_PropertySearch.xls", 1, 27));
+        click(xpath(propertySearchbtn));
+		Thread.sleep(3000);
+		Assert.assertTrue(isElementPresent(xpath(unfortunately_Error_Msg)), "Invalid Property Message is not displayed");
+	}	
+	
+	public void Property_Search_Cannot_Proceed() throws Exception{
+		
+		click(xpath(home));
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)));
+        type(xpath(propertySearch), getDataFromxls(0, "User_PropertySearch.xls", 1, 28));
+        click(xpath(propertySearchbtn));
+		Thread.sleep(3000);
+		Assert.assertTrue(isElementPresent(xpath(unfortunately_Error_Msg)), "Invalid Property Message is not displayed");
+		Thread.sleep(500);
+		type(xpath(propertySearch), getDataFromxls(0, "User_PropertySearch.xls", 2, 28));
+        click(xpath(propertySearchbtn));
+		Thread.sleep(3000);
+		Assert.assertTrue(isElementPresent(xpath(unfortunately_Error_Msg)), "Invalid Property Message is not displayed");
+		
+	}	
+	
+	
 }
 
 

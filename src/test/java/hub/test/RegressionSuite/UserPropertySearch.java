@@ -23,7 +23,6 @@ public class UserPropertySearch extends TestInitReference {
     public void init() {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
-         //driver.get("https://stage-acme.rppropertyhub.com/login");
            driver.navigate().to("https://stage-acme.rppropertyhub.com/login");
     }
     
@@ -163,7 +162,29 @@ public class UserPropertySearch extends TestInitReference {
 	public void RT_02549_Property_Search_Ghost_Text() throws Exception {
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-		util.Property_Search_Ghost_Text();
+		//util.Property_Search_Ghost_Text();
+	}
+	
+	@Test(description="User - Property Search", priority=19)
+	public void RT_02551_Property_Search_copy_paste() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		//util.Property_Search_copy_paste();
+	}
+	
+
+	@Test(description="User - Property Search", priority=20)
+	public void RT_03123_Property_Search_Invalid_Property() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		//util.Property_Search_Invalid_Property();
+	}
+	
+	@Test(description="User - Property Search", priority=21)
+	public void RT_02833_Property_Search_Cannot_Proceed() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.Property_Search_Cannot_Proceed();
 	}
 }
 

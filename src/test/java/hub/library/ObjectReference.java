@@ -191,6 +191,7 @@ public class ObjectReference {
     public static String userSearchButton = "//input[@id='hubSearchButton']";
     public static String userPropertyDetails = "//div[@id='propdetails']";
     public static String coverFlow = "//*[@id='workspace']/table/tbody/tr/td[2]/div/div[2]";
+    public static String unfortunately_Error_Msg = "(//*[@class='message'])[1]";
     
     //CFA                             
     public static String userCFAButton = "//*[@id='hubSearchAddressForm']/div[1]/img[2]";

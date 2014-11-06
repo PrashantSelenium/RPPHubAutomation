@@ -35,7 +35,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	//*************************//
 
 	//Set Enviroment to the list above depending from what environment you want to run the test	
-	public String environment = "https://dev-";
+	public String environment = "https://stage-";
 	
 	public UserHubEndToEndUtil_SmokeTest() {
 	}
@@ -1280,7 +1280,12 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 			Thread.sleep(5000);
 		}
 		if(channel.equals("bankmelbourne")){
-			click(xpath(pruchaseBtnSecondLine));
+			if(isElementPresent(xpath(pruchaseBtnSecondLine))){
+				click(xpath(pruchaseBtnSecondLine));	
+			}
+			else{
+				click(xpath(pruchaseBtnSingle));
+			}
 			Thread.sleep(5000);
 		}
 		
@@ -1559,13 +1564,20 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    		}
 		
 		Thread.sleep(4000);
+		if(isElementPresent(xpath(pruchaseBtnSecondLine))){
+			waitForElementPresent(xpath(pruchaseBtnSecondLine));
+			waitForElementVisible(xpath(pruchaseBtnSecondLine));
+			Thread.sleep(2000);
+			click(xpath(pruchaseBtnSecondLine));
+		}else{
+			waitForElementPresent(xpath(pruchaseBtnSingle));
+			waitForElementVisible(xpath(pruchaseBtnSingle));
+			Thread.sleep(2000);
+			click(xpath(pruchaseBtnSingle));
+		}
 		
-		waitForElementPresent(xpath(pruchaseBtnSecondLine));
-		waitForElementVisible(xpath(pruchaseBtnSecondLine));
-		
-		Thread.sleep(2000);
-		click(xpath(pruchaseBtnSecondLine));
 		Thread.sleep(5000);
+		
 		try{
 			Assert.assertEquals(getText(xpath(addToCartLabel)), input[6]);
 			}
