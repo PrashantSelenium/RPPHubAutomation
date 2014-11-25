@@ -47,7 +47,7 @@ public class EndToEnd_SmokeTest_Part2 extends TestInitReferenceSmokeTest {
 		        break;
 		        
 			case "ADMINPROMOTION":
-				resultcount = endtoend.adminPromotion();
+				resultcount = endtoend.adminPromotion("PromoCode");
 			        if (resultcount != 0) { fail(input[0]); } 
 			        	else { pass(input[0]); }
 		        break;

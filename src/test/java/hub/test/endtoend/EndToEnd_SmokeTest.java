@@ -5,6 +5,9 @@ import hub.library.TestInitReferenceSmokeTest;
 import hub.utilities.EndToEnd.*;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.junit.AfterClass;
 import org.testng.Assert;
@@ -35,7 +38,10 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
 	{
 		System.setProperty("atu.reporter.config", "/tooltwist/eclipse/RPPHub/conf/atu.properties");
 	}
-
+	private DateFormat dateFormat = new SimpleDateFormat("HHmmss");
+	private Date date = new Date();
+	public String PromoCode = "Promo".concat(dateFormat.format(date)).substring(0, 10);;
+		
 	@Test(description="End To End Smoke Test", dataProvider = "Data-Provider-Function")
 	public void testLogin(Class<?> clzz, String[] input) {
 		String testcase = "Smoke Test - " + input[0];
@@ -44,7 +50,7 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
 
 		try {
 			UserHubEndToEndUtil_SmokeTest endtoend = new UserHubEndToEndUtil_SmokeTest(input);
-			
+					
 			switch (input[0].toUpperCase()) {
 			case "LOGIN":
 				resultcount = endtoend.SuccessfulLogin();
@@ -118,7 +124,7 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
 		        break;
 		        
 			case "ADMINPROMOTION":
-				resultcount = endtoend.adminPromotion();
+				resultcount = endtoend.adminPromotion(PromoCode);
 			        if (resultcount != 0) { fail(input[0]); } 
 			        	else { pass(input[0]); }
 		        break;
@@ -165,6 +171,12 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
 			        	else { pass(input[0]); }
 		        break;
 		        
+			case "PROMOTIONWORKFLOW":
+				resultcount = endtoend.PromotionWorkFlow(PromoCode);
+			        if (resultcount != 0) { fail(input[0]); } 
+			        	else { pass(input[0]); }
+		        break;    
+		        
 			default:
 				fail(testcase);
 		        Assert.fail("Invalid Test Data");
@@ -191,8 +203,8 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
     public void init() {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
-           driver.navigate().to("https://stage-cbalender.rppropertyhub.com/login");
-           //driver.get("https://stage-cbalender.rppropertyhub.com/login");
+           //driver.navigate().to("https://dev-cbalender.rppropertyhub.com/login");
+           driver.get("https://cbalender.rppropertyhub.com/login");
     }
     
     @AfterClass

@@ -261,6 +261,8 @@ public class ObjectReference {
     public static String userProductSelectionListOverview = "//div[@class='overview']";
     public static String proceedtoInstuction = "//*[@id='instructionDetails']/a[2]";
     public static String titleRef = "//";
+    public static String backBtn = "//*[@class='navigationBtn hubNavigation_back']";
+    
     
     
     
@@ -723,7 +725,10 @@ public class ObjectReference {
     public static String addToCartLabel = "//label[text()='Added to cart']";
     public static String cartCount = "//a[@id='cartCount']";
     public static String nextBtn = "//*[@id='workspace']/table/tbody/tr[5]/td[2]/div[2]/img";
-    public static String pendingTransaction = "//*[@id='workspace']/table/tbody/tr[3]/td/div/table/tbody/tr/td[1]/div/div[2]/table/tbody/tr/td[3]/img";
+    //public static String pendingTransaction = "//*[@id='workspace']/table/tbody/tr[3]/td/div/table/tbody/tr/td[1]/div/div[2]/table/tbody/tr/td[3]/img";
+    public static String pendingTransaction = "//*[text()='Start a new transaction for this property']";
+    public static String CommercialTab = "//*[@id='linkCommercial']";
+    public static String promotionLogo = "//*[@id='tabCommercial']/table/tbody/tr[2]/td/div/div[1]/ul/li[4]/img";
     
   //valuation form
     public static String unitValuation = "//*[@id='1']";
@@ -732,14 +737,19 @@ public class ObjectReference {
     public static String avm = "//*[@id='6']";
     public static String proceedToProductValuation = "//*[text()='Proceed to product selection']";
     public static String combanklabel = "//*[text()='CommBank Property Report']";
-    
+    public static String loanAmount = "//*[@name='7']";
+   
   //Instruction Details
     public static String FnameInstructionDetails = "//*[@id='1_1_value']";
     public static String LnameInstructionDetails = "//*[@id='2_1_value']";
     public static String MobileInstructionDetails = "//*[@id='13_1_value']";
     public static String EmailInstructionDetails = "//*[@id='14_1_value']";
     public static String OwnerInstructionDetails = "//*[@id='3_1_value']";
+    public static String CompanyNameInstructionDetails = "//*[@id='66_1_value']";
     public static String NextBtnInstructionDetails = "//*[@id='workspace']/table/tbody/tr[2]/td[2]/div[2]/img";
+    public static String NetLendableInstructionDetails = "//*[@id='67_3_value']";
+    public static String RentalAmountInstructionDetails = "//*[@id='68_3_value']";
+    public static String OutgoingMonthlyInstructionDetails = "//*[@id='69_3_value']";
     
     //Payment Details
     public static String LabelPaymentDetails = "//*[@id='paymenDetailForm']/ul/li[1]/label";
@@ -747,6 +757,15 @@ public class ObjectReference {
     public static String AccountPasswordPaymentDetails = "//*[@id='accountPassword']";
     public static String AccountIDPaymentDetails = "//*[@id='accountId']";
     public static String ConfirmBtnPaymentDetails = "//*[@id='workspace']/table/tbody/tr[4]/td[2]/div[2]/img";
+    public static String PromoLabel = "//*[contains(text(),'Enter Promo Code:')]";
+    public static String CreditCardName = "//*[@name='nameForTaxInvoice']";
+    public static String CreditCardEmail = "//*[@name='emailForTaxInvoice']";
+    public static String CreditCardNumber = "//*[@name='cardNumber']";
+    public static String CreditCardSecurityCode = "//*[@name='securityCode']";
+    public static String PromoField = "//*[@id='promoCode']";
+    public static String PromoAddBtn = "//*[@class='hubButtonBg hubButtonText']";
+    public static String ProductPrice = "(//*[@class='hubHeaderBodyText'])[3]";
+    public static String MainTotalAmount = "//*[@id='mainTotalAmount']";
     
   //Order Confirmation
     public static String referenceNumber = "//label[contains(text(),'RP Data HUB Reference Number:')]";
@@ -888,6 +907,27 @@ public class ObjectReference {
   
   //BUILD VERSION
   public static String BuildVersion = "//*[@id='poweredby']";
+  
+  //Property Detail
+  public static String userCartPropertyDetail = "//a[@id='cartCount']";
+  public static String propertyPhoto = "//*[@id='propdetails']/div[1]/div/table/tbody/tr/td[1]/img";
+  public static String bedrooms = "//*[@id='propdetails']/div[1]/div/table/tbody/tr/td[3]/table/tbody/tr[5]/td/div/table/tbody/tr/td[1]";
+  public static String bathRooms = "//*[@id='propdetail']/div[1]/div/table/tbody/tr/td[3]/table/tbody/tr[5]/td/div/table/tbody/tr/td[3]";
+  public static String carSpace = "//*[@id='propdetails']/div[1]/div/table/tbody/tr/td[3]/table/tbody/tr[5]/td/div/table/tbody/tr/td[5]";
+  public static String landArea = "//*[@id='propdetails']/div[1]/div/table/tbody/tr/td[3]/table/tbody/tr[5]/td/div/table/tbody/tr/td[7]";
+  public static String lotNumber = "//*[@id='propdetails']/div[1]/div/table/tbody/tr/td[3]/table/tbody/tr[3]/td";
+  public static String changePropertyAdress = "//*[@id='changeAddressLink']/a[2]";
+  public static String proceedtoProductSelection = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr[1]/td/table/tbody/tr/td[2]/div/a[2]";
+  public static String pendingTransactionMessage = "//*[@class='hubPendingTransaction']";
+  public static String deletePendingTransaction = "//*[@id='workspace']/table/tbody/tr[3]/td/div/table/tbody/tr/td[1]/div/div[2]/table/tbody/tr/td[3]/img";
+  public static String homeButton = "//*[text()='HOME >']";
+  public static String okButton = "//*[text()='OK']";
+  public static String cancelButton = "//*[text()='Cancel']";
+  public static String customerId = "//*[@id='customerId']";
+  public static String guestId = "//*[@id='guestId']"; 
+  
+  
+  
 }
 
 

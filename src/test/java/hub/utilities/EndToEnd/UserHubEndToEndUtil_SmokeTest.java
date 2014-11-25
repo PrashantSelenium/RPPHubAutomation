@@ -35,7 +35,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	//*************************//
 
 	//Set Enviroment to the list above depending from what environment you want to run the test	
-	public String environment = "https://stage-";
+	public String environment = "https://";
 	
 	public UserHubEndToEndUtil_SmokeTest() {
 	}
@@ -928,12 +928,12 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		return resultcount;
 	}
 	
-	public int adminPromotion() throws Exception{
+	public int adminPromotion(String PromoCode) throws Exception{
 		
 		driver.navigate().to(environment.concat("class.rppropertyhub.com/Admin"));
 		waitForElementPresent(xpath(loginAdminUsername));
 		waitForElementVisible(xpath(loginAdminUsername));
-		
+				
 		try{
 	    	Assert.assertTrue(isElementPresent(xpath(loginAdminUsername)));
 			}
@@ -986,7 +986,10 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		
 	    type(xpath(adminPromotionName), input[4].concat(dateFormat.format(date)));
 	    type(xpath(adminPromotionDescription), input[5]);
-	    type(xpath(adminPromotionCodePrefix), input[6].concat(dateFormat.format(date)));
+	    
+	    //promoCode = input[6].concat(dateFormat.format(date));
+
+	    type(xpath(adminPromotionCodePrefix), PromoCode);
 	    type(xpath(adminPromotionCodeNumber), input[7].substring(0,1));
 	    click(xpath(adminPromotionCodeMultiplierUnliCheckbox));
 	    Thread.sleep(1000);
@@ -1005,7 +1008,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    Thread.sleep(1000);
 	    click(xpath(adminPromotionTypeValue));
 	    type(xpath(adminPromotionTypeValue), input[8].substring(0, 2));
-	    for(int x=0;x<=6; x++){
+	    for(int x=0;x<=8; x++){
 	    driver.findElement(By.id("channelId")).sendKeys(Keys.DOWN);
 	    }
 	    Thread.sleep(2000);
@@ -1403,8 +1406,13 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		if(channel.equals("bankmelbourne")){
 			Thread.sleep(5000);
 			click(xpath(yesBTN));
-			Thread.sleep(120000);
+			Thread.sleep(5000);
 		}
+		
+		if(!isElementPresent(xpath(referenceNumber))){ Thread.sleep(3000); }
+		if(!isElementVisible(xpath(referenceNumber))){ Thread.sleep(3000); }
+		if(!isElementPresent(xpath(referenceNumber))){ Thread.sleep(3000); }
+		if(!isElementVisible(xpath(referenceNumber))){ Thread.sleep(3000); }
 		
 		try{
 	    	Assert.assertTrue(isElementPresent(xpath(referenceNumber)));
@@ -2010,5 +2018,333 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		return resultcount;
 	}
 	
+	public int PromotionWorkFlow(String PromoCode) throws Exception{		
+		resultcount = 0;	
+		driver.navigate().to(environment.concat("class.rppropertyhub.com"));
+		alertvalidation();
+		alertAccept();
+		Thread.sleep(3000);
+		
+		if(isElementPresent(xpath(propertySearch))){
+			click(xpath(logout));
+			Thread.sleep(3000);
+		}
+		
+			waitForElementPresent(xpath(userLoginUsername));
+			waitForElementVisible(xpath(userLoginUsername));
+			Thread.sleep(3000);
+			type(xpath(userLoginUsername), input[1]);
+			type(xpath(userLoginPassword), input[2].substring(0,8));
+		    click(xpath(LoginButton));
+		
+	    try{
+	    	waitForElementPresent(xpath(userPropertySearch));
+	    	waitForElementVisible(xpath(userPropertySearch));
+	    	Thread.sleep(3000);
+	    	Assert.assertTrue(isElementPresent(xpath(propertySearch)));	    	
+	    	}
+	    	catch(AssertionError e){
+	    		fail(input[0] + " - Property search is not properly displayed");
+	    		resultcount++;
+	    		}
+
+	    type(xpath(propertySearch), input[3]);
+		click(xpath(propertySearchbtn));
+		
+		waitForElementPresent(xpath(completeAddress));
+		waitForElementVisible(xpath(completeAddress));
+		if(!isElementPresent(xpath(completeAddress)));{ Thread.sleep(2000); }
+    	if(!isElementPresent(xpath(completeAddress)));{ Thread.sleep(2000); }
+    	
+	try{
+		Assert.assertEquals(input[4], getText(xpath(completeAddress)));
+    	}
+    	catch(AssertionError e){
+    		fail(input[0] + " - Incorrect Address");
+    		resultcount++;
+    		}
+
+	if(isElementPresent(xpath(pendingTransaction))){
+		click(xpath(pendingTransaction));
+		}
 	
+		waitForElementPresent(xpath(proceedNextLink));
+		waitForElementVisible(xpath(proceedNextLink));
+		click(xpath(proceedNextLink));
+		Thread.sleep(10000);
+		waitForElementPresent(xpath(productNavBar));
+		waitForElementVisible(xpath(productNavBar));
+		
+		try{
+			Assert.assertEquals(input[4], getText(xpath(completeAddress)));
+		    }
+		    catch(AssertionError e){
+		    	fail(input[0] + " - Incorrect Address");
+		    	resultcount++;
+		    	}
+
+		try{
+			Assert.assertTrue(isElementPresent(xpath(productNavBar)));
+			Assert.assertTrue(isElementPresent(xpath(instructionNavBar)));
+			Assert.assertTrue(isElementPresent(xpath(paymentNavBar)));
+			Assert.assertTrue(isElementPresent(xpath(orderNavBar)));
+		    }
+		    catch(AssertionError e){
+		    	fail(input[0] + " - Navigation Bar validation");
+		    	resultcount++;
+		    	}
+				
+		type(xpath(unitPriceValuation),input[13].substring(0, 6));
+		if(isElementPresent(xpath(loanAmount))){
+			type(xpath(loanAmount),input[14].substring(0, 6));
+		}
+		if(isElementPresent(xpath(noneApplyCheckboxValuation))){
+			click(xpath(noneApplyCheckboxValuation));
+		}
+		click(xpath(proceedToProductValuation));
+		
+		waitForElementPresent(xpath(pruchaseBtnSingle));
+		waitForElementVisible(xpath(pruchaseBtnSingle));
+		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+		
+		click(xpath(CommercialTab));
+		
+		Thread.sleep(4000);
+		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+		
+		Assert.assertTrue(isElementPresent(xpath(promotionLogo)), "Promotion Logo is not Displayed");
+			
+			waitForElementPresent(xpath(pruchaseBtnSecondLine));
+			waitForElementVisible(xpath(pruchaseBtnSecondLine));
+			Thread.sleep(2000);
+			click(xpath(pruchaseBtnSecondLine));
+		
+		Thread.sleep(5000);
+		
+		try{
+			Assert.assertEquals(getText(xpath(addToCartLabel)), input[6]);
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Add to Cart Label is incorrect");
+				resultcount++;
+	    		}
+		try{
+			Assert.assertEquals(getText(xpath(cartCount)), input[5].substring(0, 3));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Incorrect cart count");
+				resultcount++;
+	    		}
+		Thread.sleep(2000);
+	    Assert.assertTrue(isElementPresent(xpath(nextBtn)), "Element is not present");	
+	    Thread.sleep(2000);
+		click(xpath(nextBtn));
+		if(!isElementPresent(xpath(FnameInstructionDetails))){ Thread.sleep(5000); }
+		    
+	    try{
+	    	Assert.assertTrue(isElementPresent(xpath(FnameInstructionDetails)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - First Name is not Displayed");
+				resultcount++;
+	    		}
+	    
+	    try{
+	    	Assert.assertTrue(isElementPresent(xpath(LnameInstructionDetails)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Last Name is not Displayed");
+				resultcount++;
+	    		}
+	    try{
+	    	Assert.assertTrue(isElementPresent(xpath(MobileInstructionDetails)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Mobile Number is not Displayed");
+				resultcount++;
+	    		}
+	    try{
+	    	Assert.assertTrue(isElementPresent(xpath(EmailInstructionDetails)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Email is not Displayed");
+				resultcount++;
+	    		}
+
+		type(xpath(FnameInstructionDetails), input[7]);
+		type(xpath(LnameInstructionDetails), input[8]);
+		type(xpath(MobileInstructionDetails), input[12].substring(0, 9));
+		type(xpath(EmailInstructionDetails), input[11]);
+		type(xpath(CompanyNameInstructionDetails), input[15].substring(0, 9));
+
+		click(xpath(instructionDetailSameAsCustomerCheckbox));
+		Thread.sleep(1000);
+		
+		type(xpath(NetLendableInstructionDetails), input[16].substring(0, 3));
+		type(xpath(RentalAmountInstructionDetails), input[16].substring(0, 3));
+		type(xpath(OutgoingMonthlyInstructionDetails), input[16].substring(0, 3));
+		
+		waitForElementPresent(xpath(NextBtnInstructionDetails));
+		waitForElementVisible(xpath(NextBtnInstructionDetails));
+		click(xpath(NextBtnInstructionDetails));
+		waitfor();
+		
+		try{
+	    	Assert.assertTrue(isElementPresent(xpath(LabelPaymentDetails)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Label is not Displayed");
+				resultcount++;
+	    		}
+		
+		try{
+	    	Assert.assertTrue(isElementPresent(xpath(TermsandConditionPaymentDetails)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Terms and Condition is not Displayed");
+				resultcount++;
+	    		}
+		
+		try{
+	    	Assert.assertTrue(isElementPresent(xpath(PromoLabel)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Promo Field is not Displayed");
+				resultcount++;
+	    		}
+		
+		try{
+	    	Assert.assertTrue(isElementPresent(xpath(CreditCardName)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - CC Name not Displayed");
+				resultcount++;
+	    		}
+		
+		try{
+	    	Assert.assertTrue(isElementPresent(xpath(CreditCardEmail)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - CC Email is not Displayed");
+				resultcount++;
+	    		}
+		
+		try{
+	    	Assert.assertTrue(isElementPresent(xpath(CreditCardNumber)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - CC Number is not Displayed");
+				resultcount++;
+	    		}
+		
+		try{
+	    	Assert.assertTrue(isElementPresent(xpath(CreditCardSecurityCode)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - CC Security code is not Displayed");
+				resultcount++;
+	    		}
+		
+		waitForElementPresent(xpath(CreditCardName));
+		waitForElementVisible(xpath(CreditCardName));
+		Double RegularPrice = Double.parseDouble(getText(xpath(ProductPrice)).substring(1).trim());
+		Double Price = RegularPrice / 2;
+		
+		type(xpath(PromoField), PromoCode);
+		click(xpath(PromoAddBtn));
+		Thread.sleep(5000);
+		if(!isElementPresent(xpath(PromoField))){ Thread.sleep(3000); }
+		if(!isElementVisible(xpath(PromoField))){ Thread.sleep(3000); }
+		if(!isElementPresent(xpath(PromoField))){ Thread.sleep(3000); }
+		Thread.sleep(5000);
+		Double TotalAmount = Double.parseDouble(getText(xpath(MainTotalAmount)).substring(1).trim());
+				
+		try{
+			Assert.assertTrue(Price.toString().equals(TotalAmount.toString()));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Price is not properly Discounted");
+				resultcount++;
+	    		}
+		if(environment.contains("dev") || environment.contains("stage"))
+		{
+
+		click(xpath(TermsandConditionPaymentDetails));
+				
+		type(xpath(CreditCardName), input[8]);
+		type(xpath(CreditCardEmail), input[11]);
+		type(xpath(CreditCardNumber), input[17].substring(0, 16).concat("111"));
+		type(xpath(CreditCardSecurityCode), input[18].substring(0, 3));
+		
+		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
+		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
+		click(xpath(ConfirmBtnPaymentDetails));
+		
+		Thread.sleep(5000);
+		waitForElementPresent(xpath(referenceNumber));
+		waitForElementVisible(xpath(referenceNumber));
+		try{
+	    	Assert.assertTrue(isElementPresent(xpath(referenceNumber)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Reference Number is not Displayed");
+				resultcount++;
+	    		}
+		try{
+	    	Assert.assertTrue(isElementPresent(xpath(downloadPDF)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Download PDF is not Displayed");
+				resultcount++;
+	    		}
+		try{
+	    	Assert.assertTrue(isElementPresent(xpath(startNewOrder)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Start New Order is not Displayed");
+				resultcount++;
+	    		}
+
+		try{
+	    	Assert.assertTrue(isElementPresent(xpath(youOrderedLabel)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - You Ordered Label is not Displayed");
+				resultcount++;
+	    		}
+		try{
+	    	Assert.assertTrue(isElementPresent(xpath(customerDetailLabel)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Customer Detail Label is not Displayed");
+				resultcount++;
+	    		}
+		try{
+	    	Assert.assertEquals(getText(xpath(fNameInfoOrderConfirmationAussie)), input[7]);
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - First Name is not Displayed");
+				resultcount++;
+	    		}
+		try{
+	    	Assert.assertEquals(getText(xpath(lNameInfoOrderConfirmationAussie)), input[8]);
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Last Name is not Displayed");
+				resultcount++;
+	    		}
+		try{
+	    	Assert.assertTrue(isElementPresent(xpath(startNewOrderBTN)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Start New Order Button is not Displayed");
+				resultcount++;
+	    		}
+		}
+		
+		return resultcount;
+		
+	}
 }

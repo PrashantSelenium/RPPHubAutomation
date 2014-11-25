@@ -23,7 +23,7 @@ public class UserRegistration extends TestInitReference {
     public void init() {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
-           driver.navigate().to("https://dev-acme.rppropertyhub.com/signup");
+           driver.navigate().to("https://stage-acme.rppropertyhub.com/signup");
     }
     
     private void setIndexPageDescription() {

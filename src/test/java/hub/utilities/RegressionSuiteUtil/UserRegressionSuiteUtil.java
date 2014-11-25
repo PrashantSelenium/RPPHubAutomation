@@ -8,7 +8,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
-
 import com.thoughtworks.selenium.Selenium;
 
 public class UserRegressionSuiteUtil extends FunctionReference {
@@ -1515,7 +1514,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(contactUsWheresMyRefNumber));
 
 		String styleval = driver.findElement(By.xpath(contactUsWheresMyRefNumberImg)).getAttribute("style");
-		Assert.assertTrue(styleval.contains("display: none;"), "Password not match is not displayed");
+		Assert.assertTrue(styleval.contains("display: none;"), "Reference Number Not Displayed");
 		
 	}
 	
@@ -2601,6 +2600,63 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		
 	}	
 	
+	public void loginToProdSelection() throws Exception{		
+		driver.navigate().to(environment.concat("cbalender.rppropertyhub.com"));
+
+		waitForElementPresent(xpath(userLoginUsername));
+		waitForElementVisible(xpath(userLoginUsername));
+		Thread.sleep(3000);
+		type(xpath(userLoginUsername), getDataFromxls(0, "User_ProductSelection.xls", 1, 0));
+		type(xpath(userLoginPassword), getDataFromxls(0, "User_ProductSelection.xls", 2, 0));
+	    click(xpath(LoginButton));
+
+	    	waitForElementPresent(xpath(userPropertySearch));
+	    	waitForElementVisible(xpath(userPropertySearch));
+	    	Thread.sleep(3000);
+	    	Assert.assertTrue(isElementPresent(xpath(propertySearch)));	    	
+
+
+	    type(xpath(propertySearch), getDataFromxls(0, "User_ProductSelection.xls", 3, 0));
+		click(xpath(propertySearchbtn));
+		
+		waitForElementPresent(xpath(completeAddress));
+		waitForElementVisible(xpath(completeAddress));
+		if(!isElementPresent(xpath(completeAddress)));{ Thread.sleep(2000); }
+    	if(!isElementPresent(xpath(completeAddress)));{ Thread.sleep(2000); }
+
+		Assert.assertEquals(getDataFromxls(0, "User_ProductSelection.xls", 4, 0), getText(xpath(completeAddress)));
+
+
+	if(isElementPresent(xpath(pendingTransaction))){
+		click(xpath(pendingTransaction));
+		}
+	
+		waitForElementPresent(xpath(proceedNextLink));
+		waitForElementVisible(xpath(proceedNextLink));
+		click(xpath(proceedNextLink));
+		Thread.sleep(10000);
+		waitForElementPresent(xpath(productNavBar));
+		waitForElementVisible(xpath(productNavBar));
+
+			Assert.assertEquals(getDataFromxls(0, "User_ProductSelection.xls", 4, 0), getText(xpath(completeAddress)));
+
+
+			Assert.assertTrue(isElementPresent(xpath(productNavBar)));
+			Assert.assertTrue(isElementPresent(xpath(instructionNavBar)));
+			Assert.assertTrue(isElementPresent(xpath(paymentNavBar)));
+			Assert.assertTrue(isElementPresent(xpath(orderNavBar)));
+
+		
+		waitForElementPresent(xpath(pruchaseBtnSingle));
+		waitForElementVisible(xpath(pruchaseBtnSingle));
+		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+	
+	}
+	
+	public void validate_Back_Button() throws Exception{
+		Assert.assertFalse(isElementPresent(xpath(backBtn)), "Back Button is present");
+	}
 	
 }
 
