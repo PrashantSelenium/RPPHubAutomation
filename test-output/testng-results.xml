@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="90919" started-at="2014-11-24T09:36:07Z" finished-at="2014-11-24T09:37:38Z">
+  <suite name="Default suite" duration-ms="81566" started-at="2014-11-25T06:59:04Z" finished-at="2014-11-25T07:00:26Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="90919" started-at="2014-11-24T09:36:07Z" finished-at="2014-11-24T09:37:38Z">
-      <class name="hub.test.RegressionSuite.UserProductSelection">
-        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:hub.test.RegressionSuite.UserProductSelection@4d459b26]" name="Startup" is-config="true" duration-ms="30339" started-at="2014-11-24T17:36:07Z" finished-at="2014-11-24T17:36:37Z">
+    <test name="Default test" duration-ms="81566" started-at="2014-11-25T06:59:04Z" finished-at="2014-11-25T07:00:26Z">
+      <class name="hub.test.RegressionSuite.UserProductSelectionTest">
+        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@632f9712]" name="Startup" is-config="true" duration-ms="36683" started-at="2014-11-25T14:59:04Z" finished-at="2014-11-25T14:59:41Z">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -16,19 +16,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Startup -->
-        <test-method status="PASS" signature="init()[pri:0, instance:hub.test.RegressionSuite.UserProductSelection@4d459b26]" name="init" is-config="true" duration-ms="3931" started-at="2014-11-24T17:36:37Z" finished-at="2014-11-24T17:36:41Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@632f9712]" name="init" is-config="true" duration-ms="9945" started-at="2014-11-25T14:59:41Z" finished-at="2014-11-25T14:59:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="RT_05397_Link_Navigation()[pri:0, instance:hub.test.RegressionSuite.UserProductSelection@4d459b26]" name="RT_05397_Link_Navigation" duration-ms="54649" started-at="2014-11-24T17:36:41Z" description="User - Login" finished-at="2014-11-24T17:37:36Z">
+        <test-method status="PASS" signature="RT_02654_Prompt_Originator_Details()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@632f9712]" name="RT_02654_Prompt_Originator_Details" duration-ms="34747" started-at="2014-11-25T14:59:51Z" description="User - Product Selection" finished-at="2014-11-25T15:00:26Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_05397_Link_Navigation -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:hub.test.RegressionSuite.UserProductSelection@4d459b26]" name="teardown" is-config="true" duration-ms="1988" started-at="2014-11-24T17:37:36Z" finished-at="2014-11-24T17:37:38Z">
+        </test-method> <!-- RT_02654_Prompt_Originator_Details -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@632f9712]" name="teardown" is-config="true" duration-ms="176" started-at="2014-11-25T15:00:26Z" finished-at="2014-11-25T15:00:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- hub.test.RegressionSuite.UserProductSelection -->
+      </class> <!-- hub.test.RegressionSuite.UserProductSelectionTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
