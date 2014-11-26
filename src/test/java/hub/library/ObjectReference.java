@@ -227,6 +227,7 @@ public class ObjectReference {
     public static String userOriginatorToProductSelection = "(//a[@class='hubTextlink'])[6]";
     public static String userOriginatorProceed = "(//table[@class='propertyDetailQuestionLink']//a)[2]";
     public static String costingReport ="//input[@id='12']";
+    public static String originatorHeader = "//form[@id='propertyDetailQuestions']//label";
     
     //Product tabs
     public static String productTabsMenu = "//div[@id='containerTab']";

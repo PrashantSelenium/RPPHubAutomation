@@ -69,21 +69,33 @@ public class UserProductSelectionUtil extends FunctionReference {
 		if(isElementPresent(xpath(userProceedToProductSelection))){
 			click(xpath(userProceedToProductSelection));
 			}
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 	}
-	
-	public void promptOriginatorDetails() throws Exception{
+	public void startNewTransaction() throws Exception {
+		if(isElementPresent(xpath(userPendingTransactionMessage))){
+	        click(By.linkText("Start a new transaction for this property"));      
+	    }
+        Thread.sleep(3000);	
+	}	
+	public void noPromptOriginatorDetails() throws Exception{
 		successfulLogin();
 		slas();
+		startNewTransaction();
 		proceedProductSelection();
-		
+		waitForElementPresent(xpath(productTabsMenu));
+		waitForElementVisible(xpath(productTabsMenu));
+		Assert.assertFalse(isElementPresent(xpath(userOriginatorDetails)), "Originator Details should not display on tab not requiring BRE");	
+	}
+	
+	public void promptOriginatorDetails() throws Exception{		
 		waitForElementPresent(xpath(productTabsMenu));
 		waitForElementVisible(xpath(productTabsMenu));
 		click(xpath(getDataFromxls(0, "User_ProductSelectionOriginator.xls", 2, 0)));	
 		
 		waitForElementPresent(xpath(userOriginatorDetails));
 		waitForElementVisible(xpath(userOriginatorDetails));
+		isElementPresent(xpath(userOriginatorDetails));
 		Thread.sleep(3000);
+		Assert.assertEquals("Please provide the following details to proceed:", getText(xpath(originatorHeader)),"Originator Header is incorrect");		
 	}
-
 }
