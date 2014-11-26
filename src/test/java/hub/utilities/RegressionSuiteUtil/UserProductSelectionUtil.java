@@ -26,7 +26,7 @@ public class UserProductSelectionUtil extends FunctionReference {
 	public UserProductSelectionUtil() {
 	}
 		
-		public String environment = "https://dev-";
+		public String environment = "https://stage-";
 	
 	public void successfulLogin() throws Exception{
 		
@@ -86,7 +86,7 @@ public class UserProductSelectionUtil extends FunctionReference {
 		proceedProductSelection();
 		waitForElementPresent(xpath(productTabsMenu));
 		waitForElementVisible(xpath(productTabsMenu));
-		Assert.assertFalse(isElementPresent(xpath(userOriginatorDetails)), "Originator Details should not display on tab not requiring BRE");	
+		Assert.assertFalse(isElementVisible(xpath(userOriginatorDetails)), "Originator Details should not display on tab not requiring BRE");	
 	}
 	
 	public void promptOriginatorDetails() throws Exception{		
@@ -98,7 +98,7 @@ public class UserProductSelectionUtil extends FunctionReference {
 		waitForElementVisible(xpath(userOriginatorDetails));
 		Assert.assertTrue(isElementPresent(xpath(userOriginatorDetails)),"Originator Details is not displayed");
 		Thread.sleep(3000);
-		Assert.assertEquals("Please provide the following details to proceed:", getText(xpath(originatorHeader)),"Originator Header is incorrect");		
+		Assert.assertEquals(getText(xpath(originatorHeader)),"Please provide the following details to proceed:");		
 	}
 
 	public void originatorToProductSelection() throws Exception{
@@ -111,6 +111,67 @@ public class UserProductSelectionUtil extends FunctionReference {
 	public void informationIcon() throws Exception{
 		Assert.assertTrue(isElementPresent(xpath(infoIcon)),"OEVPP Information icon is not displayed");
 		actionType(xpath(infoIcon),"OEVPP Information Icon");
-		Assert.assertEquals(getTooltip(by.xpath((infoIcon)), "This value is used to accurately price the products and services for this property. If you are buying the property then use the Contract Price, if not use your most accurate estimate of the current value of the property.");
+		Assert.assertEquals(getTooltip(xpath(infoIcon)), "This value is used to accurately price the products and services for this property. If you are buying the property then use the Contract Price, if not use your most accurate estimate of the current value of the property.");
+		
 	}
+
+	public void propertyType() throws Exception{
+		Assert.assertEquals(getText(xpath(propertyTypeLabel)), "* Is this a...?");
+		Assert.assertTrue(isElementPresent(xpath(propertyTypeSelect)),"Property Type field is not present");
+		Assert.assertEquals(getValue(xpath(propertyTypeSelect)), getDataFromxls(0, "User_ProductSelectionOriginator.xls", 3, 0));
+		
+		int y=1;
+		
+		do{
+			selectOption(xpath(propertyTypeSelect), getDataFromxls(0, "User_ProductSelectionOriginator.xls", 3, y));
+			String val = getDataFromxls(0, "User_ProductSelectionOriginator.xls", 3, y);
+			Assert.assertEquals(getText(xpath("//form[@id='propertyDetailQuestions']//option[@value='"+val+"']")), getDataFromxls(0, "User_ProductSelectionOriginator.xls", 2, y));
+			y++;
+		}while(y!=8);
+		selectOption(xpath(propertyTypeSelect), getDataFromxls(0, "User_ProductSelectionOriginator.xls", 3, 0));
+		
+	}
+
+	public void oevppRequiredNumeric() throws Exception{
+		Assert.assertEquals(getText(xpath(oevppLabel)), "* Owners Estimated Value / Purchase Price");
+		Assert.assertEquals(getText(xpath(oevppLabelDollar)), "$ ");
+		Assert.assertTrue(isElementPresent(xpath(userOEVPP)),"OEV/PP field is not present");
+		click(xpath(userOEVPP));
+		click(xpath(userOriginatorToProductSelection));
+		Assert.assertTrue(isElementVisible(xpath(oevppErrorMsg)),"Error message is not displayed");
+		Assert.assertEquals(getText(xpath(oevppErrorMsg)), " Field should not be empty.");
+		type(xpath(userOEVPP),(getDataFromxls(0, "User_ProductSelectionOriginator.xls", 1, 8)));
+		Assert.assertEquals(getValue(xpath(userOEVPP)),getDataFromxls(0, "User_ProductSelectionOriginator.xls", 2, 8));
+		click(xpath(userOriginatorToProductSelection));
+		Thread.sleep(3000);
+	}
+
+	public void oevppFormatted() throws Exception{
+		int y=9;
+		
+		do{
+			click(xpath(userOEVPP));
+			type(xpath(userOEVPP),(getDataFromxls(0, "User_ProductSelectionOriginator.xls", 1, y)));
+			click(xpath(infoIcon));
+			Assert.assertEquals(getValue(xpath(userOEVPP)),getDataFromxls(0, "User_ProductSelectionOriginator.xls", 2, y));
+			y++;
+		}while(y!=17);
+
+	}
+	public void doataPropertyExclusions() throws Exception{
+		Assert.assertEquals(getText(xpath(oevppLabel)), "* Owners Estimated Value / Purchase Price");
+		Assert.assertEquals(getText(xpath(oevppLabelDollar)), "$ ");
+		Assert.assertTrue(isElementPresent(xpath(userOEVPP)),"OEV/PP field is not present");
+		
+	}
+
+	public void doataRequired() throws Exception{
+		click(xpath(userOriginatorToProductSelection));
+		waitForElement error message
+		verify error message
+		select none apply 
+		error message disappears		
+	}
+
+
 }

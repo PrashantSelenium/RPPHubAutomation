@@ -222,13 +222,19 @@ public class ObjectReference {
     public static String userOriginatorDetails = "//div[@id='div_questionnaire']";
     public static String originatorHeader = "//form[@id='propertyDetailQuestions']//label";
     public static String xButton = "//form[@id='propertyDetailQuestions']//img[contains(@src,'xButton')]";
+    public static String propertyTypeLabel = "(//form[@id='propertyDetailQuestions']//td[@class='propertyDetailLabels'])[1]";
+    public static String propertyTypeSelect = "(//form[@id='propertyDetailQuestions']//select[@class='propertyType'])[1]";
+    public static String propertyTypeSelectValue = "(//form[@id='propertyDetailQuestions']//select[@value])";
     public static String infoIcon = "//form[@id='propertyDetailQuestions']//img[contains(@src,'infoIcon')]";
+    public static String oevppLabel = "(//form[@id='propertyDetailQuestions']//td[@class='propertyDetailLabels'])[2]";
+    public static String oevppLabelDollar = "//form[@id='propertyDetailQuestions']//span[contains(text(),'$')]";
     public static String userOEVPP = "//input[@id='2']";
+    public static String oevppErrorMsg = "//form[@id='propertyDetailQuestions']//div[@class='propertyValue errorMessage']";
     public static String userNoneApply ="//input[@id='26']";
     public static String userAVMAck ="//input[@id='6']";
     public static String loanApplication ="//input[@id='5']";
     public static String iconOriginatorToProductSelection = "//form[@id='propertyDetailQuestions']//img[contains(@src,'proceedIcon')]";
-    public static String userOriginatorToProductSelection = "((//form[@id='propertyDetailQuestions']//a)[3]";
+    public static String userOriginatorToProductSelection = "(//form[@id='propertyDetailQuestions']//a)[3]";
     public static String userOriginatorProceed = "(//table[@class='propertyDetailQuestionLink']//a)[2]";
     public static String costingReport ="//input[@id='12']";
 

@@ -36,7 +36,7 @@ public class UserProductSelectionTest extends TestInitReference {
     public void init() {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
-           driver.navigate().to("https://dev-cbalender.rppropertyhub.com/Login");
+           driver.navigate().to("https://stage-cbalender.rppropertyhub.com/Login");
     }
     
     private void setIndexPageDescription() {
@@ -63,6 +63,33 @@ public class UserProductSelectionTest extends TestInitReference {
 	public void RT_03117_Information_Icon_Hover() throws Exception {		
 		UserProductSelectionUtil util = new UserProductSelectionUtil();
 		util.informationIcon();	
+	}
+	@Test(description="User - Product Selection", priority=4)
+	public void RT_03107_Property_Type_Field() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.propertyType();	
+	}
+	@Test(description="User - Product Selection", priority=5)
+	public void RT_02678_OEVPP_Required_Numeric() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.oevppRequiredNumeric();	
+	}
+	@Test(description="User - Product Selection", priority=6)
+	public void RT_02375_OEVPP_Formatted() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.oevppFormatted();	
+	}
+	
+	@Test(description="User - Product Selection", priority=7)
+	public void RT_02977_DAOTA_Exclusions() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.doataPropertyExclusions();	
+	}
+
+	@Test(description="User - Product Selection", priority=8)
+	public void RT_03108_DAOTA_Required() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.doataRequired();	
 	}
 	
 }
