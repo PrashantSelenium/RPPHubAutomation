@@ -457,6 +457,14 @@ public class FunctionReference extends Results {
         return value;
     }
     
+    public String getTooltip(By by) {
+    String tooltip = "";
+    if (isElementPresent(by)) {
+        tooltip = driver.findElement(by).getAttribute("title");
+    }
+    return tooltip;
+	}
+    
     public String getChecked(By by) {
         String value = "";
         if (isElementPresent(by)) {

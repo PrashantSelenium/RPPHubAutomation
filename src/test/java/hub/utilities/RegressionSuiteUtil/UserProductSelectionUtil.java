@@ -71,12 +71,14 @@ public class UserProductSelectionUtil extends FunctionReference {
 			}
 		Thread.sleep(6000);
 	}
+	
 	public void startNewTransaction() throws Exception {
 		if(isElementPresent(xpath(userPendingTransactionMessage))){
 	        click(By.linkText("Start a new transaction for this property"));      
 	    }
         Thread.sleep(3000);	
 	}	
+	
 	public void noPromptOriginatorDetails() throws Exception{
 		successfulLogin();
 		slas();
@@ -94,8 +96,21 @@ public class UserProductSelectionUtil extends FunctionReference {
 		
 		waitForElementPresent(xpath(userOriginatorDetails));
 		waitForElementVisible(xpath(userOriginatorDetails));
-		isElementPresent(xpath(userOriginatorDetails));
+		Assert.assertTrue(isElementPresent(xpath(userOriginatorDetails)),"Originator Details is not displayed");
 		Thread.sleep(3000);
 		Assert.assertEquals("Please provide the following details to proceed:", getText(xpath(originatorHeader)),"Originator Header is incorrect");		
+	}
+
+	public void originatorToProductSelection() throws Exception{
+		waitForElementPresent(xpath(userOriginatorDetails));
+		waitForElementVisible(xpath(userOriginatorDetails));
+		Assert.assertTrue(isElementPresent(xpath(iconOriginatorToProductSelection)),"Procced to product selection icon is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(userOriginatorToProductSelection)),"Procced to product selection link is not displayed");		
+	}
+
+	public void informationIcon() throws Exception{
+		Assert.assertTrue(isElementPresent(xpath(infoIcon)),"OEVPP Information icon is not displayed");
+		actionType(xpath(infoIcon),"OEVPP Information Icon");
+		Assert.assertEquals(getTooltip(by.xpath((infoIcon)), "This value is used to accurately price the products and services for this property. If you are buying the property then use the Contract Price, if not use your most accurate estimate of the current value of the property.");
 	}
 }

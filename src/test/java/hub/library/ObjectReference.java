@@ -220,14 +220,18 @@ public class ObjectReference {
 
     //originator
     public static String userOriginatorDetails = "//div[@id='div_questionnaire']";
+    public static String originatorHeader = "//form[@id='propertyDetailQuestions']//label";
+    public static String xButton = "//form[@id='propertyDetailQuestions']//img[contains(@src,'xButton')]";
+    public static String infoIcon = "//form[@id='propertyDetailQuestions']//img[contains(@src,'infoIcon')]";
     public static String userOEVPP = "//input[@id='2']";
     public static String userNoneApply ="//input[@id='26']";
     public static String userAVMAck ="//input[@id='6']";
     public static String loanApplication ="//input[@id='5']";
-    public static String userOriginatorToProductSelection = "(//a[@class='hubTextlink'])[6]";
+    public static String iconOriginatorToProductSelection = "//form[@id='propertyDetailQuestions']//img[contains(@src,'proceedIcon')]";
+    public static String userOriginatorToProductSelection = "((//form[@id='propertyDetailQuestions']//a)[3]";
     public static String userOriginatorProceed = "(//table[@class='propertyDetailQuestionLink']//a)[2]";
     public static String costingReport ="//input[@id='12']";
-    public static String originatorHeader = "//form[@id='propertyDetailQuestions']//label";
+
     
     //Product tabs
     public static String productTabsMenu = "//div[@id='containerTab']";

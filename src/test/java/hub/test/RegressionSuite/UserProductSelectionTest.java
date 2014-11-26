@@ -45,20 +45,24 @@ public class UserProductSelectionTest extends TestInitReference {
     }
 
 	@Test(description="User - Product Selection", priority=0)
-	public void RT_02654_Prompt_Originator_Details() throws Exception {		
+	public void RT_02619_No_Prompt_Originator_Details() throws Exception {		
 		UserProductSelectionUtil util = new UserProductSelectionUtil();
 		util.noPromptOriginatorDetails();	
 	}
 	@Test(description="User - Product Selection", priority=1)
-	public void RT_02619_No_Prompt_Originator_Details() throws Exception {		
+	public void RT_02654_Prompt_Originator_Details() throws Exception {		
 		UserProductSelectionUtil util = new UserProductSelectionUtil();
 		util.promptOriginatorDetails();	
 	}
 	@Test(description="User - Product Selection", priority=2)
 	public void RT_02269_Proceed_Product_Selection_Link() throws Exception {		
 		UserProductSelectionUtil util = new UserProductSelectionUtil();
-		util.promptOriginatorDetails();	
+		util.originatorToProductSelection();	
 	}
-		
+	@Test(description="User - Product Selection", priority=3)
+	public void RT_03117_Information_Icon_Hover() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.informationIcon();	
+	}
 	
 }
