@@ -158,19 +158,39 @@ public class UserProductSelectionUtil extends FunctionReference {
 		}while(y!=17);
 
 	}
-	public void doataPropertyExclusions() throws Exception{
-		Assert.assertEquals(getText(xpath(oevppLabel)), "* Owners Estimated Value / Purchase Price");
-		Assert.assertEquals(getText(xpath(oevppLabelDollar)), "$ ");
-		Assert.assertTrue(isElementPresent(xpath(userOEVPP)),"OEV/PP field is not present");
-		
+
+	public void daotaPropertyExclusions() throws Exception{
+		Assert.assertEquals(getText(xpath(daotaLabel)), "* Do Any Of These Apply?");
+		int y=17;
+		do{
+		System.out.println("Checking "+getDataFromxls(0, "User_ProductSelectionOriginator.xls", 3, y));
+		String excId = getDataFromxls(0, "User_ProductSelectionOriginator.xls", 1, y);
+		String excText = getDataFromxls(0, "User_ProductSelectionOriginator.xls", 2, y);
+		Assert.assertTrue(isElementPresent(xpath("//form[@id='propertyDetailQuestions']//input[@id='"+excId+"']")), excText+" is not present");	
+		Assert.assertEquals(getText(xpath("//form[@id='propertyDetailQuestions']//input[@id='"+excId+"']")),excText);
+		y++;
+		}while(y!=33);
 	}
 
-	public void doataRequired() throws Exception{
+	public void daotaRequired() throws Exception{
+		click(xpath(xButton));
+		Thread.sleep(3000);
+		click(xpath(getDataFromxls(0, "User_ProductSelectionOriginator.xls", 2, 0)));
+		Thread.sleep(3000);
 		click(xpath(userOriginatorToProductSelection));
-		waitForElement error message
-		verify error message
-		select none apply 
-		error message disappears		
+		Assert.assertTrue(isElementVisible(xpath(daotaErrorMsg)),"Error message is not displayed");
+		Assert.assertEquals(getText(xpath(daotaErrorMsg)), " Field should be checked..");
+	
+	}
+	public void loanPurpose() throws Exception{
+		Assert.assertEquals(getText(xpath(loanPurposeLabel)), "* Loan Purpose");
+		int y=33;
+		do{
+		String loanPId = getDataFromxls(0, "User_ProductSelectionOriginator.xls", 1, y);
+		String loanPText = getDataFromxls(0, "User_ProductSelectionOriginator.xls", 2, y);
+		Assert.assertTrue(isElementPresent(xpath("//form[@id='propertyDetailQuestions']//input[@value='"+loanPId+"']")), loanPText+" is not present");	
+		y++;
+		}while(y!=38);
 	}
 
 

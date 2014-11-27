@@ -230,6 +230,9 @@ public class ObjectReference {
     public static String oevppLabelDollar = "//form[@id='propertyDetailQuestions']//span[contains(text(),'$')]";
     public static String userOEVPP = "//input[@id='2']";
     public static String oevppErrorMsg = "//form[@id='propertyDetailQuestions']//div[@class='propertyValue errorMessage']";
+    public static String loanPurposeLabel = "(//form[@id='propertyDetailQuestions']//td[@class='propertyDetailLabels'])[3]";
+    public static String daotaLabel = "(//form[@id='propertyDetailQuestions']//td[@class='propertyDetailLabels'])[4]";
+    public static String daotaErrorMsg = "//form[@id='propertyDetailQuestions']//div[@id='errorMessage4']";
     public static String userNoneApply ="//input[@id='26']";
     public static String userAVMAck ="//input[@id='6']";
     public static String loanApplication ="//input[@id='5']";

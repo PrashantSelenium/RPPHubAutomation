@@ -83,13 +83,18 @@ public class UserProductSelectionTest extends TestInitReference {
 	@Test(description="User - Product Selection", priority=7)
 	public void RT_02977_DAOTA_Exclusions() throws Exception {		
 		UserProductSelectionUtil util = new UserProductSelectionUtil();
-		util.doataPropertyExclusions();	
+		util.daotaPropertyExclusions();	
 	}
 
 	@Test(description="User - Product Selection", priority=8)
 	public void RT_03108_DAOTA_Required() throws Exception {		
 		UserProductSelectionUtil util = new UserProductSelectionUtil();
-		util.doataRequired();	
+		util.daotaRequired();	
+	}
+	@Test(description="User - Product Selection", priority=9)
+	public void RT_Loan_Purpose() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.loanPurpose();
 	}
 	
 }

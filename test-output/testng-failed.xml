@@ -7,7 +7,7 @@
         <methods>
           <include name="Startup"/>
           <include name="teardown"/>
-          <include name="RT_02678_OEVPP_Required_Numeric"/>
+          <include name="RT_02977_DAOTA_Exclusions"/>
           <include name="init"/>
         </methods>
       </class> <!-- hub.test.RegressionSuite.UserProductSelectionTest -->
