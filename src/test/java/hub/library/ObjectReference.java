@@ -234,6 +234,15 @@ public class ObjectReference {
     public static String daotaLabel = "(//form[@id='propertyDetailQuestions']//td[@class='propertyDetailLabels'])[4]";
     public static String daotaErrorMsg = "//form[@id='propertyDetailQuestions']//div[@id='errorMessage4']";
     public static String userNoneApply ="//input[@id='26']";
+    public static String avmAckLabel = "(//form[@id='propertyDetailQuestions']//td[@class='propertyDetailLabels'])[6]";
+    public static String avmAckSelect = "//form[@id='propertyDetailQuestions']//input[@id='6']";
+    public static String avmAckDesc = "(id('propertyDetailQuestions')//span)[25]";
+    public static String avmAckError = "(//form[@id='propertyDetailQuestions']//div[contains(@class,'AvmAckError')])[2]";
+    public static String daotaCompanyTitle = "//form[@id='propertyDetailQuestions']//input[@id='11']";
+    public static String loanAppLabel = "(//form[@id='propertyDetailQuestions']//td[@class='propertyDetailLabels'])[5]";
+    public static String loanAppSelect = "//form[@id='propertyDetailQuestions']//input[@id='5']";
+    public static String loanAppDesc = "(id('propertyDetailQuestions')//span)[23]";
+    public static String loanAppError = "(//form[@id='propertyDetailQuestions']//*[contains(text(),'Loan Application')])[1]";
     public static String userAVMAck ="//input[@id='6']";
     public static String loanApplication ="//input[@id='5']";
     public static String iconOriginatorToProductSelection = "//form[@id='propertyDetailQuestions']//img[contains(@src,'proceedIcon')]";
@@ -256,13 +265,16 @@ public class ObjectReference {
     public static String userRetroReportsTab = "//div[@id='tabRetro_Reports']";
     
     //Products
-    public static String productLenderEmpowerment = "//div[@id='tabReports']/table/tbody/tr/td/div/div/ul/li[2]/div/input[@id='purchaseButton']";
+    public static String productLenderEmpowerment = "//*[@id='tabReports']//input[@id='purchaseButton']";
+    public static String lenderEmpAdded = "//*[@id='tabReports']//*[contains(@class,'itemAdded')]";
     public static String productLenderAVM = "//div[@id='tabValuations']//input[@id='purchaseButton']";
     public static String productShorFormVal = "//div[@id='tabValuations']/table/tbody/tr[2]/td/div/div/ul/li[2]/div/input[@id='purchaseButton']";
     public static String titleName = "(//h2[@class='hubHeaderBodyText'])[1]";
     public static String titleMoreDetails = "(//a[@class='hubTextlink moreDetails'])[1]";
     public static String titleShort = "(//span[@class='hubHeaderBodyText shortDescription'])[1]";
     public static String titleLong = "(//span[@class='hubHeaderBodyText longDescription'])[1]";
+    public static String onAccountDisplay = "//*[@id='tabReports']//*[contains(@class,'price')]";
+
 
     //Product selection
     public static String userAddToCart = "(//input[@id='purchaseButton'])[1]";
@@ -276,11 +288,16 @@ public class ObjectReference {
     public static String proceedtoInstuction = "//*[@id='instructionDetails']/a[2]";
     public static String titleRef = "//";
     public static String backBtn = "//*[@class='navigationBtn hubNavigation_back']";
+    public static String emptyCartMessage = "//*[@class='cartCountMessage']//*[@class='hubHeaderBodyText']";
+    public static String emptyCartOkBtn = "//*[@class='cartCountMessage']//*[@id='continueChangeAdd']";
+    public static String emptyCartXBtn = "//*[@id='hubCboxClose']";
+    public static String cartInstructionMessage = "//table[@class='hubHeaderBodyText']";
     
     
     
     
     //Instruction details
+    public static String instructionDetailsTab = "//*[@id='flowbar']//*[contains(text(),'INSTRUCTION')]";
     public static String userProceedToInstructionDetails = "//*[text()='Proceed to instruction details']";  
     public static String userInstructionDetails = "//div[@id='instructionDetails_acc']";
     public static String userCustomerFName = "//input[@id='1_1_value']";

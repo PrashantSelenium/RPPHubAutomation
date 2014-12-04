@@ -36,7 +36,7 @@ public class UserProductSelectionTest extends TestInitReference {
     public void init() {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
-           driver.navigate().to("https://stage-cbalender.rppropertyhub.com/Login");
+           driver.navigate().to("https://dev-cbalender.rppropertyhub.com/Login");
     }
     
     private void setIndexPageDescription() {
@@ -85,16 +85,62 @@ public class UserProductSelectionTest extends TestInitReference {
 		UserProductSelectionUtil util = new UserProductSelectionUtil();
 		util.daotaPropertyExclusions();	
 	}
-
+	
 	@Test(description="User - Product Selection", priority=8)
 	public void RT_03108_DAOTA_Required() throws Exception {		
 		UserProductSelectionUtil util = new UserProductSelectionUtil();
 		util.daotaRequired();	
 	}
+	
 	@Test(description="User - Product Selection", priority=9)
 	public void RT_Loan_Purpose() throws Exception {		
 		UserProductSelectionUtil util = new UserProductSelectionUtil();
 		util.loanPurpose();
 	}
-	
+	@Test(description="User - Product Selection", priority=10)
+	public void RT_03109_AVM_Ack_Display() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.avmAckDisplay();
+	}
+	@Test(description="User - Product Selection", priority=11)
+	public void RT_03110_AVM_Ack_Required() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.avmAckRequired();
+	}
+	@Test(description="User - Product Selection", priority=12)
+	public void RT_03111_AVM_Ack_Replaced() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.loanAppDisplay();
+	}
+	@Test(description="User - Product Selection", priority=13)
+	public void RT_Loan_App_Required() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.loanAppRequired();
+	}
+	@Test(description="User - Product Selection", priority=14)
+	public void RT_02704_Url_Https() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.urlHttps();
+	}
+	@Test(description="User - Product Selection", priority=15)
+	public void RT_02904_PP_No_RPID() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.lenderEmpowermentNoRPID();
+	}
+	@Test(description="User - Product Selection", priority=16)
+	public void RT_02903_Empowerment_Metropolitan_Regional() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.lenderEmpowermentMetropolitan();
+	}	
+	@Test(description="User - Product Selection", priority=17)
+	public void RT_02658_On_Account() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.productOnAccount();
+	}
+	@Test(description="User - Product Selection", priority=18)
+	public void RT_02650_Cart_Link() throws Exception {		
+		UserProductSelectionUtil util = new UserProductSelectionUtil();
+		util.cartLinkFunctionality();
+	}	
+
 }
