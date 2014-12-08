@@ -26,7 +26,7 @@ public class UserProductSelectionUtil extends FunctionReference {
 	public UserProductSelectionUtil() {
 	}
 		
-		public String environment = "https://dev-";
+		public String environment = "https://stage-";
 	
 	public void successfulLogin() throws Exception{
 		
@@ -163,6 +163,11 @@ public class UserProductSelectionUtil extends FunctionReference {
 			y++;
 		}while(y!=17);
 	}
+	
+	public void loanAmountNotActive() throws Exception{
+		// Loan Amount is not enabled from the admin
+		Assert.assertFalse(isElementPresent(xpath(orgLoanAmount)),"Loan Amount field should not be dispalyed");		
+	} 
 
 	public void daotaPropertyExclusions() throws Exception{
 		Assert.assertEquals(getText(xpath(daotaLabel)), "* Do Any Of These Apply?");
@@ -178,7 +183,7 @@ public class UserProductSelectionUtil extends FunctionReference {
 		y++;
 		}while(y!=33);
 	}
-
+	
 	public void daotaRequired() throws Exception{
 		click(xpath(xButton));
 		Thread.sleep(3000);
@@ -256,7 +261,7 @@ public class UserProductSelectionUtil extends FunctionReference {
 		click(xpath(confirmbtnSearchAddress));
 		Thread.sleep(3000);
 		proceedProductSelection();
-		Assert.assertFalse(isElementVisible(xpath(productLenderEmpowerment)), "Lender Empowerment is not offered");		
+		Assert.assertFalse(isElementPresent(xpath(productLenderEmpowerment)), "Lender Empowerment is not offered");		
 		Thread.sleep(3000);
 	}
 	
@@ -271,6 +276,21 @@ public class UserProductSelectionUtil extends FunctionReference {
 		Assert.assertTrue(isElementVisible(xpath(productLenderEmpowerment)), "Lender Empowerment is not offered");		
 	}
 
+	public void productDetails() throws Exception{
+		Assert.assertTrue(isElementVisible(xpath(productName)), "Product name is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(productShort)), "Product Short desctiption is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(productMore)), "More link is not displayed");
+		Assert.assertFalse(isElementVisible(xpath(productLong)), "Long description should not be displayed");
+		Assert.assertFalse(isElementVisible(xpath(productHide)), "Hide details link should not be displayed");
+		click(xpath(productMore));		
+	}
+	public void productDetailsMore() throws Exception{
+		Assert.assertTrue(isElementVisible(xpath(productLong)), "Long description is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(productHide)), "Hide details link is not displayed");
+		Assert.assertFalse(isElementVisible(xpath(productMore)), "More details link should not be displayed");
+		click(xpath(productHide));		
+		Assert.assertFalse(isElementVisible(xpath(productHide)), "Hide details link should not be displayed");
+	}
 	public void productOnAccount() throws Exception{
 		Assert.assertTrue(isElementVisible(xpath(onAccountDisplay)), "On Account text is not displayed");
 		Assert.assertEquals(getText(xpath(onAccountDisplay)), "Price: On Account");		
@@ -306,7 +326,42 @@ public class UserProductSelectionUtil extends FunctionReference {
 		click(xpath(emptyCartXBtn));
 		Thread.sleep(3000);	
 	}
-	
 
+	public void workflowBar() throws Exception{
+		Assert.assertTrue(isElementVisible(xpath(workflowBar)), "Workflow Bar is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(productSelectionBar)), "Product Selection Bar is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(instructionDetailsTab)), "Instruction Details Bar is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(paymentDetailsBar)), "Payment Details Bar is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(OrderConfirmationBar)), "Order Confirmation Bar is not displayed");
+	}
+
+	public void productTabNotActive() throws Exception{
+		Assert.assertFalse(isElementPresent(xpath(tabRetroReports)),"Inactive tab should not be displayed");		
+	}
+
+	public void loanAmountActive() throws Exception{
+		String URL = driver.getCurrentUrl();
+		if(URL.contains("cbalender")){
+			driver.navigate().to(environment.concat("amp.rppropertyhub.com"));
+		}
+		type(xpath(userLoginUsername), getDataFromxls(0, "User_Login.xls", 1, 40));
+		type(xpath(userLoginPassword), getDataFromxls(0, "User_Login.xls", 2, 40));
+		click(xpath(loginButton));
+		slas();
+		startNewTransaction();
+		proceedProductSelection();
+		promptOriginatorDetails();
+		Assert.assertEquals(getText(xpath(loanAmountLabel)), "* Loan Amount");
+		Assert.assertEquals(getText(xpath(loanAmountDollar)), "$ ");
+		Assert.assertTrue(isElementPresent(xpath(orgLoanAmount)),"Loan Amount field is not present");		
+	}
+
+	public void loanAmountMandatory() throws Exception{
+		click(xpath(orgLoanAmount));
+		click(xpath(userOriginatorToProductSelection));
+		Assert.assertTrue(isElementVisible(xpath(oevppErrorMsg)),"Error message is not displayed");
+		Assert.assertEquals(getText(xpath(oevppErrorMsg)), " Field should not be empty.");
+		click(xpath(userLogoutLink));
+	}
 
 }

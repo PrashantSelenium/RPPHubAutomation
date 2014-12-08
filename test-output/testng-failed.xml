@@ -3,14 +3,21 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="hub.test.endtoend.EndToEnd_SmokeTest">
+      <class name="hub.test.RegressionSuite.UserProductSelectionTest">
         <methods>
-          <include name="teardown"/>
           <include name="Startup"/>
-          <include name="testLogin" invocation-numbers="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 18 20"/>
+          <include name="teardown"/>
+          <include name="RT_02658_On_Account"/>
+          <include name="RT_02617_Workflow_Bar"/>
+          <include name="RT_02903_Empowerment_Metropolitan_Regional"/>
+          <include name="RT_08846_Loan_Amount_Mandatory"/>
+          <include name="RT_02620_Product_Details"/>
+          <include name="RT_02650_Cart_Link"/>
           <include name="init"/>
+          <include name="RT_08845_Loan_Amount_Active"/>
+          <include name="RT_03099_Product_Details_More"/>
         </methods>
-      </class> <!-- hub.test.endtoend.EndToEnd_SmokeTest -->
+      </class> <!-- hub.test.RegressionSuite.UserProductSelectionTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

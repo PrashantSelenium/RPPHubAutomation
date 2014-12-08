@@ -230,6 +230,9 @@ public class ObjectReference {
     public static String oevppLabelDollar = "//form[@id='propertyDetailQuestions']//span[contains(text(),'$')]";
     public static String userOEVPP = "//input[@id='2']";
     public static String oevppErrorMsg = "//form[@id='propertyDetailQuestions']//div[@class='propertyValue errorMessage']";
+    public static String loanAmountLabel = "(//form[@id='propertyDetailQuestions']//td[@class='propertyDetailLabels'])[3]";
+    public static String loanAmountDollar = "(//form[@id='propertyDetailQuestions']//span[contains(text(),'$')])[2]";
+    public static String orgLoanAmount = "//*[@id='7']";
     public static String loanPurposeLabel = "(//form[@id='propertyDetailQuestions']//td[@class='propertyDetailLabels'])[3]";
     public static String daotaLabel = "(//form[@id='propertyDetailQuestions']//td[@class='propertyDetailLabels'])[4]";
     public static String daotaErrorMsg = "//form[@id='propertyDetailQuestions']//div[@id='errorMessage4']";
@@ -269,11 +272,17 @@ public class ObjectReference {
     public static String lenderEmpAdded = "//*[@id='tabReports']//*[contains(@class,'itemAdded')]";
     public static String productLenderAVM = "//div[@id='tabValuations']//input[@id='purchaseButton']";
     public static String productShorFormVal = "//div[@id='tabValuations']/table/tbody/tr[2]/td/div/div/ul/li[2]/div/input[@id='purchaseButton']";
+    public static String productName = "//*[@id='tabReports']//h2[@class='hubHeaderBodyText']";
+    public static String productShort = "//*[@id='tabReports']//*[contains(@class,'shortDescription')]";
+    public static String productMore = "//*[@id='tabReports']//*[contains(@class,'moreDetails')]";    
+    public static String productLong = "//*[@id='tabReports']//*[contains(@class,'longDescription')]";
+    public static String productHide = "//*[@id='tabReports']//*[contains(@class,'hideDetails')]";
+    public static String onAccountDisplay = "//*[@id='tabReports']//*[contains(@class,'price')]";
     public static String titleName = "(//h2[@class='hubHeaderBodyText'])[1]";
     public static String titleMoreDetails = "(//a[@class='hubTextlink moreDetails'])[1]";
     public static String titleShort = "(//span[@class='hubHeaderBodyText shortDescription'])[1]";
     public static String titleLong = "(//span[@class='hubHeaderBodyText longDescription'])[1]";
-    public static String onAccountDisplay = "//*[@id='tabReports']//*[contains(@class,'price')]";
+
 
 
     //Product selection
@@ -292,12 +301,14 @@ public class ObjectReference {
     public static String emptyCartOkBtn = "//*[@class='cartCountMessage']//*[@id='continueChangeAdd']";
     public static String emptyCartXBtn = "//*[@id='hubCboxClose']";
     public static String cartInstructionMessage = "//table[@class='hubHeaderBodyText']";
-    
-    
+    public static String workflowBar = "//*[@id='flowbar']";
+    public static String productSelectionBar ="//*[@id='flowbar']//*[contains(text(),'PRODUCT')]";
+    public static String instructionDetailsTab = "//*[@id='flowbar']//*[contains(text(),'INSTRUCTION')]";
+    public static String paymentDetailsBar ="//*[@id='flowbar']//*[contains(text(),'PAYMENT')]";
+    public static String OrderConfirmationBar ="//*[@id='flowbar']//*[contains(text(),'ORDER')]";
     
     
     //Instruction details
-    public static String instructionDetailsTab = "//*[@id='flowbar']//*[contains(text(),'INSTRUCTION')]";
     public static String userProceedToInstructionDetails = "//*[text()='Proceed to instruction details']";  
     public static String userInstructionDetails = "//div[@id='instructionDetails_acc']";
     public static String userCustomerFName = "//input[@id='1_1_value']";
@@ -701,7 +712,7 @@ public class ObjectReference {
     public static String hubLoggerResponse = "(//*[contains(text(),'SA42657')])[2]";
     
   //CFA
-    public static String cantFindAddressbtn = "//*[@id='hubSearchAddressForm']/div[1]/input[3]";
+    public static String cantFindAddressbtn = "//*[contains(@src,'cantFindAddress')]";
     public static String unitNumberSearchAddress = "//*[@id='hubSearchAddress_unitNumber']";
     public static String streetNumberSearchAddress = "//*[@id='hubSearchAddress_streetNumber']";
     public static String lotNumberSearchAddress = "//*[@id='hubSearchAddress_lotNumber']";

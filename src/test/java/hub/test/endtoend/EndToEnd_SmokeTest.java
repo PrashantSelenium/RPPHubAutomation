@@ -204,7 +204,7 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
            //driver.navigate().to("https://dev-cbalender.rppropertyhub.com/login");
-           driver.get("https://stage-cbalender.rppropertyhub.com/login");
+           driver.get("https://cbalender.rppropertyhub.com/login");
     }
     
     @AfterClass
