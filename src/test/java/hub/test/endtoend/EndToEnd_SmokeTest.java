@@ -62,8 +62,8 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
 				resultcount = endtoend.HealthCheck();
 			        if (resultcount != 0) { fail(input[0]); } 
 			        	else { pass(input[0]); }
-		        break;
-		        
+			    break;
+			       
 			case "CFA":
 				resultcount = endtoend.validateCantFindAddress();
 			        if (resultcount != 0) { fail(input[0]); } 
@@ -204,7 +204,7 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
            //driver.navigate().to("https://dev-cbalender.rppropertyhub.com/login");
-           driver.get("https://cbalender.rppropertyhub.com/login");
+           driver.get("https://dev-cbalender.rppropertyhub.com/login");
     }
     
     @AfterClass

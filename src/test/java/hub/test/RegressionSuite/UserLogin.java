@@ -68,7 +68,7 @@ public class UserLogin extends TestInitReference {
 	public void RT_2578_Login_Succesful_login() throws Exception {
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-		util.Login_Successful_login();
+		util.Successful_login();
         util.Logout_link();
 	}
 	

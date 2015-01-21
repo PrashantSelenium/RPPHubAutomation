@@ -45,10 +45,10 @@ public class TestInitReferenceSmokeTest extends FunctionReference {
     public static String environment = rxml.data("environment");
     
     
-    public static final String USERNAME = "tooltwist";
-    public static final String AUTOMATE_KEY = "9quC1U5hBNqMfkAByiyp";
-    public static final String remoteUrl = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
-   // public String remoteUrl = rxml.data("remoteUrl");
+//    public static final String USERNAME = "tooltwist";
+//    public static final String AUTOMATE_KEY = "9quC1U5hBNqMfkAByiyp";
+//    public static final String remoteUrl = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
+    public String remoteUrl = rxml.data("remoteUrl");
     
     //public static final String USERNAME = "support-tooltwist";
    	//public static final String AUTOMATE_KEY = "69845b25-d4b1-4420-9c59-b1dcf06b479d";
@@ -68,24 +68,17 @@ public class TestInitReferenceSmokeTest extends FunctionReference {
             profile.setEnableNativeEvents(true);
             driver = new FirefoxDriver(new FirefoxBinary(), profile);
             
-            DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability("browser", "Firefox");
-            caps.setCapability("browser_version", "28.0");
-            caps.setCapability("os", "Windows");
-            caps.setCapability("os_version", "7");
-    	    caps.setCapability("browserstack.debug", "true");
-    	    caps.setCapability("build", "Prod v4.12.1");
-    	    caps.setCapability("project", "Hub");
+//            DesiredCapabilities caps = new DesiredCapabilities();
+//            caps.setCapability("browser", "Firefox");
+//            caps.setCapability("browser_version", "28.0");
+//            caps.setCapability("os", "Windows");
+//            caps.setCapability("os_version", "7");
+//    	    caps.setCapability("browserstack.debug", "true");
+//    	    caps.setCapability("build", "Prod v4.12.1");
+//    	    caps.setCapability("project", "Hub");
 
-    	    driver = new RemoteWebDriver(new URL(remoteUrl), caps);
+//    	    driver = new RemoteWebDriver(new URL(remoteUrl), caps);
     	    
-    	    
-    	    /*DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setBrowserName(browser);
-            capabilities.setCapability("version", "28.0");
-            capabilities.setCapability("platform", Platform.valueOf("XP"));
-            capabilities.setCapability("name", "Hub Test");
-            driver = new RemoteWebDriver(new URL(remoteUrl), capabilities);*/
         }
         if (browser.contains("HTMLUnit")) {
             DesiredCapabilities capabilities = DesiredCapabilities.htmlUnit();

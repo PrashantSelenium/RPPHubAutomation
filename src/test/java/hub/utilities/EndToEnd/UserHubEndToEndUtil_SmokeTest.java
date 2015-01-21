@@ -10,8 +10,10 @@ import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
 
 import org.testng.Assert;
+import org.apache.poi.util.SystemOutLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.Select;
 
 import com.thoughtworks.selenium.Selenium;
 
@@ -35,7 +37,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	//*************************//
 
 	//Set Enviroment to the list above depending from what environment you want to run the test	
-	public String environment = "https://";
+	public String environment = "https://dev-";
 	
 	public UserHubEndToEndUtil_SmokeTest() {
 	}
@@ -220,6 +222,14 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		
 		try{
 			Assert.assertTrue(getText(xpath(HealthCheck)).contains(input[13]));
+		    }
+		    catch(AssertionError e){
+		    	fail(input[0] + " - EVR Service Connection label is not ok");
+		    	resultcount++;
+		    	}
+		
+		try{
+			Assert.assertTrue(getText(xpath(HealthCheck)).contains(input[14]));
 		    }
 		    catch(AssertionError e){
 		    	fail(input[0] + " - EVR Service Connection label is not ok");
@@ -429,7 +439,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
     	if(!isElementPresent(xpath(cbatitlestatus)));{ Thread.sleep(2000); }
 		
 		try{
-			Assert.assertEquals(getText(xpath(cbatitle)), input[3]);
+			Assert.assertTrue(getText(xpath(cbatitle)).contains(input[3]));
 		    }
 		    catch(AssertionError e){
 		    	fail(input[0] + " - CBA title validation");
@@ -1008,9 +1018,10 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    Thread.sleep(1000);
 	    click(xpath(adminPromotionTypeValue));
 	    type(xpath(adminPromotionTypeValue), input[8].substring(0, 2));
-	    for(int x=0;x<=8; x++){
-	    driver.findElement(By.id("channelId")).sendKeys(Keys.DOWN);
-	    }
+	    
+	    Select dropdown = new Select(driver.findElement(By.id("channelId")));
+	    dropdown.selectByValue("9");
+	    driver.findElement(By.id("channelId")).sendKeys(Keys.ENTER);
 	    Thread.sleep(2000);
 	    click(xpath(adminPromotionBaseProduct));
 	    Thread.sleep(500);
@@ -1034,6 +1045,9 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    
 	    click(xpath(adminPromotionSave));
 	    
+	Thread.sleep(3000);
+	click(xpath(admLogout));
+	Thread.sleep(2000);
 	return resultcount;
 	}
 	
@@ -1552,7 +1566,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 			}while(x<7);
 			driver.findElement(By.id("1")).sendKeys(Keys.ENTER);
 		}
-		
+
 		type(xpath(unitPriceValuation),input[11].substring(0, 6));
 		click(xpath(noneApplyCheckboxValuation));
 		click(xpath(avm));
@@ -2121,8 +2135,9 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 			Thread.sleep(2000);
 			click(xpath(pruchaseBtnSecondLine));
 		
-		Thread.sleep(5000);
-		
+		Thread.sleep(6000);
+		waitForElementPresent(xpath(addToCartLabel));
+		waitForElementVisible(xpath(addToCartLabel));
 		try{
 			Assert.assertEquals(getText(xpath(addToCartLabel)), input[6]);
 			}
@@ -2214,41 +2229,9 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 				fail(input[0] + " - Promo Field is not Displayed");
 				resultcount++;
 	    		}
-		
-		try{
-	    	Assert.assertTrue(isElementPresent(xpath(CreditCardName)));
-			}
-			catch(AssertionError e){
-				fail(input[0] + " - CC Name not Displayed");
-				resultcount++;
-	    		}
-		
-		try{
-	    	Assert.assertTrue(isElementPresent(xpath(CreditCardEmail)));
-			}
-			catch(AssertionError e){
-				fail(input[0] + " - CC Email is not Displayed");
-				resultcount++;
-	    		}
-		
-		try{
-	    	Assert.assertTrue(isElementPresent(xpath(CreditCardNumber)));
-			}
-			catch(AssertionError e){
-				fail(input[0] + " - CC Number is not Displayed");
-				resultcount++;
-	    		}
-		
-		try{
-	    	Assert.assertTrue(isElementPresent(xpath(CreditCardSecurityCode)));
-			}
-			catch(AssertionError e){
-				fail(input[0] + " - CC Security code is not Displayed");
-				resultcount++;
-	    		}
-		
-		waitForElementPresent(xpath(CreditCardName));
-		waitForElementVisible(xpath(CreditCardName));
+			
+		waitForElementPresent(xpath(PromoLabel));
+		waitForElementVisible(xpath(PromoLabel));
 		Double RegularPrice = Double.parseDouble(getText(xpath(ProductPrice)).substring(1).trim());
 		Double Price = RegularPrice / 2;
 		
@@ -2259,6 +2242,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		if(!isElementVisible(xpath(PromoField))){ Thread.sleep(3000); }
 		if(!isElementPresent(xpath(PromoField))){ Thread.sleep(3000); }
 		Thread.sleep(5000);
+		
 		Double TotalAmount = Double.parseDouble(getText(xpath(MainTotalAmount)).substring(1).trim());
 				
 		try{
@@ -2272,17 +2256,32 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		{
 
 		click(xpath(TermsandConditionPaymentDetails));
-				
-		type(xpath(CreditCardName), input[8]);
-		type(xpath(CreditCardEmail), input[11]);
-		type(xpath(CreditCardNumber), input[17].substring(0, 16).concat("111"));
-		type(xpath(CreditCardSecurityCode), input[18].substring(0, 3));
-		
+		type(xpath(InvoiceName), input[1]);
+		type(xpath(InvoiceEmail), input[11]);
 		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
 		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
 		click(xpath(ConfirmBtnPaymentDetails));
 		
+		Thread.sleep(4000);
+		if(!isElementPresent(xpath("//iframe[@id='card_payment_iframe']"))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath("//iframe[@id='card_payment_iframe']"))){ Thread.sleep(2000); }
+		
+		waitForElementPresent(xpath("//iframe[@id='card_payment_iframe']"));
+		waitForElementVisible(xpath("//iframe[@id='card_payment_iframe']"));
+			
+		Thread.sleep(2000);
+		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='card_payment_iframe']")));
+		isElementVisible(By.xpath("//*[@id='CardNumber']"));
+		type(xpath("//*[@id='CardNumber']"), input[17].substring(0, 16).concat("111"));
+		type(xpath("//*[@id='CardHolderName']"), input[8]);
+		type(xpath("//*[@id='DateExpiry_1']"), "12");
+		type(xpath("//*[@id='DateExpiry_2']"), "15");
+		type(xpath("//*[@id='Cvc2']"), "1234");
+		click(xpath("//*[@id='Add']"));
+		
 		Thread.sleep(5000);
+		if(!isElementPresent(xpath(referenceNumber))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath(referenceNumber))){ Thread.sleep(2000); }
 		waitForElementPresent(xpath(referenceNumber));
 		waitForElementVisible(xpath(referenceNumber));
 		try{

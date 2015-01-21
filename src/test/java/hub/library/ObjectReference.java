@@ -249,7 +249,8 @@ public class ObjectReference {
     public static String userAVMAck ="//input[@id='6']";
     public static String loanApplication ="//input[@id='5']";
     public static String iconOriginatorToProductSelection = "//form[@id='propertyDetailQuestions']//img[contains(@src,'proceedIcon')]";
-    public static String userOriginatorToProductSelection = "(//form[@id='propertyDetailQuestions']//a)[3]";
+     //public static String userOriginatorToProductSelection = "(//a[@class='hubTextlink'])[6]";
+     public static String userOriginatorToProductSelection = "//*[text()='Proceed to product selection']";
     public static String userOriginatorProceed = "(//table[@class='propertyDetailQuestionLink']//a)[2]";
     public static String costingReport ="//input[@id='12']";
 
@@ -306,6 +307,8 @@ public class ObjectReference {
     public static String instructionDetailsTab = "//*[@id='flowbar']//*[contains(text(),'INSTRUCTION')]";
     public static String paymentDetailsBar ="//*[@id='flowbar']//*[contains(text(),'PAYMENT')]";
     public static String OrderConfirmationBar ="//*[@id='flowbar']//*[contains(text(),'ORDER')]";
+ public static String userOnAccountLabel = "(//*[@class='hubHeaderBodyText productPrice'])[4]";
+
     
     
     //Instruction details
@@ -751,6 +754,7 @@ public class ObjectReference {
     public static String myAccount = "//a[text()='MY ACCOUNT >']";
     public static String myTransactions = "//a[text()='MY TRANSACTIONS >']";
     public static String logout = "//*[@id='logoutLink']";
+    public static String admLogout = "//*[text()='Logout']";
     
   //ProductSelection
     public static String productNavBar = "//*[@id='flowbar']/div[1]/div/div[1]/div[2]/span[1]";
@@ -764,15 +768,25 @@ public class ObjectReference {
     public static String purchaseBtn = "//*[@id='purchaseButton']";
     public static String pruchaseBtnSingle = "(//*[@id='purchaseButton'])[1]";
     public static String pruchaseBtnSecondLine = "(//*[@id='purchaseButton'])[2]";
+    public static String pruchaseBtnThirdLine = "(//*[@id='purchaseButton'])[3]";
+    public static String pruchaseBtnFourthLine = "(//*[@id='purchaseButton'])[4]";
+    public static String pruchaseBtnFifthLine = "(//*[@id='purchaseButton'])[5]";
+
     public static String addToCartLabel = "//label[text()='Added to cart']";
     public static String cartCount = "//a[@id='cartCount']";
-    public static String nextBtn = "//*[@id='workspace']/table/tbody/tr[5]/td[2]/div[2]/img";
+     public static String nextBtn = "//*[@class='navigationBtn hubNavigation_next']";
     //public static String pendingTransaction = "//*[@id='workspace']/table/tbody/tr[3]/td/div/table/tbody/tr/td[1]/div/div[2]/table/tbody/tr/td[3]/img";
     public static String pendingTransaction = "//*[text()='Start a new transaction for this property']";
     public static String CommercialTab = "//*[@id='linkCommercial']";
     public static String promotionLogo = "//*[@id='tabCommercial']/table/tbody/tr[2]/td/div/div[1]/ul/li[4]/img";
     
-  //valuation form
+public static String AVMProduct = "//*[text()='Automated Valuation Model']";
+    public static String ShortForm = "//*[text()='Short Form Valuation']";
+    public static String ShortFormLeaseHold = "//*[text()='Short Form Leasehold Title Valuation']";
+    public static String ShortFormPrice = "(//*[@class='hubHeaderBodyText productPrice'])[2]";
+    public static String ConstructionPrice = "(//*[@class='hubHeaderBodyText productPrice'])[5]";
+    public static String NoAvailableMessage ="//*[@id='noPackagesAvailableMessage']";
+    public static String SampleReport = "(//*[@alt='PDF Icon'])[3]";  //valuation form
     public static String unitValuation = "//*[@id='1']";
     public static String unitPriceValuation = "//*[@id='2']";
     public static String noneApplyCheckboxValuation = "//*[@id='26']";
@@ -808,6 +822,8 @@ public class ObjectReference {
     public static String PromoAddBtn = "//*[@class='hubButtonBg hubButtonText']";
     public static String ProductPrice = "(//*[@class='hubHeaderBodyText'])[3]";
     public static String MainTotalAmount = "//*[@id='mainTotalAmount']";
+    public static String InvoiceName = "//*[@name='nameForTaxInvoice']";
+    public static String InvoiceEmail = "//*[@name='emailForTaxInvoice']";
     
   //Order Confirmation
     public static String referenceNumber = "//label[contains(text(),'RP Data HUB Reference Number:')]";
@@ -967,10 +983,6 @@ public class ObjectReference {
   public static String cancelButton = "//*[text()='Cancel']";
   public static String customerId = "//*[@id='customerId']";
   public static String guestId = "//*[@id='guestId']"; 
-  
-  
-  //Product Selection
-  
   
   
 }

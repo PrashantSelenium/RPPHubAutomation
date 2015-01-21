@@ -35,7 +35,7 @@ public class UserPropertySearch extends TestInitReference {
 	public void RT_02902_PropertySearch_Logout() throws Exception {
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-		util.Login_Successful_login();
+		util.Successful_login();
 		util.Logout_link();
 	}
 	

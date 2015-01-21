@@ -17,6 +17,7 @@ import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
 import atu.testng.reports.ATUReports;
 import atu.testng.reports.utils.SettingsFile;
+//import atu.testrecorder.ATUTestRecorder;
 
 import com.thoughtworks.selenium.Selenium;
 
@@ -30,6 +31,7 @@ import javax.imageio.ImageIO;
 import javax.imageio.stream.ImageInputStream;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.internal.seleniumemulation.WaitForPageToLoad;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -126,13 +128,14 @@ public class EndtoEndUtil extends FunctionReference{
 	public void endToEndLogin () throws InterruptedException, IOException {
 		resultcount = 0;	
 		testCase = "RP Property Hub Login: " + input[0];
-		
+
 		driver.navigate().to(input[1]);	
+//		driver.navigate().to(input[1].replaceAll("stage", "dev"));	
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		String ready = (String) js.executeScript("return document.readyState");
 		
-		if(ready.equalsIgnoreCase("complete")){
+ 		if(ready.equalsIgnoreCase("complete")){
 			waitForElementPresent(xpath(userLoginUsername));
 			try {
 				Assert.assertTrue(isElementPresent(xpath(userLoginUsername)));
@@ -151,8 +154,9 @@ public class EndtoEndUtil extends FunctionReference{
 			type(xpath(userLoginUsername), username);
 			type(xpath(userLoginPassword), password);
 			click(xpath(loginButton));
-			
-			if(!input[4].equalsIgnoreCase("DEEP")){
+			Thread.sleep(3000);
+//			driver.navigate().to("https://dev-cbalender.rppropertyhub.com/PropertySearch");
+			if(!input[5].equalsIgnoreCase("DEEP")){
 				waitForElementPresent(xpath(userPropertySearch));
 				
 				try {
@@ -256,7 +260,6 @@ public class EndtoEndUtil extends FunctionReference{
 		Thread.sleep(3000);	
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		String ready = (String) js.executeScript("return document.readyState");
-		
 		if(ready.equalsIgnoreCase("complete")){
 			if (isElementPresent(xpath(userPendingTransactionMessage))){
 		    	System.out.println("User has Pending transactions!");
@@ -509,7 +512,7 @@ public class EndtoEndUtil extends FunctionReference{
 	}
 	
 	public void regressionInstructionDetailsForm() throws Exception {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+ 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		waitForElementPresent(By.linkText("Proceed to payment details"));
 		String ready = (String) js.executeScript("return document.readyState");
 		waitForElementNotPresent(xpath("//*[class='blockUI blockOverlay']"));
@@ -543,6 +546,10 @@ public class EndtoEndUtil extends FunctionReference{
 				waitForElementVisible(xpath(userSameAsCustomer));
 			click(xpath(userSameAsCustomer));
 			}
+//			System.out.println();
+//			if(isElementPresent(xpath(loanAmount))){
+//				type(xpath(loanAmount), "1000");	
+//			}
 			
 			if (input[28].equalsIgnoreCase("Costing")){
 				if(isElementPresent(xpath(builderName))){
@@ -616,14 +623,13 @@ public class EndtoEndUtil extends FunctionReference{
 			click(By.linkText(userProceedToPaymentDetails));
 		}
 		
+		Thread.sleep(6000);
+		
+		regressionPaymentForm();
 	}
 	
 	public void regressionPaymentForm() throws Exception{
-		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		Thread.sleep(3000);
-		String ready = (String) js.executeScript("return document.readyState");
-		if(ready.equalsIgnoreCase("complete")){
+
 			resultcount = 0;	
 			testCase = "RP Property Hub Payment Details: " + input[0];
 			waitForElementNotPresent(xpath("//*[class='blockUI blockOverlay']"));
@@ -662,12 +668,12 @@ public class EndtoEndUtil extends FunctionReference{
 				type(xpath(userPaymentCreditSecurity), input[26]);	
 				}
 			
+			
 			if (resultcount != 0) {
 				fail(testCase);
 			} else {
 				pass(testCase);
 			}
-		}
 		
 	}
 	
@@ -677,8 +683,23 @@ public class EndtoEndUtil extends FunctionReference{
 		
 		if(ready.equalsIgnoreCase("complete")){
 			click(xpath(userConfirmPayment));
-//			Thread.sleep(30000);
 		}
+		
+		Thread.sleep(6000);
+		waitForElementPresent(By.xpath("//iframe[@id='card_payment_iframe']"));
+		try{
+			driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='card_payment_iframe']")));
+			isElementVisible(By.xpath("//*[@id='CardNumber']"));
+			type(xpath("//*[@id='CardNumber']"), "4111111111111111");
+			type(xpath("//*[@id='CardHolderName']"), "Twist");
+			type(xpath("//*[@id='DateExpiry_1']"), "12");
+			type(xpath("//*[@id='DateExpiry_2']"), "15");
+			type(xpath("//*[@id='Cvc2']"), "1234");
+			click(xpath("//*[@id='Add']"));
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+		
 	}
 	
 	public void testMortgageValuation() throws Exception {
@@ -714,7 +735,7 @@ public class EndtoEndUtil extends FunctionReference{
 	}
 	
 public void regressionOrderConfirmationDetails() throws Exception {
-	Thread.sleep(2000);
+	Thread.sleep(6000);
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	String ready = (String) js.executeScript("return document.readyState");
 	waitForElementNotPresent(xpath("//*[class='blockUI blockOverlay']"));

@@ -6,6 +6,10 @@ import hub.utilities.EndtoEndUtil.EndtoEndUtil;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -43,93 +47,38 @@ public class EndtoEnd extends TestInitReference {
 			case "SLAS":
 				
 				etou.endToEndLogin();
-				Thread.sleep(3000);
-				etou.endToEndCoverFlow();
-				Thread.sleep(3000);
-				etou.endToEndSLAS();
-				Thread.sleep(3000);
-				etou.startNewTransaction();
-				Thread.sleep(3000);
-				etou.proceedProductSelection();	
+
 				etou.regressionProductTab();								
-				Thread.sleep(3000);
+				//Thread.sleep(2000);
 				
 				if (input[12].equalsIgnoreCase("Originator")) {
+//				//Thread.sleep(5000);
 				etou.smokeOriginator();
-				Thread.sleep(3000);
+				//Thread.sleep(2000);
 				etou.smokeOriginatorProceed();	
-				Thread.sleep(10000);
+//				//Thread.sleep(5000);
 				}
 				
 				etou.regressionAddProduct();
-				Thread.sleep(3000);
+				//Thread.sleep(2000);
 				etou.testCartCountCheck();
-				Thread.sleep(5000);
 				etou.testProceedInstructionDetails();
-				Thread.sleep(6000);
+				//Thread.sleep(3000);
 				etou.regressionInstructionDetailsForm();
-				Thread.sleep(3000);
+//				Thread.sleep(3000);
 				etou.testUserProceedToPayment();
+			//	etou.regressionPaymentForm();
 				Thread.sleep(3000);
-				etou.regressionPaymentForm();
-				Thread.sleep(3000);
-				etou.testConfirmPayment();				
-				Thread.sleep(3000);
+				etou.testConfirmPayment();	
+				//Thread.sleep(10000);
 				etou.testMortgageValuation();
-				Thread.sleep(3000);
+				//Thread.sleep(3000);
 				etou.regressionOrderConfirmationDetails();
-				Thread.sleep(3000);
+				//Thread.sleep(3000);
 				etou.testPopup();
-				Thread.sleep(3000);
+				//Thread.sleep(3000);
 				etou.testDownloadPDF();
-				Thread.sleep(3000);
-				etou.testLogout();
-				
-				break;
-				
-			case "DEEP":
-				
-				etou.endToEndLogin();
-				Thread.sleep(3000);
-//				etou.endToEndCoverFlow();
-//				Thread.sleep(3000);
-//				etou.endToEndSLAS();
-//				Thread.sleep(3000);
-//				etou.startNewTransaction();
-//				Thread.sleep(3000);
-//				etou.proceedProductSelection();	
-				etou.regressionProductTab();								
-				Thread.sleep(3000);
-				
-				if (input[12].equalsIgnoreCase("Originator")) {
-				etou.smokeOriginator();
-				Thread.sleep(3000);
-				etou.smokeOriginatorProceed();	
-				Thread.sleep(10000);
-				}
-				
-				etou.regressionAddProduct();
-				Thread.sleep(3000);
-				etou.testCartCountCheck();
-				Thread.sleep(5000);
-				etou.testProceedInstructionDetails();
-				Thread.sleep(6000);
-				etou.regressionInstructionDetailsForm();
-				Thread.sleep(3000);
-				etou.testUserProceedToPayment();
-				Thread.sleep(3000);
-				etou.regressionPaymentForm();
-				Thread.sleep(3000);
-				etou.testConfirmPayment();				
-				Thread.sleep(3000);
-				etou.testMortgageValuation();
-				Thread.sleep(3000);
-				etou.regressionOrderConfirmationDetails();
-				Thread.sleep(3000);
-				etou.testPopup();
-				Thread.sleep(3000);
-				etou.testDownloadPDF();
-				Thread.sleep(3000);
+				//Thread.sleep(3000);
 				etou.testLogout();
 				
 				break;
