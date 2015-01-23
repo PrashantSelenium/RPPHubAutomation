@@ -400,59 +400,76 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		    	fail(input[0] + " - Navigation Bar validation");
 		    	resultcount++;
 		    	}
-		try{
-
-			waitForElementPresent(xpath(reportsTab));
-			waitForElementVisible(xpath(reportsTab));
-			waitForElementPresent(xpath(valuationsTab));
-			waitForElementVisible(xpath(valuationsTab));
-			
-			if(!isElementPresent(xpath(reportsTab)));{ Thread.sleep(5000); }
-	    	if(!isElementPresent(xpath(reportsTab)));{ Thread.sleep(5000); }
-	    	if(!isElementPresent(xpath(valuationsTab)));{ Thread.sleep(5000); }
-	    	if(!isElementPresent(xpath(valuationsTab)));{ Thread.sleep(5000); }
-	    	
-			Assert.assertTrue(isElementPresent(xpath(reportsTab)));
-			Assert.assertTrue(isElementPresent(xpath(valuationsTab)));
-		    }
-		    catch(AssertionError e){
-		    	fail(input[0] + " - Tab validation");
-		    	resultcount++;
-		    	}
-		try{
-			String selectedtab = driver.findElement(By.xpath(reportsTab)).getCssValue("background-color");
-			Assert.assertEquals(selectedtab, input[2]);
-		    }
-		    catch(AssertionError e){
-		    	fail(input[0] + " - Navigation Bar validation");
-		    	resultcount++;
-		    	}
 		
-		waitForElementPresent(xpath(cbatitle));
-		waitForElementVisible(xpath(cbatitle));
-		waitForElementPresent(xpath(cbatitlestatus));
-		waitForElementVisible(xpath(cbatitlestatus));
-		
-		if(!isElementPresent(xpath(cbatitle)));{ Thread.sleep(2000); }
-    	if(!isElementPresent(xpath(cbatitle)));{ Thread.sleep(2000); }
-    	if(!isElementPresent(xpath(cbatitlestatus)));{ Thread.sleep(2000); }
-    	if(!isElementPresent(xpath(cbatitlestatus)));{ Thread.sleep(2000); }
-		
-		try{
-			Assert.assertTrue(getText(xpath(cbatitle)).contains(input[3]));
-		    }
-		    catch(AssertionError e){
-		    	fail(input[0] + " - CBA title validation");
-		    	resultcount++;
-		    	}
-		try{
-			Assert.assertEquals(getText(xpath(cbatitlestatus)), input[4]);
-		    }
-		    catch(AssertionError e){
-		    	fail(input[0] + " - CBA Status validation");
-		    	resultcount++;
-		    	}
-		
+		if(!isElementPresent(xpath(unitPriceValuation))){
+				try{
+					waitForElementPresent(xpath(reportsTab));
+					waitForElementVisible(xpath(reportsTab));
+					if(!isElementPresent(xpath(reportsTab)));{ Thread.sleep(5000); }
+			    	if(!isElementPresent(xpath(reportsTab)));{ Thread.sleep(5000); }
+			    	Assert.assertTrue(isElementPresent(xpath(reportsTab)));
+			    	
+					waitForElementPresent(xpath(valuationsTab));
+					waitForElementVisible(xpath(valuationsTab));			
+			    	if(!isElementPresent(xpath(valuationsTab)));{ Thread.sleep(5000); }
+			    	if(!isElementPresent(xpath(valuationsTab)));{ Thread.sleep(5000); }	    	
+					
+					Assert.assertTrue(isElementPresent(xpath(valuationsTab)));
+				    }
+				    catch(AssertionError e){
+				    	fail(input[0] + " - Tab validation");
+				    	resultcount++;
+				    	}
+				try{
+					String selectedtab = driver.findElement(By.xpath(reportsTab)).getCssValue("background-color");
+					Assert.assertEquals(selectedtab, input[2]);
+				    }
+				    catch(AssertionError e){
+				    	fail(input[0] + " - Navigation Bar validation");
+				    	resultcount++;
+				    	}
+				
+				waitForElementPresent(xpath(cbatitle));
+				waitForElementVisible(xpath(cbatitle));
+				waitForElementPresent(xpath(cbatitlestatus));
+				waitForElementVisible(xpath(cbatitlestatus));
+				
+				if(!isElementPresent(xpath(cbatitle)));{ Thread.sleep(2000); }
+		    	if(!isElementPresent(xpath(cbatitle)));{ Thread.sleep(2000); }
+		    	if(!isElementPresent(xpath(cbatitlestatus)));{ Thread.sleep(2000); }
+		    	if(!isElementPresent(xpath(cbatitlestatus)));{ Thread.sleep(2000); }
+				
+				try{
+					Assert.assertTrue(getText(xpath(cbatitle)).contains(input[3]));
+				    }
+				    catch(AssertionError e){
+				    	fail(input[0] + " - CBA title validation");
+				    	resultcount++;
+				    	}
+				try{
+					Assert.assertEquals(getText(xpath(cbatitlestatus)), input[4]);
+				    }
+				    catch(AssertionError e){
+				    	fail(input[0] + " - CBA Status validation");
+				    	resultcount++;
+				    	}
+		}else
+			{
+			type(xpath(unitPriceValuation), input[7].substring(0, 6));
+			click(xpath(noneApplyCheckboxValuation));
+			click(xpath(avm));
+			click(xpath(proceedToProductValuation));
+			Thread.sleep(5000);
+			waitForElementPresent(xpath(purchaseBtn));
+			waitForElementVisible(xpath(purchaseBtn));
+				try{
+					Assert.assertEquals(getValue(xpath(purchaseBtn)), "Not Available");
+				    }
+				    catch(AssertionError e){
+				    	fail(input[0] + " - Not Redirected to product selection page");
+				    	resultcount++;
+				    	}
+			}
 		return resultcount;
 	}
 	
@@ -520,44 +537,46 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		    	fail(input[0] + " - Navigation Bar validation");
 		    	resultcount++;
 		    	}
-		
-		waitForElementPresent(xpath(purchaseBtn));
-		waitForElementVisible(xpath(purchaseBtn));
-		if(!isElementVisible(xpath(purchaseBtn))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(purchaseBtn))){ Thread.sleep(7000); }
-
-		try{
-			Assert.assertTrue(isElementPresent(xpath(purchaseBtn)));
-			}
-			catch(AssertionError e){
-				fail(input[0] + " - Purchase Button not available");
-				resultcount++;
-	    		}
-		
-		click(xpath(valuationsTab));
-		Thread.sleep(4000);
-		waitForElementPresent(xpath(unitPriceValuation));
-		waitForElementVisible(xpath(unitPriceValuation));
-		if(!isElementVisible(xpath(unitPriceValuation))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(unitPriceValuation))){ Thread.sleep(7000); }
-		
-		type(xpath(unitPriceValuation), input[2].substring(0, 6));
-		click(xpath(noneApplyCheckboxValuation));
-		click(xpath(avm));
-		click(xpath(proceedToProductValuation));
-		Thread.sleep(5000);
-		waitForElementPresent(xpath(pruchaseBtnSingle));
-		waitForElementVisible(xpath(pruchaseBtnSingle));
-		waitfor();
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		waitForElementPresent(xpath(pruchaseBtnSingle));
-		waitForElementVisible(xpath(pruchaseBtnSingle));
-		click(xpath(pruchaseBtnSingle));
-		
-		Thread.sleep(4000);
+		Thread.sleep(2000);
+		if(!isElementPresent(xpath(unitPriceValuation))){
+			
+				if(!isElementVisible(xpath(purchaseBtn))){ Thread.sleep(7000); }
+				if(!isElementPresent(xpath(purchaseBtn))){ Thread.sleep(7000); }
+				waitForElementPresent(xpath(purchaseBtn));
+				waitForElementVisible(xpath(purchaseBtn));		
+				Thread.sleep(2000);
+				try{
+					Assert.assertTrue(isElementPresent(xpath(purchaseBtn)));
+					}
+					catch(AssertionError e){
+						fail(input[0] + " - Purchase Button not available");
+						resultcount++;
+			    		}
+				
+				click(xpath(valuationsTab));
+				Thread.sleep(4000);
+				waitForElementPresent(xpath(unitPriceValuation));
+				waitForElementVisible(xpath(unitPriceValuation));
+				if(!isElementVisible(xpath(unitPriceValuation))){ Thread.sleep(7000); }
+				if(!isElementVisible(xpath(unitPriceValuation))){ Thread.sleep(7000); }
+		}
+			type(xpath(unitPriceValuation), input[2].substring(0, 6));
+			click(xpath(noneApplyCheckboxValuation));
+			click(xpath(avm));
+			click(xpath(proceedToProductValuation));
+			Thread.sleep(5000);
+			waitForElementPresent(xpath(pruchaseBtnSingle));
+			waitForElementVisible(xpath(pruchaseBtnSingle));
+			waitfor();
+			if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+			if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+			if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+			if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+			waitForElementPresent(xpath(pruchaseBtnSingle));
+			waitForElementVisible(xpath(pruchaseBtnSingle));
+			click(xpath(pruchaseBtnSingle));
+			
+			Thread.sleep(4000);
 			
 		try{
 			Assert.assertEquals(getText(xpath(addToCartLabel)), input[3]);
@@ -1046,7 +1065,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    click(xpath(adminPromotionSave));
 	    
 	Thread.sleep(3000);
-	click(xpath(admLogout));
+	click(xpath(adminLinkLogout));
 	Thread.sleep(2000);
 	return resultcount;
 	}

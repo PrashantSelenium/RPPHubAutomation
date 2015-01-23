@@ -824,7 +824,7 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
     public static String MainTotalAmount = "//*[@id='mainTotalAmount']";
     public static String InvoiceName = "//*[@name='nameForTaxInvoice']";
     public static String InvoiceEmail = "//*[@name='emailForTaxInvoice']";
-    
+        
   //Order Confirmation
     public static String referenceNumber = "//label[contains(text(),'RP Data HUB Reference Number:')]";
     public static String downloadPDF = "//*[@id='checkOrderConfirmationReport']/a";

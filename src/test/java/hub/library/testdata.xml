@@ -21,7 +21,7 @@
 	<entry key="environment">Prod</entry>
 <!-- 	<entry key="remoteUrl">http://10.0.1.138:8080/wd/hub</entry> -->
 	<!-- 	<entry key="local_url">http://192.168.0.20:8080/</entry> -->
-	<entry key="prod_url">https://stage.rppropertyhub.com</entry>
+	<entry key="prod_url"></entry>
 	<entry key="devtest_url"></entry>	
 	
 <!-- 	<entry key="stage_admin_url">https://stage.rppropertyhub.com/n/Admin-Console/myrp-872</entry> -->

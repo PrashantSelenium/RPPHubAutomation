@@ -1,0 +1,263 @@
+package hub.test.RegressionSuite;
+
+
+import hub.library.TestInitReference;
+import hub.utilities.RegressionSuiteUtil.UserRegressionSuiteUtil;
+
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import atu.testng.reports.ATUReports;
+import atu.testng.reports.listeners.ATUReportsListener;
+import atu.testng.reports.listeners.ConfigurationListener;
+import atu.testng.reports.listeners.MethodListener;
+import atu.testng.reports.utils.Utils;
+
+@Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
+public class UserProductSelection extends TestInitReference {
+	{
+		System.setProperty("atu.reporter.config", "/tooltwist/eclipse/RPPHub/conf/atu.properties");
+	}
+	    
+    @BeforeClass
+    public void init() {
+           ATUReports.setWebDriver(driver);
+           setIndexPageDescription();
+           driver.navigate().to("https://stage-cbalender.rppropertyhub.com/Login");
+    }
+    
+    private void setIndexPageDescription() {
+        ATUReports.indexPageDescription = "Hub";
+        ATUReports.setAuthorInfo("Automation Tester", Utils.getCurrentTime(),"1.0");
+    }
+    
+    @Test(description="User - Product Selection", priority=0)
+	public void RT_02619_No_Prompt_Originator_Details() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.noPromptOriginatorDetails();	
+	}
+	@Test(description="User - Product Selection", priority=1)
+	public void RT_02654_Prompt_Originator_Details() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.promptOriginatorDetails();	
+	}
+	@Test(description="User - Product Selection", priority=2)
+	public void RT_02269_Proceed_Product_Selection_Link() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.originatorToProductSelection();	
+	}
+	@Test(description="User - Product Selection", priority=3)
+	public void RT_03117_Information_Icon_Hover() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.informationIcon();	
+	}
+	@Test(description="User - Product Selection", priority=4)
+	public void RT_03107_Property_Type_Field() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.propertyType();	
+	}
+	@Test(description="User - Product Selection", priority=5)
+	public void RT_02678_OEVPP_Required_Numeric() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.oevppRequiredNumeric();	
+	}
+	@Test(description="User - Product Selection", priority=6)
+	public void RT_02375_OEVPP_Formatted() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.oevppFormatted();	
+	}
+	
+	@Test(description="User - Product Selection", priority=7)
+	public void RT_08844_Loan_Amount_Not_Active() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.loanAmountNotActive();
+	}
+	
+	@Test(description="User - Product Selection", priority=8)
+	public void RT_02977_DAOTA_Exclusions() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.daotaPropertyExclusions();	
+	}
+	
+	@Test(description="User - Product Selection", priority=9)
+	public void RT_03108_DAOTA_Required() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.daotaRequired();	
+	}
+	
+	@Test(description="User - Product Selection", priority=10)
+	public void RT_Loan_Purpose() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.loanPurpose();
+	}
+	@Test(description="User - Product Selection", priority=11)
+	public void RT_03109_AVM_Ack_Display() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.avmAckDisplay();
+	}
+	@Test(description="User - Product Selection", priority=12)
+	public void RT_03110_AVM_Ack_Required() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.avmAckRequired();
+	}
+	@Test(description="User - Product Selection", priority=13)
+	public void RT_03111_AVM_Ack_Replaced() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.loanAppDisplay();
+	}
+	@Test(description="User - Product Selection", priority=14)
+	public void RT_Loan_App_Required() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.loanAppRequired();
+	}
+	@Test(description="User - Product Selection", priority=15)
+	public void RT_02704_Url_Https() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.urlHttps();
+	}
+	@Test(description="User - Product Selection", priority=16)
+	public void RT_02904_PP_No_RPID() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.lenderEmpowermentNoRPID();
+	}
+	@Test(description="User - Product Selection", priority=17)
+	public void RT_02903_Empowerment_Metropolitan_Regional() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.lenderEmpowermentMetropolitan();
+	}	
+	@Test(description="User - Product Selection", priority=18)
+	public void RT_02620_Product_Details() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.productDetails();
+	}
+	@Test(description="User - Product Selection", priority=19)
+	public void RT_03099_Product_Details_More() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.productDetailsMore();
+	}
+	@Test(description="User - Product Selection", priority=20)
+	public void RT_02658_On_Account() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.productOnAccount();
+	}
+	@Test(description="User - Product Selection", priority=21)
+	public void RT_02650_Cart_Link() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.cartLinkFunctionality();
+	}	
+	@Test(description="User - Product Selection", priority=22)
+	public void RT_02617_Workflow_Bar() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.workflowBar();
+	}
+	@Test(description="User - Product Selection", priority=23)
+	public void RT_03127_Product_Tab_Not_Active() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.productTabNotActive();
+	}	
+	@Test(description="User - Product Selection", priority=24)
+	public void RT_08845_Loan_Amount_Active() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.loanAmountActive();
+	}
+	@Test(description="User - Product Selection", priority=25)
+	public void RT_08846_Loan_Amount_Mandatory() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.loanAmountMandatory();
+		util.Logout_link();
+	}
+
+	@Test(description="User - Product Selection", priority=26)
+	public void RT_02651_Link_Navigation() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.loginToProdSelection();
+        util.validate_Back_Button();
+	}
+	
+	@Test(description="User - Product Selection", priority=27)
+	public void RT_02652_validate_Next_ProceedToInstruction_Link_NotVisible() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+        util.validate_Next_ProceedToInstruction_Link_NotVisible();
+	}
+	
+	@Test(description="User - Product Selection", priority=28)
+	public void RT_02652_validate_Next_Button_function() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+        util.validate_Next_Button_function();
+	}
+	
+	@Test(description="User - Product Selection", priority=29)
+	public void RT_02650_validate_ProceedToInstruction_Link_function() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.loginToProdSelection();
+		util.validate_ProceedToInstruction_Link_function();
+		util.Logout_link();
+	}
+	
+	@Test(description="User - Product Selection", priority=30)
+	public void RT_02665_validate_Add_To_Cart_Button() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.loginToProdSelection();
+		util.validate_Add_To_Cart_Button();
+		util.Logout_link();
+	}
+	
+	@Test(description="User - Product Selection", priority=31)
+	public void RT_03102_validate_correct_products_displayed() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.loginToProdSelection();
+		util.validate_correct_products_displayed();
+		util.Logout_link();
+	}
+	
+	@Test(description="User - Product Selection", priority=32)
+	public void RT_02656_validate_On_Credit_Card_Price() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.loginToProdSelection();
+		util.validate_On_Credit_Card_Price();
+		util.Logout_link();
+	}
+	
+	@Test(description="User - Product Selection", priority=33)
+	public void RT_03104_validate_No_Product_Available_message() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.validate_No_Product_Available_message();
+	}
+	
+	@Test(description="User - Product Selection", priority=34)
+	public void RT_03127_validate_2_tabs_cbalender() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.validate_2_tabs_cbalender();
+		util.Logout_link();
+	}
+	
+	@Test(description="User - Product Selection", priority=35)
+	public void RT_02657_validate_PreAuth_Price() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.loginToProdSelection();
+		util.validate_On_Credit_Card_Price();
+		util.Logout_link();
+	}
+	
+	@Test(description="User - Product Selection", priority=36)
+	public void RT_02622_validate_SampleReport_Link() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.loginToProdSelection();
+		util.validate_On_Credit_Card_Price();
+		util.validate_Sample_Report_Link();
+		util.Logout_link();
+	}
+	
+}
