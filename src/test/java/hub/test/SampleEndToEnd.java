@@ -24,7 +24,7 @@ public class SampleEndToEnd extends TestInitReference {
 		endToEnd.hubUserLogin(username.trim(), password.trim());
 		
 		//Property Search
-		String addressToSearch = getDataFromxls(0, "EndToEndUtilData.xls", 1, 2);
+		String addressToSearch = getDataFromxls(0, "EndToEndUtilData.xls", 2, 1);
 		endToEnd.searchAddress(addressToSearch);
 		
 		//Property Details
