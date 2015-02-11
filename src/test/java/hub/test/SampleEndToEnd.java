@@ -50,7 +50,7 @@ public class SampleEndToEnd extends TestInitReference {
 	}
 	
 	private List<HashMap<String, Object>> getProductSelectionList() throws Exception {
-		
+		//Formatter pattern (expected format, key, excel filename, sheet number, column, row).
 		String[] productSelectionArr = {String.format(EventUtil.DATA_FORMAT, "Type", XML_FILE_NAME, 0, 1, 6),
 			String.format(EventUtil.DATA_FORMAT, "OEVPP", XML_FILE_NAME, 0, 1, 7)};
 		
@@ -87,13 +87,17 @@ public class SampleEndToEnd extends TestInitReference {
 	}
 	
 	private HashMap<String, Object> getInstructionDetailsMap() throws Exception {
-		
+		//Formatter pattern (expected format, key, excel filename, sheet number, column, row).
 		String[] arr = {String.format(EventUtil.DATA_FORMAT, "FirstName", XML_FILE_NAME, 0, 1, 26),
-			String.format(EventUtil.DATA_FORMAT, "LastName", XML_FILE_NAME, 0, 1, 27), String.format(EventUtil.DATA_FORMAT, "TheCustomerIs", XML_FILE_NAME, 0, 1, 28),
-			String.format(EventUtil.DATA_FORMAT, "ContactNumber", XML_FILE_NAME, 0, 1, 29), String.format(EventUtil.DATA_FORMAT, "CompanyName", XML_FILE_NAME, 0, 1, 30),
-			String.format(EventUtil.DATA_FORMAT, "Email", XML_FILE_NAME, 0, 1, 31), String.format(EventUtil.DATA_FORMAT, "SameAsCustomerDetails", XML_FILE_NAME, 0, 1, 32),
-			String.format(EventUtil.DATA_FORMAT, "NetLettableArea", XML_FILE_NAME, 0, 1, 33), String.format(EventUtil.DATA_FORMAT, "RentalAmountMonthly", XML_FILE_NAME, 0, 1, 34),
-			String.format(EventUtil.DATA_FORMAT, "OutgoinsMonthly", XML_FILE_NAME, 0, 1, 35)};
+						String.format(EventUtil.DATA_FORMAT, "LastName", XML_FILE_NAME, 0, 1, 27), 
+						String.format(EventUtil.DATA_FORMAT, "TheCustomerIs", XML_FILE_NAME, 0, 1, 28),
+						String.format(EventUtil.DATA_FORMAT, "ContactNumber", XML_FILE_NAME, 0, 1, 29), 
+						String.format(EventUtil.DATA_FORMAT, "CompanyName", XML_FILE_NAME, 0, 1, 30),
+						String.format(EventUtil.DATA_FORMAT, "Email", XML_FILE_NAME, 0, 1, 31), 
+						String.format(EventUtil.DATA_FORMAT, "SameAsCustomerDetails", XML_FILE_NAME, 0, 1, 32),
+						String.format(EventUtil.DATA_FORMAT, "NetLettableArea", XML_FILE_NAME, 0, 1, 33), 
+						String.format(EventUtil.DATA_FORMAT, "RentalAmountMonthly", XML_FILE_NAME, 0, 1, 34),
+						String.format(EventUtil.DATA_FORMAT, "OutgoinsMonthly", XML_FILE_NAME, 0, 1, 35)};
 		
 		HashMap<String, Object> map = EventUtil.dataMap(arr);		
 		return map;
@@ -101,9 +105,10 @@ public class SampleEndToEnd extends TestInitReference {
 	}
 	
 	private HashMap<String, Object> getPaymentDetailsMap() throws Exception {
-		
+		//Formatter pattern (expected format, key, excel filename, sheet number, column, row).
 		String[] arr = {String.format(EventUtil.DATA_FORMAT, "TermsAndConditions", XML_FILE_NAME, 0, 1, 38),
-			String.format(EventUtil.DATA_FORMAT, "NameForTaxInvoice", XML_FILE_NAME, 0, 1, 39), String.format(EventUtil.DATA_FORMAT, "EmailForInvoice", XML_FILE_NAME, 0, 1, 40)};
+						String.format(EventUtil.DATA_FORMAT, "NameForTaxInvoice", XML_FILE_NAME, 0, 1, 39), 
+						String.format(EventUtil.DATA_FORMAT, "EmailForInvoice", XML_FILE_NAME, 0, 1, 40)};
 		
 		HashMap<String, Object> map = EventUtil.dataMap(arr);	
 		
@@ -112,10 +117,11 @@ public class SampleEndToEnd extends TestInitReference {
 	}
 	
 	private HashMap<String, Object> getPaymentDetailsCpsMap() throws Exception {
-		
+		//Formatter pattern (expected format, key, excel filename, sheet number, column, row).
 		String[] arr = {String.format(EventUtil.DATA_FORMAT, "CardNumber", XML_FILE_NAME, 0, 1, 43),
-			String.format(EventUtil.DATA_FORMAT, "CardHolder", XML_FILE_NAME, 0, 1, 44), String.format(EventUtil.DATA_FORMAT, "ExpiryDate", XML_FILE_NAME, 0, 1, 45),
-			String.format(EventUtil.DATA_FORMAT, "SecurityCode", XML_FILE_NAME, 0, 1, 46)};
+						String.format(EventUtil.DATA_FORMAT, "CardHolder", XML_FILE_NAME, 0, 1, 44), 
+						String.format(EventUtil.DATA_FORMAT, "ExpiryDate", XML_FILE_NAME, 0, 1, 45),
+						String.format(EventUtil.DATA_FORMAT, "SecurityCode", XML_FILE_NAME, 0, 1, 46)};
 		
 		HashMap<String, Object> map = EventUtil.dataMap(arr);	
 		
