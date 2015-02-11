@@ -299,19 +299,17 @@ public class HubEndToEndUtil extends FunctionReference {
 			
 			fillOutFormFields(originatorMap, "Originator");
 			
-		} else {
-			return;
-		}
-		
-		try {
-			waitForElementPresent(xpath(proceedToProductSelection));
-			click(xpath(proceedToProductSelection));
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				waitForElementPresent(xpath(proceedToProductSelection));
+				click(xpath(proceedToProductSelection));
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}
 		
 	}
@@ -360,7 +358,6 @@ public class HubEndToEndUtil extends FunctionReference {
 					String[] strValueArray = value.split(EventUtil.SEPARATOR);
 
 					if (isElementPresent(xpath(strValueArray[0]))) {
-//						fillOutFormFields(strValueArray[2].trim(), strValueArray[1].trim(), strValueArray[0].trim());
 						try {
 							String type = strValueArray[2].trim();
 							String fieldValue = strValueArray[1].trim();

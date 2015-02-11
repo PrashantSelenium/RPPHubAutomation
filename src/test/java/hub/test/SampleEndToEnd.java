@@ -22,7 +22,7 @@ public class SampleEndToEnd extends TestInitReference {
 	public void sample() throws Exception {
 		
 		HubEndToEndUtil endToEnd = new HubEndToEndUtil();
-		EventUtil.getDataFromFile(0, XML_FILE_NAME, 1, 1);
+		
 		//Login
 		String username = EventUtil.getDataFromFile(0, XML_FILE_NAME, 1, 1);
 		String password = EventUtil.getDataFromFile(0, XML_FILE_NAME, 2, 1);
@@ -78,7 +78,7 @@ public class SampleEndToEnd extends TestInitReference {
 		productsAndTabMap2.put("Products", productXpath2);
 		originatorMap2.put("TabProductObject", productsAndTabMap2);
 		
-		//NOTE: Placing of new Map in List Object should in order as declared on xls file.
+		//NOTE: Placing of new Map in List Object should be in order as declared on excel file.
 		List<HashMap<String, Object>> productSelectionMap = new ArrayList<HashMap<String, Object>>();
 		productSelectionMap.add(originatorMap);
 		productSelectionMap.add(originatorMap2);
@@ -125,7 +125,7 @@ public class SampleEndToEnd extends TestInitReference {
 	
 	@BeforeMethod
     public void reinitializeBrowser() throws Exception {
-    	String url = getDataFromxls(0, "EndToEndUtilData2.xls", 1, 0);
+    	String url = getDataFromxls(0, XML_FILE_NAME, 1, 0);
     	driver.manage().deleteAllCookies();
     	driver.get(url);
     }

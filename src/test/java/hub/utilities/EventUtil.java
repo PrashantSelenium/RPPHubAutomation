@@ -59,7 +59,6 @@ public class EventUtil {
 				int column = Integer.parseInt(dataArr[3].trim());
 				int row = Integer.parseInt(dataArr[4].trim());
 				
-				
 				try {
 					map.put(key, getDataFromFile(sheetNumber, fileName, column, row));
 				} catch (Exception e) {
