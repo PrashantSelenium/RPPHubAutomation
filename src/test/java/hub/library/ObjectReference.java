@@ -250,7 +250,8 @@ public class ObjectReference {
     public static String loanApplication ="//input[@id='5']";
     public static String iconOriginatorToProductSelection = "//form[@id='propertyDetailQuestions']//img[contains(@src,'proceedIcon')]";
      //public static String userOriginatorToProductSelection = "(//a[@class='hubTextlink'])[6]";
-     public static String userOriginatorToProductSelection = "//*[text()='Proceed to product selection']";
+    public static String proceedToProductSelection = "//*[@id='propertyDetailQuestions']/div[2]/table[2]/tbody/tr[1]/td[2]/a[2]";
+    public static String userOriginatorToProductSelection = "//*[text()='Proceed to product selection']";
     public static String userOriginatorProceed = "(//table[@class='propertyDetailQuestionLink']//a)[2]";
     public static String costingReport ="//input[@id='12']";
 
@@ -307,7 +308,8 @@ public class ObjectReference {
     public static String instructionDetailsTab = "//*[@id='flowbar']//*[contains(text(),'INSTRUCTION')]";
     public static String paymentDetailsBar ="//*[@id='flowbar']//*[contains(text(),'PAYMENT')]";
     public static String OrderConfirmationBar ="//*[@id='flowbar']//*[contains(text(),'ORDER')]";
- public static String userOnAccountLabel = "(//*[@class='hubHeaderBodyText productPrice'])[4]";
+    public static String userOnAccountLabel = "(//*[@class='hubHeaderBodyText productPrice'])[4]";
+    public static String dynamicProductTabLink = "//a[@id='link{?}']";
 
     
     
