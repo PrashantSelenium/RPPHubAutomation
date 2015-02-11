@@ -14,6 +14,8 @@ import org.openqa.selenium.support.ui.Select;
 public class EventUtil {
 	private static FunctionReference functionReference = new FunctionReference();
 	public static final String SEPARATOR = "_@@_";
+	public static final String DATA_FORMAT = "%s_@@_%s_@@_%s_@@_%s_@@_%s";
+	
 	public static void fillOutField(String type, String value, String xPath) throws InterruptedException, IOException {
 		
 		switch(type){
