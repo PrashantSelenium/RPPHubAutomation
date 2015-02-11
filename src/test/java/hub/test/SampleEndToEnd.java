@@ -3,7 +3,7 @@ package hub.test;
 import hub.library.ReadXlsData;
 import hub.library.TestInitReference;
 import hub.utilities.EventUtil;
-import hub.utilities.HubEndToEndUtil;
+import hub.utilities.HubNavigationUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class SampleEndToEnd extends TestInitReference {
 	@Test
 	public void sample() throws Exception {
 		
-		HubEndToEndUtil endToEnd = new HubEndToEndUtil();
+		HubNavigationUtil endToEnd = new HubNavigationUtil();
 		
 		//Login
 		String username = EventUtil.getDataFromFile(0, XML_FILE_NAME, 1, 1);

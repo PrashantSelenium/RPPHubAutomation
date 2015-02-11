@@ -16,7 +16,7 @@ import org.testng.Assert;
 
 import atu.testng.reports.ATUReports;
 
-public class HubEndToEndUtil extends FunctionReference {
+public class HubNavigationUtil extends FunctionReference {
 
 	//Login	
 	public void hubUserLogin (String username, String password) throws Exception {
