@@ -24,7 +24,7 @@ public class UserLogin extends TestInitReference {
     public void init() {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
-           driver.navigate().to("https://dev-cbalender.rppropertyhub.com/Login");
+           driver.navigate().to("https://stage-cbalender.rppropertyhub.com/Login");
     }
     
     private void setIndexPageDescription() {

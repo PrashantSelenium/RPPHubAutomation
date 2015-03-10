@@ -31,7 +31,7 @@ public class PropertyDetailTest extends TestInitReference {
 	
 	@Test(description="Smoke Test", dataProvider = "Data-Provider-Function")
 	public void testEndtoEnd(Class clzz, String[] input) {
-		String testcase = input[0];
+		String testcase = input[6];
 		log(testcase);
 		logInput(input);
 		setAuthorInfoForReports();
@@ -41,7 +41,7 @@ public class PropertyDetailTest extends TestInitReference {
 			PropertyDetailUtil pdu = new PropertyDetailUtil(input);	
 			switch (input[0].toUpperCase()) {
 		
-			case "RT-02902":
+			case "RT-02902": 
 				pdu.login();
 				Thread.sleep(3000);
 				pdu.slas();

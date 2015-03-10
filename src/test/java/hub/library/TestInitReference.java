@@ -42,10 +42,10 @@ public class TestInitReference extends FunctionReference {
     public String record = rxml.data("record");
     public static String environment = rxml.data("environment");
     
-    public static final String USERNAME = "tooltwist";
-	public static final String AUTOMATE_KEY = "9quC1U5hBNqMfkAByiyp";
-    public static final String remoteUrl = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
-    //public String remoteUrl = rxml.data("remoteUrl");
+//    public static final String USERNAME = "tooltwist";
+//	public static final String AUTOMATE_KEY = "9quC1U5hBNqMfkAByiyp";
+//    public static final String remoteUrl = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
+    public String remoteUrl = rxml.data("remoteUrl");
     
     public String url = environment.equalsIgnoreCase("Prod") ? prod_url : local_url;
     protected String ipAddress;
@@ -58,18 +58,18 @@ public class TestInitReference extends FunctionReference {
         if (browser.contains("Firefox")) {
             FirefoxProfile profile = new FirefoxProfile();
             profile.setEnableNativeEvents(true);
-           // driver = new FirefoxDriver(new FirefoxBinary(), profile);
+            driver = new FirefoxDriver(new FirefoxBinary(), profile);
             
-            DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability("browser", "Firefox");
-            caps.setCapability("browser_version", "28.0");
-            caps.setCapability("os", "Windows");
-            caps.setCapability("os_version", "7");
-    	    caps.setCapability("browserstack.debug", "true");
-    	    caps.setCapability("build", "Regression-Automation");
-    	    caps.setCapability("project", "Hub");
-
-    	    driver = new RemoteWebDriver(new URL(remoteUrl), caps);
+//            DesiredCapabilities caps = new DesiredCapabilities();
+//            caps.setCapability("browser", "Chrome");
+//            caps.setCapability("browser_version", "39.0");
+//            caps.setCapability("os", "Windows");
+//            caps.setCapability("os_version", "7");
+//    	    caps.setCapability("browserstack.debug", "true");
+//    	    caps.setCapability("build", "Regression-Automation v4.13");
+//    	    caps.setCapability("project", "Hub");
+//
+//    	    driver = new RemoteWebDriver(new URL(remoteUrl), caps);
             
         }
         if (browser.contains("HTMLUnit")) {

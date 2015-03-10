@@ -593,7 +593,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(myAccountFN));
 		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
 		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
-		
+		Thread.sleep(1000);
 		Assert.assertTrue(isElementPresent(xpath(myAccountFN)), "My Account button not Functioning");
 		type(xpath(myAccountFN), getDataFromxls(0, "User_MyAccount.xls", 1, 0));
 		type(xpath(myAccountLN), getDataFromxls(0, "User_MyAccount.xls", 2, 0));
@@ -842,7 +842,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(myAccountFN));
 		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
 		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
-		
+		Thread.sleep(1000);
 		Assert.assertTrue(isElementPresent(xpath(myAccountFN)), "My Account button not Functioning");
 		type(xpath(myAccountFN), getDataFromxls(0, "User_MyAccount.xls", 6, 3));
 		type(xpath(myAccountLN), getDataFromxls(0, "User_MyAccount.xls", 6, 3));
@@ -859,24 +859,17 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		
 		Assert.assertTrue(isElementPresent(xpath(myAccountDialogBoxOK)), "Save not Successful - Special Character");
 		click(xpath(myAccountDialogBoxOK));
-		
+		Thread.sleep(1000);
 		waitForElementPresent(xpath(myAccountFN));
 		waitForElementVisible(xpath(myAccountFN));
 		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
 		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
-		Thread.sleep(3000);
 		type(xpath(myAccountFN), getDataFromxls(0, "User_MyAccount.xls", 1, 3));
-		Thread.sleep(300);
 		type(xpath(myAccountLN), getDataFromxls(0, "User_MyAccount.xls", 2, 3));
-		Thread.sleep(300);
 		type(xpath(myAccountSecurityQuestion), getDataFromxls(0, "User_MyAccount.xls", 3, 3));
-		Thread.sleep(300);
 		type(xpath(myAccountSecurityAnswer), getDataFromxls(0, "User_MyAccount.xls", 4, 3));
-		Thread.sleep(300);
 		type(xpath(myAccountStaffId), getDataFromxls(0, "User_MyAccount.xls", 5, 3));
-		Thread.sleep(300);
 		type(xpath(myAccountBranchId), getDataFromxls(0, "User_MyAccount.xls", 5, 3));
-		Thread.sleep(300);
 		click(xpath(myAccountSavebtn));
 		
 		waitForElementPresent(xpath(myAccountDialogBoxOK));
@@ -886,7 +879,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		
 		Assert.assertTrue(isElementPresent(xpath(myAccountDialogBoxOK)), "Save not Successful - Special Character");
 		click(xpath(myAccountDialogBoxOK));
-		
+		Thread.sleep(1000);
 		waitForElementPresent(xpath(myAccountFN));
 		waitForElementVisible(xpath(myAccountFN));
 		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
@@ -1290,7 +1283,6 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(myAccountFN));
 		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
 		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
-		Thread.sleep(500);
 		type(xpath(myAccountUsername), getDataFromxls(0, "User_MyAccount.xls", 2, 11));
 		
 		click(xpath(myAccountSavebtn));
@@ -1305,8 +1297,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(myAccountFN));
 		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
 		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
-		
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		type(xpath(myAccountUsername), getDataFromxls(0, "User_MyAccount.xls", 1, 11));
 		click(xpath(myAccountSavebtn));
 		waitForElementPresent(xpath(myAccountDialogBoxOK));
@@ -1333,7 +1324,6 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(myAccountFN));
 		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
 		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
-		Thread.sleep(500);
 		type(xpath(myAccountUsername), getDataFromxls(0, "User_MyAccount.xls", 1, 12));
 		
 		click(xpath(myAccountSavebtn));

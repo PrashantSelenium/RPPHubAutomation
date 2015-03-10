@@ -50,9 +50,9 @@ public class TestInitReferenceSmokeTest extends FunctionReference {
     public static final String remoteUrl = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
     //public String remoteUrl = rxml.data("remoteUrl");
     
-    //public static final String USERNAME = "support-tooltwist";
-   	//public static final String AUTOMATE_KEY = "69845b25-d4b1-4420-9c59-b1dcf06b479d";
-    //public static final String remoteUrl = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@ondemand.saucelabs.com:80/wd/hub";
+//    public static final String USERNAME = "support-tooltwist";
+//   	public static final String AUTOMATE_KEY = "69845b25-d4b1-4420-9c59-b1dcf06b479d";
+//    public static final String remoteUrl = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@ondemand.saucelabs.com:80/wd/hub";
 
     
     public String url = environment.equalsIgnoreCase("Prod") ? prod_url : local_url;
@@ -74,7 +74,7 @@ public class TestInitReferenceSmokeTest extends FunctionReference {
             caps.setCapability("os", "Windows");
             caps.setCapability("os_version", "7");
     	    caps.setCapability("browserstack.debug", "true");
-    	    caps.setCapability("build", "Prod v4.12.1");
+    	    caps.setCapability("build", "Prod v4.13.4");
     	    caps.setCapability("project", "Hub");
 
     	    driver = new RemoteWebDriver(new URL(remoteUrl), caps);

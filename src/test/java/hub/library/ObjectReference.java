@@ -939,6 +939,7 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
   public static String adminPromotionStartDateNow = "//button[text()='Now']";
   public static String adminPromotionFinishDate = "//*[@id='endDate']";
   public static String adminPromotionFinishDate30 = "//a[text()='30']";
+  public static String adminPromotionFinishDate28 = "//a[text()='28']";  
   public static String adminPromotionTypeValue = "//*[@id='typeValue']";
   public static String adminPromotionChannel = "//*[@id='channelId']";
   public static String adminPromotionBaseProduct = "//*[@id='baseProductId']";

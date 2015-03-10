@@ -31,7 +31,7 @@ public class PropertyDetailUtil extends FunctionReference{
 	
 	public void login () throws InterruptedException, IOException {
 		resultcount = 0;	
-		testCase = "RP Property Hub Login: " + input[0];
+		testCase = "Login:" + input[0];
 
 		driver.navigate().to(input[1]);	
 //		driver.navigate().to(input[1].replaceAll("stage", "dev"));	
@@ -395,10 +395,9 @@ public class PropertyDetailUtil extends FunctionReference{
 		String ready = (String) js.executeScript("return document.readyState");
 		if(ready.equalsIgnoreCase("complete")){
 			if (isElementPresent(xpath(userPendingTransactionMessage))){
-		    	System.out.println("User has Pending transactions!");
-				resultcount = 0;	
-				testCase = "RP Property Hub Start new transaction: " + input[0];
-		    	
+		    	resultcount = 0;	
+		    	testCase = "RP Property Hub Start new transaction: " + input[0];
+		    	Thread.sleep(1000);
 		    	try {
 					Assert.assertTrue(isElementPresent(By.linkText("Start a new transaction for this property")));
 				} catch (AssertionError e) {
@@ -415,7 +414,6 @@ public class PropertyDetailUtil extends FunctionReference{
 			}
 		    
 		    }
-//	        Thread.sleep(3000);	
 		}
 	}
 	

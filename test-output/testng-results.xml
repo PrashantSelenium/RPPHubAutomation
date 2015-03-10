@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="8" total="26" passed="18">
+<testng-results skipped="0" failed="4" total="19" passed="15">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="306589" started-at="2014-12-08T07:34:33Z" finished-at="2014-12-08T07:39:39Z">
+  <suite name="Default suite" duration-ms="588558" started-at="2015-02-27T08:07:18Z" finished-at="2015-02-27T08:17:06Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="306589" started-at="2014-12-08T07:34:33Z" finished-at="2014-12-08T07:39:39Z">
-      <class name="hub.test.RegressionSuite.UserProductSelectionTest">
-        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="Startup" is-config="true" duration-ms="28989" started-at="2014-12-08T15:34:33Z" finished-at="2014-12-08T15:35:02Z">
+    <test name="Default test" duration-ms="588558" started-at="2015-02-27T08:07:18Z" finished-at="2015-02-27T08:17:06Z">
+      <class name="hub.test.endtoend.EndToEnd_SmokeTest">
+        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="Startup" is-config="true" duration-ms="15589" started-at="2015-02-27T16:07:18Z" finished-at="2015-02-27T16:07:33Z">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -16,533 +16,271 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Startup -->
-        <test-method status="PASS" signature="init()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="init" is-config="true" duration-ms="13390" started-at="2014-12-08T15:35:02Z" finished-at="2014-12-08T15:35:15Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="init" is-config="true" duration-ms="3327" started-at="2015-02-27T16:07:33Z" finished-at="2015-02-27T16:07:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="RT_02619_No_Prompt_Originator_Details()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_02619_No_Prompt_Originator_Details" duration-ms="30015" started-at="2014-12-08T15:35:15Z" description="User - Product Selection" finished-at="2014-12-08T15:35:45Z">
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="17376" started-at="2015-02-27T16:07:37Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:07:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@61af0238]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_02619_No_Prompt_Originator_Details -->
-        <test-method status="PASS" signature="RT_02654_Prompt_Originator_Details()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_02654_Prompt_Originator_Details" duration-ms="5618" started-at="2014-12-08T15:35:45Z" description="User - Product Selection" finished-at="2014-12-08T15:35:51Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="16159" started-at="2015-02-27T16:07:54Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:08:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@28badca2]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_02654_Prompt_Originator_Details -->
-        <test-method status="PASS" signature="RT_02269_Proceed_Product_Selection_Link()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_02269_Proceed_Product_Selection_Link" duration-ms="108" started-at="2014-12-08T15:35:51Z" description="User - Product Selection" finished-at="2014-12-08T15:35:51Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="10640" started-at="2015-02-27T16:08:10Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:08:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@3eb2492]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_02269_Proceed_Product_Selection_Link -->
-        <test-method status="PASS" signature="RT_03117_Information_Icon_Hover()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_03117_Information_Icon_Hover" duration-ms="427" started-at="2014-12-08T15:35:51Z" description="User - Product Selection" finished-at="2014-12-08T15:35:51Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="31356" started-at="2015-02-27T16:08:21Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:08:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@42adef40]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_03117_Information_Icon_Hover -->
-        <test-method status="PASS" signature="RT_03107_Property_Type_Field()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_03107_Property_Type_Field" duration-ms="4521" started-at="2014-12-08T15:35:51Z" description="User - Product Selection" finished-at="2014-12-08T15:35:56Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="65418" started-at="2015-02-27T16:08:52Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:09:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@293674f3]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_03107_Property_Type_Field -->
-        <test-method status="PASS" signature="RT_02678_OEVPP_Required_Numeric()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_02678_OEVPP_Required_Numeric" duration-ms="4047" started-at="2014-12-08T15:35:56Z" description="User - Product Selection" finished-at="2014-12-08T15:36:00Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="9399" started-at="2015-02-27T16:09:58Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:10:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@363812a8]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_02678_OEVPP_Required_Numeric -->
-        <test-method status="PASS" signature="RT_02375_OEVPP_Formatted()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_02375_OEVPP_Formatted" duration-ms="12316" started-at="2014-12-08T15:36:00Z" description="User - Product Selection" finished-at="2014-12-08T15:36:12Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="17612" started-at="2015-02-27T16:10:07Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:10:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@1b50ef67]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_02375_OEVPP_Formatted -->
-        <test-method status="PASS" signature="RT_08844_Loan_Amount_Not_Active()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_08844_Loan_Amount_Not_Active" duration-ms="66" started-at="2014-12-08T15:36:12Z" description="User - Product Selection" finished-at="2014-12-08T15:36:12Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="22060" started-at="2015-02-27T16:10:25Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:10:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@5e956133]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_08844_Loan_Amount_Not_Active -->
-        <test-method status="PASS" signature="RT_02977_DAOTA_Exclusions()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_02977_DAOTA_Exclusions" duration-ms="6258" started-at="2014-12-08T15:36:12Z" description="User - Product Selection" finished-at="2014-12-08T15:36:18Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="18885" started-at="2015-02-27T16:10:47Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:11:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@21208bc8]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_02977_DAOTA_Exclusions -->
-        <test-method status="PASS" signature="RT_03108_DAOTA_Required()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_03108_DAOTA_Required" duration-ms="6723" started-at="2014-12-08T15:36:18Z" description="User - Product Selection" finished-at="2014-12-08T15:36:25Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="3718" started-at="2015-02-27T16:11:06Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:11:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@5fb90875]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_03108_DAOTA_Required -->
-        <test-method status="PASS" signature="RT_Loan_Purpose()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_Loan_Purpose" duration-ms="1261" started-at="2014-12-08T15:36:25Z" description="User - Product Selection" finished-at="2014-12-08T15:36:26Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="8045" started-at="2015-02-27T16:11:10Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:11:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@6cda6a6b]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_Loan_Purpose -->
-        <test-method status="PASS" signature="RT_03109_AVM_Ack_Display()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_03109_AVM_Ack_Display" duration-ms="197" started-at="2014-12-08T15:36:26Z" description="User - Product Selection" finished-at="2014-12-08T15:36:27Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="77412" started-at="2015-02-27T16:11:18Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:12:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@7780cea1]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_03109_AVM_Ack_Display -->
-        <test-method status="PASS" signature="RT_03110_AVM_Ack_Required()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_03110_AVM_Ack_Required" duration-ms="6601" started-at="2014-12-08T15:36:27Z" description="User - Product Selection" finished-at="2014-12-08T15:36:33Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="190703" started-at="2015-02-27T16:12:35Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:15:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@297de952]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_03110_AVM_Ack_Required -->
-        <test-method status="PASS" signature="RT_03111_AVM_Ack_Replaced()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_03111_AVM_Ack_Replaced" duration-ms="2309" started-at="2014-12-08T15:36:33Z" description="User - Product Selection" finished-at="2014-12-08T15:36:35Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="63610" started-at="2015-02-27T16:15:46Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:16:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@9611bc6]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_03111_AVM_Ack_Replaced -->
-        <test-method status="PASS" signature="RT_Loan_App_Required()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_Loan_App_Required" duration-ms="9624" started-at="2014-12-08T15:36:35Z" description="User - Product Selection" finished-at="2014-12-08T15:36:45Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="15180" started-at="2015-02-27T16:16:49Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:17:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@466668f9]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_Loan_App_Required -->
-        <test-method status="PASS" signature="RT_02704_Url_Https()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_02704_Url_Https" duration-ms="28" started-at="2014-12-08T15:36:45Z" description="User - Product Selection" finished-at="2014-12-08T15:36:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RT_02704_Url_Https -->
-        <test-method status="PASS" signature="RT_02904_PP_No_RPID()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_02904_PP_No_RPID" duration-ms="31008" started-at="2014-12-08T15:36:45Z" description="User - Product Selection" finished-at="2014-12-08T15:37:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RT_02904_PP_No_RPID -->
-        <test-method status="FAIL" signature="RT_02903_Empowerment_Metropolitan_Regional()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_02903_Empowerment_Metropolitan_Regional" duration-ms="44068" started-at="2014-12-08T15:37:16Z" description="User - Product Selection" finished-at="2014-12-08T15:38:00Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="28" started-at="2015-02-27T16:17:05Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:17:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@3d06dd70]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Unable to locate element: {"method":"xpath","selector":"(//a[@class='hubTextlink'])[4]"}
-Command duration or timeout: 11 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Session ID: a6108154-9ebd-d640-8af8-5ea76a3dfc70
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=23.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]]]>
+              <![CDATA[Invalid Test Data]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"(//a[@class='hubTextlink'])[4]"}
-Command duration or timeout: 11 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Session ID: a6108154-9ebd-d640-8af8-5ea76a3dfc70
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=23.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]
-	at sun.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:525)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:554)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:307)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:404)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:299)
-	at hub.library.FunctionReference.isElementVisible(FunctionReference.java:400)
-	at hub.library.FunctionReference.waitForElementVisible(FunctionReference.java:411)
-	at hub.utilities.RegressionSuiteUtil.UserProductSelectionUtil.proceedProductSelection(UserProductSelectionUtil.java:68)
-	at hub.utilities.RegressionSuiteUtil.UserProductSelectionUtil.lenderEmpowermentMetropolitan(UserProductSelectionUtil.java:275)
-	at hub.test.RegressionSuite.UserProductSelectionTest.RT_02903_Empowerment_Metropolitan_Regional(UserProductSelectionTest.java:139)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unable to locate element: {"method":"xpath","selector":"(//a[@class='hubTextlink'])[4]"}
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8860)
-	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8869)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10831)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10836)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10778)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RT_02903_Empowerment_Metropolitan_Regional -->
-        <test-method status="FAIL" signature="RT_02620_Product_Details()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_02620_Product_Details" duration-ms="15358" started-at="2014-12-08T15:38:01Z" description="User - Product Selection" finished-at="2014-12-08T15:38:16Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Unable to locate element: {"method":"xpath","selector":"//*[@id='tabReports']//h2[@class='hubHeaderBodyText']"}
-Command duration or timeout: 12 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Session ID: a6108154-9ebd-d640-8af8-5ea76a3dfc70
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=23.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//*[@id='tabReports']//h2[@class='hubHeaderBodyText']"}
-Command duration or timeout: 12 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Session ID: a6108154-9ebd-d640-8af8-5ea76a3dfc70
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=23.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]
-	at sun.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:525)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:554)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:307)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:404)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:299)
-	at hub.library.FunctionReference.isElementVisible(FunctionReference.java:400)
-	at hub.utilities.RegressionSuiteUtil.UserProductSelectionUtil.productDetails(UserProductSelectionUtil.java:280)
-	at hub.test.RegressionSuite.UserProductSelectionTest.RT_02620_Product_Details(UserProductSelectionTest.java:144)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unable to locate element: {"method":"xpath","selector":"//*[@id='tabReports']//h2[@class='hubHeaderBodyText']"}
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8860)
-	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8869)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10831)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10836)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10778)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RT_02620_Product_Details -->
-        <test-method status="FAIL" signature="RT_03099_Product_Details_More()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_03099_Product_Details_More" duration-ms="15263" started-at="2014-12-08T15:38:16Z" description="User - Product Selection" finished-at="2014-12-08T15:38:31Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Unable to locate element: {"method":"xpath","selector":"//*[@id='tabReports']//*[contains(@class,'longDescription')]"}
-Command duration or timeout: 12 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Session ID: a6108154-9ebd-d640-8af8-5ea76a3dfc70
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=23.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//*[@id='tabReports']//*[contains(@class,'longDescription')]"}
-Command duration or timeout: 12 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Session ID: a6108154-9ebd-d640-8af8-5ea76a3dfc70
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=23.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]
-	at sun.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:525)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:554)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:307)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:404)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:299)
-	at hub.library.FunctionReference.isElementVisible(FunctionReference.java:400)
-	at hub.utilities.RegressionSuiteUtil.UserProductSelectionUtil.productDetailsMore(UserProductSelectionUtil.java:288)
-	at hub.test.RegressionSuite.UserProductSelectionTest.RT_03099_Product_Details_More(UserProductSelectionTest.java:149)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unable to locate element: {"method":"xpath","selector":"//*[@id='tabReports']//*[contains(@class,'longDescription')]"}
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8860)
-	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8869)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10831)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10836)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10778)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RT_03099_Product_Details_More -->
-        <test-method status="FAIL" signature="RT_02658_On_Account()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_02658_On_Account" duration-ms="15227" started-at="2014-12-08T15:38:31Z" description="User - Product Selection" finished-at="2014-12-08T15:38:46Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Unable to locate element: {"method":"xpath","selector":"//*[@id='tabReports']//*[contains(@class,'price')]"}
-Command duration or timeout: 12 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Session ID: a6108154-9ebd-d640-8af8-5ea76a3dfc70
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=23.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//*[@id='tabReports']//*[contains(@class,'price')]"}
-Command duration or timeout: 12 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Session ID: a6108154-9ebd-d640-8af8-5ea76a3dfc70
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=23.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]
-	at sun.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:525)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:554)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:307)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:404)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:299)
-	at hub.library.FunctionReference.isElementVisible(FunctionReference.java:400)
-	at hub.utilities.RegressionSuiteUtil.UserProductSelectionUtil.productOnAccount(UserProductSelectionUtil.java:295)
-	at hub.test.RegressionSuite.UserProductSelectionTest.RT_02658_On_Account(UserProductSelectionTest.java:154)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unable to locate element: {"method":"xpath","selector":"//*[@id='tabReports']//*[contains(@class,'price')]"}
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8860)
-	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8869)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10831)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10836)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10778)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RT_02658_On_Account -->
-        <test-method status="FAIL" signature="RT_02650_Cart_Link()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_02650_Cart_Link" duration-ms="15250" started-at="2014-12-08T15:38:46Z" description="User - Product Selection" finished-at="2014-12-08T15:39:02Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Unable to locate element: {"method":"xpath","selector":"//a[@id='cartCount']"}
-Command duration or timeout: 11 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Session ID: a6108154-9ebd-d640-8af8-5ea76a3dfc70
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=23.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//a[@id='cartCount']"}
-Command duration or timeout: 11 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Session ID: a6108154-9ebd-d640-8af8-5ea76a3dfc70
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=23.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]
-	at sun.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:525)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:554)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:307)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:404)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:299)
-	at hub.library.FunctionReference.isElementVisible(FunctionReference.java:400)
-	at hub.utilities.RegressionSuiteUtil.UserProductSelectionUtil.cartLinkFunctionality(UserProductSelectionUtil.java:300)
-	at hub.test.RegressionSuite.UserProductSelectionTest.RT_02650_Cart_Link(UserProductSelectionTest.java:159)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unable to locate element: {"method":"xpath","selector":"//a[@id='cartCount']"}
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8860)
-	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8869)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10831)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10836)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10778)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RT_02650_Cart_Link -->
-        <test-method status="FAIL" signature="RT_02617_Workflow_Bar()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_02617_Workflow_Bar" duration-ms="15224" started-at="2014-12-08T15:39:02Z" description="User - Product Selection" finished-at="2014-12-08T15:39:17Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Unable to locate element: {"method":"xpath","selector":"//*[@id='flowbar']"}
-Command duration or timeout: 12 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Session ID: a6108154-9ebd-d640-8af8-5ea76a3dfc70
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=23.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//*[@id='flowbar']"}
-Command duration or timeout: 12 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Session ID: a6108154-9ebd-d640-8af8-5ea76a3dfc70
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=23.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]
-	at sun.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:525)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:554)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:307)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:404)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:299)
-	at hub.library.FunctionReference.isElementVisible(FunctionReference.java:400)
-	at hub.utilities.RegressionSuiteUtil.UserProductSelectionUtil.workflowBar(UserProductSelectionUtil.java:331)
-	at hub.test.RegressionSuite.UserProductSelectionTest.RT_02617_Workflow_Bar(UserProductSelectionTest.java:164)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unable to locate element: {"method":"xpath","selector":"//*[@id='flowbar']"}
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8860)
-	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8869)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10831)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10836)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10778)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RT_02617_Workflow_Bar -->
-        <test-method status="PASS" signature="RT_03127_Product_Tab_Not_Active()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_03127_Product_Tab_Not_Active" duration-ms="23" started-at="2014-12-08T15:39:17Z" description="User - Product Selection" finished-at="2014-12-08T15:39:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RT_03127_Product_Tab_Not_Active -->
-        <test-method status="FAIL" signature="RT_08845_Loan_Amount_Active()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_08845_Loan_Amount_Active" duration-ms="16437" started-at="2014-12-08T15:39:17Z" description="User - Product Selection" finished-at="2014-12-08T15:39:33Z">
-          <exception class="java.lang.ArrayIndexOutOfBoundsException">
-            <message>
-              <![CDATA[40]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.ArrayIndexOutOfBoundsException: 40
-	at jxl.read.biff.SheetImpl.getCell(SheetImpl.java:318)
-	at hub.library.FunctionReference.getDataFromxls(FunctionReference.java:530)
-	at hub.utilities.RegressionSuiteUtil.UserProductSelectionUtil.loanAmountActive(UserProductSelectionUtil.java:347)
-	at hub.test.RegressionSuite.UserProductSelectionTest.RT_08845_Loan_Amount_Active(UserProductSelectionTest.java:174)
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:182)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -569,46 +307,32 @@ Driver info: driver.version: unknown
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.ArrayIndexOutOfBoundsException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_08845_Loan_Amount_Active -->
-        <test-method status="FAIL" signature="RT_08846_Loan_Amount_Mandatory()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="RT_08846_Loan_Amount_Mandatory" duration-ms="5104" started-at="2014-12-08T15:39:33Z" description="User - Product Selection" finished-at="2014-12-08T15:39:39Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="17" started-at="2015-02-27T16:17:05Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:17:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@db4035d]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Unable to locate element: {"method":"xpath","selector":"//*[@id='7']"}
-Command duration or timeout: 9 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Session ID: a6108154-9ebd-d640-8af8-5ea76a3dfc70
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=23.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]]]>
+              <![CDATA[Invalid Test Data]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//*[@id='7']"}
-Command duration or timeout: 9 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Session ID: a6108154-9ebd-d640-8af8-5ea76a3dfc70
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=23.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]
-	at sun.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:525)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:554)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:307)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:404)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:299)
-	at hub.library.FunctionReference.click(FunctionReference.java:239)
-	at hub.utilities.RegressionSuiteUtil.UserProductSelectionUtil.loanAmountMandatory(UserProductSelectionUtil.java:360)
-	at hub.test.RegressionSuite.UserProductSelectionTest.RT_08846_Loan_Amount_Mandatory(UserProductSelectionTest.java:179)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:182)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:601)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
@@ -631,26 +355,117 @@ Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browse
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unable to locate element: {"method":"xpath","selector":"//*[@id='7']"}
-Build info: version: '2.38.0', revision: 'bd32d4e7247a32d801b3d2d4f84a4e7384300378', time: '2013-12-05 09:01:37'
-System info: host: 'Crow.local', ip: '10.0.10.167', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.5', java.version: '1.7.0_04'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8860)
-	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8869)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10831)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10836)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///var/folders/yy/zxgm085n2zj299n6hyvsvd6m0000gp/T/anonymous8750456334572694865webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10778)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RT_08846_Loan_Amount_Mandatory -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:hub.test.RegressionSuite.UserProductSelectionTest@68d6c6eb]" name="teardown" is-config="true" duration-ms="544" started-at="2014-12-08T15:39:39Z" finished-at="2014-12-08T15:39:39Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="13" started-at="2015-02-27T16:17:05Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:17:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@2548d5b2]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:182)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="FAIL" signature="testLogin(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="testLogin" duration-ms="15" started-at="2015-02-27T16:17:05Z" description="End To End Smoke Test" data-provider="Data-Provider-Function" finished-at="2015-02-27T16:17:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@50c5ac3d]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Invalid Test Data]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Invalid Test Data
+	at org.testng.Assert.fail(Assert.java:94)
+	at hub.test.endtoend.EndToEnd_SmokeTest.testLogin(EndToEnd_SmokeTest.java:182)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:hub.test.endtoend.EndToEnd_SmokeTest@5aabb9e4]" name="teardown" is-config="true" duration-ms="1516" started-at="2015-02-27T16:17:05Z" finished-at="2015-02-27T16:17:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- hub.test.RegressionSuite.UserProductSelectionTest -->
+      </class> <!-- hub.test.endtoend.EndToEnd_SmokeTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

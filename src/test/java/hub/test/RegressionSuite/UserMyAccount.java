@@ -200,7 +200,6 @@ public class UserMyAccount extends TestInitReference {
 		util.MyAccount_Duplicate_Username();
         
 	}
-	
-	
+
 
 }
