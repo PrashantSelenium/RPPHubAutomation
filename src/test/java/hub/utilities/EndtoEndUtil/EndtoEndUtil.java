@@ -17,7 +17,7 @@ import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
 import atu.testng.reports.ATUReports;
 import atu.testng.reports.utils.SettingsFile;
-//import atu.testrecorder.ATUTestRecorder;
+import atu.testrecorder.ATUTestRecorder;
 
 import com.thoughtworks.selenium.Selenium;
 
@@ -32,7 +32,6 @@ import javax.imageio.stream.ImageInputStream;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.internal.seleniumemulation.WaitForPageToLoad;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -623,7 +622,7 @@ public class EndtoEndUtil extends FunctionReference{
 			click(By.linkText(userProceedToPaymentDetails));
 		}
 		
-		Thread.sleep(6000);
+		Thread.sleep(10000);
 		
 		regressionPaymentForm();
 	}
@@ -686,19 +685,22 @@ public class EndtoEndUtil extends FunctionReference{
 		}
 		
 		Thread.sleep(6000);
-		waitForElementPresent(By.xpath("//iframe[@id='card_payment_iframe']"));
-		try{
-			driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='card_payment_iframe']")));
-			isElementVisible(By.xpath("//*[@id='CardNumber']"));
-			type(xpath("//*[@id='CardNumber']"), "4111111111111111");
-			type(xpath("//*[@id='CardHolderName']"), "Twist");
-			type(xpath("//*[@id='DateExpiry_1']"), "12");
-			type(xpath("//*[@id='DateExpiry_2']"), "15");
-			type(xpath("//*[@id='Cvc2']"), "1234");
-			click(xpath("//*[@id='Add']"));
-		} catch (Exception e){
-			e.printStackTrace();
+		if(isElementPresent(By.xpath("//iframe[@id='card_payment_iframe']"))){
+			try{
+				driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='card_payment_iframe']")));
+				isElementVisible(By.xpath("//*[@id='CardNumber']"));
+				type(xpath("//*[@id='CardNumber']"), "4111111111111111");
+				type(xpath("//*[@id='CardHolderName']"), "Twist");
+				type(xpath("//*[@id='DateExpiry_1']"), "12");
+				type(xpath("//*[@id='DateExpiry_2']"), "15");
+				type(xpath("//*[@id='Cvc2']"), "1234");
+				click(xpath("//*[@id='Add']"));
+			} catch (Exception e){
+				e.printStackTrace();
+			}
 		}
+		
+		Thread.sleep(6000);
 		
 	}
 	
