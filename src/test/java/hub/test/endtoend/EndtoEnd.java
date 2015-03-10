@@ -47,6 +47,18 @@ public class EndtoEnd extends TestInitReference {
 			case "SLAS":
 				
 				etou.endToEndLogin();
+				
+				if(!input[5].toUpperCase().equals("DEEP")){
+//					//Thread.sleep(3000);
+					etou.endToEndCoverFlow();
+//					//Thread.sleep(3000);
+					etou.endToEndSLAS();
+//					//Thread.sleep(3000);
+					etou.startNewTransaction();
+//					//Thread.sleep(3000);
+					etou.proceedProductSelection();	
+					//Thread.sleep(6000);
+				}
 
 				etou.regressionProductTab();								
 				//Thread.sleep(2000);
