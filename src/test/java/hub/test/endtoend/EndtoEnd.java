@@ -112,8 +112,8 @@ public class EndtoEnd extends TestInitReference {
 	@DataProvider(name = "Data-Provider-Function")
 	public Object[][] parameterIntTestProvider() throws IOException {
 		Object[][] data = null; 
-		ReadXlsData rxd = new ReadXlsData("src/test/java/hub/library/endToEndDataTestOnly.xls");
-		data = rxd.getData();
+		ReadXlsData rxd = new ReadXlsData("src/test/java/hub/library/endToEndData.xls");
+		data = rxd.getData(); 
 		return data;
 	}
 	
