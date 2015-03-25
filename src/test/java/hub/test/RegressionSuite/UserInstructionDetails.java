@@ -33,11 +33,23 @@ public class UserInstructionDetails extends TestInitReference {
     }
 
 	@Test(description="User - Instruction Details", priority=0)
-	public void RT_05397_Link_Navigation() throws Exception {
-		
+	public void RT_02286_Instruction_Back_Button_Functionality() throws Exception {		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.insBackBtn();
-        
 	}
-
+	@Test(description="User - Instruction Details", priority=1)
+	public void RT_02630_Completed_Instruction_Validations() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.instructionVallidation();
+	}
+	@Test(description="User - Instruction Details", priority=2)
+	public void RT_02643_Instruction_Toggle_Sections() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.instructionToggleSections();
+	}
+	@Test(description="User - Instruction Details", priority=3)
+	public void RT_03088_Minimum_Data_Requirement() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.minimumDataRequirement();
+	}
 }

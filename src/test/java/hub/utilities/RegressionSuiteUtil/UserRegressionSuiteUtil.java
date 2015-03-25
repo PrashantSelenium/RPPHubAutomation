@@ -2973,6 +2973,23 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(noneApplyCheckboxValuation));
 		click(xpath(avmAckSelect));	
 		click(xpath(userOriginatorToProductSelection));
+		Thread.sleep(12000);
+		Assert.assertTrue(isElementPresent(xpath(shortFormAddToCart)),"Short Form Valuation should be available");
+		click(xpath(shortFormAddToCart));
+		Thread.sleep(1500);
+	}
+	
+	public void breConstruction() throws Exception {
+		waitForElementPresent(xpath(userOriginatorDetails));
+		waitForElementVisible(xpath(userOriginatorDetails));
+		type(xpath(userOEVPP),(getDataFromxls(0, "User_InstructionDetails.xls", 1, 0)));
+		click(xpath(loanConstruction));
+		click(xpath(noneApplyCheckboxValuation));
+		click(xpath(avmAckSelect));	
+		click(xpath(userOriginatorToProductSelection));
+		Thread.sleep(12000);
+		Assert.assertTrue(isElementPresent(xpath(constructionAddToCart)),"Constrcution Valuation should be available");
+		click(xpath(constructionAddToCart));
 	}
 
 	public void originatorToProductSelection() throws Exception{
@@ -3242,15 +3259,138 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertEquals(getText(xpath(oevppErrorMsg)), " Field should not be empty.");
 	}
 	
+	public void clickToInstruction() throws Exception {
+		waitForElementVisible(xpath(userProceedToInstructionDetails));
+		click(xpath(userProceedToInstructionDetails));
+		Thread.sleep(3000);
+	}
+	public void cartCountPopup() throws Exception {
+		waitForElementVisible(xpath(cartCountPopup));
+		Assert.assertTrue(isElementPresent(xpath(cartCountPopup)),"Cart Count Message popup is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(cartCountPopup)),"Cart Count Message popup is not displayed");
+		Assert.assertTrue(getText(xpath(cartCountPopup)).contains("Please complete all mandatory fields before navigating away from Instruction Details screen."));		
+		click(xpath(cartCountOK));
+		Thread.sleep(2000);
+	}
+	public void insMandatoryPopup() throws Exception {
+		waitForElementVisible(xpath(cartCountPopup));
+		Assert.assertTrue(isElementPresent(xpath(cartCountPopup)),"Instrcution Details Mandatory popup is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(cartCountPopup)),"Instrcution Details Mandatory popup is not displayed");
+		Assert.assertTrue(getText(xpath(cartCountPopup)).contains("Cart and Payment screen will not be available until mandatory fields from Instruction Details are filled in."));		
+		click(xpath(cartCountOK));
+		Thread.sleep(2000);
+	}
+	
 	public void insBackBtn() throws Exception {
 		Successful_login_CBALender();
 		slas();
 		startNewTransaction();
 		proceedProductSelection();
 		breShortForm();
+		clickToInstruction();
+		click(xpath(insBackBtn));		
+		cartCountPopup();
+	}
+
+	public void instructionVallidation() throws Exception{
+		click(xpath(productSelectionBar));
+		cartCountPopup();
+		click(xpath(paymentDetailsBar));
+		insMandatoryPopup();
+		click(xpath(insNextBtn));
+		insMandatoryPopup();
+		click(xpath(insPaymentIcon));
+		insMandatoryPopup();
+		click(xpath(insPaymentLink));
+		insMandatoryPopup();
+		click(xpath(cartCount));
+		insMandatoryPopup();
+	}
+
+	public void instructionToggleSections() throws Exception{
+		click(xpath(insCustomerDetails));
+		Assert.assertFalse(isElementVisible(xpath(insCustomerDetailsForm)),"Customer Details section was not toggled close");
+		click(xpath(insCustomerDetails));
+		Assert.assertTrue(isElementVisible(xpath(insCustomerDetailsForm)),"Customer Details section was not toggled open");
 		
+		click(xpath(insPropertyAccess));
+		Assert.assertFalse(isElementVisible(xpath(insPropertyAccessForm)),"Property Access Details section was not toggled close");
+		click(xpath(insPropertyAccess));
+		Assert.assertTrue(isElementVisible(xpath(insPropertyAccessForm)),"Property Access Details section was not toggled open");
 		
+		click(xpath(insLoanDetails));
+		Assert.assertTrue(isElementVisible(xpath(insLoanDetailsForm)),"Loan Details section was not toggled close");
+		click(xpath(insLoanDetails));
+		Assert.assertFalse(isElementVisible(xpath(insLoanDetailsForm)),"Loan Details section was not toggled open");
 		
+		click(xpath(insDocumentUpload));
+		Assert.assertFalse(isElementVisible(xpath(insDocumentUploadForm)),"Document Upload section was not toggled close");
+		click(xpath(insDocumentUpload));
+		Assert.assertTrue(isElementVisible(xpath(insDocumentUploadForm)),"Document Upload section was not toggled open");
+		
+		click(xpath(insSpecialInstructions));
+		Assert.assertTrue(isElementVisible(xpath(insSpecialInstructionsForm)),"Special Instructions section was not toggled close");
+		click(xpath(insSpecialInstructions));
+		Assert.assertFalse(isElementVisible(xpath(insSpecialInstructionsForm)),"Special Instructions section was not toggled open");
+		
+	}
+
+	public void minimumDataRequirement() throws Exception{
+		Assert.assertTrue(isElementPresent(xpath(insCustomerDetails)),"Customer Details section is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(insCustomerDetailsForm)),"Customer Details Form is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(custFnameLabel)),"Customer Details First Name Label is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(custLnameLabel)),"Customer Details Last Name Label is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(custCustomerIsLabel)),"Customer Details Customer Is label is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(custContactLabel)),"Customer Details Contact number label is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(custEmailLabel)),"Customer Details Email label is not displayed");
+		
+		Assert.assertEquals(getText(xpath(custFnameLabel)),"* First Name");
+		Assert.assertEquals(getText(xpath(custLnameLabel)),"* Last Name");
+		Assert.assertEquals(getText(xpath(custCustomerIsLabel)),"* The Customer is");
+		Assert.assertEquals(getText(xpath(custContactLabel)),"* Contact Number");
+		Assert.assertEquals(getText(xpath(custEmailLabel)),"Email");
+		
+		Assert.assertTrue(isElementPresent(xpath(userCustomerFName)),"Customer Details First Name field is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(userCustomerLName)),"Customer Details Last Name field is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(userCustomerContact)),"Customer Details Contact Number field is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(userCustomerEmail)),"Customer Details Email field is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(insCustomerIs)),"Customer Details Customer Is dropdown field is not displayed");
+		
+		Assert.assertTrue(isElementPresent(xpath(insPropertyAccess)),"Property Access Details section is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(insPropertyAccessForm)),"Property Access Details Form is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(accessSameAsLabel)),"Property Access Details Same As Customer label is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(userSameAsCustomer)),"Property Access Details Same As Customer checkbox is not displayed");
+	
+		Assert.assertTrue(isElementPresent(xpath(accessFnameLabel)),"Property Access Details First name label is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(accessLnameLabel)),"Property Access Details Last name label is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(accessCompanyLabel)),"Property Access Details Company name label is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(accessContactLabel)),"Property Access Details Contact number label is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(accessEmailLabel)),"Property Access Details Email label is not displayed");
+		
+		Assert.assertEquals(getText(xpath(accessFnameLabel)),"* First Name");
+		Assert.assertEquals(getText(xpath(accessLnameLabel)),"Last Name");
+		Assert.assertEquals(getText(xpath(accessCompanyLabel)),"Company Name");
+		Assert.assertEquals(getText(xpath(accessContactLabel)),"* Contact Number");
+		Assert.assertEquals(getText(xpath(accessEmailLabel)),"Email");
+		
+		Assert.assertTrue(isElementPresent(xpath(accessFName)),"Property Access Details First name field is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(accessLName)),"Property Access Details Last name field is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(accessCompany)),"Property Access Details Company name field is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(accessContact)),"Property Access Details Contact number field is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(accessEmail)),"Property Access Details Email field is not displayed");
+		
+		click(xpath(insLoanDetails));
+		Assert.assertTrue(isElementPresent(xpath(insLoanDetails)),"Loan Details section is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(insLoanDetailsForm)),"Loan Details Form is not displayed");
+		
+		Assert.assertTrue(isElementPresent(xpath(loanApplicationIdLabel)),"Loan Details Application ID label label is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(loanValuationIdLabel)),"Loan Details Valuation ID label is not displayed");
+		
+		Assert.assertEquals(getText(xpath(loanApplicationIdLabel)),"Application ID #");
+		Assert.assertEquals(getText(xpath(loanValuationIdLabel)),"Valuation ID #");
+		
+		Assert.assertTrue(isElementPresent(xpath(loanApplicationId)),"Loan Details Application ID field is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(loanValuationId)),"Loan Details Valuation ID field is not displayed");		
 	}
 
 }

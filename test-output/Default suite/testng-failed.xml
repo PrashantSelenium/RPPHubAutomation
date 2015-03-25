@@ -3,14 +3,17 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="hub.test.endtoend.EndToEnd_SmokeTest">
+      <class name="hub.test.RegressionSuite.UserInstructionDetails">
         <methods>
-          <include name="teardown"/>
           <include name="Startup"/>
-          <include name="testLogin" invocation-numbers="15 16 17 18"/>
           <include name="init"/>
+          <include name="teardown"/>
+          <include name="RT_03088_Minimum_Data_Requirement"/>
+          <include name="RT_02286_Instruction_Back_Button_Functionality"/>
+          <include name="RT_02630_Completed_Instruction_Validations"/>
+          <include name="RT_02643_Instruction_Toggle_Sections"/>
         </methods>
-      </class> <!-- hub.test.endtoend.EndToEnd_SmokeTest -->
+      </class> <!-- hub.test.RegressionSuite.UserInstructionDetails -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
