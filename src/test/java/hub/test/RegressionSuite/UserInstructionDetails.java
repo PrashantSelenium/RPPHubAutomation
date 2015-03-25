@@ -36,7 +36,7 @@ public class UserInstructionDetails extends TestInitReference {
 	public void RT_05397_Link_Navigation() throws Exception {
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-		util.Link_Navigation();
+		util.insBackBtn();
         
 	}
 

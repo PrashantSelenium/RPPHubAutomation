@@ -254,7 +254,11 @@ public class ObjectReference {
     public static String userOriginatorToProductSelection = "//*[text()='Proceed to product selection']";
     public static String userOriginatorProceed = "(//table[@class='propertyDetailQuestionLink']//a)[2]";
     public static String costingReport ="//input[@id='12']";
-
+    public static String loanPurchase ="//*[@value='8']";
+    public static String loanRefinance ="//*[@value='9']";
+    public static String loanTopup ="//*[@value='10']";
+    public static String loanConstruction ="//*[@value='27']";
+    public static String loanCHLM ="//*[@value='30']";
     
     //Product tabs
     public static String productTabsMenu = "//div[@id='containerTab']";
@@ -316,10 +320,10 @@ public class ObjectReference {
     //Instruction details
     public static String userProceedToInstructionDetails = "//*[text()='Proceed to instruction details']";  
     public static String userInstructionDetails = "//div[@id='instructionDetails_acc']";
-    public static String userCustomerFName = "//input[@id='1_1_value']";
-    public static String userCustomerLName = "//input[@id='2_1_value']";
-    public static String userCustomerContact = "//input[@id='13_1_value']";
-    public static String userCustomerEmail = "//input[@id='14_1_value']";
+    public static String userCustomerFName = "//*[@id='1_1_value']";
+    public static String userCustomerLName = "//*[@id='2_1_value']";
+    public static String userCustomerContact = "//*[@id='13_1_value']";
+    public static String userCustomerEmail = "//*[@id='14_1_value']";
     public static String userSameAsCustomer = "//input[@id='checkbox_16_2_value']";
     public static String builderName = "//*[@id='50_6_value']";
     public static String builderContactNumber = "//*[@id='51_6_value']";

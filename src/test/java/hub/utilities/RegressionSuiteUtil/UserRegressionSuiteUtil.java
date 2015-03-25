@@ -2964,6 +2964,16 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Thread.sleep(3000);
 		Assert.assertEquals(getText(xpath(originatorHeader)),"Please provide the following details to proceed:");		
 	}
+	
+	public void breShortForm() throws Exception {
+		waitForElementPresent(xpath(userOriginatorDetails));
+		waitForElementVisible(xpath(userOriginatorDetails));
+		type(xpath(userOEVPP),(getDataFromxls(0, "User_InstructionDetails.xls", 1, 0)));
+		click(xpath(loanRefinance));
+		click(xpath(noneApplyCheckboxValuation));
+		click(xpath(avmAckSelect));	
+		click(xpath(userOriginatorToProductSelection));
+	}
 
 	public void originatorToProductSelection() throws Exception{
 		waitForElementPresent(xpath(userOriginatorDetails));
@@ -3230,6 +3240,17 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(userOriginatorToProductSelection));
 		Assert.assertTrue(isElementVisible(xpath(oevppErrorMsg)),"Error message is not displayed");
 		Assert.assertEquals(getText(xpath(oevppErrorMsg)), " Field should not be empty.");
+	}
+	
+	public void insBackBtn() throws Exception {
+		Successful_login_CBALender();
+		slas();
+		startNewTransaction();
+		proceedProductSelection();
+		breShortForm();
+		
+		
+		
 	}
 
 }
