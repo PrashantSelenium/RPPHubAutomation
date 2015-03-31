@@ -52,4 +52,9 @@ public class UserInstructionDetails extends TestInitReference {
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.minimumDataRequirement();
 	}
+	@Test(description="User - Instruction Details", priority=4)
+	public void RT_02633_Email_Validations() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.insEmailValidations();
+	}
 }

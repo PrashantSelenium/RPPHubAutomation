@@ -3392,6 +3392,18 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementPresent(xpath(loanApplicationId)),"Loan Details Application ID field is not displayed");
 		Assert.assertTrue(isElementPresent(xpath(loanValuationId)),"Loan Details Valuation ID field is not displayed");		
 	}
+	public void insEmailValidations() throws Exception{
+		int z=1;
+		do {
+			click(xpath(instructionDetailsTab));
+			Thread.sleep(4000);
+			type(xpath(userCustomerEmail), getDataFromxls(0, "User_InstructionDetails.xls", z, 1));
+			click(xpath(custEmailLabel));
+			Assert.assertTrue(isElementVisible(xpath(custEmailError)), "Email error message is not displayed");
+			Assert.assertEquals(getText(xpath(custEmailError)), "Invalid Email Address format.");
+			z++;
+		} while(z!=8);
+	}
 
 }
 
