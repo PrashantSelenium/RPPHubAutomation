@@ -225,7 +225,7 @@ public class ObjectReference {
     public static String propertyTypeLabel = "(//form[@id='propertyDetailQuestions']//td[@class='propertyDetailLabels'])[1]";
     public static String propertyTypeSelect = "(//form[@id='propertyDetailQuestions']//select[@class='propertyType'])[1]";
     public static String propertyTypeSelectValue = "(//form[@id='propertyDetailQuestions']//select[@value])";
-    public static String infoIcon = "//form[@id='propertyDetailQuestions']//img[contains(@src,'infoIcon')]";
+    public static String infoIcon = "//form[@id='propertyDetailQuestions']//img[@class='infoIcon']";
     public static String oevppLabel = "(//form[@id='propertyDetailQuestions']//td[@class='propertyDetailLabels'])[2]";
     public static String oevppLabelDollar = "//form[@id='propertyDetailQuestions']//span[contains(text(),'$')]";
     public static String userOEVPP = "//input[@id='2']";
@@ -234,6 +234,7 @@ public class ObjectReference {
     public static String loanAmountDollar = "(//form[@id='propertyDetailQuestions']//span[contains(text(),'$')])[2]";
     public static String orgLoanAmount = "//*[@id='7']";
     public static String loanPurposeLabel = "(//form[@id='propertyDetailQuestions']//td[@class='propertyDetailLabels'])[3]";
+    public static String loanPurposeRefinance = "(//*[@id='3'])[2]";
     public static String daotaLabel = "(//form[@id='propertyDetailQuestions']//td[@class='propertyDetailLabels'])[4]";
     public static String daotaErrorMsg = "//form[@id='propertyDetailQuestions']//div[@id='errorMessage4']";
     public static String userNoneApply ="//input[@id='26']";
@@ -254,7 +255,11 @@ public class ObjectReference {
     public static String userOriginatorToProductSelection = "//*[text()='Proceed to product selection']";
     public static String userOriginatorProceed = "(//table[@class='propertyDetailQuestionLink']//a)[2]";
     public static String costingReport ="//input[@id='12']";
-
+    public static String loanPurchase ="//*[@value='8']";
+    public static String loanRefinance ="//*[@value='9']";
+    public static String loanTopup ="//*[@value='10']";
+    public static String loanConstruction ="//*[@value='27']";
+    public static String loanCHLM ="//*[@value='30']";
     
     //Product tabs
     public static String productTabsMenu = "//div[@id='containerTab']";
@@ -284,7 +289,8 @@ public class ObjectReference {
     public static String titleMoreDetails = "(//a[@class='hubTextlink moreDetails'])[1]";
     public static String titleShort = "(//span[@class='hubHeaderBodyText shortDescription'])[1]";
     public static String titleLong = "(//span[@class='hubHeaderBodyText longDescription'])[1]";
-
+    public static String shortFormAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_71']";
+    public static String constructionAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_72']";
 
 
     //Product selection
@@ -315,18 +321,85 @@ public class ObjectReference {
     
     //Instruction details
     public static String userProceedToInstructionDetails = "//*[text()='Proceed to instruction details']";  
+    public static String insBackBtn = "//*[@src='/ttsvr/myrp/images/hub/hub_back.png']";
+    public static String insNextBtn = "//*[@src='/ttsvr/myrp/images/hub/hub_next.png']";	
+    public static String insPaymentIcon = "//*[@src='/ttsvr/cropImage/myrp.images.hub_i_proceedIcon.png']";
+    public static String insPaymentLink = "//*[text()='Proceed to payment details']";
+    public static String insChangeAddIcon = "//*[@src='/ttsvr/cropImage/myrp.images.hub_i_changeAddressIcon.png']";
+    public static String insChangeAddLink = "//*[text()='Change property address']";
     public static String userInstructionDetails = "//div[@id='instructionDetails_acc']";
-    public static String userCustomerFName = "//input[@id='1_1_value']";
-    public static String userCustomerLName = "//input[@id='2_1_value']";
-    public static String userCustomerContact = "//input[@id='13_1_value']";
-    public static String userCustomerEmail = "//input[@id='14_1_value']";
-    public static String userSameAsCustomer = "//input[@id='checkbox_16_2_value']";
+    public static String insCustomerDetails = "//*[@id='CustomerDetails']";
+    public static String insPropertyAccess = "//*[@id='PropertyAccessDetails']";
+    public static String insLoanDetails = "//*[@id='LoanDetails']";
+    public static String insDocumentUpload = "//*[@id='documentUploads']";
+    public static String insSpecialInstructions = "//*[@id='SpecialInstructions']";
+    public static String insCustomerDetailsForm = "//*[@id='CustomerDetails_form']";
+    public static String insPropertyAccessForm = "//*[@id='PropertyAccessDetails_form']";
+    public static String insLoanDetailsForm = "//*[@id='LoanDetails_form']";
+    public static String insDocumentUploadForm = "//*[@id='documentUploads_form']";
+    public static String insSpecialInstructionsForm = "//*[@id='SpecialInstructions_form']";
+    public static String custFnameLabel = "//label[@for='1_1_value']";
+    public static String custLnameLabel = "//label[@for='2_1_value']";
+    public static String custCustomerIsLabel = "//label[@for='3_1_value']";
+    public static String custContactLabel = "//label[@for='13_1_value']";
+    public static String custEmailLabel = "//label[@for='14_1_value']";
+    
+    public static String userCustomerFName = "//*[@id='1_1_value']";
+    public static String userCustomerLName = "//*[@id='2_1_value']";
+    public static String userCustomerContact = "//*[@id='13_1_value']";
+    public static String userCustomerEmail = "//*[@id='14_1_value']";
+    
+    public static String custFnameError = "//*[@class='1_1_value errorMessage']";
+    public static String custLnameError = "//*[@class='2_1_value errorMessage']";
+    public static String custContactError = "//*[@class='13_1_value errorMessage']";
+    public static String custEmailError = "//*[@class='14_1_value errorMessage']";
+    
+    public static String accessFnameLabel = "//label[@for='17_2_value']";
+    public static String accessLnameLabel = "//label[@for='18_2_value']";
+    public static String accessCompanyLabel = "//label[@for='19_2_value']";
+    public static String accessContactLabel = "//label[@for='21_2_value']";
+    public static String accessEmailLabel = "//label[@for='22_2_value']";
+    
+    public static String accessFName = "//*[@id='17_2_value']";
+    public static String accessLName = "//*[@id='18_2_value']";
+    public static String accessCompany = "//*[@id='19_2_value']";
+    public static String accessContact = "//*[@id='21_2_value']";
+    public static String accessEmail = "//*[@id='22_2_value']";
+    
+    public static String accessFnameError = "//*[@class='17_2_value errorMessage']";
+    public static String accessLnameError = "//*[@class='18_2_value errorMessage']";
+    public static String accessCompanyError = "//*[@class='19_2_value errorMessage']";
+    public static String accessContactError = "//*[@class='21_2_value errorMessage']";
+    public static String accessEmailError = "//*[@class='22_2_value errorMessage']";
+    
+    public static String loanApplicationIdLabel = "//label[@for='54_7_value']";
+    public static String loanValuationIdLabel = "//label[@for='62_7_value']";
+    
+    public static String loanApplicationId = "//*[@id='54_7_value']";
+    public static String loanValuationId = "//*[@id='62_7_value']";
+    
+    public static String loanApplicationIdError = "//*[@class='54_7_value errorMessage']";
+    public static String loanValuationIdError = "//*[@class='62_7_value errorMessage']";
+    
+    public static String insCustomerIs = "//*[@id='3_1_value']";
+    public static String theOwner = "//*[@id='3_1_value']//option[@value='1']";
+    public static String theAgent = "//*[@id='3_1_value']//option[@value='2']";
+    public static String theBorrower = "//*[@id='3_1_value']//option[@value='3']";
+    public static String thePurchaser = "//*[@id='3_1_value']//option[@value='4']";
+    public static String theOther = "//*[@id='3_1_value']//option[@value='5']";
+    
+    public static String userSameAsCustomer = "//*[@id='checkbox_16_2_value']";
+    public static String accessSameAsLabel = "//label[@for='16_2_value']";
+    
     public static String builderName = "//*[@id='50_6_value']";
     public static String builderContactNumber = "//*[@id='51_6_value']";
     public static String applicationId = "//*[@id='54_7_value']";
     public static String construction = "//*[@value='27']";
     public static String companyTitle = "//*[@id='11']"; 
     public static String leasehold = "//*[@id='16']";
+    
+    public static String cartCountPopup = "//*[@class='cartCountMessage']";
+    public static String cartCountOK = "//*[text()='OK']";
 
     //Cart Count Pop up
     public static String userCartCountPopup = "//table[@id='cartCountRestrictionPopup']/tbody/tr[2]/td";

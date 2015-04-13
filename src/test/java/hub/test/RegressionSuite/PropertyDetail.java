@@ -22,7 +22,7 @@ import atu.testng.reports.utils.Utils;
 
 
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
-public class PropertyDetailTest extends TestInitReference {
+public class PropertyDetail extends TestInitReference {
 	{
 		System.setProperty("atu.reporter.config", "/tooltwist/eclipse/RPPHub/conf/atu.properties");
 	}
