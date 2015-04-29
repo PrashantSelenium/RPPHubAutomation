@@ -74,7 +74,7 @@ public class TestInitReferenceSmokeTest extends FunctionReference {
             caps.setCapability("os", "Windows");
             caps.setCapability("os_version", "7");
     	    caps.setCapability("browserstack.debug", "true");
-    	    caps.setCapability("build", "Prod v4.14.1");
+    	    caps.setCapability("build", "Prod v4.15");
     	    caps.setCapability("project", "Hub");
 
     	    driver = new RemoteWebDriver(new URL(remoteUrl), caps);

@@ -37,7 +37,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	//*************************//
 
 	//Set Enviroment to the list above depending from what environment you want to run the test	
-	public String environment = "https://dev-";
+	public String environment = "https://stage-";
 	
 	public UserHubEndToEndUtil_SmokeTest() {
 	}

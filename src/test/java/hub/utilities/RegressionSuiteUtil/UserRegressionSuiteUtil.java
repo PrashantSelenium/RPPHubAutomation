@@ -3352,7 +3352,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		cartCountPopup();
 	}
 
-	public void instructionVallidation() throws Exception{
+	public void instructionValidation() throws Exception{
 		click(xpath(productSelectionBar));
 		cartCountPopup();
 		click(xpath(paymentDetailsBar));
@@ -3392,7 +3392,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementVisible(xpath(insSpecialInstructionsForm)),"Special Instructions section was not toggled close");
 		click(xpath(insSpecialInstructions));
 		Assert.assertFalse(isElementVisible(xpath(insSpecialInstructionsForm)),"Special Instructions section was not toggled open");
-		
+		Thread.sleep(2000);
 	}
 
 	public void minimumDataRequirement() throws Exception{
@@ -3460,12 +3460,93 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			Thread.sleep(4000);
 			type(xpath(userCustomerEmail), getDataFromxls(0, "User_InstructionDetails.xls", z, 1));
 			click(xpath(custEmailLabel));
+			Thread.sleep(1000);
 			Assert.assertTrue(isElementVisible(xpath(custEmailError)), "Email error message is not displayed");
 			Assert.assertEquals(getText(xpath(custEmailError)), "Invalid Email Address format.");
 			z++;
 		} while(z!=8);
 	}
 
+	public void theCustomerIs() throws Exception{
+		click(xpath(instructionDetailsTab));
+		waitForElementVisible(xpath(custCustomerIsLabel));
+		Assert.assertTrue(isElementPresent(xpath(insCustomerIs)), "The customer is dropdown is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(theOwner)), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath(theAgent)), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath(theBorrower)), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath(thePurchaser)), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath(theOther)), "The customer is option is not available");
+		Assert.assertEquals(getText(xpath(theOwner)), "the Owner");
+		Assert.assertEquals(getText(xpath(theAgent)), "the Agent");
+		Assert.assertEquals(getText(xpath(theBorrower)), "the Borrower");
+		Assert.assertEquals(getText(xpath(thePurchaser)), "the Purchaser");
+		Assert.assertEquals(getText(xpath(theOther)), "Other");
+		
+		Assert.assertEquals(getValue(xpath(insCustomerIs)), "1");
+		selectOption(xpath(insCustomerIs), "2");
+		Assert.assertEquals(getValue(xpath(insCustomerIs)), "2");
+		selectOption(xpath(insCustomerIs), "3");
+		Assert.assertEquals(getValue(xpath(insCustomerIs)), "3");
+		selectOption(xpath(insCustomerIs), "4");
+		Assert.assertEquals(getValue(xpath(insCustomerIs)), "4");
+		selectOption(xpath(insCustomerIs), "5");
+		Assert.assertEquals(getValue(xpath(insCustomerIs)), "5");
+		selectOption(xpath(insCustomerIs), "1");
+		Assert.assertEquals(getValue(xpath(insCustomerIs)), "1");
+	}
+
+	public void insConstructionFields() throws Exception {
+		click(xpath(logout));
+		Thread.sleep(3000);
+		Successful_login_CBALender();
+		slas();
+		startNewTransaction();
+		proceedProductSelection();
+		breConstruction();
+		clickToInstruction();
+		Assert.assertTrue(isElementPresent(xpath(insConstructionDetails)), "Construction Details section is not displayed");
+		Assert.assertEquals(getText(xpath(insConstructionDetails)), "Construction Details");
+		
+		Assert.assertTrue(isElementVisible(xpath(consCompNameLabel)), "Construction Company Name label is not displayed");
+		Assert.assertEquals(getText(xpath(consCompNameLabel)), "Construction Company Name");
+		Assert.assertTrue(isElementVisible(xpath(builderNameLabel)), "Builder Name label is not displayed");
+		Assert.assertEquals(getText(xpath(builderNameLabel)), "* Builder Name");
+		Assert.assertTrue(isElementVisible(xpath(builderContactNumberLabel)), "Builder Number label is not displayed");
+		Assert.assertEquals(getText(xpath(builderContactNumberLabel)), "* Builder Contact Number");
+		
+		Assert.assertTrue(isElementVisible(xpath(consCompName)), "Construction Company Name field is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(builderName)), "Construction Builder Name field is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(builderContactNumber)), "Construction Builder Contact Number field is not displayed");
+	}
+
+	public void insResetForms() throws Exception {
+		
+		type(xpath(userCustomerFName), getDataFromxls(0, "User_InstructionDetails.xls", 1, 2));
+		type(xpath(userCustomerLName), getDataFromxls(0, "User_InstructionDetails.xls", 2, 2));
+		type(xpath(userCustomerContact), getDataFromxls(0, "User_InstructionDetails.xls", 3, 2));
+		type(xpath(userCustomerEmail), getDataFromxls(0, "User_InstructionDetails.xls", 4, 2));
+		type(xpath(accessFName), getDataFromxls(0, "User_InstructionDetails.xls", 5, 2));
+		type(xpath(accessLName), getDataFromxls(0, "User_InstructionDetails.xls", 6, 2));
+		type(xpath(accessCompany), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
+		type(xpath(accessContact), getDataFromxls(0, "User_InstructionDetails.xls", 8, 2));
+		type(xpath(consCompName), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
+		type(xpath(builderName), getDataFromxls(0, "User_InstructionDetails.xls", 5, 2));
+		type(xpath(builderContactNumber), getDataFromxls(0, "User_InstructionDetails.xls", 8, 2));
+		click(xpath(instructionDetailsTab));
+		Thread.sleep(4000);
+		Assert.assertEquals(getValue(xpath(userCustomerFName)), "");
+		Assert.assertEquals(getValue(xpath(userCustomerLName)), "");
+		Assert.assertEquals(getValue(xpath(userCustomerContact)), "");
+		Assert.assertEquals(getValue(xpath(userCustomerEmail)), "");
+		Assert.assertEquals(getValue(xpath(accessFName)), "");
+		Assert.assertEquals(getValue(xpath(accessLName)), "");
+		Assert.assertEquals(getValue(xpath(accessCompany)), "");
+		Assert.assertEquals(getValue(xpath(accessContact)), "");
+		Assert.assertEquals(getValue(xpath(consCompName)), "");
+		Assert.assertEquals(getValue(xpath(builderName)), "");
+		Assert.assertEquals(getValue(xpath(builderContactNumber)), "");
+
+	}
 
 }
 

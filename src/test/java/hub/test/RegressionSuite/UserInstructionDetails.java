@@ -40,7 +40,7 @@ public class UserInstructionDetails extends TestInitReference {
 	@Test(description="User - Instruction Details", priority=1)
 	public void RT_02630_Completed_Instruction_Validations() throws Exception {		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-		util.instructionVallidation();
+		util.instructionValidation();
 	}
 	@Test(description="User - Instruction Details", priority=2)
 	public void RT_02643_Instruction_Toggle_Sections() throws Exception {		
@@ -57,4 +57,20 @@ public class UserInstructionDetails extends TestInitReference {
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.insEmailValidations();
 	}
+	@Test(description="User - Instruction Details", priority=5)
+	public void RT_03098_The_Customer_Is() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.theCustomerIs();
+	}
+	@Test(description="User - Instruction Details", priority=6)
+	public void RT_03089_Construction_Fields() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.insConstructionFields();
+	}
+	@Test(description="User - Instruction Details", priority=7)
+	public void RT_02646_Reset_Instruction_Details() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.insResetForms();
+	}
+
 }
