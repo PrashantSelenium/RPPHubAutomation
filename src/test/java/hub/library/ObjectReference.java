@@ -330,6 +330,7 @@ public class ObjectReference {
     public static String userInstructionDetails = "//div[@id='instructionDetails_acc']";
     public static String insCustomerDetails = "//*[@id='CustomerDetails']";
     public static String insPropertyAccess = "//*[@id='PropertyAccessDetails']";
+    public static String insConstructionDetails = "//*[@id='ConstructionDetails']";
     public static String insLoanDetails = "//*[@id='LoanDetails']";
     public static String insDocumentUpload = "//*[@id='documentUploads']";
     public static String insSpecialInstructions = "//*[@id='SpecialInstructions']";
@@ -391,6 +392,12 @@ public class ObjectReference {
     public static String userSameAsCustomer = "//*[@id='checkbox_16_2_value']";
     public static String accessSameAsLabel = "//label[@for='16_2_value']";
     
+    
+    public static String consCompNameLabel = "//label[@for='49_6_value']";
+    public static String builderNameLabel = "//label[@for='50_6_value']";
+    public static String builderContactNumberLabel = "//label[@for='51_6_value']";
+    
+    public static String consCompName = "//*[@id='49_6_value']";
     public static String builderName = "//*[@id='50_6_value']";
     public static String builderContactNumber = "//*[@id='51_6_value']";
     public static String applicationId = "//*[@id='54_7_value']";
