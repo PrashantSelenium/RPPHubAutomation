@@ -3459,8 +3459,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			click(xpath(instructionDetailsTab));
 			Thread.sleep(4000);
 			type(xpath(userCustomerEmail), getDataFromxls(0, "User_InstructionDetails.xls", z, 1));
+			Thread.sleep(2000);
 			click(xpath(custEmailLabel));
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			Assert.assertTrue(isElementVisible(xpath(custEmailError)), "Email error message is not displayed");
 			Assert.assertEquals(getText(xpath(custEmailError)), "Invalid Email Address format.");
 			z++;
