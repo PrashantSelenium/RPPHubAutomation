@@ -3366,6 +3366,20 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(cartCount));
 		insMandatoryPopup();
 	}
+	
+	public void insMandatoryFields() throws Exception {
+		Assert.assertTrue(isElementVisible(xpath(custFnameError)),"Mandatory field error message is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(custLnameError)),"Mandatory field error message is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(custContactError)),"Mandatory field error message is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(accessFnameError)),"Mandatory field error message is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(accessContactError)),"Mandatory field error message is not displayed");	    
+		
+		Assert.assertEquals(getText(xpath(custFnameError)), " First Name should not be empty.");
+		Assert.assertEquals(getText(xpath(custLnameError)), " Last Name should not be empty.");
+		Assert.assertEquals(getText(xpath(custContactError)), " Contact Number should not be empty.");
+		Assert.assertEquals(getText(xpath(accessFnameError)), " First Name should not be empty.");
+		Assert.assertEquals(getText(xpath(accessContactError)), " Contact Number should not be empty.");
+	}
 
 	public void instructionToggleSections() throws Exception{
 		click(xpath(insCustomerDetails));
@@ -3546,6 +3560,55 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertEquals(getValue(xpath(consCompName)), "");
 		Assert.assertEquals(getValue(xpath(builderName)), "");
 		Assert.assertEquals(getValue(xpath(builderContactNumber)), "");
+
+	}
+
+	public void fillInsDetails() throws Exception {
+	type(xpath(userCustomerFName), getDataFromxls(0, "User_InstructionDetails.xls", 1, 2));
+	type(xpath(userCustomerLName), getDataFromxls(0, "User_InstructionDetails.xls", 2, 2));
+	type(xpath(userCustomerContact), getDataFromxls(0, "User_InstructionDetails.xls", 3, 2));
+	type(xpath(userCustomerEmail), getDataFromxls(0, "User_InstructionDetails.xls", 4, 2));
+	type(xpath(accessFName), getDataFromxls(0, "User_InstructionDetails.xls", 5, 2));
+	type(xpath(accessLName), getDataFromxls(0, "User_InstructionDetails.xls", 6, 2));
+	type(xpath(accessCompany), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
+	type(xpath(accessContact), getDataFromxls(0, "User_InstructionDetails.xls", 8, 2));
+	type(xpath(consCompName), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
+	type(xpath(builderName), getDataFromxls(0, "User_InstructionDetails.xls", 5, 2));
+	type(xpath(builderContactNumber), getDataFromxls(0, "User_InstructionDetails.xls", 8, 2));
+	}
+	
+	public void insProceedPayment() throws Exception{
+		fillInsDetails();
+		click(xpath(paymentDetailsBar));
+		Assert.assertTrue(isElementPresent(xpath(pleaseWaitBlock)), "Please Wait is not displayed when application is busy");
+		Thread.sleep(12000);
+		Assert.assertTrue(isElementPresent(xpath(ConfirmBtnPaymentDetails)), "User not redirected to Payment Details");
+		click(xpath(insBackBtn));
+		Thread.sleep(12000);
+		
+		fillInsDetails();
+		click(xpath(insPaymentIcon));
+		Assert.assertTrue(isElementPresent(xpath(pleaseWaitBlock)), "Please Wait is not displayed when application is busy");
+		Thread.sleep(12000);
+		Assert.assertTrue(isElementPresent(xpath(ConfirmBtnPaymentDetails)), "User not redirected to Payment Details");
+		click(xpath(insBackBtn));
+		Thread.sleep(12000);
+		
+		fillInsDetails();
+		click(xpath(insPaymentLink));
+		Assert.assertTrue(isElementPresent(xpath(pleaseWaitBlock)), "Please Wait is not displayed when application is busy");
+		Thread.sleep(12000);
+		Assert.assertTrue(isElementPresent(xpath(ConfirmBtnPaymentDetails)), "User not redirected to Payment Details");
+		click(xpath(insBackBtn));
+		Thread.sleep(12000);
+		
+		fillInsDetails();
+		click(xpath(insNextBtn));
+		Assert.assertTrue(isElementPresent(xpath(pleaseWaitBlock)), "Please Wait is not displayed when application is busy");
+		Thread.sleep(12000);
+		Assert.assertTrue(isElementPresent(xpath(ConfirmBtnPaymentDetails)), "User not redirected to Payment Details");
+		click(xpath(insBackBtn));
+		Thread.sleep(12000);
 
 	}
 

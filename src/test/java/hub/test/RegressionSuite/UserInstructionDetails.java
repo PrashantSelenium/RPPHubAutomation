@@ -43,34 +43,45 @@ public class UserInstructionDetails extends TestInitReference {
 		util.instructionValidation();
 	}
 	@Test(description="User - Instruction Details", priority=2)
+	public void RT_02647_Mandatory_Instruction_Validations() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.insMandatoryFields();
+	}
+	@Test(description="User - Instruction Details", priority=3)
 	public void RT_02643_Instruction_Toggle_Sections() throws Exception {		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.instructionToggleSections();
 	}
-	@Test(description="User - Instruction Details", priority=3)
+	@Test(description="User - Instruction Details", priority=4)
 	public void RT_03088_Minimum_Data_Requirement() throws Exception {		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.minimumDataRequirement();
 	}
-	@Test(description="User - Instruction Details", priority=4)
+	@Test(description="User - Instruction Details", priority=5)
 	public void RT_02633_Email_Validations() throws Exception {		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.insEmailValidations();
 	}
-	@Test(description="User - Instruction Details", priority=5)
+	@Test(description="User - Instruction Details", priority=6)
 	public void RT_03098_The_Customer_Is() throws Exception {		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.theCustomerIs();
 	}
-	@Test(description="User - Instruction Details", priority=6)
+	@Test(description="User - Instruction Details", priority=7)
 	public void RT_03089_Construction_Fields() throws Exception {		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.insConstructionFields();
 	}
-	@Test(description="User - Instruction Details", priority=7)
+	@Test(description="User - Instruction Details", priority=8)
 	public void RT_02646_Reset_Instruction_Details() throws Exception {		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.insResetForms();
 	}
+	@Test(description="User - Instruction Details", priority=9)
+	public void RT_02277n02638_Proceed_Payment_Details_n_PleaseWait() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.insProceedPayment();
+	}
 
+	
 }

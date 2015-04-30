@@ -407,6 +407,8 @@ public class ObjectReference {
     
     public static String cartCountPopup = "//*[@class='cartCountMessage']";
     public static String cartCountOK = "//*[text()='OK']";
+    
+    public static String pleaseWaitBlock = "//*[@class='blockUI blockOverlay']";
 
     //Cart Count Pop up
     public static String userCartCountPopup = "//table[@id='cartCountRestrictionPopup']/tbody/tr[2]/td";
