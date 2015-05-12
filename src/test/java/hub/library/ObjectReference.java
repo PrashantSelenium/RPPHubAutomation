@@ -352,6 +352,7 @@ public class ObjectReference {
     public static String userCustomerLName = "//*[@id='2_1_value']";
     public static String userCustomerContact = "//*[@id='13_1_value']";
     public static String userCustomerEmail = "//*[@id='14_1_value']";
+    public static String userCustomerCompany = "//*[@id='66_1_value']";
     
     public static String custFnameError = "//*[@class='1_1_value errorMessage']";
     public static String custLnameError = "//*[@class='2_1_value errorMessage']";
@@ -395,7 +396,17 @@ public class ObjectReference {
     public static String userSameAsCustomer = "//*[@id='checkbox_16_2_value']";
     public static String accessSameAsLabel = "//label[@for='16_2_value']";
     
-    
+    public static String insAddress = "//*[@id='4_1_value']";
+    public static String insCantFindAddress = "//*[@id='5_1_value']";
+
+    public static String insLotUnitNumber = "//*[@id='6_1_value']";
+    public static String insStreetNumber = "//*[@id='7_1_value']";
+    public static String insStreetName = "//*[@id='8_1_value']";
+    public static String insStreetType = "//*[@id='9_1_value']";
+    public static String insSuburb = "//*[@id='10_1_value']";
+    public static String insState = "//*[@id='11_1_value']";
+    public static String insPostcode = "//*[@id='12_1_value']";
+   
     public static String consCompNameLabel = "//label[@for='49_6_value']";
     public static String builderNameLabel = "//label[@for='50_6_value']";
     public static String builderContactNumberLabel = "//label[@for='51_6_value']";
@@ -414,6 +425,8 @@ public class ObjectReference {
     public static String strataNet = "//*[@id='67_3_value']";
     public static String strataRental = "//*[@id='68_3_value']";
     public static String strataOutgoings = "//*[@id='69_3_value']";
+    
+    public static String specialInstructions = "//*[@id='60_8_value']";
     
     public static String cartCountPopup = "//*[@class='cartCountMessage']";
     public static String cartCountOK = "//*[text()='OK']";

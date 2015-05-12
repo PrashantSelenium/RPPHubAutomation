@@ -3533,13 +3533,13 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 
 	public void insChangeAddress() throws Exception{
 		click(xpath(insChangeAddress));
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		Assert.assertTrue(isElementVisible(xpath(changeAddressPopup)),"Change address conformation is not displayed");
 		Assert.assertTrue(getText(xpath(changeAddressPopup)).contains("Are you sure you want to change your current property address?"), "Change address message is incorrect");
 		Assert.assertTrue(getText(xpath(changeAddressPopup)).contains("This will remove your current selections and take you back to the Home Page. Please confirm"), "Change address message is incorrect");
 		click(xpath(popupCancel));
 		click(xpath(insChangeAddress));
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		Assert.assertTrue(isElementVisible(xpath(changeAddressPopup)),"Change address conformation is not displayed");
 		click(xpath(cartCountOK));
 		Thread.sleep(12000);
@@ -3692,7 +3692,43 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementVisible(xpath(strataOutgoings)), "Outgoings Monthly field is not displayed");
 		
 	}
+	
+	public void insSameAsCustomer() throws Exception {
+		type(xpath(userCustomerFName), getDataFromxls(0, "User_InstructionDetails.xls", 1, 2));
+		type(xpath(userCustomerLName), getDataFromxls(0, "User_InstructionDetails.xls", 2, 2));
+		type(xpath(userCustomerContact), getDataFromxls(0, "User_InstructionDetails.xls", 3, 2));
+		type(xpath(userCustomerCompany), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
+		
+		click(xpath(userSameAsCustomer));
+		Thread.sleep(1000);
+		
+		Assert.assertEquals(getText(xpath(accessFName)), getDataFromxls(0, "User_InstructionDetails.xls", 1, 2));
+		Assert.assertEquals(getText(xpath(accessLName)), getDataFromxls(0, "User_InstructionDetails.xls", 2, 2));
+		Assert.assertEquals(getText(xpath(accessCompany)), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
+		Assert.assertEquals(getText(xpath(accessContact)), getDataFromxls(0, "User_InstructionDetails.xls", 3, 2));	
+	}
+	
+	public void insCantFindAddress() throws Exception {
+		click(xpath(insCantFindAddress));
+		Thread.sleep(1000);
+		Assert.assertTrue(isElementVisible(xpath(insLotUnitNumber)),"CFA Lot field is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(insStreetNumber)),"CFA Street number field is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(insStreetName)),"CFA Street name field is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(insStreetType)),"CFA Street type field is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(insSuburb)),"CFA Suburb field is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(insState)),"CFA State field is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(insPostcode)),"CFA Postcode field is not displayed");
+		
+		type(xpath(insAddress), getDataFromxls(0, "User_InstructionDetails.xls", 1, 4));
+		Assert.assertEquals(isReadOnly(xpath(insAddress)), "readonly");
+	}
 
+	public void insSpecialInstructions() throws Exception{
+		click(xpath(insSpecialInstructions));
+		Assert.assertTrue(isElementVisible(xpath(insSpecialInstructionsForm)),"Special Instructions section was not toggled close");
+		Thread.sleep(2000);
+		Assert.assertTrue(isElementVisible(xpath(specialInstructions)), "Special Instructions field is not displayed");
+	}
 	
 
 }

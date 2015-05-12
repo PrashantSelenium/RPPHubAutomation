@@ -107,6 +107,19 @@ public class UserInstructionDetails extends TestInitReference {
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.insStrataFields();
 	}
-	
-	
+	@Test(description="User - Instruction Details", priority=15)
+	public void RT_03094_Instruction_Same_As_Customer() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.insSameAsCustomer();
+	}
+	@Test(description="User - Instruction Details", priority=16)
+	public void RT_03091_Instruction_Cant_Find_Address() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.insCantFindAddress();
+	}
+	@Test(description="User - Instruction Details", priority=17)
+	public void RT_03087_Instruction_Special_Instructions() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.insSpecialInstructions();
+	}
 }
