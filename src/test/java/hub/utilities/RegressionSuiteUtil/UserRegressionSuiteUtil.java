@@ -3006,7 +3006,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(noneApplyCheckboxValuation));
 		click(xpath(avmAckSelect));	
 		click(xpath(userOriginatorToProductSelection));
-		Thread.sleep(12000);
+		Thread.sleep(20000);
 		Assert.assertTrue(isElementPresent(xpath(shortFormAddToCart)),"Short Form Valuation should be available");
 		click(xpath(shortFormAddToCart));
 		Thread.sleep(1500);
@@ -3020,11 +3020,22 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(noneApplyCheckboxValuation));
 		click(xpath(avmAckSelect));	
 		click(xpath(userOriginatorToProductSelection));
-		Thread.sleep(12000);
+		Thread.sleep(20000);
 		Assert.assertTrue(isElementPresent(xpath(constructionAddToCart)),"Constrcution Valuation should be available");
 		click(xpath(constructionAddToCart));
 	}
 
+	public void breDesktopValuation() throws Exception {
+		waitForElementPresent(xpath(userOriginatorDetails));
+		waitForElementVisible(xpath(userOriginatorDetails));
+		type(xpath(userOEVPP),(getDataFromxls(0, "User_InstructionDetails.xls", 1, 0)));
+		click(xpath(userOriginatorToProductSelection));
+		Thread.sleep(12000);
+		click(xpath(tabCommercial));
+		Thread.sleep(20000);
+		Assert.assertTrue(isElementPresent(xpath(commercialDesktopDualAddToCart)),"Commercial Desktop Valuation - Double Tenancy should be available");
+		click(xpath(commercialDesktopDualAddToCart));
+	}
 	public void originatorToProductSelection() throws Exception{
 		waitForElementPresent(xpath(userOriginatorDetails));
 		waitForElementVisible(xpath(userOriginatorDetails));
@@ -3363,6 +3374,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		insMandatoryPopup();
 		click(xpath(insPaymentLink));
 		insMandatoryPopup();
+
+	}
+	public void insCartValidation() throws Exception{
 		click(xpath(cartCount));
 		insMandatoryPopup();
 	}
@@ -3381,6 +3395,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertEquals(getText(xpath(accessContactError)), " Contact Number should not be empty.");
 	}
 
+	
 	public void instructionToggleSections() throws Exception{
 		click(xpath(insCustomerDetails));
 		Assert.assertFalse(isElementVisible(xpath(insCustomerDetailsForm)),"Customer Details section was not toggled close");
@@ -3467,15 +3482,21 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementPresent(xpath(loanValuationId)),"Loan Details Valuation ID field is not displayed");		
 	}
 	
+	public void insStrataNotActive() throws Exception{
+		Assert.assertFalse(isElementPresent(xpath(strataNet)), "Net Lettable Area M2 should not be displayed");
+		Assert.assertFalse(isElementPresent(xpath(strataRental)), "Rental Amount Monthly excl. GST should not be displayed");
+		Assert.assertFalse(isElementPresent(xpath(strataOutgoings)), "Outgoings Monthly excl. GST should not be displayed");
+	}
+	
 	public void insEmailValidations() throws Exception{
 		int z=1;
 		do {
 			click(xpath(instructionDetailsTab));
-			Thread.sleep(4000);
+			Thread.sleep(6000);
 			type(xpath(userCustomerEmail), getDataFromxls(0, "User_InstructionDetails.xls", z, 1));
 			Thread.sleep(2000);
 			click(xpath(custEmailLabel));
-			Thread.sleep(2000);
+			Thread.sleep(6000);
 			Assert.assertTrue(isElementVisible(xpath(custEmailError)), "Email error message is not displayed");
 			Assert.assertEquals(getText(xpath(custEmailError)), "Invalid Email Address format.");
 			z++;
@@ -3510,6 +3531,20 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertEquals(getValue(xpath(insCustomerIs)), "1");
 	}
 
+	public void insChangeAddress() throws Exception{
+		click(xpath(insChangeAddress));
+		Thread.sleep(3000);
+		Assert.assertTrue(isElementVisible(xpath(changeAddressPopup)),"Change address conformation is not displayed");
+		Assert.assertTrue(getText(xpath(changeAddressPopup)).contains("Are you sure you want to change your current property address?"), "Change address message is incorrect");
+		Assert.assertTrue(getText(xpath(changeAddressPopup)).contains("This will remove your current selections and take you back to the Home Page. Please confirm"), "Change address message is incorrect");
+		click(xpath(popupCancel));
+		click(xpath(insChangeAddress));
+		Thread.sleep(3000);
+		Assert.assertTrue(isElementVisible(xpath(changeAddressPopup)),"Change address conformation is not displayed");
+		click(xpath(cartCountOK));
+		Thread.sleep(12000);
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)), "Change property address is not working");
+	}
 	public void insConstructionFields() throws Exception {
 		click(xpath(logout));
 		Thread.sleep(3000);
@@ -3611,6 +3646,54 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Thread.sleep(12000);
 
 	}
+
+	public void insSpecialChars() throws Exception{
+		type(xpath(userCustomerFName), getDataFromxls(0, "User_InstructionDetails.xls", 1, 3));
+		type(xpath(userCustomerLName), getDataFromxls(0, "User_InstructionDetails.xls", 1, 3));
+		type(xpath(userCustomerContact), getDataFromxls(0, "User_InstructionDetails.xls", 3, 3));
+		type(xpath(userCustomerEmail), getDataFromxls(0, "User_InstructionDetails.xls", 4, 2));
+		type(xpath(accessFName), getDataFromxls(0, "User_InstructionDetails.xls", 1, 3));
+		type(xpath(accessLName), getDataFromxls(0, "User_InstructionDetails.xls", 1, 3));
+		type(xpath(accessCompany), getDataFromxls(0, "User_InstructionDetails.xls", 1, 3));
+		type(xpath(accessContact), getDataFromxls(0, "User_InstructionDetails.xls", 3, 3));
+		type(xpath(consCompName), getDataFromxls(0, "User_InstructionDetails.xls", 1, 3));
+		type(xpath(builderName), getDataFromxls(0, "User_InstructionDetails.xls", 1, 3));
+		type(xpath(builderContactNumber), getDataFromxls(0, "User_InstructionDetails.xls", 3, 3));
+		click(xpath(insNextBtn));
+		Assert.assertTrue(isElementPresent(xpath(pleaseWaitBlock)), "Please Wait is not displayed when application is busy");
+		Thread.sleep(12000);
+		Assert.assertTrue(isElementPresent(xpath(ConfirmBtnPaymentDetails)), "User not redirected to Payment Details");
+		click(xpath(insBackBtn));
+		Thread.sleep(12000);
+	}
+
+	public void insStrataFields() throws Exception {
+		click(xpath(logout));
+		LoginChannel("class");
+		Thread.sleep(3000);
+		slas();
+		startNewTransaction();
+		proceedProductSelection();
+		breDesktopValuation();
+		clickToInstruction();
+		
+		Assert.assertTrue(isElementPresent(xpath(insStrataDetails)), "Strata Details section is not displayed");
+		Assert.assertEquals(getText(xpath(insStrataDetails)), "Strata Details");
+		
+		Assert.assertTrue(isElementVisible(xpath(strataNetLabel)), "Net Lettable Area m² label is not displayed");
+		Assert.assertEquals(getText(xpath(strataNetLabel)), "* Net Lettable Area m²");
+		Assert.assertTrue(isElementVisible(xpath(strataRentalLabel)), "Rental Amount Monthly excl. GST label is not displayed");
+		Assert.assertEquals(getText(xpath(strataRentalLabel)), "* Rental Amount Monthly excl. GST");
+		Assert.assertTrue(isElementVisible(xpath(strataOutgoingsLabel)), "Outgoings Monthly excl. GST label is not displayed");
+		Assert.assertEquals(getText(xpath(strataOutgoingsLabel)), "* Outgoings Monthly excl. GST");
+		
+		Assert.assertTrue(isElementVisible(xpath(strataNet)), "Net Lettable Area field is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(strataRental)), "Rental Amount Monthly field is not displayed");
+		Assert.assertTrue(isElementVisible(xpath(strataOutgoings)), "Outgoings Monthly field is not displayed");
+		
+	}
+
+	
 
 }
 

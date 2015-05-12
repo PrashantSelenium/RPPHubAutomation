@@ -270,6 +270,7 @@ public class ObjectReference {
     public static String tabResidentialValuation = "//input[@id='linkResidential_Valuations']";
     public static String tabRetroReports = "//div[@id='linkRetro_Reports']";
     public static String tabCommercialValuations ="//div[@id='linkCommercial_Valuations']";
+    public static String tabCommercial = "//*[@id='linkCommercial']";
     public static String tabRuralValuations ="//div[@id='linkRural_Valuations']";
     public static String userValuationsTab = "//div[@id('tabValuations')]";
     public static String userRetroReportsTab = "//div[@id='tabRetro_Reports']";
@@ -291,6 +292,7 @@ public class ObjectReference {
     public static String titleLong = "(//span[@class='hubHeaderBodyText longDescription'])[1]";
     public static String shortFormAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_71']";
     public static String constructionAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_72']";
+    public static String commercialDesktopDualAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_101']";
 
 
     //Product selection
@@ -332,6 +334,7 @@ public class ObjectReference {
     public static String insPropertyAccess = "//*[@id='PropertyAccessDetails']";
     public static String insConstructionDetails = "//*[@id='ConstructionDetails']";
     public static String insLoanDetails = "//*[@id='LoanDetails']";
+    public static String insStrataDetails = "//*[@id='StrataDetails']";
     public static String insDocumentUpload = "//*[@id='documentUploads']";
     public static String insSpecialInstructions = "//*[@id='SpecialInstructions']";
     public static String insCustomerDetailsForm = "//*[@id='CustomerDetails_form']";
@@ -405,10 +408,20 @@ public class ObjectReference {
     public static String companyTitle = "//*[@id='11']"; 
     public static String leasehold = "//*[@id='16']";
     
+    public static String strataNetLabel = "//label[@for='67_3_value']";
+    public static String strataRentalLabel = "//label[@for='68_3_value']";
+    public static String strataOutgoingsLabel = "//label[@for='69_3_value']";
+    public static String strataNet = "//*[@id='67_3_value']";
+    public static String strataRental = "//*[@id='68_3_value']";
+    public static String strataOutgoings = "//*[@id='69_3_value']";
+    
     public static String cartCountPopup = "//*[@class='cartCountMessage']";
     public static String cartCountOK = "//*[text()='OK']";
+    public static String popupCancel = "//*[text()='Cancel']";
     
     public static String pleaseWaitBlock = "//*[@class='blockUI blockOverlay']";
+    public static String insChangeAddress = "//*[text()='Change property address']";
+    public static String changeAddressPopup = "//*[@id='hubCboxLoadedContent']//*[@class='changeAddress']";
 
     //Cart Count Pop up
     public static String userCartCountPopup = "//table[@id='cartCountRestrictionPopup']/tbody/tr[2]/td";
