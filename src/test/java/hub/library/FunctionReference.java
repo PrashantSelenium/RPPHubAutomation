@@ -446,7 +446,13 @@ public class FunctionReference extends Results {
         }
         return value;
     }
-    
+    public String isReadOnly(By by) {
+        String readonly = "";
+        if (isElementPresent(by)) {
+            readonly = driver.findElement(by).getAttribute("readonly");
+        }
+        return readonly;
+    }    
     public String getValue(By by, String attribute) {
         String value = "";
         if (isElementPresent(by)) {
