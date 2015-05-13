@@ -619,7 +619,7 @@ public class EndtoEndUtil extends FunctionReference{
 		String ready = (String) js.executeScript("return document.readyState");
 		
 		if(ready.equalsIgnoreCase("complete")){
-			click(By.linkText(userProceedToPaymentDetails));
+			click(By.linkText(ProceedToPaymentDetails));
 		}
 		
 		Thread.sleep(10000);
@@ -646,12 +646,12 @@ public class EndtoEndUtil extends FunctionReference{
 				click(xpath(userPaymentTermsConditions));	
 				}
 			
-			if(isElementPresent(xpath(userPaymentPassword))){
-				type(xpath(userPaymentPassword), input[21]);	
+			if(isElementPresent(xpath(accountPasswordPaymentDetails))){
+				type(xpath(accountPasswordPaymentDetails), input[21]);	
 				}
 			
-			if(isElementPresent(xpath(userPaymentBroker))){
-				type(xpath(userPaymentBroker), input[22]);	
+			if(isElementPresent(xpath(staffIDPaymentDetails))){
+				type(xpath(staffIDPaymentDetails), input[22]);	
 				}
 			
 			if(isElementPresent(xpath(userPaymentCreditName))){

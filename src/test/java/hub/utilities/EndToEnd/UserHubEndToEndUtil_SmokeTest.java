@@ -558,20 +558,20 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 			click(xpath(avm));
 			click(xpath(proceedToProductValuation));
 			Thread.sleep(5000);
-			waitForElementPresent(xpath(pruchaseBtnSingle));
-			waitForElementVisible(xpath(pruchaseBtnSingle));
+			waitForElementPresent(xpath(purchaseBtnSingle));
+			waitForElementVisible(xpath(purchaseBtnSingle));
 			waitfor();
-			if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-			if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-			if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-			if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-			if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-			if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-			waitForElementPresent(xpath(pruchaseBtnSingle));
-			waitForElementPresent(xpath(pruchaseBtnSingle));
-			waitForElementPresent(xpath(pruchaseBtnSingle));
-			waitForElementVisible(xpath(pruchaseBtnSingle));
-			click(xpath(pruchaseBtnSingle));
+			if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+			if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+			if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+			if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+			if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+			if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+			waitForElementPresent(xpath(purchaseBtnSingle));
+			waitForElementPresent(xpath(purchaseBtnSingle));
+			waitForElementPresent(xpath(purchaseBtnSingle));
+			waitForElementVisible(xpath(purchaseBtnSingle));
+			click(xpath(purchaseBtnSingle));
 			
 			Thread.sleep(6000);
 			if(!isElementPresent(xpath(addToCartLabel))){ Thread.sleep(3000); }
@@ -1311,22 +1311,22 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		
 		Thread.sleep(5000);
 		
-		waitForElementPresent(xpath(pruchaseBtnSingle));
-		waitForElementVisible(xpath(pruchaseBtnSingle));
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+		waitForElementPresent(xpath(purchaseBtnSingle));
+		waitForElementVisible(xpath(purchaseBtnSingle));
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
 		
 		Thread.sleep(3000);
 		if(channel.equals("wpcbroker")){
-			click(xpath(pruchaseBtnSingle));
+			click(xpath(purchaseBtnSingle));
 			Thread.sleep(5000);
 		}
 		if(channel.equals("bankmelbourne")){
-			if(isElementPresent(xpath(pruchaseBtnSecondLine))){
-				click(xpath(pruchaseBtnSecondLine));	
+			if(isElementPresent(xpath(purchaseBtnSecondLine))){
+				click(xpath(purchaseBtnSecondLine));	
 			}
 			else{
-				click(xpath(pruchaseBtnSingle));
+				click(xpath(purchaseBtnSingle));
 			}
 			Thread.sleep(5000);
 		}
@@ -1597,13 +1597,13 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		click(xpath(avm));
 		click(xpath(proceedToProductValuation));
 		
-		waitForElementPresent(xpath(pruchaseBtnSingle));
-		waitForElementVisible(xpath(pruchaseBtnSingle));
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+		waitForElementPresent(xpath(purchaseBtnSingle));
+		waitForElementVisible(xpath(purchaseBtnSingle));
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
 
 		try{
-			Assert.assertEquals(getValue(xpath(pruchaseBtnSingle)), "Not Available");
+			Assert.assertEquals(getValue(xpath(purchaseBtnSingle)), "Not Available");
 			}
 			catch(AssertionError e){
 				fail(input[0] + " - Purchase Button for AVM is available");
@@ -1611,16 +1611,16 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    		}
 		
 		Thread.sleep(4000);
-		if(isElementPresent(xpath(pruchaseBtnSecondLine))){
-			waitForElementPresent(xpath(pruchaseBtnSecondLine));
-			waitForElementVisible(xpath(pruchaseBtnSecondLine));
+		if(isElementPresent(xpath(purchaseBtnSecondLine))){
+			waitForElementPresent(xpath(purchaseBtnSecondLine));
+			waitForElementVisible(xpath(purchaseBtnSecondLine));
 			Thread.sleep(2000);
-			click(xpath(pruchaseBtnSecondLine));
+			click(xpath(purchaseBtnSecondLine));
 		}else{
-			waitForElementPresent(xpath(pruchaseBtnSingle));
-			waitForElementVisible(xpath(pruchaseBtnSingle));
+			waitForElementPresent(xpath(purchaseBtnSingle));
+			waitForElementVisible(xpath(purchaseBtnSingle));
 			Thread.sleep(2000);
-			click(xpath(pruchaseBtnSingle));
+			click(xpath(purchaseBtnSingle));
 		}
 		
 		Thread.sleep(5000);
@@ -1860,10 +1860,10 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		    	resultcount++;
 		    	}
 		
-		waitForElementPresent(xpath(pruchaseBtnSingle));
-		waitForElementVisible(xpath(pruchaseBtnSingle));
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+		waitForElementPresent(xpath(purchaseBtnSingle));
+		waitForElementVisible(xpath(purchaseBtnSingle));
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
 		try{
 			Assert.assertTrue(isElementPresent(xpath(combanklabel)));
 			}
@@ -1873,7 +1873,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    		}
 		
 		Thread.sleep(2000);
-		click(xpath(pruchaseBtnSingle));
+		click(xpath(purchaseBtnSingle));
 		Thread.sleep(5000);
 		try{
 			Assert.assertEquals(getText(xpath(addToCartLabel)), input[6]);
@@ -2142,23 +2142,23 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		}
 		click(xpath(proceedToProductValuation));
 		
-		waitForElementPresent(xpath(pruchaseBtnSingle));
-		waitForElementVisible(xpath(pruchaseBtnSingle));
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+		waitForElementPresent(xpath(purchaseBtnSingle));
+		waitForElementVisible(xpath(purchaseBtnSingle));
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
 		
 		click(xpath(CommercialTab));
 		
 		Thread.sleep(4000);
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
 		
 		Assert.assertTrue(isElementPresent(xpath(promotionLogo)), "Promotion Logo is not Displayed");
 			
-			waitForElementPresent(xpath(pruchaseBtnSecondLine));
-			waitForElementVisible(xpath(pruchaseBtnSecondLine));
+			waitForElementPresent(xpath(purchaseBtnSecondLine));
+			waitForElementVisible(xpath(purchaseBtnSecondLine));
 			Thread.sleep(2000);
-			click(xpath(pruchaseBtnSecondLine));
+			click(xpath(purchaseBtnSecondLine));
 		
 		Thread.sleep(6000);
 		waitForElementPresent(xpath(addToCartLabel));
