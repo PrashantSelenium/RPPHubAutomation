@@ -318,6 +318,7 @@ public class ObjectReference {
     public static String OrderConfirmationBar ="//*[@id='flowbar']//*[contains(text(),'ORDER')]";
     public static String userOnAccountLabel = "(//*[@class='hubHeaderBodyText productPrice'])[4]";
     public static String dynamicProductTabLink = "//a[@id='link{?}']";
+    public static String propertyType = "//*[@class='propertyType']";
 
     
     
@@ -393,6 +394,8 @@ public class ObjectReference {
     public static String thePurchaser = "//*[@id='3_1_value']//option[@value='4']";
     public static String theOther = "//*[@id='3_1_value']//option[@value='5']";
     
+    public static String specialInstruction = "//*[@id='60_8_value']";
+        
     public static String userSameAsCustomer = "//*[@id='checkbox_16_2_value']";
     public static String accessSameAsLabel = "//label[@for='16_2_value']";
     
@@ -417,6 +420,24 @@ public class ObjectReference {
     public static String applicationId = "//*[@id='54_7_value']";
     public static String construction = "//*[@value='27']";
     public static String companyTitle = "//*[@id='11']"; 
+    public static String doAnyApplyConstructionCompleted = "//*[@id='31']";
+    public static String doAnyApplyCostingReport ="//*[@id='12']";
+    public static String doAnyApplyDevelopmentSite ="//*[@id='13']";
+    public static String doAnyApplyDHA ="//*[@id='33']";
+    public static String doAnyApplyDisplayHome ="//*[@id='34']";
+    public static String doAnyApplyLeasehold ="//*[@id='16']";
+    public static String doAnyApplyMultipleDwelling ="//*[@id='18']";
+    public static String doAnyApplyNonResidential ="//*[@id='19']";
+    public static String doAnyApplyNonHabitable ="//*[@id='20']";
+    public static String doAnyApplyOffThePlan ="//*[@id='21']";
+    public static String doAnyApplyPropertyBeing ="//*[@id='22']";
+    public static String doAnyApplyPropertySize40ha ="//*[@id='36']";
+    public static String doAnyApplyPropertySize50haor22ha ="//*[@id='32']";
+    public static String doAnyApplyReverseMortgage ="//*[@id='38']";
+    public static String doAnyApplyServiceManagement ="//*[@id='37']";
+    public static String doAnyApplyStudentStyle ="//*[@id='25']";
+    
+    
     public static String leasehold = "//*[@id='16']";
     
     public static String strataNetLabel = "//label[@for='67_3_value']";
@@ -444,12 +465,12 @@ public class ObjectReference {
     public static String userCartCountCancel = "//input[@id='cartCountRestrictionCancel']";
 
     // Payment Details
-    public static String userProceedToPaymentDetails = "Proceed to payment details";  
+    public static String ProceedToPaymentDetails = "//*[text()='Proceed to payment details']";  
     public static String userPaymentDetailsForm = "//div[@id='paymentDetailForm']";
     public static String userPaymentItem = "//td[@class='labelText hubHeaderBodyText']";
     public static String userPaymentTermsConditions = "//input[@id='termsAndConditions']";
-    public static String userPaymentPassword = "//input[@id='accountPassword']";
-    public static String userPaymentBroker = "//input[@id='accountId']";
+    public static String accountPasswordPaymentDetails = "//input[@id='accountPassword']";
+    public static String staffIDPaymentDetails = "//input[@id='accountId']";
     public static String userPaymentCreditName = "//input[@id='nameForTaxInvoice']";
     public static String userPaymentCreditEmail = "//input[@id='emailForTaxInvoice']";
     public static String userPaymentCreditNumber = "//input[@id='cardNumber']";
@@ -459,13 +480,19 @@ public class ObjectReference {
     public static String userPaymentDetailsRemoveOk = "//a[contains(text(),'OK')]";
     public static String confirmPayment = "//*[@class='navigationBtn hubNavigation_next']";
     
+    public static String termAndConditionsErrorPaymentDetails = "//*[@class='termsAndConditionsError errorMessage']";
+    public static String accountPasswordErrorPaymentDetails = "//*[@class='accountPasswordError errorMessage']";
+    public static String staffIDErrorPaymentDetails = "//*[@class='accountIdError errorMessage']";
+    
     //Order Confirmation
+    public static String proceedToOrderConfirmation = "//*[text()='Proceed to order confirmation']";
     public static String userConfirmPayment = "//img[@src='/myrp/images/hub/hub_confirm.png']"; 
     public static String userOrderItem = "//*[@class='labelText']";
     public static String userOrderDetailFN = "(//div[@class='wrap']/div/div[@class='hubHeaderBodyText'])[1]";
     public static String userOrderDetailLN = "(//div[@class='wrap']/div/div[@class='hubHeaderBodyText'])[2]";
     public static String userOrderDetailCN = "(//div[@class='wrap']/div/div[@class='hubHeaderBodyText'])[3]";
     public static String userOrderDetailCA = "(//div[@class='wrap']/div/div[@class='hubHeaderBodyText'])[4]";
+    
     
     //Mortgage Valuation Notification
     public static String userMortgagePopup = "//table[@class='hubHeaderBodyText']//td[@align='center']";
@@ -876,11 +903,11 @@ public class ObjectReference {
     public static String cbatitle = "//*[@id='tabReports']/table/tbody/tr/td/div/div[1]";
     public static String cbatitlestatus = "//*[@id='tabReports']/table/tbody/tr/td/div/div[2]";
     public static String purchaseBtn = "//*[@id='purchaseButton']";
-    public static String pruchaseBtnSingle = "(//*[@id='purchaseButton'])[1]";
-    public static String pruchaseBtnSecondLine = "(//*[@id='purchaseButton'])[2]";
-    public static String pruchaseBtnThirdLine = "(//*[@id='purchaseButton'])[3]";
-    public static String pruchaseBtnFourthLine = "(//*[@id='purchaseButton'])[4]";
-    public static String pruchaseBtnFifthLine = "(//*[@id='purchaseButton'])[5]";
+    public static String purchaseBtnSingle = "(//*[@id='purchaseButton'])[1]";
+    public static String purchaseBtnSecondLine = "(//*[@id='purchaseButton'])[2]";
+    public static String purchaseBtnThirdLine = "(//*[@id='purchaseButton'])[3]";
+    public static String purchaseBtnFourthLine = "(//*[@id='purchaseButton'])[4]";
+    public static String purchaseBtnFifthLine = "(//*[@id='purchaseButton'])[5]";
 
     public static String addToCartLabel = "//label[text()='Added to cart']";
     public static String cartCount = "//a[@id='cartCount']";
@@ -916,6 +943,7 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
     public static String NetLendableInstructionDetails = "//*[@id='67_3_value']";
     public static String RentalAmountInstructionDetails = "//*[@id='68_3_value']";
     public static String OutgoingMonthlyInstructionDetails = "//*[@id='69_3_value']";
+    public static String InstructionDetailsTab = "//*[@class='bottomLabel instructionDetailsLink']";
     
     //Payment Details
     public static String LabelPaymentDetails = "//*[@id='paymenDetailForm']/ul/li[1]/label";
@@ -931,9 +959,12 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
     public static String PromoField = "//*[@id='promoCode']";
     public static String PromoAddBtn = "//*[@class='hubButtonBg hubButtonText']";
     public static String ProductPrice = "(//*[@class='hubHeaderBodyText'])[3]";
+    //public static String ProductPrice = "((//*[@class='hubHeaderBodyText'])[3]/text()";
+    
     public static String MainTotalAmount = "//*[@id='mainTotalAmount']";
     public static String InvoiceName = "//*[@name='nameForTaxInvoice']";
     public static String InvoiceEmail = "//*[@name='emailForTaxInvoice']";
+    public static String PaymentProductName = "(//*[@class='labelText hubHeaderBodyText'])[1]";
         
   //Order Confirmation
     public static String referenceNumber = "//label[contains(text(),'RP Data HUB Reference Number:')]";
@@ -1094,6 +1125,17 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
   public static String cancelButton = "//*[text()='Cancel']";
   public static String customerId = "//*[@id='customerId']";
   public static String guestId = "//*[@id='guestId']"; 
+  
+  public static String inconsistentData = "//*[text()='Inconsistent Data']";
+  
+  
+  /////////////////////////////TEST////////////////
+  public static String searchfield = "//*[@id='CourseName']";
+  public static String SearchButton = "//*[@class='btn btn-primary']";
+  public static String text = "//*[text()='B Information Technology']";
+  public static String CutOff = "//*[contains(text(),'Cut-off ATAR (2014):')])[1]";
+  public static String FieldofEdu = "//*[contains(text(),'Field of education:')])[1]"; 
+  
   
   
 }

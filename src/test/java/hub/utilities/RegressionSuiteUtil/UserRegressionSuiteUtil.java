@@ -5,10 +5,10 @@ import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
-import com.aspose.omr.internal.iF;
 import com.thoughtworks.selenium.Selenium;
 
 public class UserRegressionSuiteUtil extends FunctionReference {
@@ -1798,10 +1798,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(proceedToProductValuation));
 		Thread.sleep(3000);
 		
-		waitForElementPresent(xpath(pruchaseBtnSingle));
-		waitForElementVisible(xpath(pruchaseBtnSingle));
-		if(!isElementPresent(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }	
-		if(!isElementPresent(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+		waitForElementPresent(xpath(purchaseBtnSingle));
+		waitForElementVisible(xpath(purchaseBtnSingle));
+		if(!isElementPresent(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }	
+		if(!isElementPresent(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
 			
 		Assert.assertEquals(getValue(xpath(CBANotAvailableAVMBtn)), getDataFromxls(0, "User_CBA_Multi_AVM.xls", 5, 0));
 	}
@@ -1891,10 +1891,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(proceedToProductValuation));
 		Thread.sleep(3000);
 		
-		waitForElementPresent(xpath(pruchaseBtnSingle));
-		waitForElementVisible(xpath(pruchaseBtnSingle));
-		if(!isElementPresent(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }	
-		if(!isElementPresent(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+		waitForElementPresent(xpath(purchaseBtnSingle));
+		waitForElementVisible(xpath(purchaseBtnSingle));
+		if(!isElementPresent(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }	
+		if(!isElementPresent(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
 			
 		Assert.assertEquals(getValue(xpath(CBANotAvailableAVMBtn)), getDataFromxls(0, "User_CBA_Multi_AVM.xls", 5, 0));
 	}
@@ -2167,10 +2167,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(proceedToProductValuation));
 		Thread.sleep(3000);
 		
-		waitForElementPresent(xpath(pruchaseBtnSingle));
-		waitForElementVisible(xpath(pruchaseBtnSingle));
-		if(!isElementPresent(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }	
-		if(!isElementPresent(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+		waitForElementPresent(xpath(purchaseBtnSingle));
+		waitForElementVisible(xpath(purchaseBtnSingle));
+		if(!isElementPresent(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }	
+		if(!isElementPresent(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
 			
 		driver.navigate().to(environment.concat("rppropertyhub.com/servlet/hubDBTracker"));
 		//driver.navigate().to("https://stage.rppropertyhub.com/servlet/hubDBTracker");
@@ -2576,6 +2576,8 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	public void Property_Search_Ghost_Text() throws Exception{
 		
 		click(xpath(home));
+		Thread.sleep(2000);
+		Thread.sleep(2000);
 		waitForElementPresent(xpath(propertySearch));
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
@@ -2590,6 +2592,8 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	public void Property_Search_copy_paste() throws Exception{
 		
 		click(xpath(home));
+		Thread.sleep(2000);
+		Thread.sleep(2000);
 		waitForElementPresent(xpath(propertySearch));
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
@@ -2609,6 +2613,8 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	public void Property_Search_Invalid_Property() throws Exception{
 		
 		click(xpath(home));
+		Thread.sleep(2000);
+		Thread.sleep(2000);
 		waitForElementPresent(xpath(propertySearch));
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
@@ -2623,6 +2629,8 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	public void Property_Search_Cannot_Proceed() throws Exception{
 		
 		click(xpath(home));
+		Thread.sleep(2000);
+		Thread.sleep(2000);
 		waitForElementPresent(xpath(propertySearch));
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
@@ -2689,10 +2697,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			Assert.assertTrue(isElementPresent(xpath(orderNavBar)));
 
 		
-		waitForElementPresent(xpath(pruchaseBtnSingle));
-		waitForElementVisible(xpath(pruchaseBtnSingle));
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
+		waitForElementPresent(xpath(purchaseBtnSingle));
+		waitForElementVisible(xpath(purchaseBtnSingle));
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
 	
 	}
 	
@@ -2706,7 +2714,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void validate_Next_Button_function() throws Exception{
-		click(xpath(pruchaseBtnSingle));
+		click(xpath(purchaseBtnSingle));
 		Thread.sleep(3000);
 		Assert.assertTrue(isElementPresent(xpath(nextBtn)), "Next Button is not present");		
 		
@@ -2721,7 +2729,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void validate_ProceedToInstruction_Link_function() throws Exception{
-		click(xpath(pruchaseBtnSingle));
+		click(xpath(purchaseBtnSingle));
 		Thread.sleep(3000);
 		Assert.assertTrue(isElementPresent(xpath(nextBtn)), "Next Button is not present");		
 		
@@ -2751,21 +2759,21 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			click(xpath(avm));
 			click(xpath(proceedToProductValuation));
 			Thread.sleep(5000);
-			waitForElementPresent(xpath(pruchaseBtnSingle));
-			waitForElementVisible(xpath(pruchaseBtnSingle));
+			waitForElementPresent(xpath(purchaseBtnSingle));
+			waitForElementVisible(xpath(purchaseBtnSingle));
 		}
 		
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		waitForElementPresent(xpath(pruchaseBtnSingle));
-		waitForElementVisible(xpath(pruchaseBtnSingle));
-		if(getValue(xpath(pruchaseBtnSingle)).contains("Add to cart")){
-				click(xpath(pruchaseBtnSingle));
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		waitForElementPresent(xpath(purchaseBtnSingle));
+		waitForElementVisible(xpath(purchaseBtnSingle));
+		if(getValue(xpath(purchaseBtnSingle)).contains("Add to cart")){
+				click(xpath(purchaseBtnSingle));
 			}
 		else{
-			click(xpath(pruchaseBtnSecondLine));
+			click(xpath(purchaseBtnSecondLine));
 		}
 		Thread.sleep(4000);
 		Assert.assertTrue(isElementPresent(xpath(addToCartLabel)), "Add to Cart button is not functioning");
@@ -2788,16 +2796,16 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 				click(xpath(avm));
 				click(xpath(proceedToProductValuation));
 				Thread.sleep(5000);
-				waitForElementPresent(xpath(pruchaseBtnSingle));
-				waitForElementVisible(xpath(pruchaseBtnSingle));
+				waitForElementPresent(xpath(purchaseBtnSingle));
+				waitForElementVisible(xpath(purchaseBtnSingle));
 			}
 
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		waitForElementPresent(xpath(pruchaseBtnSingle));
-		waitForElementVisible(xpath(pruchaseBtnSingle));
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		waitForElementPresent(xpath(purchaseBtnSingle));
+		waitForElementVisible(xpath(purchaseBtnSingle));
 		Assert.assertTrue(isElementVisible(xpath(AVMProduct)));
 		Assert.assertTrue(isElementVisible(xpath(ShortForm)));
 		Assert.assertTrue(isElementVisible(xpath(ShortFormLeaseHold)));
@@ -2821,16 +2829,16 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 				click(xpath(avm));
 				click(xpath(proceedToProductValuation));
 				Thread.sleep(5000);
-				waitForElementPresent(xpath(pruchaseBtnSingle));
-				waitForElementVisible(xpath(pruchaseBtnSingle));
+				waitForElementPresent(xpath(purchaseBtnSingle));
+				waitForElementVisible(xpath(purchaseBtnSingle));
 			}
 
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(pruchaseBtnSingle))){ Thread.sleep(7000); }
-		waitForElementPresent(xpath(pruchaseBtnSingle));
-		waitForElementVisible(xpath(pruchaseBtnSingle));
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
+		waitForElementPresent(xpath(purchaseBtnSingle));
+		waitForElementVisible(xpath(purchaseBtnSingle));
 		Assert.assertTrue(isElementVisible(xpath(AVMProduct)));
 		Assert.assertTrue(isElementVisible(xpath(ShortForm)));
 		Assert.assertTrue(isElementVisible(xpath(ShortFormLeaseHold)));
@@ -2950,12 +2958,25 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void proceedProductSelection() throws Exception {	
-		waitForElementPresent(xpath(userProceedToProductSelection));
-		waitForElementVisible(xpath(userProceedToProductSelection));
-		if(isElementPresent(xpath(userProceedToProductSelection))){
-			click(xpath(userProceedToProductSelection));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String ready = (String) js.executeScript("return document.readyState");
+		
+		if(ready.equalsIgnoreCase("complete")){
+			
+			if(!isElementPresent(xpath(userProceedToProductSelection))){ Thread.sleep(300); }
+			if(!isElementPresent(xpath(userProceedToProductSelection))){ Thread.sleep(300); }
+			waitForElementPresent(xpath(userProceedToProductSelection));
+			waitForElementVisible(xpath(userProceedToProductSelection));
+			try{
+				if(isElementPresent(xpath(userProceedToProductSelection))){
+					click(xpath(userProceedToProductSelection));
+					}
+				Thread.sleep(6000);
+			}catch (AssertionError e) {
+				fail("Loading of Product Selection is not finished");
 			}
-		Thread.sleep(6000);
+			
+		}
 	}
 	
 	public void startNewTransaction() throws Exception {
@@ -3041,6 +3062,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(userOriginatorDetails));
 		Assert.assertTrue(isElementPresent(xpath(iconOriginatorToProductSelection)),"Procced to product selection icon is not displayed");
 		Assert.assertTrue(isElementPresent(xpath(userOriginatorToProductSelection)),"Procced to product selection link is not displayed");		
+		
 	}
 
 	public void informationIcon() throws Exception{
@@ -3503,6 +3525,28 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		} while(z!=8);
 	}
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+	
+	///////////////////Sample//////////////////////
+	
+	public void search() throws Exception{
+		waitForElementPresent(xpath(searchfield));
+		type(xpath(searchfield), "Information Technology");
+		click(xpath(SearchButton));
+		Assert.assertTrue(isElementVisible(xpath(text)));
+		Assert.assertTrue(isElementVisible(xpath(CutOff)));
+		Assert.assertTrue(isElementVisible(xpath(FieldofEdu)));
+	}
+	
+	public void slas_dynamic(String address) throws Exception {
+		waitForElementPresent(xpath(userPropertySearch));
+		waitForElementVisible(xpath(userPropertySearch));
+		if(!isElementPresent(xpath(userPropertySearch))){ Thread.sleep(3000); }
+		if(!isElementPresent(xpath(userPropertySearch))){ Thread.sleep(3000); }
+=======
+>>>>>>> Stashed changes
 	public void theCustomerIs() throws Exception{
 		click(xpath(instructionDetailsTab));
 		waitForElementVisible(xpath(custCustomerIsLabel));
@@ -3722,6 +3766,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		type(xpath(insAddress), getDataFromxls(0, "User_InstructionDetails.xls", 1, 4));
 		Assert.assertEquals(isReadOnly(xpath(insAddress)), "readonly");
 	}
+<<<<<<< Updated upstream
 
 	public void insSpecialInstructions() throws Exception{
 		click(xpath(insSpecialInstructions));
@@ -3730,7 +3775,361 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementVisible(xpath(specialInstructions)), "Special Instructions field is not displayed");
 	}
 	
+=======
+>>>>>>> Stashed changes
 
+	public void insSpecialInstructions() throws Exception{
+		click(xpath(insSpecialInstructions));
+		Assert.assertTrue(isElementVisible(xpath(insSpecialInstructionsForm)),"Special Instructions section was not toggled close");
+		Thread.sleep(2000);
+		Assert.assertTrue(isElementVisible(xpath(specialInstructions)), "Special Instructions field is not displayed");
+	}
+	
+>>>>>>> origin/hub-automation
+
+		try {
+			Assert.assertEquals("Enter your property address or street name here.", getValue(xpath(userPropertySearch)));
+		} catch (AssertionError e) {
+			fail("SLAS placeholder text");
+		}
+		type(xpath(userPropertySearch), address);		
+		click(xpath(userSearchButton));
+		Thread.sleep(3000);
+	}
+	
+	public void MacquarieBRE_CorrectProduct() throws Exception{
+		int num = 1;
+		int col = 3;
+		int x = 0;
+		
+		do{
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			String ready = (String) js.executeScript("return document.readyState");
+			
+			if(ready.equalsIgnoreCase("complete")){
+				
+				//Check if Row is empty
+				if(getDataFromxls(0, "macquarie.xls" , 1, col).isEmpty()){ col++;	}
+				if(getDataFromxls(0, "macquarie.xls" , 1, col).isEmpty()){ col++;	}
+				if(getDataFromxls(0, "macquarie.xls" , 1, col).isEmpty()){ col++;	}
+
+				//CHECK Property Type
+				String Address = "";
+				Address = getDataFromxls(0, "macquarie.xls" , 0, col);
+
+//				if(getDataFromxls(0, "macquarie.xls" , 4, col).contains("house")){ Address = "25 Goundry Street Gateshead NSW 2290"; }
+//				if(getDataFromxls(0, "macquarie.xls" , 4, col).contains("unit")){ Address = "5/67-69 Pile Street Marrickville NSW 2204"; }
+//				if(getDataFromxls(0, "macquarie.xls" , 4, col).contains("vacant land")){ Address = "123 Aurelian Avenue Yalyalup WA 6280"; }
+//				
+			slas_dynamic(Address);
+			startNewTransaction();
+			Thread.sleep(1000);
+			proceedProductSelection();
+								
+			Thread.sleep(2000);
+			waitForElementPresent(xpath(oevppLabel));
+			waitForElementVisible(xpath(oevppLabel));
+			
+			if(getDataFromxls(0, "macquarie.xls" , 4, col).contains("unit")){ 
+				click(xpath(propertyType));
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN); 
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.ENTER);  
+			}
+			if(getDataFromxls(0, "macquarie.xls" , 4, col).contains("duplex")){ 
+				click(xpath(propertyType));
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN); 
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN); 
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.ENTER); 
+			}
+			if(getDataFromxls(0, "macquarie.xls" , 4, col).contains("townhouse")){ 
+				click(xpath(propertyType));
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN);  
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN); 
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN);  
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.ENTER);
+			}
+			if(getDataFromxls(0, "macquarie.xls" , 4, col).contains("apartment")){ 
+				click(xpath(propertyType));
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN);  
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN);  
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN); 
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN); 
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.ENTER);
+			}
+			if(getDataFromxls(0, "macquarie.xls" , 4, col).contains("villa")){ 
+				click(xpath(propertyType));
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN); 
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN); 
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN); 
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN);  
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN); 
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.ENTER);
+			}
+			if(getDataFromxls(0, "macquarie.xls" , 4, col).contains("vacant land")){ 
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN); 
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN);
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN); 
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN); 
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN);  
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.DOWN); 
+				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.ENTER);
+			}
+			
+			type(xpath(userOEVPP), getDataFromxls(0, "macquarie.xls" , 5, col));
+			type(xpath(loanAmount), getDataFromxls(0, "macquarie.xls" , 6, col));
+			
+		//LOAN Purpose					
+			if(getDataFromxls(0, "macquarie.xls" , 8, col).contains("Purchase")){ click(xpath(loanPurchase)); }
+			if(getDataFromxls(0, "macquarie.xls" , 8, col).contains("Refinance")){ click(xpath(loanPurposeRefinance)); }
+			if(getDataFromxls(0, "macquarie.xls" , 8, col).contains("TopUp")){ click(xpath(loanTopup)); }
+			if(getDataFromxls(0, "macquarie.xls" , 8, col).contains("Construction/Renovation")){ click(xpath(loanConstruction)); }
+			if(getDataFromxls(0, "macquarie.xls" , 8, col).contains("Miscellaneous/CHLM")){ click(xpath(loanCHLM)); }
+	
+			
+		//DO ANY APPLY
+			if(!getDataFromxls(0, "macquarie.xls" , 9, col).isEmpty()){ click(xpath(companyTitle)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 10, col).isEmpty()){ click(xpath(doAnyApplyConstructionCompleted)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 11, col).isEmpty()){ click(xpath(doAnyApplyDevelopmentSite)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 12, col).isEmpty()){ click(xpath(doAnyApplyDHA)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 13, col).isEmpty()){ click(xpath(doAnyApplyDisplayHome)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 14, col).isEmpty()){ click(xpath(doAnyApplyLeasehold)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 15, col).isEmpty()){ click(xpath(doAnyApplyMultipleDwelling)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 16, col).isEmpty()){ click(xpath(doAnyApplyNonResidential)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 17, col).isEmpty()){ click(xpath(doAnyApplyNonHabitable)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 18, col).isEmpty()){ click(xpath(doAnyApplyOffThePlan)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 19, col).isEmpty()){ click(xpath(doAnyApplyPropertyBeing)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 20, col).isEmpty()){ click(xpath(doAnyApplyPropertySize40ha)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 21, col).isEmpty()){ click(xpath(doAnyApplyPropertySize50haor22ha)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 22, col).isEmpty()){ click(xpath(doAnyApplyReverseMortgage)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 23, col).isEmpty()){ click(xpath(doAnyApplyServiceManagement)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 24, col).isEmpty()){ click(xpath(doAnyApplyStudentStyle)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 25, col).isEmpty()){ click(xpath(noneApplyCheckboxValuation)); }
+			
+			
+			click(xpath(userOriginatorToProductSelection));
+			Thread.sleep(5000);
+			Thread.sleep(7000);
+			waitForElementPresent(xpath(tabValuations));
+			waitForElementVisible(xpath(tabValuations));
+			Thread.sleep(5000);
+			
+			JavascriptExecutor js2 = (JavascriptExecutor) driver;
+			String ready2 = (String) js2.executeScript("return document.readyState");
+			
+			if(ready2.equalsIgnoreCase("complete")){
+				
+				
+				if(getDataFromxls(0, "macquarie.xls" , 1, col).contains("No Product")){
+					System.out.println("Test #" + num + " Passed" );
+				}
+				else{
+									
+					if(!isElementPresent(xpath(purchaseBtnSingle))){Thread.sleep(3000);	}
+					if(!isElementPresent(xpath(purchaseBtnSingle))){Thread.sleep(3000);	}
+					if(!isElementPresent(xpath(purchaseBtnSingle))){Thread.sleep(3000);	}
+					if(!isElementPresent(xpath(purchaseBtnSingle))){Thread.sleep(3000);	}
+					Thread.sleep(3000);
+					try{
+						Assert.assertTrue(getText(xpath(ProductPrice)).contains(getDataFromxls(0, "macquarie.xls" , 1, col)), "Product Return is ".concat(getText(xpath(ProductPrice))).concat(".. Expected Product is").concat(getDataFromxls(0, "macquarie.xls" , 1, col)).concat("/////"));
+						System.out.println("Test #" + getDataFromxls(0, "macquarie.xls" , 3, col) + " Passed "  );
+					} catch (AssertionError e) {
+						fail("Test #" + getDataFromxls(0, "macquarie.xls" , 3, col) + " - Product Return is ".concat(getText(xpath(ProductPrice))).concat(".. Expected Product is ").concat(getDataFromxls(0, "macquarie.xls" , 1, col)));
+					}
+				}
+			}
+			
+			click(xpath(changeAddressLink));
+			
+			col++;
+			num++;
+			x++;
+			}
+		}while(x<=200);		
+	}
+	
+	public void Originator_Page(String oevpp, String loanAmountval, String Purpose) throws Exception{
+	
+		type(xpath(userOEVPP), oevpp);
+		if(!loanAmountval.contains("0")){ type(xpath(loanAmount), loanAmountval);}
+		//LOAN Purpose					
+		if(Purpose.contains("urchase")){ click(xpath(loanPurchase)); }
+		if(Purpose.contains("efinance")){ click(xpath(loanPurposeRefinance)); }
+		if(Purpose.contains("opUp")){ click(xpath(loanTopup)); }
+		if(Purpose.contains("onstruction/Renovation")){ click(xpath(loanConstruction)); }
+		if(Purpose.contains("iscellaneous/CHLM")){ click(xpath(loanCHLM)); }
+	
+		//DO ANY APPLY
+		click(xpath(noneApplyCheckboxValuation));
+		if(isElementPresent(xpath(avm))){ click(xpath(avm)); }
+	}
+	
+	public void Product_Selection_select_Product(String Productline) throws Exception{
+		Thread.sleep(7000);
+		waitForElementPresent(xpath(purchaseBtnSecondLine));
+		waitForElementVisible(xpath(purchaseBtnSecondLine));
+		Assert.assertTrue(isElementPresent(xpath(purchaseBtnSecondLine)));
+		
+		if(Productline.contains("1")){ click(xpath(purchaseBtnSingle)) ;}
+		if(Productline.contains("2")){ click(xpath(purchaseBtnSecondLine)) ;}
+		if(Productline.contains("3")){ click(xpath(purchaseBtnThirdLine)) ;}
+		if(Productline.contains("4")){ click(xpath(purchaseBtnFourthLine)) ;}
+		if(Productline.contains("5")){ click(xpath(purchaseBtnFifthLine)) ;}
+		Thread.sleep(3000);		
+		Assert.assertTrue(isElementPresent(xpath(addToCartLabel)));
+	}
+	
+	public void Instruction_Input_Fields() throws Exception{
+		Thread.sleep(3000);
+		waitForElementPresent(xpath(FnameInstructionDetails));
+		waitForElementVisible(xpath(FnameInstructionDetails));
+		type(xpath(FnameInstructionDetails), getDataFromxls(0, "User_PaymentOnAccount.xls", 3, 1));
+		type(xpath(LnameInstructionDetails), getDataFromxls(0, "User_PaymentOnAccount.xls", 4, 1));
+		type(xpath(MobileInstructionDetails), getDataFromxls(0, "User_PaymentOnAccount.xls", 5, 1));
+		
+		if(isElementPresent(xpath(instructionDetailSameAsCustomerCheckbox))){
+			click(xpath(instructionDetailSameAsCustomerCheckbox));
+		}
+		
+		click(xpath(ProceedToPaymentDetails));
+		Thread.sleep(3000);
+	}
+	
+	public void Payment_Validate_Account_Password_Field_Hidden() throws Exception{
+		Thread.sleep(2000);
+		Assert.assertFalse(isElementPresent(xpath(accountPasswordPaymentDetails)));
+		Assert.assertFalse(isElementPresent(xpath(staffIDPaymentDetails)));
+	}
+	
+	public void Payment_Validate_Back_Btn() throws Exception{
+		Thread.sleep(2000);
+		Assert.assertTrue(isElementPresent(xpath(backBtn)));
+	}
+	
+	public void Payment_Successful_OnAccount_Purchase(String ProceedorConfirm) throws Exception{
+		Thread.sleep(3500);
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		Thread.sleep(2000);
+		click(xpath(TermsandConditionPaymentDetails));
+		type(xpath(accountPasswordPaymentDetails), getDataFromxls(0, "User_PaymentOnAccount.xls", 6, 1));
+		type(xpath(staffIDPaymentDetails), getDataFromxls(0, "User_PaymentOnAccount.xls", 7, 1));
+		if(ProceedorConfirm.equalsIgnoreCase("proceed")){ click(xpath(proceedToOrderConfirmation));		}
+			else { click(xpath(ConfirmBtnPaymentDetails));	 }
+		Thread.sleep(3500);
+		waitForElementPresent(xpath(startNewOrder));
+		waitForElementVisible(xpath(startNewOrder));
+		Assert.assertTrue(isElementPresent(xpath(startNewOrder)), "Start new order not present");
+	}
+
+	public void Payment_Validation_Message() throws Exception{
+		Thread.sleep(2000);
+		click(xpath(proceedToOrderConfirmation));
+		Thread.sleep(2000);
+		waitForElementPresent(xpath(termAndConditionsErrorPaymentDetails));
+		Assert.assertTrue(isElementPresent(xpath(termAndConditionsErrorPaymentDetails)), "Terms and Condition validation error");
+		Assert.assertTrue(isElementPresent(xpath(accountPasswordErrorPaymentDetails)), " Account Password validation error");
+		Assert.assertTrue(isElementPresent(xpath(staffIDErrorPaymentDetails)), "Staff ID validation error");
+	}
+	
+	public void Payment_Navigate_Back_InstructionDetails() throws Exception{
+		Thread.sleep(3000);
+		click(xpath(backBtn));
+		Thread.sleep(5000);
+		
+		waitForElementPresent(xpath(FnameInstructionDetails));
+		waitForElementVisible(xpath(FnameInstructionDetails));
+		Thread.sleep(2000);
+		Assert.assertTrue(isElementPresent(xpath(FnameInstructionDetails)), "Back Button used");
+		click(xpath(ProceedToPaymentDetails));
+		Thread.sleep(3000);
+		waitForElementPresent(xpath(accountPasswordPaymentDetails));
+		Assert.assertTrue(isElementPresent(xpath(accountPasswordPaymentDetails)), "Payment Account Password Displayed");
+		Assert.assertTrue(isElementPresent(xpath(staffIDPaymentDetails)), "Payment Staff ID Displayed");
+		
+		Thread.sleep(3000);
+		click(xpath(InstructionDetailsTab));
+		Thread.sleep(5000);
+		
+		waitForElementPresent(xpath(FnameInstructionDetails));
+		waitForElementVisible(xpath(FnameInstructionDetails));
+		Thread.sleep(2000);
+		Assert.assertTrue(isElementPresent(xpath(FnameInstructionDetails)), "Instruction Tab used");
+		
+		Thread.sleep(3000);
+		click(xpath(ProceedToPaymentDetails));
+		Thread.sleep(3000);		
+		waitForElementPresent(xpath(accountPasswordPaymentDetails));
+		Assert.assertTrue(isElementPresent(xpath(accountPasswordPaymentDetails)), "2:Payment Account Password Displayed");
+		Assert.assertTrue(isElementPresent(xpath(staffIDPaymentDetails)), "2:Payment Staff ID Displayed");
+	}
+	
+	public void Payment_Validation_Of_Products() throws Exception{
+		Thread.sleep(2000);
+		click(xpath(proceedToOrderConfirmation));
+		Thread.sleep(2000);
+		waitForElementPresent(xpath(termAndConditionsErrorPaymentDetails));
+		Assert.assertTrue(isElementPresent(xpath(termAndConditionsErrorPaymentDetails)), "Terms and Condition validation error");
+		Assert.assertTrue(isElementPresent(xpath(accountPasswordErrorPaymentDetails)), " Account Password validation error");
+		Assert.assertTrue(isElementPresent(xpath(staffIDErrorPaymentDetails)), "Staff ID validation error");
+	}
+	
+	public void Instruction_fields_Verification() throws Exception{
+		Thread.sleep(3000);
+		click(xpath(backBtn));
+		Thread.sleep(3000);
+		waitForElementPresent(xpath(FnameInstructionDetails));
+		//Customer Details
+		Assert.assertTrue(isElementPresent(xpath(FnameInstructionDetails)), "First Name");
+		Assert.assertTrue(isElementPresent(xpath(LnameInstructionDetails)), "Last Name");
+		Assert.assertTrue(isElementPresent(xpath(OwnerInstructionDetails)), "The Customer Is");
+		Assert.assertTrue(isElementPresent(xpath(MobileInstructionDetails)), "Mobile");
+		Assert.assertTrue(isElementPresent(xpath(EmailInstructionDetails)), "Email");
+		//Property Access Details
+		Assert.assertTrue(isElementPresent(xpath(instructionDetailSameAsCustomerCheckbox)), "Same As Customer");
+		Assert.assertTrue(isElementPresent(xpath(accessFName)), "Access First Name");
+		Assert.assertTrue(isElementPresent(xpath(accessLName)), "Access Last Name");
+		Assert.assertTrue(isElementPresent(xpath(accessCompany)), "Access Company");
+		Assert.assertTrue(isElementPresent(xpath(accessContact)), "Access Contact");
+		Assert.assertTrue(isElementPresent(xpath(accessEmail)), "Access Email");
+		//Loan Details
+		Assert.assertTrue(isElementPresent(xpath(loanApplicationId)), "Application ID");
+		Assert.assertTrue(isElementPresent(xpath(loanValuationId)), "Valuation ID");
+		//Special Instruction
+		Assert.assertTrue(isElementPresent(xpath(specialInstruction)), "Special Instruction");		
+	}
+	
+	public void Payment_No_Saved_Data() throws Exception{
+		Thread.sleep(3500);
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		Thread.sleep(2000);
+		click(xpath(TermsandConditionPaymentDetails));
+		type(xpath(accountPasswordPaymentDetails), getDataFromxls(0, "User_PaymentOnAccount.xls", 6, 1));
+		type(xpath(staffIDPaymentDetails), getDataFromxls(0, "User_PaymentOnAccount.xls", 7, 1));
+		click(xpath(backBtn));
+		Thread.sleep(3500);
+		waitForElementPresent(xpath(FnameInstructionDetails));
+		waitForElementVisible(xpath(FnameInstructionDetails));
+		click(xpath(ProceedToPaymentDetails));
+		Thread.sleep(3500);
+		click(xpath(proceedToOrderConfirmation));
+		Thread.sleep(1000);
+		Assert.assertTrue(isElementPresent(xpath(accountPasswordErrorPaymentDetails)));
+		Assert.assertTrue(isElementPresent(xpath(staffIDErrorPaymentDetails)));
+	}
+	
+	public void Payment_Security_Inconsistent() throws Exception{
+		String URL = "/Payment?propertyId=4857081&hubtk=123411234113241&op=myrp_widgets.paymentDetail.paymentDetail&nocache=1380532035760 &subop=validatePaymentValues&totalAmountPurchased=605.00&isTermsConditionsActive=true &termsAndConditions=true&cardNumber=4111111111111111&securityCode=123&expirationMonth=09 &expirationYear=2013&isDefaultCard=on&isCompanyIdActive=false&isCompanyIdMandatory=false &hubtk=130930185823503&nameForTaxInvoice=Twistresources+Tester &emailForTaxInvoice=devtest%40twistresources.com&_ggSec001=123456";
+		driver.navigate().to(environment.concat("cbalender".concat(".rppropertyhub.com").concat(URL)));
+		Thread.sleep(4000);	
+		waitForElementPresent(xpath(inconsistentData));
+		Assert.assertTrue(isElementPresent(xpath(inconsistentData)));
+		driver.navigate().to(environment.concat("cbalender".concat(".rppropertyhub.com/")));
+		Thread.sleep(2000);
+		Logout_link();
+	}
+	public void Payment_TermsAndCondition() throws Exception{
+		Assert.assertTrue(isElementPresent(xpath(TermsandConditionPaymentDetails)));
+	}
+	
 }
 
 
