@@ -319,7 +319,6 @@ public class ObjectReference {
     public static String userOnAccountLabel = "(//*[@class='hubHeaderBodyText productPrice'])[4]";
     public static String dynamicProductTabLink = "//a[@id='link{?}']";
     public static String propertyType = "//*[@class='propertyType']";
-
     
     
     //Instruction details
@@ -395,7 +394,6 @@ public class ObjectReference {
     public static String theOther = "//*[@id='3_1_value']//option[@value='5']";
     
     public static String specialInstruction = "//*[@id='60_8_value']";
-        
     public static String userSameAsCustomer = "//*[@id='checkbox_16_2_value']";
     public static String accessSameAsLabel = "//label[@for='16_2_value']";
     
@@ -419,26 +417,25 @@ public class ObjectReference {
     public static String builderContactNumber = "//*[@id='51_6_value']";
     public static String applicationId = "//*[@id='54_7_value']";
     public static String construction = "//*[@value='27']";
-    public static String companyTitle = "//*[@id='11']"; 
-    public static String doAnyApplyConstructionCompleted = "//*[@id='31']";
-    public static String doAnyApplyCostingReport ="//*[@id='12']";
-    public static String doAnyApplyDevelopmentSite ="//*[@id='13']";
-    public static String doAnyApplyDHA ="//*[@id='33']";
-    public static String doAnyApplyDisplayHome ="//*[@id='34']";
-    public static String doAnyApplyLeasehold ="//*[@id='16']";
-    public static String doAnyApplyMultipleDwelling ="//*[@id='18']";
-    public static String doAnyApplyNonResidential ="//*[@id='19']";
-    public static String doAnyApplyNonHabitable ="//*[@id='20']";
-    public static String doAnyApplyOffThePlan ="//*[@id='21']";
-    public static String doAnyApplyPropertyBeing ="//*[@id='22']";
-    public static String doAnyApplyPropertySize40ha ="//*[@id='36']";
-    public static String doAnyApplyPropertySize50haor22ha ="//*[@id='32']";
-    public static String doAnyApplyReverseMortgage ="//*[@id='38']";
-    public static String doAnyApplyServiceManagement ="//*[@id='37']";
-    public static String doAnyApplyStudentStyle ="//*[@id='25']";
-    
-    
+    public static String companyTitle = "//*[@id='11']";    
     public static String leasehold = "//*[@id='16']";
+    
+    public static String doAnyApplyConstructionCompleted = "//*[@id='31']";		
+    public static String doAnyApplyCostingReport ="//*[@id='12']";		
+    public static String doAnyApplyDevelopmentSite ="//*[@id='13']";		
+    public static String doAnyApplyDHA ="//*[@id='33']";		
+    public static String doAnyApplyDisplayHome ="//*[@id='34']";		
+    public static String doAnyApplyLeasehold ="//*[@id='16']";		
+    public static String doAnyApplyMultipleDwelling ="//*[@id='18']";		
+    public static String doAnyApplyNonResidential ="//*[@id='19']";		
+    public static String doAnyApplyNonHabitable ="//*[@id='20']";		
+    public static String doAnyApplyOffThePlan ="//*[@id='21']";		
+    public static String doAnyApplyPropertyBeing ="//*[@id='22']";		
+    public static String doAnyApplyPropertySize40ha ="//*[@id='36']";		
+    public static String doAnyApplyPropertySize50haor22ha ="//*[@id='32']";		
+    public static String doAnyApplyReverseMortgage ="//*[@id='38']";		
+    public static String doAnyApplyServiceManagement ="//*[@id='37']";		
+    public static String doAnyApplyStudentStyle ="//*[@id='25']";		
     
     public static String strataNetLabel = "//label[@for='67_3_value']";
     public static String strataRentalLabel = "//label[@for='68_3_value']";
@@ -465,7 +462,8 @@ public class ObjectReference {
     public static String userCartCountCancel = "//input[@id='cartCountRestrictionCancel']";
 
     // Payment Details
-    public static String ProceedToPaymentDetails = "//*[text()='Proceed to payment details']";  
+
+    public static String ProceedToPaymentDetails = "//*[text()='Proceed to payment details']";
     public static String userPaymentDetailsForm = "//div[@id='paymentDetailForm']";
     public static String userPaymentItem = "//td[@class='labelText hubHeaderBodyText']";
     public static String userPaymentTermsConditions = "//input[@id='termsAndConditions']";
@@ -479,9 +477,8 @@ public class ObjectReference {
     public static String userPaymentDetailsRemovePopup = "//div[@id='hubCboxLoadedContent']";
     public static String userPaymentDetailsRemoveOk = "//a[contains(text(),'OK')]";
     public static String confirmPayment = "//*[@class='navigationBtn hubNavigation_next']";
-    
-    public static String termAndConditionsErrorPaymentDetails = "//*[@class='termsAndConditionsError errorMessage']";
-    public static String accountPasswordErrorPaymentDetails = "//*[@class='accountPasswordError errorMessage']";
+    public static String termAndConditionsErrorPaymentDetails = "//*[@class='termsAndConditionsError errorMessage']";		
+    public static String accountPasswordErrorPaymentDetails = "//*[@class='accountPasswordError errorMessage']";		
     public static String staffIDErrorPaymentDetails = "//*[@class='accountIdError errorMessage']";
     
     //Order Confirmation
@@ -960,7 +957,6 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
     public static String PromoAddBtn = "//*[@class='hubButtonBg hubButtonText']";
     public static String ProductPrice = "(//*[@class='hubHeaderBodyText'])[3]";
     //public static String ProductPrice = "((//*[@class='hubHeaderBodyText'])[3]/text()";
-    
     public static String MainTotalAmount = "//*[@id='mainTotalAmount']";
     public static String InvoiceName = "//*[@name='nameForTaxInvoice']";
     public static String InvoiceEmail = "//*[@name='emailForTaxInvoice']";
@@ -1125,7 +1121,6 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
   public static String cancelButton = "//*[text()='Cancel']";
   public static String customerId = "//*[@id='customerId']";
   public static String guestId = "//*[@id='guestId']"; 
-  
   public static String inconsistentData = "//*[text()='Inconsistent Data']";
   
   
@@ -1134,9 +1129,7 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
   public static String SearchButton = "//*[@class='btn btn-primary']";
   public static String text = "//*[text()='B Information Technology']";
   public static String CutOff = "//*[contains(text(),'Cut-off ATAR (2014):')])[1]";
-  public static String FieldofEdu = "//*[contains(text(),'Field of education:')])[1]"; 
-  
-  
+  public static String FieldofEdu = "//*[contains(text(),'Field of education:')])[1]";
   
 }
 
