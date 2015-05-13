@@ -442,9 +442,9 @@ public class AdminRegressionSuiteUtil extends FunctionReference {
 			click(xpath(avm));
 			click(xpath(proceedToProductValuation));
 			Thread.sleep(3000);
-			waitForElementPresent(xpath(pruchaseBtnSingle));
-			waitForElementVisible(xpath(pruchaseBtnSingle));
-			Assert.assertEquals(getValue(xpath(pruchaseBtnSingle)), "Not Available");
+			waitForElementPresent(xpath(purchaseBtnSingle));
+			waitForElementVisible(xpath(purchaseBtnSingle));
+			Assert.assertEquals(getValue(xpath(purchaseBtnSingle)), "Not Available");
 
 		}
 	
@@ -520,9 +520,9 @@ public class AdminRegressionSuiteUtil extends FunctionReference {
 		click(xpath(avm));
 		click(xpath(proceedToProductValuation));
 		Thread.sleep(3000);
-		waitForElementPresent(xpath(pruchaseBtnSingle));
-		waitForElementVisible(xpath(pruchaseBtnSingle));
-		Assert.assertEquals(getValue(xpath(pruchaseBtnSingle)), "Add to cart");
+		waitForElementPresent(xpath(purchaseBtnSingle));
+		waitForElementVisible(xpath(purchaseBtnSingle));
+		Assert.assertEquals(getValue(xpath(purchaseBtnSingle)), "Add to cart");
 
 	}
 	

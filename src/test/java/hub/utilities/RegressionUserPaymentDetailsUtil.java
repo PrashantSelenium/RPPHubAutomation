@@ -31,7 +31,7 @@ public class RegressionUserPaymentDetailsUtil extends FunctionReference{
 	}
 	
 	public void testUserProceedToPayment() throws Exception {	
-		click(By.linkText(userProceedToPaymentDetails));
+		click(By.linkText(ProceedToPaymentDetails));
 	}
 
 	public void testPaymentCartCountPopup() throws Exception {
@@ -93,12 +93,12 @@ public class RegressionUserPaymentDetailsUtil extends FunctionReference{
 			click(xpath(userPaymentTermsConditions));	
 			}
 		
-		if(isElementPresent(xpath(userPaymentPassword))){
-			type(xpath(userPaymentPassword), input[21]);	
+		if(isElementPresent(xpath(accountPasswordPaymentDetails))){
+			type(xpath(accountPasswordPaymentDetails), input[21]);	
 			}
 		
-		if(isElementPresent(xpath(userPaymentBroker))){
-			type(xpath(userPaymentBroker), input[22]);	
+		if(isElementPresent(xpath(staffIDPaymentDetails))){
+			type(xpath(staffIDPaymentDetails), input[22]);	
 			}
 		
 		if(isElementPresent(xpath(userPaymentCreditName))){

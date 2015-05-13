@@ -3524,10 +3524,6 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			z++;
 		} while(z!=8);
 	}
-
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 	
 	///////////////////Sample//////////////////////
 	
@@ -3545,8 +3541,8 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(userPropertySearch));
 		if(!isElementPresent(xpath(userPropertySearch))){ Thread.sleep(3000); }
 		if(!isElementPresent(xpath(userPropertySearch))){ Thread.sleep(3000); }
-=======
->>>>>>> Stashed changes
+	}
+	
 	public void theCustomerIs() throws Exception{
 		click(xpath(instructionDetailsTab));
 		waitForElementVisible(xpath(custCustomerIsLabel));
@@ -3766,27 +3762,20 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		type(xpath(insAddress), getDataFromxls(0, "User_InstructionDetails.xls", 1, 4));
 		Assert.assertEquals(isReadOnly(xpath(insAddress)), "readonly");
 	}
-<<<<<<< Updated upstream
 
+//	public void insSpecialInstructions() throws Exception{
+//		click(xpath(insSpecialInstructions));
+//		Assert.assertTrue(isElementVisible(xpath(insSpecialInstructionsForm)),"Special Instructions section was not toggled close");
+//		Thread.sleep(2000);
+//		Assert.assertTrue(isElementVisible(xpath(specialInstructions)), "Special Instructions field is not displayed");
+//	}
+	
 	public void insSpecialInstructions() throws Exception{
 		click(xpath(insSpecialInstructions));
 		Assert.assertTrue(isElementVisible(xpath(insSpecialInstructionsForm)),"Special Instructions section was not toggled close");
 		Thread.sleep(2000);
 		Assert.assertTrue(isElementVisible(xpath(specialInstructions)), "Special Instructions field is not displayed");
-	}
 	
-=======
->>>>>>> Stashed changes
-
-	public void insSpecialInstructions() throws Exception{
-		click(xpath(insSpecialInstructions));
-		Assert.assertTrue(isElementVisible(xpath(insSpecialInstructionsForm)),"Special Instructions section was not toggled close");
-		Thread.sleep(2000);
-		Assert.assertTrue(isElementVisible(xpath(specialInstructions)), "Special Instructions field is not displayed");
-	}
-	
->>>>>>> origin/hub-automation
-
 		try {
 			Assert.assertEquals("Enter your property address or street name here.", getValue(xpath(userPropertySearch)));
 		} catch (AssertionError e) {
@@ -3796,7 +3785,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(userSearchButton));
 		Thread.sleep(3000);
 	}
-	
+
 	public void MacquarieBRE_CorrectProduct() throws Exception{
 		int num = 1;
 		int col = 3;
