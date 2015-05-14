@@ -2967,6 +2967,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			if(!isElementPresent(xpath(userProceedToProductSelection))){ Thread.sleep(300); }
 			waitForElementPresent(xpath(userProceedToProductSelection));
 			waitForElementVisible(xpath(userProceedToProductSelection));
+			Thread.sleep(3000);
 			try{
 				if(isElementPresent(xpath(userProceedToProductSelection))){
 					click(xpath(userProceedToProductSelection));
@@ -3541,6 +3542,15 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(userPropertySearch));
 		if(!isElementPresent(xpath(userPropertySearch))){ Thread.sleep(3000); }
 		if(!isElementPresent(xpath(userPropertySearch))){ Thread.sleep(3000); }
+		Thread.sleep(3000);
+		try {
+			Assert.assertEquals("Enter your property address or street name here.", getValue(xpath(userPropertySearch)));
+		} catch (AssertionError e) {
+			fail("SLAS placeholder text");
+		}
+		type(xpath(userPropertySearch), getDataFromxls(0, "User_ProductSelectionOriginator.xls", 1, 0));		
+		click(xpath(userSearchButton));
+		Thread.sleep(4000);
 	}
 	
 	public void theCustomerIs() throws Exception{
@@ -3763,27 +3773,11 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertEquals(isReadOnly(xpath(insAddress)), "readonly");
 	}
 
-//	public void insSpecialInstructions() throws Exception{
-//		click(xpath(insSpecialInstructions));
-//		Assert.assertTrue(isElementVisible(xpath(insSpecialInstructionsForm)),"Special Instructions section was not toggled close");
-//		Thread.sleep(2000);
-//		Assert.assertTrue(isElementVisible(xpath(specialInstructions)), "Special Instructions field is not displayed");
-//	}
-	
 	public void insSpecialInstructions() throws Exception{
 		click(xpath(insSpecialInstructions));
 		Assert.assertTrue(isElementVisible(xpath(insSpecialInstructionsForm)),"Special Instructions section was not toggled close");
 		Thread.sleep(2000);
 		Assert.assertTrue(isElementVisible(xpath(specialInstructions)), "Special Instructions field is not displayed");
-	
-		try {
-			Assert.assertEquals("Enter your property address or street name here.", getValue(xpath(userPropertySearch)));
-		} catch (AssertionError e) {
-			fail("SLAS placeholder text");
-		}
-		type(xpath(userPropertySearch), address);		
-		click(xpath(userSearchButton));
-		Thread.sleep(3000);
 	}
 
 	public void MacquarieBRE_CorrectProduct() throws Exception{

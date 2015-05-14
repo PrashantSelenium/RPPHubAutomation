@@ -103,6 +103,7 @@ public class UserPaymentDetailsOnAccount extends TestInitReference {
 		Assert.assertTrue(URL.toLowerCase().contains("https"));
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.Logout_link();
+    	Thread.sleep(300);
 	}
 	
 	@Test(description="User - Payment Details", priority=6)
@@ -119,7 +120,7 @@ public class UserPaymentDetailsOnAccount extends TestInitReference {
 		util.Product_Selection_select_Product("1");
 		click(xpath(proceedtoInstuction));
 		util.Instruction_Input_Fields();
-		Thread.sleep(5000);
+		Thread.sleep(5500);
 		Assert.assertTrue(getDataFromxls(0, "User_PaymentOnAccount.xls" , 8, 1).contains(getText(xpath(PaymentProductName))));
 		util.Logout_link();
 	}
@@ -138,7 +139,7 @@ public class UserPaymentDetailsOnAccount extends TestInitReference {
 		util.Product_Selection_select_Product("2");
 		click(xpath(proceedtoInstuction));
 		util.Instruction_Input_Fields();
-		Thread.sleep(5000);
+		Thread.sleep(5500);
 		Assert.assertTrue(getDataFromxls(0, "User_PaymentOnAccount.xls" , 9, 1).contains(getText(xpath(MainTotalAmount))));
 	}
 	
