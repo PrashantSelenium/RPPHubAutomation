@@ -35,7 +35,8 @@ public class UserOrderConfirmation extends TestInitReference {
 	@Test(description="User - Order Confirmation", priority=0)
 	public void RT_02707_Order_Confirmation_HTTPS() throws Exception {		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-		util.ocHTTPS();
+			util.proceedToOrderConfirmation();
+			util.urlHttps();
 	}
 
 }

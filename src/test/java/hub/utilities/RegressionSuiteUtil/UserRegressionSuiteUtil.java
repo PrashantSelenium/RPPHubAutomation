@@ -3582,6 +3582,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 
 	public void insChangeAddress() throws Exception{
+		waitForElementVisible(xpath(insChangeAddress));
 		click(xpath(insChangeAddress));
 		Thread.sleep(6000);
 		Assert.assertTrue(isElementVisible(xpath(changeAddressPopup)),"Change address conformation is not displayed");
@@ -3649,17 +3650,39 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 
 	public void fillInsDetails() throws Exception {
+	if(isElementVisible(xpath(userCustomerFName))){
 	type(xpath(userCustomerFName), getDataFromxls(0, "User_InstructionDetails.xls", 1, 2));
+	}
+	if(isElementVisible(xpath(userCustomerFName))){
 	type(xpath(userCustomerLName), getDataFromxls(0, "User_InstructionDetails.xls", 2, 2));
+	}
+	if(isElementVisible(xpath(userCustomerFName))){
 	type(xpath(userCustomerContact), getDataFromxls(0, "User_InstructionDetails.xls", 3, 2));
+	}
+	if(isElementVisible(xpath(userCustomerFName))){
 	type(xpath(userCustomerEmail), getDataFromxls(0, "User_InstructionDetails.xls", 4, 2));
+	}
+	if(isElementVisible(xpath(userCustomerFName))){
 	type(xpath(accessFName), getDataFromxls(0, "User_InstructionDetails.xls", 5, 2));
+	}
+	if(isElementVisible(xpath(userCustomerFName))){
 	type(xpath(accessLName), getDataFromxls(0, "User_InstructionDetails.xls", 6, 2));
+	}
+	if(isElementVisible(xpath(userCustomerFName))){
 	type(xpath(accessCompany), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
+	}
+	if(isElementVisible(xpath(userCustomerFName))){
 	type(xpath(accessContact), getDataFromxls(0, "User_InstructionDetails.xls", 8, 2));
+	}
+	if(isElementVisible(xpath(userCustomerFName))){
 	type(xpath(consCompName), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
+	}
+	if(isElementVisible(xpath(userCustomerFName))){
 	type(xpath(builderName), getDataFromxls(0, "User_InstructionDetails.xls", 5, 2));
+	}
+	if(isElementVisible(xpath(userCustomerFName))){
 	type(xpath(builderContactNumber), getDataFromxls(0, "User_InstructionDetails.xls", 8, 2));
+	}
 	}
 	
 	public void insProceedPayment() throws Exception{
@@ -4157,44 +4180,23 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 				fail("Reference Number is not Displayed");
 				resultcount++;
 	    		}
-		try{
-	    	Assert.assertTrue(isElementPresent(xpath(downloadPDF)));
-			}
-			catch(AssertionError e){
-				fail("Download PDF is not Displayed");
-				resultcount++;
-	    		}
-		try{
-	    	Assert.assertTrue(isElementPresent(xpath(startNewOrder)));
-			}
-			catch(AssertionError e){
-				fail("Start New Order is not Displayed");
-				resultcount++;
-	    		}
-
-		try{
-	    	Assert.assertTrue(isElementPresent(xpath(youOrderedLabel)));
-			}
-			catch(AssertionError e){
-				fail("You Ordered Label is not Displayed");
-				resultcount++;
-	    		}
-		try{
-	    	Assert.assertTrue(isElementPresent(xpath(customerDetailLabel)));
-			}
-			catch(AssertionError e){
-				fail("Customer Detail Label is not Displayed");
-				resultcount++;
-	    		}
-		try{
-	    	Assert.assertTrue(isElementPresent(xpath(startNewOrderBTN)));
-			}
-			catch(AssertionError e){
-				fail("Start New Order Button is not Displayed");
-				resultcount++;
-	    		}
 		}
-	}	
+	}
+
+	public void proceedToOrderConfirmation() throws Exception {
+		Successful_login_CBALender();
+		slas();
+		startNewTransaction();
+		proceedProductSelection();
+		breShortForm();
+		clickToInstruction();
+		fillInsDetails();
+		click(xpath(insNextBtn));
+		Thread.sleep(6000);
+		Payment_CPS_Successful();
+	}
+
+
 }
 
 
