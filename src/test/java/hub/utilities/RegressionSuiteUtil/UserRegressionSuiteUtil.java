@@ -3020,6 +3020,18 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertEquals(getText(xpath(originatorHeader)),"Please provide the following details to proceed:");		
 	}
 	
+	public void repRPDataAutoval() throws Exception {
+		click(xpath(tabAffordability));
+		waitForElementPresent(xpath(userOriginatorDetails));
+		waitForElementVisible(xpath(userOriginatorDetails));
+		type(xpath(userOEVPP),(getDataFromxls(0, "User_InstructionDetails.xls", 1, 0)));
+		click(xpath(userOriginatorToProductSelection));
+		Thread.sleep(20000);
+		Assert.assertTrue(isElementPresent(xpath(RPDtataAutovalAddToCart)),"RP Data Autoval should be available");
+		click(xpath(RPDtataAutovalAddToCart));
+		Thread.sleep(1500);
+	}
+	
 	public void breShortForm() throws Exception {
 		waitForElementPresent(xpath(userOriginatorDetails));
 		waitForElementVisible(xpath(userOriginatorDetails));
@@ -3650,37 +3662,40 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 
 	public void fillInsDetails() throws Exception {
-	if(isElementVisible(xpath(userCustomerFName))){
+	if(isElementPresent(xpath(userCustomerFName))){
 	type(xpath(userCustomerFName), getDataFromxls(0, "User_InstructionDetails.xls", 1, 2));
 	}
-	if(isElementVisible(xpath(userCustomerFName))){
+	if(isElementPresent(xpath(userCustomerLName))){
 	type(xpath(userCustomerLName), getDataFromxls(0, "User_InstructionDetails.xls", 2, 2));
 	}
-	if(isElementVisible(xpath(userCustomerFName))){
+	if(isElementPresent(xpath(userCustomerContact))){
 	type(xpath(userCustomerContact), getDataFromxls(0, "User_InstructionDetails.xls", 3, 2));
 	}
-	if(isElementVisible(xpath(userCustomerFName))){
+	if(isElementPresent(xpath(userCustomerEmail))){
 	type(xpath(userCustomerEmail), getDataFromxls(0, "User_InstructionDetails.xls", 4, 2));
 	}
-	if(isElementVisible(xpath(userCustomerFName))){
+	if(isElementPresent(xpath(accessFName))){
 	type(xpath(accessFName), getDataFromxls(0, "User_InstructionDetails.xls", 5, 2));
 	}
-	if(isElementVisible(xpath(userCustomerFName))){
+	if(isElementPresent(xpath(accessLName))){
 	type(xpath(accessLName), getDataFromxls(0, "User_InstructionDetails.xls", 6, 2));
 	}
-	if(isElementVisible(xpath(userCustomerFName))){
+	if(isElementPresent(xpath(accessCompany))){
 	type(xpath(accessCompany), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
 	}
-	if(isElementVisible(xpath(userCustomerFName))){
+	if(isElementPresent(xpath(accessContact))){
 	type(xpath(accessContact), getDataFromxls(0, "User_InstructionDetails.xls", 8, 2));
 	}
-	if(isElementVisible(xpath(userCustomerFName))){
+	if(isElementPresent(xpath(accessEmail))){
+	type(xpath(accessEmail), getDataFromxls(0, "User_InstructionDetails.xls", 4, 2));
+	}
+	if(isElementPresent(xpath(consCompName))){
 	type(xpath(consCompName), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
 	}
-	if(isElementVisible(xpath(userCustomerFName))){
+	if(isElementPresent(xpath(builderName))){
 	type(xpath(builderName), getDataFromxls(0, "User_InstructionDetails.xls", 5, 2));
 	}
-	if(isElementVisible(xpath(userCustomerFName))){
+	if(isElementPresent(xpath(builderContactNumber))){
 	type(xpath(builderContactNumber), getDataFromxls(0, "User_InstructionDetails.xls", 8, 2));
 	}
 	}
@@ -4013,11 +4028,17 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	
 	public void Payment_Successful_OnAccount_Purchase(String ProceedorConfirm) throws Exception{
 		Thread.sleep(3500);
-		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
 		Thread.sleep(2000);
+		if(isElementPresent(xpath(TermsandConditionPaymentDetails))){
 		click(xpath(TermsandConditionPaymentDetails));
+		}
+		if(isElementPresent(xpath(accountPasswordPaymentDetails))){
 		type(xpath(accountPasswordPaymentDetails), getDataFromxls(0, "User_PaymentOnAccount.xls", 6, 1));
+		}
+		if(isElementPresent(xpath(staffIDPaymentDetails))){
 		type(xpath(staffIDPaymentDetails), getDataFromxls(0, "User_PaymentOnAccount.xls", 7, 1));
+		}
 		if(ProceedorConfirm.equalsIgnoreCase("proceed")){ click(xpath(proceedToOrderConfirmation));		}
 			else { click(xpath(ConfirmBtnPaymentDetails));	 }
 		Thread.sleep(3500);
@@ -4194,6 +4215,84 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(insNextBtn));
 		Thread.sleep(6000);
 		Payment_CPS_Successful();
+	}
+
+	public void youOrderedTile() throws Exception{
+		Assert.assertTrue(isElementPresent(xpath(youOrderedTile)), "You Ordered tile is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(youOrderedLabel)), "You Ordered: header is not displayed");
+		Assert.assertEquals(getText(xpath(youOrderedLabel)), "You ordered:");
+		Assert.assertTrue(isElementPresent(xpath(youOrderedItem)),"Cart items are not displayed");
+		Assert.assertEquals(getText(xpath(youOrderedItem)), getDataFromxls(0, "User_PaymentCPS.xls", 8, 2));
+		Assert.assertEquals(getText(xpath(youOrderedPrice)), getDataFromxls(0, "User_PaymentCPS.xls", 9, 2));
+		Assert.assertTrue(isElementPresent(xpath(youOrderedTotal)), "Total Amount: is not displayed");
+		Assert.assertEquals(getText(xpath(youOrderedTotal)), "Total Amount:");
+		Assert.assertTrue(verifyTextPresent("All Prices are in Australian Dollars and include GST"));
+	}
+	
+	public void startNewOrder() throws Exception {
+		Assert.assertTrue(isElementPresent(xpath(startNewOrderBTN)), "Start New Order button is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(startNewOrderIcon)), "Start New Order icon is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(startNewOrderLink)), "Start New Order link is not displayed");
+		click(xpath(startNewOrderBTN));
+		Thread.sleep(6000);
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)), "Start new order is not working");
+		driver.navigate().back();
+		Thread.sleep(6000);
+		click(xpath(startNewOrderIcon));
+		Thread.sleep(6000);
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)), "Start new order is not working");
+		driver.navigate().back();
+		Thread.sleep(6000);
+		click(xpath(startNewOrderLink));
+		Thread.sleep(6000);
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)), "Start new order is not working");
+		driver.navigate().back();
+		Thread.sleep(6000);
+	}
+	
+	public void reportPopup() throws Exception {
+		LoginChannel("stgeorge");
+		Thread.sleep(3000);
+		slas();
+		startNewTransaction();
+		proceedProductSelection();
+		click(xpath(SuburbScorecardAddToCart));
+		Thread.sleep(1500);
+		clickToInstruction();
+		fillInsDetails();
+		click(xpath(insNextBtn));
+		Thread.sleep(6000);
+		Payment_Successful_OnAccount_Purchase("confirm");
+		waitForElementPresent(xpath(openReportpopup));
+		waitForElementVisible(xpath(openReportpopup));
+		Assert.assertTrue(isElementVisible(xpath(openReportpopup)), "Report pop up is not displayed");
+		Thread.sleep(500);
+		Assert.assertTrue(getText(xpath(openReportpopup)).contains("Your reports will be sent to your email address shortly. Would you like to view your reports now?"));
+		click(xpath(noBTN));
+		Thread.sleep(500);	
+		Assert.assertFalse(isElementPresent(xpath(openReportpopup)), "Report pop up was not closed");
+		String url = driver.getCurrentUrl();
+		driver.navigate().to(url);
+		Thread.sleep(3000);
+		Assert.assertTrue(isElementVisible(xpath(openReportpopup)), "Report pop up is not displayed");
+		click(xpath(yesBTN));
+		Thread.sleep(20000);
+	}
+
+	public void orderConfirmationWordings() throws Exception {
+		LoginChannel("wpcbroker");
+		Thread.sleep(3000);
+		slas();
+		startNewTransaction();
+		proceedProductSelection();
+		repRPDataAutoval();
+		clickToInstruction();
+		fillInsDetails();
+		click(xpath(insNextBtn));
+		Thread.sleep(6000);
+		Payment_Successful_OnAccount_Purchase("confirm");
+		
+		
 	}
 
 

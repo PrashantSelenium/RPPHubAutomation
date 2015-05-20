@@ -274,6 +274,7 @@ public class ObjectReference {
     public static String tabRuralValuations ="//div[@id='linkRural_Valuations']";
     public static String userValuationsTab = "//div[@id('tabValuations')]";
     public static String userRetroReportsTab = "//div[@id='tabRetro_Reports']";
+    public static String tabAffordability = "//*[@id='linkAffordability']";
     
     //Products
     public static String productLenderEmpowerment = "//*[@id='tabReports']//input[@id='purchaseButton']";
@@ -293,7 +294,8 @@ public class ObjectReference {
     public static String shortFormAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_71']";
     public static String constructionAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_72']";
     public static String commercialDesktopDualAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_101']";
-
+    public static String SuburbScorecardAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_31']";
+    public static String RPDtataAutovalAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_10']";
 
     //Product selection
     public static String userAddToCart = "(//input[@id='purchaseButton'])[1]";
@@ -967,14 +969,20 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
     public static String downloadPDF = "//*[@id='checkOrderConfirmationReport']/a";
     public static String startNewOrder = "//*[@id='startAnotherOrder']/a[2]";
     public static String emailInformation = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/div[1]/ul[1]/li";
-    public static String youOrderedLabel = "//*[@id='paymentDetailForm']/ul/li/label";
+    public static String youOrderedTile = "//*[@id='paymentDetailForm']";
+    public static String youOrderedLabel = "//*[@id='paymentDetailForm']//*[@class='mainLabel youPurchasedLabel hubHeaderBodyText']";
+    public static String youOrderedTotal = "//*[@id='paymentDetailForm']//*[@class='redLabel hubHeaderBodyText']";
+    public static String youOrderedItem = "//*[@id='purchaseReports']//*[@class='labelText']";
+    public static String youOrderedPrice = "//*[@id='purchaseReports']//*[@style='text-align: right;']";
     public static String customerDetailLabel = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[1]/td/label";
     public static String fNameInfoOrderConfirmation = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[1]/div[2]";
     public static String lNameInfoOrderConfirmation = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[2]/div[2]";
     public static String theCustomer = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[4]/div[2]";
     public static String mobileInfoOrderConfirmation = "(//*[@class='hubHeaderBodyText'])[10]";
-    public static String startNewOrderBTN = "//*[@id='workspace']/table/tbody/tr[2]/td[2]/div[2]/img";
-    public static String openReportpopup = "//*[@id='hubCboxLoadedContent']/div/table[1]/tbody/tr[2]/td";
+    public static String startNewOrderBTN = "//*[@id='hubNavigation_next']";
+    public static String startNewOrderIcon = "//*[@id='startAnotherOrder']//*[@href='javascript:ReferenceNumber.navigateHome();'][1]";
+    public static String startNewOrderLink = "//*[@id='startAnotherOrder']//*[@href='javascript:ReferenceNumber.navigateHome();'][2]";
+    public static String openReportpopup = "//*[@id='hubCboxLoadedContent']//*[@class='hubHeaderBodyText']";
     public static String yesBTN = "//*[text()='Yes']";
     public static String noBTN = "//*[text()='No']";
     //AussieSelect
