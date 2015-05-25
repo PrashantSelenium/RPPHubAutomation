@@ -39,24 +39,48 @@ public class UserOrderConfirmation extends TestInitReference {
 			util.urlHttps();
 	}
 	@Test(description="User - Order Confirmation", priority=1)
+	public void RT_05429_Order_Confirmation_User_Administration() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+			util.userAdministration();
+	}
+	@Test(description="User - Order Confirmation", priority=2)
 	public void RT_09301_Order_Confirmation_You_Ordered_Tile() throws Exception {		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 			util.youOrderedTile();
 	}
-	@Test(description="User - Order Confirmation", priority=2)
+	@Test(description="User - Order Confirmation", priority=3)
+	public void RT_2982_Order_Confirmation_InstructionDetails() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+			util.verifyInstructionDetails();
+	}
+	@Test(description="User - Order Confirmation", priority=4)
 	public void RT_02302_Order_Confirmation_Start_New_Order() throws Exception {		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 			util.startNewOrder();
 	}
-	@Test(description="User - Order Confirmation", priority=3)
+	@Test(description="User - Order Confirmation", priority=5)
 	public void RT_03016_Order_Confirmation_Summary_Wordings() throws Exception {		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 			util.orderConfirmationWordings();
 	}
-	@Test(description="User - Order Confirmation", priority=4)
+	@Test(description="User - Order Confirmation", priority=6)
+	public void RT_03019_Order_Confirmation_Product_Enquiry() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+			util.productAndEnquiry();
+	}
+	@Test(description="User - Order Confirmation", priority=7)
 	public void RT_02138_Order_Confirmation_Report_Popup() throws Exception {		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 			util.reportPopup();
 	}
-
+	@Test(description="User - Order Confirmation", priority=8)
+	public void RT_03005_Order_Confirmation_Download_PDF() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+			util.downloadPDF();
+	}
+	@Test(description="User - Order Confirmation", priority=9)
+	public void RT_03317_Mortgage_Valuation_Popup() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+			util.mortgageValuationPopup();
+	}
 }

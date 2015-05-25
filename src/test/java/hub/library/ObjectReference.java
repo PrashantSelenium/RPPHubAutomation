@@ -19,7 +19,6 @@ public class ObjectReference {
     public static String loginMandatoryFields = "//*[text()='Please complete all mandatory fields.']";
     public static String loginNotEmpty = "//*[text()='Username and/or Password should not be empty.']";
     
-  
     //User Login new
     public static String registerButton = "(//input[@id='subRegInd'])[1]";
     public static String loginButton = "(//input[@id='subRegInd'])[2]";
@@ -182,8 +181,7 @@ public class ObjectReference {
     public static String userShowValidationUpperCase = "//td[@id='upper_case']";
     public static String userShowValidationSpecialChar = "//td[@id='special_character']";
     public static String userResetPasswordButton = "//input[@value='Reset Password']";
-    public static String ForgotPassword = "//input[@value='Forgot My Password!']";
-    
+    public static String ForgotPassword = "//input[@value='Forgot My Password!']";    
     public static String userOTPLabel = "//*[@class='one-time-password']";
 
     //Property Search
@@ -296,6 +294,7 @@ public class ObjectReference {
     public static String commercialDesktopDualAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_101']";
     public static String SuburbScorecardAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_31']";
     public static String RPDtataAutovalAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_10']";
+    public static String aussieShortFormAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_104']";
 
     //Product selection
     public static String userAddToCart = "(//input[@id='purchaseButton'])[1]";
@@ -985,11 +984,32 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
     public static String openReportpopup = "//*[@id='hubCboxLoadedContent']//*[@class='hubHeaderBodyText']";
     public static String yesBTN = "//*[text()='Yes']";
     public static String noBTN = "//*[text()='No']";
+    public static String ocOriginatorEmail = "//*[@class='orderConfirmationDesc'][1]//li[1]";
+    public static String ocCustomerEmail = "//*[@class='orderConfirmationDesc'][1]//li[2]";
+    public static String ocTaxDesc = "//*[@class='orderConfirmationDesc'][2]//li[1]";
+    public static String ocConfInfo = "//*[@class='orderConfirmationDesc'][2]//li[2]";
+    public static String ocCopyPage = "//*[@class='orderConfirmationDesc'][2]//li[2]//td[1]";
+    public static String ocProductEnquiry = "(//*[@class='orderConfirmationDesc'][2]//li[2]//td)[2]";
+    public static String ocGenReport = "//*[@class='orderConfirmationDesc'][2]//li[3]";
+    public static String ocFirstName = "(//*[@class='innerDiv']//div[2])[1]";
+    public static String ocLastName = "(//*[@class='innerDiv']//div[2])[2]";
+    public static String ocContact = "(//*[@class='innerDiv']//div[2])[4]";
+    public static String ocEmail = "(//*[@class='innerDiv']//div[2])[5]";
+    public static String ocCustomer = "(//*[@class='innerDiv']//div[2])[3]";
+    public static String ocAccessFirstName = "(//*[@class='innerDiv']//div[2])[6]";
+    public static String ocAccessLastName = "(//*[@class='innerDiv']//div[2])[7]";
+    public static String ocCompany = "(//*[@class='innerDiv']//div[2])[8]";
+    public static String ocAccessContact = "(//*[@class='innerDiv']//div[2])[9]";
+    public static String ocAccessEmail = "(//*[@class='innerDiv']//div[2])[10]";
+    public static String ocLoanApp = "(//*[@class='innerDiv']//div[2])[11]";
+    public static String ocLoanVal = "(//*[@class='innerDiv']//div[2])[12]";
+    
     //AussieSelect
     public static String fNameInfoOrderConfirmationAussie = "(//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[1]/div[2])[1]";
     public static String lNameInfoOrderConfirmationAussie = "(//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[2]/div[2])[1]";
     public static String mobileInfoOrderConfirmationAussie = "(//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[5]/div[2])[2]";
   //My Transaction
+    public static String transactionList ="//*[@class='TransactionList']";
     public static String customerName= "//*[text()='Customer Name']";
     public static String address = "//th[@class='address']";
     public static String serviceType = "//th[@class='serviceType']";
