@@ -4370,17 +4370,33 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void mortgageValuationPopup() throws Exception {
-		LoginChannel("aussieselect");
+		LoginChannel("acme");
 		Thread.sleep(3000);
 		slas();
 		startNewTransaction();
 		proceedProductSelection();
-		aussieShortForm();
+		click(xpath(SuburbScorecardAddToCart));
 		clickToInstruction();
 		fillInsDetails();
 		click(xpath(insNextBtn));
-		Thread.sleep(6000);
-		Payment_Successful_OnAccount_Purchase("confirm");
+		Thread.sleep(3500);
+		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
+		Thread.sleep(2000);
+		if(isElementPresent(xpath(TermsandConditionPaymentDetails))){
+		click(xpath(TermsandConditionPaymentDetails));
+		}
+		if(isElementPresent(xpath(accountPasswordPaymentDetails))){
+		type(xpath(accountPasswordPaymentDetails), getDataFromxls(0, "User_PaymentOnAccount.xls", 6, 1));
+		}
+		if(isElementPresent(xpath(staffIDPaymentDetails))){
+		type(xpath(staffIDPaymentDetails), getDataFromxls(0, "User_PaymentOnAccount.xls", 7, 1));
+		}
+		click(xpath(proceedToOrderConfirmation));
+		Thread.sleep(3500);
+		waitForElementPresent(xpath(mortgageValuationPopup));
+		Assert.assertTrue(getText(xpath(mortgageValuationPopup)).contains("Mortgage Valuation Notification"));
+		Assert.assertTrue(getText(xpath(mortgageValuationPopup)).contains("You have ordered a valuation in support of a loan application. Please wait until the valuation has been completed and returned to you prior to submitting your loan application The loan application, the valuation and any supporting documentation should be submitted together."));
+		click(xpath(cartCountOK));
 	}
 }
 

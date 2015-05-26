@@ -295,6 +295,7 @@ public class ObjectReference {
     public static String SuburbScorecardAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_31']";
     public static String RPDtataAutovalAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_10']";
     public static String aussieShortFormAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_104']";
+    public static String propProfileV3AddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_130']";
 
     //Product selection
     public static String userAddToCart = "(//input[@id='purchaseButton'])[1]";
@@ -1003,6 +1004,7 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
     public static String ocAccessEmail = "(//*[@class='innerDiv']//div[2])[10]";
     public static String ocLoanApp = "(//*[@class='innerDiv']//div[2])[11]";
     public static String ocLoanVal = "(//*[@class='innerDiv']//div[2])[12]";
+    public static String mortgageValuationPopup = "//*[@id='hubCboxLoadedContent']//*[@class='hubHeaderBodyText']";
     
     //AussieSelect
     public static String fNameInfoOrderConfirmationAussie = "(//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[1]/div[2])[1]";
