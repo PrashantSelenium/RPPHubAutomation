@@ -3576,17 +3576,6 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		} while(z!=8);
 	}
 	
-	///////////////////Sample//////////////////////
-	
-	public void search() throws Exception{
-		waitForElementPresent(xpath(searchfield));
-		type(xpath(searchfield), "Information Technology");
-		click(xpath(SearchButton));
-		Assert.assertTrue(isElementVisible(xpath(text)));
-		Assert.assertTrue(isElementVisible(xpath(CutOff)));
-		Assert.assertTrue(isElementVisible(xpath(FieldofEdu)));
-	}
-	
 	public void slas_dynamic(String address) throws Exception {
 		waitForElementPresent(xpath(userPropertySearch));
 		waitForElementVisible(xpath(userPropertySearch));

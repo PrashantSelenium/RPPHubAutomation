@@ -249,6 +249,7 @@ public class ObjectReference {
     
     //Pending Transactions
     public static String userPendingTransactionMessage ="//*[@id='divContainer']";
+    public static String startNewTransaction = "//*[@onclick='javascript:HubPendingTransaction.startNewTransaction();']";
     
   //Property Detail
     public static String propertDetailsTile = "//*[@id='propdetails']";
@@ -272,7 +273,6 @@ public class ObjectReference {
     public static String customerId = "//*[@id='customerId']";
     public static String guestId = "//*[@id='guestId']"; 
     public static String inconsistentData = "//*[text()='Inconsistent Data']";
-    public static String startNewTransaction = "//*[@onclick='javascript:HubPendingTransaction.startNewTransaction();']";
     public static String hubReferenceNumberLabel = "//*[@class='hubHeaderBodyText']//label";
     public static String hubReferenceNumber = "//*[@class='hubHeaderBodyText']//label//span";
 
