@@ -4201,13 +4201,13 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath("//iframe[@id='card_payment_iframe']"));
 			
 		Thread.sleep(3000);
-		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='card_payment_iframe']")));
-		isElementVisible(By.xpath("//*[@id='CardNumber']"));
-		type(xpath("//*[@id='CardNumber']"), getDataFromxls(0, "User_PaymentCPS.xls", 3, 2).substring(0, 16).concat("111"));
-		type(xpath("//*[@id='CardHolderName']"), getDataFromxls(0, "User_PaymentCPS.xls", 4, 2));
-		type(xpath("//*[@id='DateExpiry_1']"), getDataFromxls(0, "User_PaymentCPS.xls", 5, 2));
-		type(xpath("//*[@id='DateExpiry_2']"), getDataFromxls(0, "User_PaymentCPS.xls", 6, 2));
-		type(xpath("//*[@id='Cvc2']"), getDataFromxls(0, "User_PaymentCPS.xls", 7, 2));
+		driver.switchTo().frame(driver.findElement(By.xpath(CPSIframe)));
+		isElementVisible(By.xpath(CPSCardNumber));
+		type(xpath(CPSCardNumber), getDataFromxls(0, "User_PaymentCPS.xls", 3, 2).substring(0, 16).concat("111"));
+		type(xpath(CPSCardHolderName), getDataFromxls(0, "User_PaymentCPS.xls", 4, 2));
+		type(xpath(CPSDateExpiry), getDataFromxls(0, "User_PaymentCPS.xls", 5, 2));
+		type(xpath(CPSDateExpiry2), getDataFromxls(0, "User_PaymentCPS.xls", 6, 2));
+		type(xpath(CPSCvc2), getDataFromxls(0, "User_PaymentCPS.xls", 7, 2));
 		
 		
 		//STOP HERE IF TESTING IN PROD
@@ -4416,13 +4416,13 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath("//iframe[@id='card_payment_iframe']"));
 			
 		Thread.sleep(400);
-		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='card_payment_iframe']")));
-		isElementVisible(By.xpath("//*[@id='CardNumber']"));
-		type(xpath("//*[@id='CardNumber']"), getDataFromxls(0, "User_PaymentCPS.xls", 3, 2).substring(0, 16).concat("111"));
-		type(xpath("//*[@id='CardHolderName']"), getDataFromxls(0, "User_PaymentCPS.xls", 4, 2));
-		type(xpath("//*[@id='DateExpiry_1']"), getDataFromxls(0, "User_PaymentCPS.xls", 5, 2));
-		type(xpath("//*[@id='DateExpiry_2']"), getDataFromxls(0, "User_PaymentCPS.xls", 6, 2));
-		type(xpath("//*[@id='Cvc2']"), getDataFromxls(0, "User_PaymentCPS.xls", 7, 2));
+		driver.switchTo().frame(driver.findElement(By.xpath(CPSIframe)));
+		isElementVisible(By.xpath(CPSCardNumber));
+		type(xpath(CPSCardNumber), getDataFromxls(0, "User_PaymentCPS.xls", 3, 2).substring(0, 16).concat("111"));
+		type(xpath(CPSCardHolderName), getDataFromxls(0, "User_PaymentCPS.xls", 4, 2));
+		type(xpath(CPSDateExpiry), getDataFromxls(0, "User_PaymentCPS.xls", 5, 2));
+		type(xpath(CPSDateExpiry2), getDataFromxls(0, "User_PaymentCPS.xls", 6, 2));
+		type(xpath(CPSCvc2), getDataFromxls(0, "User_PaymentCPS.xls", 7, 2));
 		Thread.sleep(2000);
  		waitForElementVisible(xpath(instructionNavBar));
 		Assert.assertTrue(isElementVisible(xpath(instructionNavBar)));
@@ -4431,11 +4431,11 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(ProceedToPaymentDetails));
 		Thread.sleep(7000);
 		
-		Assert.assertTrue(getValue(xpath("//*[@id='CardNumber']")).isEmpty());
-		Assert.assertTrue(getValue(xpath("//*[@id='CardHolderName']")).isEmpty());
-		Assert.assertTrue(getValue(xpath("//*[@id='DateExpiry_1']")).isEmpty());
-		Assert.assertTrue(getValue(xpath("//*[@id='DateExpiry_2']")).isEmpty());
-		Assert.assertTrue(getValue(xpath("//*[@id='Cvc2']")).isEmpty());
+		Assert.assertTrue(getValue(xpath(CPSCardNumber)).isEmpty());
+		Assert.assertTrue(getValue(xpath(CPSCardHolderName)).isEmpty());
+		Assert.assertTrue(getValue(xpath(CPSDateExpiry)).isEmpty());
+		Assert.assertTrue(getValue(xpath(CPSDateExpiry2)).isEmpty());
+		Assert.assertTrue(getValue(xpath(CPSCvc2)).isEmpty());
 	}
 }
 
