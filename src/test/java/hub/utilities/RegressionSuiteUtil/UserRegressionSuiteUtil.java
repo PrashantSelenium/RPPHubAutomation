@@ -2982,7 +2982,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	
 	public void startNewTransaction() throws Exception {
 		if(isElementPresent(xpath(userPendingTransactionMessage))){
-	        click(By.linkText("Start a new transaction for this property"));      
+	        click(xpath(startNewTransaction));      
 	    }
         Thread.sleep(3000);	
 	}	
@@ -4397,6 +4397,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(getText(xpath(mortgageValuationPopup)).contains("Mortgage Valuation Notification"));
 		Assert.assertTrue(getText(xpath(mortgageValuationPopup)).contains("You have ordered a valuation in support of a loan application. Please wait until the valuation has been completed and returned to you prior to submitting your loan application The loan application, the valuation and any supporting documentation should be submitted together."));
 		click(xpath(cartCountOK));
+		Thread.sleep(3500);
 	}
 }
 

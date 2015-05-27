@@ -210,7 +210,7 @@ public class ObjectReference {
     public static String cfaErrorMessageSuburb = "//*[text()='Suburb, State and Postcode cannot be empty']";
     
     //Pending Transactions
-    public static String userPendingTransactionMessage ="//div[@id='divContainer']";
+    public static String userPendingTransactionMessage ="//*[@id='divContainer']";
     
     //Property Details
     public static String userCart ="//a[@id='cartCount']";
@@ -1152,6 +1152,7 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
   public static String customerId = "//*[@id='customerId']";
   public static String guestId = "//*[@id='guestId']"; 
   public static String inconsistentData = "//*[text()='Inconsistent Data']";
+  public static String startNewTransaction = "//*[@onclick='javascript:HubPendingTransaction.startNewTransaction();']";
   
   
   /////////////////////////////TEST////////////////
