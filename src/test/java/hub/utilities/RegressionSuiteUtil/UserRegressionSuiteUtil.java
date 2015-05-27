@@ -4194,11 +4194,11 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(ConfirmBtnPaymentDetails));
 		
 		Thread.sleep(4000);
-		if(!isElementPresent(xpath("//iframe[@id='card_payment_iframe']"))){ Thread.sleep(2000); }
-		if(!isElementPresent(xpath("//iframe[@id='card_payment_iframe']"))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath(CPSIframe))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath(CPSIframe))){ Thread.sleep(2000); }
 		
-		waitForElementPresent(xpath("//iframe[@id='card_payment_iframe']"));
-		waitForElementVisible(xpath("//iframe[@id='card_payment_iframe']"));
+		waitForElementPresent(xpath(CPSIframe));
+		waitForElementVisible(xpath(CPSIframe));
 			
 		Thread.sleep(3000);
 		driver.switchTo().frame(driver.findElement(By.xpath(CPSIframe)));
