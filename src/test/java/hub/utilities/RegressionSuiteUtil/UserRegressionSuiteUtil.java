@@ -4399,6 +4399,44 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(cartCountOK));
 		Thread.sleep(3500);
 	}
+	public void Payment_CPS_Kill_widget() throws Exception{
+		Thread.sleep(7000);
+		click(xpath(TermsandConditionPaymentDetails));
+		type(xpath(InvoiceName), getDataFromxls(0, "User_PaymentCPS.xls", 1, 2));
+		type(xpath(InvoiceEmail), getDataFromxls(0, "User_PaymentCPS.xls", 2, 2));
+		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
+		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
+		click(xpath(ConfirmBtnPaymentDetails));
+		
+		Thread.sleep(7000);
+		if(!isElementPresent(xpath("//iframe[@id='card_payment_iframe']"))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath("//iframe[@id='card_payment_iframe']"))){ Thread.sleep(2000); }
+		
+		waitForElementPresent(xpath("//iframe[@id='card_payment_iframe']"));
+		waitForElementVisible(xpath("//iframe[@id='card_payment_iframe']"));
+			
+		Thread.sleep(400);
+		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='card_payment_iframe']")));
+		isElementVisible(By.xpath("//*[@id='CardNumber']"));
+		type(xpath("//*[@id='CardNumber']"), getDataFromxls(0, "User_PaymentCPS.xls", 3, 2).substring(0, 16).concat("111"));
+		type(xpath("//*[@id='CardHolderName']"), getDataFromxls(0, "User_PaymentCPS.xls", 4, 2));
+		type(xpath("//*[@id='DateExpiry_1']"), getDataFromxls(0, "User_PaymentCPS.xls", 5, 2));
+		type(xpath("//*[@id='DateExpiry_2']"), getDataFromxls(0, "User_PaymentCPS.xls", 6, 2));
+		type(xpath("//*[@id='Cvc2']"), getDataFromxls(0, "User_PaymentCPS.xls", 7, 2));
+		Thread.sleep(2000);
+ 		waitForElementVisible(xpath(instructionNavBar));
+		Assert.assertTrue(isElementVisible(xpath(instructionNavBar)));
+		click(xpath(instructionNavBar));
+		Thread.sleep(3000);
+		click(xpath(ProceedToPaymentDetails));
+		Thread.sleep(7000);
+		
+		Assert.assertTrue(getValue(xpath("//*[@id='CardNumber']")).isEmpty());
+		Assert.assertTrue(getValue(xpath("//*[@id='CardHolderName']")).isEmpty());
+		Assert.assertTrue(getValue(xpath("//*[@id='DateExpiry_1']")).isEmpty());
+		Assert.assertTrue(getValue(xpath("//*[@id='DateExpiry_2']")).isEmpty());
+		Assert.assertTrue(getValue(xpath("//*[@id='Cvc2']")).isEmpty());
+	}
 }
 
 
