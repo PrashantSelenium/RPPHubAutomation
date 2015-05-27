@@ -62,7 +62,7 @@ public class TestInitReference extends FunctionReference {
             
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability("browser", "IE");
-            caps.setCapability("browser_version", "9.0");
+            caps.setCapability("browser_version", "8.0");
             caps.setCapability("os", "Windows");
             caps.setCapability("os_version", "7");
     	    caps.setCapability("browserstack.debug", "true");

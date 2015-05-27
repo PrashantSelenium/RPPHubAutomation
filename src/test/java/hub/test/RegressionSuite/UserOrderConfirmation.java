@@ -83,4 +83,9 @@ public class UserOrderConfirmation extends TestInitReference {
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 			util.mortgageValuationPopup();
 	}
+	@Test(description="User - Order Confirmation", priority=10)
+	public void RT_03007_Order_Confirmation_Details() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+			util.ocPropertyDetailsTile();
+	}
 }

@@ -4394,10 +4394,22 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(proceedToOrderConfirmation));
 		Thread.sleep(3500);
 		waitForElementPresent(xpath(mortgageValuationPopup));
+		waitForElementVisible(xpath(mortgageValuationPopup));
 		Assert.assertTrue(getText(xpath(mortgageValuationPopup)).contains("Mortgage Valuation Notification"));
 		Assert.assertTrue(getText(xpath(mortgageValuationPopup)).contains("You have ordered a valuation in support of a loan application. Please wait until the valuation has been completed and returned to you prior to submitting your loan application The loan application, the valuation and any supporting documentation should be submitted together."));
 		click(xpath(cartCountOK));
 		Thread.sleep(3500);
+	}
+
+	public void ocPropertyDetailsTile() throws Exception{
+		Assert.assertTrue(isElementPresent(xpath(propertDetailsTile)), "Property Details tile is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(userPropertyPhoto)), "Property photo is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(propertyAddress)), "Property address is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(hubReferenceNumberLabel)), "Hub Reference Number is not displayed");
+		Assert.assertTrue(getText(xpath(hubReferenceNumberLabel)).contains("RP Data HUB Reference Number"));
+		System.out.println(getText(xpath(hubReferenceNumber)));
+		Thread.sleep(2000);
+		
 	}
 }
 

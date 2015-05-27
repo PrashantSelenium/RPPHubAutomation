@@ -212,10 +212,6 @@ public class ObjectReference {
     //Pending Transactions
     public static String userPendingTransactionMessage ="//*[@id='divContainer']";
     
-    //Property Details
-    public static String userCart ="//a[@id='cartCount']";
-    public static String userPropertyPhoto = "//*[@alt='Property Photo']";
-
     //originator
     public static String userOriginatorDetails = "//div[@id='div_questionnaire']";
     public static String originatorHeader = "//form[@id='propertyDetailQuestions']//label";
@@ -1135,7 +1131,11 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
   public static String BuildVersion = "//*[@id='poweredby']";
   
   //Property Detail
+  public static String propertDetailsTile = "//*[@id='propdetails']";
+  public static String userCart ="//a[@id='cartCount']";
+  public static String userPropertyPhoto = "//*[@alt='Property Photo']";
   public static String userCartPropertyDetail = "//a[@id='cartCount']";
+  public static String propertyAddress = "//*[@class='bold hubHeaderBodyText']";
   public static String propertyPhoto = "//*[@id='propdetails']/div[1]/div/table/tbody/tr/td[1]/img";
   public static String bedrooms = "//*[@id='propdetails']/div[1]/div/table/tbody/tr/td[3]/table/tbody/tr[5]/td/div/table/tbody/tr/td[1]";
   public static String bathRooms = "//*[@id='propdetail']/div[1]/div/table/tbody/tr/td[3]/table/tbody/tr[5]/td/div/table/tbody/tr/td[3]";
@@ -1153,6 +1153,8 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
   public static String guestId = "//*[@id='guestId']"; 
   public static String inconsistentData = "//*[text()='Inconsistent Data']";
   public static String startNewTransaction = "//*[@onclick='javascript:HubPendingTransaction.startNewTransaction();']";
+  public static String hubReferenceNumberLabel = "//*[@class='hubHeaderBodyText']//label";
+  public static String hubReferenceNumber = "//*[@class='hubHeaderBodyText']//label//span";
   
   
   /////////////////////////////TEST////////////////
