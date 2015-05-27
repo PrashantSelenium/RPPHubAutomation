@@ -19,7 +19,6 @@ public class ObjectReference {
     public static String loginMandatoryFields = "//*[text()='Please complete all mandatory fields.']";
     public static String loginNotEmpty = "//*[text()='Username and/or Password should not be empty.']";
     
-  
     //User Login new
     public static String registerButton = "(//input[@id='subRegInd'])[1]";
     public static String loginButton = "(//input[@id='subRegInd'])[2]";
@@ -182,8 +181,7 @@ public class ObjectReference {
     public static String userShowValidationUpperCase = "//td[@id='upper_case']";
     public static String userShowValidationSpecialChar = "//td[@id='special_character']";
     public static String userResetPasswordButton = "//input[@value='Reset Password']";
-    public static String ForgotPassword = "//input[@value='Forgot My Password!']";
-    
+    public static String ForgotPassword = "//input[@value='Forgot My Password!']";    
     public static String userOTPLabel = "//*[@class='one-time-password']";
 
     //Property Search
@@ -212,7 +210,7 @@ public class ObjectReference {
     public static String cfaErrorMessageSuburb = "//*[text()='Suburb, State and Postcode cannot be empty']";
     
     //Pending Transactions
-    public static String userPendingTransactionMessage ="//div[@id='divContainer']";
+    public static String userPendingTransactionMessage ="//*[@id='divContainer']";
     
     //Property Details
     public static String userCart ="//a[@id='cartCount']";
@@ -274,6 +272,7 @@ public class ObjectReference {
     public static String tabRuralValuations ="//div[@id='linkRural_Valuations']";
     public static String userValuationsTab = "//div[@id('tabValuations')]";
     public static String userRetroReportsTab = "//div[@id='tabRetro_Reports']";
+    public static String tabAffordability = "//*[@id='linkAffordability']";
     
     //Products
     public static String productLenderEmpowerment = "//*[@id='tabReports']//input[@id='purchaseButton']";
@@ -293,7 +292,10 @@ public class ObjectReference {
     public static String shortFormAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_71']";
     public static String constructionAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_72']";
     public static String commercialDesktopDualAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_101']";
-
+    public static String SuburbScorecardAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_31']";
+    public static String RPDtataAutovalAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_10']";
+    public static String aussieShortFormAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_104']";
+    public static String propProfileV3AddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_130']";
 
     //Product selection
     public static String userAddToCart = "(//input[@id='purchaseButton'])[1]";
@@ -967,21 +969,49 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
     public static String downloadPDF = "//*[@id='checkOrderConfirmationReport']/a";
     public static String startNewOrder = "//*[@id='startAnotherOrder']/a[2]";
     public static String emailInformation = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/div[1]/ul[1]/li";
-    public static String youOrderedLabel = "//*[@id='paymentDetailForm']/ul/li/label";
+    public static String youOrderedTile = "//*[@id='paymentDetailForm']";
+    public static String youOrderedLabel = "//*[@id='paymentDetailForm']//*[@class='mainLabel youPurchasedLabel hubHeaderBodyText']";
+    public static String youOrderedTotal = "//*[@id='paymentDetailForm']//*[@class='redLabel hubHeaderBodyText']";
+    public static String youOrderedItem = "//*[@id='purchaseReports']//*[@class='labelText']";
+    public static String youOrderedPrice = "//*[@id='purchaseReports']//*[@style='text-align: right;']";
     public static String customerDetailLabel = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[1]/td/label";
     public static String fNameInfoOrderConfirmation = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[1]/div[2]";
     public static String lNameInfoOrderConfirmation = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[2]/div[2]";
     public static String theCustomer = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[4]/div[2]";
     public static String mobileInfoOrderConfirmation = "(//*[@class='hubHeaderBodyText'])[10]";
-    public static String startNewOrderBTN = "//*[@id='workspace']/table/tbody/tr[2]/td[2]/div[2]/img";
-    public static String openReportpopup = "//*[@id='hubCboxLoadedContent']/div/table[1]/tbody/tr[2]/td";
+    public static String startNewOrderBTN = "//*[@id='hubNavigation_next']";
+    public static String startNewOrderIcon = "//*[@id='startAnotherOrder']//*[@href='javascript:ReferenceNumber.navigateHome();'][1]";
+    public static String startNewOrderLink = "//*[@id='startAnotherOrder']//*[@href='javascript:ReferenceNumber.navigateHome();'][2]";
+    public static String openReportpopup = "//*[@id='hubCboxLoadedContent']//*[@class='hubHeaderBodyText']";
     public static String yesBTN = "//*[text()='Yes']";
     public static String noBTN = "//*[text()='No']";
+    public static String ocOriginatorEmail = "//*[@class='orderConfirmationDesc'][1]//li[1]";
+    public static String ocCustomerEmail = "//*[@class='orderConfirmationDesc'][1]//li[2]";
+    public static String ocTaxDesc = "//*[@class='orderConfirmationDesc'][2]//li[1]";
+    public static String ocConfInfo = "//*[@class='orderConfirmationDesc'][2]//li[2]";
+    public static String ocCopyPage = "//*[@class='orderConfirmationDesc'][2]//li[2]//td[1]";
+    public static String ocProductEnquiry = "(//*[@class='orderConfirmationDesc'][2]//li[2]//td)[2]";
+    public static String ocGenReport = "//*[@class='orderConfirmationDesc'][2]//li[3]";
+    public static String ocFirstName = "(//*[@class='innerDiv']//div[2])[1]";
+    public static String ocLastName = "(//*[@class='innerDiv']//div[2])[2]";
+    public static String ocContact = "(//*[@class='innerDiv']//div[2])[4]";
+    public static String ocEmail = "(//*[@class='innerDiv']//div[2])[5]";
+    public static String ocCustomer = "(//*[@class='innerDiv']//div[2])[3]";
+    public static String ocAccessFirstName = "(//*[@class='innerDiv']//div[2])[6]";
+    public static String ocAccessLastName = "(//*[@class='innerDiv']//div[2])[7]";
+    public static String ocCompany = "(//*[@class='innerDiv']//div[2])[8]";
+    public static String ocAccessContact = "(//*[@class='innerDiv']//div[2])[9]";
+    public static String ocAccessEmail = "(//*[@class='innerDiv']//div[2])[10]";
+    public static String ocLoanApp = "(//*[@class='innerDiv']//div[2])[11]";
+    public static String ocLoanVal = "(//*[@class='innerDiv']//div[2])[12]";
+    public static String mortgageValuationPopup = "//*[@id='hubCboxLoadedContent']//*[@class='hubHeaderBodyText']";
+    
     //AussieSelect
     public static String fNameInfoOrderConfirmationAussie = "(//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[1]/div[2])[1]";
     public static String lNameInfoOrderConfirmationAussie = "(//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[2]/div[2])[1]";
     public static String mobileInfoOrderConfirmationAussie = "(//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[5]/div[2])[2]";
   //My Transaction
+    public static String transactionList ="//*[@class='TransactionList']";
     public static String customerName= "//*[text()='Customer Name']";
     public static String address = "//th[@class='address']";
     public static String serviceType = "//th[@class='serviceType']";
@@ -1122,6 +1152,7 @@ public static String AVMProduct = "//*[text()='Automated Valuation Model']";
   public static String customerId = "//*[@id='customerId']";
   public static String guestId = "//*[@id='guestId']"; 
   public static String inconsistentData = "//*[text()='Inconsistent Data']";
+  public static String startNewTransaction = "//*[@onclick='javascript:HubPendingTransaction.startNewTransaction();']";
   
   
   /////////////////////////////TEST////////////////
