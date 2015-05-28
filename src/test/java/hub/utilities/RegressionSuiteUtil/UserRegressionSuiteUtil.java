@@ -7,6 +7,7 @@ import hub.library.ReadXmlData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 
 import com.thoughtworks.selenium.Selenium;
@@ -2942,6 +2943,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void slas() throws Exception {
+		Thread.sleep(3000);
 		waitForElementPresent(xpath(userPropertySearch));
 		waitForElementVisible(xpath(userPropertySearch));
 		if(!isElementPresent(xpath(userPropertySearch))){ Thread.sleep(3000); }
@@ -3666,12 +3668,12 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Thread.sleep(4000);
 		Assert.assertEquals(getValue(xpath(userCustomerFName)), "");
 		Assert.assertEquals(getValue(xpath(userCustomerLName)), "");
-		Assert.assertEquals(getValue(xpath(userCustomerContact)), "");
+		Assert.assertEquals(getText(xpath(userCustomerContact)), "");
 		Assert.assertEquals(getValue(xpath(userCustomerEmail)), "");
 		Assert.assertEquals(getValue(xpath(accessFName)), "");
 		Assert.assertEquals(getValue(xpath(accessLName)), "");
 		Assert.assertEquals(getValue(xpath(accessCompany)), "");
-		Assert.assertEquals(getValue(xpath(accessContact)), "");
+		Assert.assertEquals(getText(xpath(accessContact)), "");
 		Assert.assertEquals(getValue(xpath(consCompName)), "");
 		Assert.assertEquals(getValue(xpath(builderName)), "");
 		Assert.assertEquals(getValue(xpath(builderContactNumber)), "");

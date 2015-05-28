@@ -1,7 +1,5 @@
 package hub.library;
 
-import static org.openqa.selenium.By.xpath;
-
 public class ObjectReference {
 
 	ReadXmlData rxml = new ReadXmlData();
