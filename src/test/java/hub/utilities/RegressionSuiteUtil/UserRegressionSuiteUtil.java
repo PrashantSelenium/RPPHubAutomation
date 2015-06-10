@@ -4201,18 +4201,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		type(xpath(InvoiceEmail), getDataFromxls(0, "User_PaymentCPS.xls", 2, 2));
 		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
 		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
-<<<<<<< HEAD
-=======
-		click(xpath(ConfirmBtnPaymentDetails));
-		
-		Thread.sleep(4000);
-		if(!isElementPresent(xpath(CPSIframe))){ Thread.sleep(2000); }
-		if(!isElementPresent(xpath(CPSIframe))){ Thread.sleep(2000); }
-		
-		waitForElementPresent(xpath(CPSIframe));
-		waitForElementVisible(xpath(CPSIframe));
-			
->>>>>>> origin/hub-automation
+
 		Thread.sleep(3000);
 		Assert.assertTrue(isElementVisible(xpath(ConfirmBtnPaymentDetails)), "Confirm Button Payment A not displayed");
 		click(xpath(ConfirmBtnPaymentDetails));
@@ -4434,7 +4423,6 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
 		Assert.assertTrue(isElementVisible(xpath(ConfirmBtnPaymentDetails)), "Confirm Button Payment A not displayed");
 		click(xpath(ConfirmBtnPaymentDetails));
-<<<<<<< HEAD
 		Thread.sleep(10000);
 		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
 		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
@@ -4443,17 +4431,6 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementVisible(xpath(CPSIframe)), "CPS Iframe 1 not displayed");	
 	
 		Thread.sleep(10000);
-=======
-		
-		Thread.sleep(7000);
-		if(!isElementPresent(xpath(CPSIframe))){ Thread.sleep(2000); }
-		if(!isElementPresent(xpath(CPSIframe))){ Thread.sleep(2000); }
-		
-		waitForElementPresent(xpath(CPSIframe));
-		waitForElementVisible(xpath(CPSIframe));
-			
-		Thread.sleep(400);
->>>>>>> origin/hub-automation
 		driver.switchTo().frame(driver.findElement(By.xpath(CPSIframe)));
 		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(7000); }
 		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(7000); }
@@ -4727,8 +4704,4 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementVisible(xpath(InvoiceName)), "Invoice Name not displayed");
 		Assert.assertTrue(isElementVisible(xpath(InvoiceEmail)), "Invoice Email not displayed");
 	}
-	
 }
-
-
-
