@@ -24,7 +24,7 @@ public class UserPaymentDetailsOnAccount extends TestInitReference {
     public void init() {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
-           driver.navigate().to("https://stage-bankmelbourne.rppropertyhub.com/login");
+           driver.navigate().to("https://dev-bankmelbourne.rppropertyhub.com/login");
     }
     
     private void setIndexPageDescription() {
@@ -76,6 +76,7 @@ public class UserPaymentDetailsOnAccount extends TestInitReference {
 	public void RT_2290_Payment_Validation_Message() throws Exception {
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		if(isElementPresent(xpath(logout))){ util.Logout_link(); }
 		util.LoginChannel("cbalender");
 		util.slas_dynamic(getDataFromxls(0, "User_PaymentOnAccount.xls" , 0, 1));
 		util.startNewTransaction();
@@ -103,7 +104,7 @@ public class UserPaymentDetailsOnAccount extends TestInitReference {
 		Assert.assertTrue(URL.toLowerCase().contains("https"));
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.Logout_link();
-    	Thread.sleep(300);
+    	Thread.sleep(3000);
 	}
 	
 	@Test(description="User - Payment Details", priority=6)
@@ -120,7 +121,7 @@ public class UserPaymentDetailsOnAccount extends TestInitReference {
 		util.Product_Selection_select_Product("1");
 		click(xpath(proceedtoInstuction));
 		util.Instruction_Input_Fields();
-		Thread.sleep(5500);
+		Thread.sleep(7000);
 		Assert.assertTrue(getDataFromxls(0, "User_PaymentOnAccount.xls" , 8, 1).contains(getText(xpath(PaymentProductName))));
 		util.Logout_link();
 	}
@@ -208,7 +209,7 @@ public class UserPaymentDetailsOnAccount extends TestInitReference {
 		util.Product_Selection_select_Product("1");
 		click(xpath(proceedtoInstuction));
 		util.Instruction_Input_Fields();
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		util.Payment_TermsAndCondition();		
 	}
 	

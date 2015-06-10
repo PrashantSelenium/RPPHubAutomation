@@ -7,6 +7,7 @@ import hub.library.ReadXmlData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 
 import com.thoughtworks.selenium.Selenium;
@@ -2942,6 +2943,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void slas() throws Exception {
+		Thread.sleep(3000);
 		waitForElementPresent(xpath(userPropertySearch));
 		waitForElementVisible(xpath(userPropertySearch));
 		if(!isElementPresent(xpath(userPropertySearch))){ Thread.sleep(3000); }
@@ -2960,7 +2962,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	public void proceedProductSelection() throws Exception {	
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		String ready = (String) js.executeScript("return document.readyState");
-		
+		Thread.sleep(3000);
 		if(ready.equalsIgnoreCase("complete")){
 			
 			if(!isElementPresent(xpath(userProceedToProductSelection))){ Thread.sleep(300); }
@@ -3577,6 +3579,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void slas_dynamic(String address) throws Exception {
+		Thread.sleep(3000);
 		waitForElementPresent(xpath(userPropertySearch));
 		waitForElementVisible(xpath(userPropertySearch));
 		if(!isElementPresent(xpath(userPropertySearch))){ Thread.sleep(3000); }
@@ -3587,7 +3590,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		} catch (AssertionError e) {
 			fail("SLAS placeholder text");
 		}
-		type(xpath(userPropertySearch), getDataFromxls(0, "User_ProductSelectionOriginator.xls", 1, 0));		
+		type(xpath(userPropertySearch), address);		
 		click(xpath(userSearchButton));
 		Thread.sleep(4000);
 	}
@@ -3666,12 +3669,12 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Thread.sleep(4000);
 		Assert.assertEquals(getValue(xpath(userCustomerFName)), "");
 		Assert.assertEquals(getValue(xpath(userCustomerLName)), "");
-		Assert.assertEquals(getValue(xpath(userCustomerContact)), "");
+		Assert.assertEquals(getText(xpath(userCustomerContact)), "");
 		Assert.assertEquals(getValue(xpath(userCustomerEmail)), "");
 		Assert.assertEquals(getValue(xpath(accessFName)), "");
 		Assert.assertEquals(getValue(xpath(accessLName)), "");
 		Assert.assertEquals(getValue(xpath(accessCompany)), "");
-		Assert.assertEquals(getValue(xpath(accessContact)), "");
+		Assert.assertEquals(getText(xpath(accessContact)), "");
 		Assert.assertEquals(getValue(xpath(consCompName)), "");
 		Assert.assertEquals(getValue(xpath(builderName)), "");
 		Assert.assertEquals(getValue(xpath(builderContactNumber)), "");
@@ -4014,7 +4017,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Thread.sleep(7000);
 		waitForElementPresent(xpath(purchaseBtnSecondLine));
 		waitForElementVisible(xpath(purchaseBtnSecondLine));
-		Assert.assertTrue(isElementPresent(xpath(purchaseBtnSecondLine)));
+		Assert.assertTrue(isElementPresent(xpath(purchaseBtnSecondLine)), "2nd Button is not available");
 		
 		if(Productline.contains("1")){ click(xpath(purchaseBtnSingle)) ;}
 		if(Productline.contains("2")){ click(xpath(purchaseBtnSecondLine)) ;}
@@ -4022,7 +4025,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(Productline.contains("4")){ click(xpath(purchaseBtnFourthLine)) ;}
 		if(Productline.contains("5")){ click(xpath(purchaseBtnFifthLine)) ;}
 		Thread.sleep(3000);		
-		Assert.assertTrue(isElementPresent(xpath(addToCartLabel)));
+		Assert.assertTrue(isElementPresent(xpath(addToCartLabel)), "Added to cart label not displayed");
 	}
 	
 	public void Instruction_Input_Fields() throws Exception{
@@ -4084,7 +4087,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void Payment_Navigate_Back_InstructionDetails() throws Exception{
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		click(xpath(backBtn));
 		Thread.sleep(5000);
 		
@@ -4185,23 +4188,44 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void Payment_CPS_Successful() throws Exception{
-		Thread.sleep(4000);
+		Thread.sleep(10000);
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
 		click(xpath(TermsandConditionPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(TermsandConditionPaymentDetails)), "Terms and Condition not displayed");
 		type(xpath(InvoiceName), getDataFromxls(0, "User_PaymentCPS.xls", 1, 2));
 		type(xpath(InvoiceEmail), getDataFromxls(0, "User_PaymentCPS.xls", 2, 2));
 		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
 		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
+<<<<<<< HEAD
+=======
 		click(xpath(ConfirmBtnPaymentDetails));
 		
 		Thread.sleep(4000);
-		if(!isElementPresent(xpath("//iframe[@id='card_payment_iframe']"))){ Thread.sleep(2000); }
-		if(!isElementPresent(xpath("//iframe[@id='card_payment_iframe']"))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath(CPSIframe))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath(CPSIframe))){ Thread.sleep(2000); }
 		
-		waitForElementPresent(xpath("//iframe[@id='card_payment_iframe']"));
-		waitForElementVisible(xpath("//iframe[@id='card_payment_iframe']"));
+		waitForElementPresent(xpath(CPSIframe));
+		waitForElementVisible(xpath(CPSIframe));
 			
+>>>>>>> origin/hub-automation
 		Thread.sleep(3000);
+		Assert.assertTrue(isElementVisible(xpath(ConfirmBtnPaymentDetails)), "Confirm Button Payment A not displayed");
+		click(xpath(ConfirmBtnPaymentDetails));
+		Thread.sleep(7000);
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		waitForElementVisible(xpath(CPSIframe));
+		waitForElementVisible(xpath(CPSIframe));
+		Assert.assertTrue(isElementVisible(xpath(CPSIframe)), "CPS Iframe not displayed");	
+		Thread.sleep(7000);
 		driver.switchTo().frame(driver.findElement(By.xpath(CPSIframe)));
+		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(5000); }
+		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(5000); }
 		isElementVisible(By.xpath(CPSCardNumber));
 		type(xpath(CPSCardNumber), getDataFromxls(0, "User_PaymentCPS.xls", 3, 2).substring(0, 16).concat("111"));
 		type(xpath(CPSCardHolderName), getDataFromxls(0, "User_PaymentCPS.xls", 4, 2));
@@ -4220,13 +4244,8 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(referenceNumber))){ Thread.sleep(2000); }
 		waitForElementPresent(xpath(referenceNumber));
 		waitForElementVisible(xpath(referenceNumber));
-		try{
-	    	Assert.assertTrue(isElementPresent(xpath(referenceNumber)));
-			}
-			catch(AssertionError e){
-				fail("Reference Number is not Displayed");
-				resultcount++;
-	    		}
+
+	    	Assert.assertTrue(isElementPresent(xpath(referenceNumber)), "Payment not successfull");
 		}
 	}
 
@@ -4400,43 +4419,315 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 
 	public void Payment_CPS_Kill_widget() throws Exception{
-		Thread.sleep(7000);
+		Thread.sleep(10000);
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(TermsandConditionPaymentDetails)), "Terms and Condition not displayed");
 		click(xpath(TermsandConditionPaymentDetails));
 		type(xpath(InvoiceName), getDataFromxls(0, "User_PaymentCPS.xls", 1, 2));
 		type(xpath(InvoiceEmail), getDataFromxls(0, "User_PaymentCPS.xls", 2, 2));
 		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
 		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(ConfirmBtnPaymentDetails)), "Confirm Button Payment A not displayed");
 		click(xpath(ConfirmBtnPaymentDetails));
+<<<<<<< HEAD
+		Thread.sleep(10000);
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		waitForElementVisible(xpath(CPSIframe));
+		waitForElementVisible(xpath(CPSIframe));
+		Assert.assertTrue(isElementVisible(xpath(CPSIframe)), "CPS Iframe 1 not displayed");	
+	
+		Thread.sleep(10000);
+=======
 		
 		Thread.sleep(7000);
-		if(!isElementPresent(xpath("//iframe[@id='card_payment_iframe']"))){ Thread.sleep(2000); }
-		if(!isElementPresent(xpath("//iframe[@id='card_payment_iframe']"))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath(CPSIframe))){ Thread.sleep(2000); }
+		if(!isElementPresent(xpath(CPSIframe))){ Thread.sleep(2000); }
 		
-		waitForElementPresent(xpath("//iframe[@id='card_payment_iframe']"));
-		waitForElementVisible(xpath("//iframe[@id='card_payment_iframe']"));
+		waitForElementPresent(xpath(CPSIframe));
+		waitForElementVisible(xpath(CPSIframe));
 			
 		Thread.sleep(400);
+>>>>>>> origin/hub-automation
 		driver.switchTo().frame(driver.findElement(By.xpath(CPSIframe)));
+		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(7000); }
 		isElementVisible(By.xpath(CPSCardNumber));
 		type(xpath(CPSCardNumber), getDataFromxls(0, "User_PaymentCPS.xls", 3, 2).substring(0, 16).concat("111"));
 		type(xpath(CPSCardHolderName), getDataFromxls(0, "User_PaymentCPS.xls", 4, 2));
 		type(xpath(CPSDateExpiry), getDataFromxls(0, "User_PaymentCPS.xls", 5, 2));
 		type(xpath(CPSDateExpiry2), getDataFromxls(0, "User_PaymentCPS.xls", 6, 2));
 		type(xpath(CPSCvc2), getDataFromxls(0, "User_PaymentCPS.xls", 7, 2));
-		Thread.sleep(2000);
- 		waitForElementVisible(xpath(instructionNavBar));
-		Assert.assertTrue(isElementVisible(xpath(instructionNavBar)));
-		click(xpath(instructionNavBar));
-		Thread.sleep(3000);
-		click(xpath(ProceedToPaymentDetails));
-		Thread.sleep(7000);
 		
-		Assert.assertTrue(getValue(xpath(CPSCardNumber)).isEmpty());
-		Assert.assertTrue(getValue(xpath(CPSCardHolderName)).isEmpty());
-		Assert.assertTrue(getValue(xpath(CPSDateExpiry)).isEmpty());
-		Assert.assertTrue(getValue(xpath(CPSDateExpiry2)).isEmpty());
-		Assert.assertTrue(getValue(xpath(CPSCvc2)).isEmpty());
+		driver.switchTo().defaultContent();
+		Thread.sleep(1000);
+		Assert.assertTrue(isElementPresent(xpath(instructionNavBar)),"Instruction Nav bar not displayed");
+		click(xpath(instructionNavBar));
+		Thread.sleep(5000);
+		Assert.assertTrue(isElementVisible(xpath(ProceedToPaymentDetails)), "Proceed to payment link not displayed");
+		click(xpath(ProceedToPaymentDetails));
+		
+		Thread.sleep(12000);
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(InvoiceName))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(InvoiceName))) { Thread.sleep(7000); }
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(TermsandConditionPaymentDetails)), "Terms and Condition not displayed");
+		click(xpath(TermsandConditionPaymentDetails));
+		type(xpath(InvoiceName), getDataFromxls(0, "User_PaymentCPS.xls", 1, 2));
+		type(xpath(InvoiceEmail), getDataFromxls(0, "User_PaymentCPS.xls", 2, 2));
+		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
+		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(ConfirmBtnPaymentDetails)), "Confirm Button Payment A not displayed");
+		click(xpath(ConfirmBtnPaymentDetails));
+		Thread.sleep(10000);
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		waitForElementVisible(xpath(CPSIframe));
+		waitForElementVisible(xpath(CPSIframe));
+		Assert.assertTrue(isElementVisible(xpath(CPSIframe)), "CPS Iframe 2 not displayed");	
+		Thread.sleep(10000);
+		driver.switchTo().frame(driver.findElement(By.xpath(CPSIframe)));
+		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(7000); }
+		isElementVisible(By.xpath(CPSCardNumber));
+		Assert.assertTrue(getValue(xpath(CPSCardNumber)).isEmpty(), "Card Number Not Empty");
+		Assert.assertTrue(getValue(xpath(CPSCardHolderName)).isEmpty(), "Card Holder Name Not Empty");
+		Assert.assertTrue(getValue(xpath(CPSDateExpiry)).isEmpty(), "Date Expiry 1 Not Empty");
+		Assert.assertTrue(getValue(xpath(CPSDateExpiry2)).isEmpty(), "Date Expiry 2 Not Empty");
+		Assert.assertTrue(getValue(xpath(CPSCvc2)).isEmpty(), "CVC Not Empty");
 	}
+	
+	public void Payment_CPS_Kill_widget_backbtn() throws Exception{
+		Thread.sleep(10000);
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(TermsandConditionPaymentDetails)), "Terms and Condition not displayed");
+		click(xpath(TermsandConditionPaymentDetails));
+		type(xpath(InvoiceName), getDataFromxls(0, "User_PaymentCPS.xls", 1, 2));
+		type(xpath(InvoiceEmail), getDataFromxls(0, "User_PaymentCPS.xls", 2, 2));
+		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
+		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(ConfirmBtnPaymentDetails)), "Confirm Button Payment A not displayed");
+		click(xpath(ConfirmBtnPaymentDetails));
+		Thread.sleep(10000);
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		waitForElementVisible(xpath(CPSIframe));
+		waitForElementVisible(xpath(CPSIframe));
+		Assert.assertTrue(isElementVisible(xpath(CPSIframe)), "CPS Iframe 1 not displayed");	
+		
+		Thread.sleep(10000);
+		driver.switchTo().frame(driver.findElement(By.xpath(CPSIframe)));
+		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(7000); }
+		isElementVisible(By.xpath(CPSCardNumber));
+		type(xpath(CPSCardNumber), getDataFromxls(0, "User_PaymentCPS.xls", 3, 2).substring(0, 16).concat("111"));
+		type(xpath(CPSCardHolderName), getDataFromxls(0, "User_PaymentCPS.xls", 4, 2));
+		type(xpath(CPSDateExpiry), getDataFromxls(0, "User_PaymentCPS.xls", 5, 2));
+		type(xpath(CPSDateExpiry2), getDataFromxls(0, "User_PaymentCPS.xls", 6, 2));
+		type(xpath(CPSCvc2), getDataFromxls(0, "User_PaymentCPS.xls", 7, 2));
+		
+		driver.switchTo().defaultContent();
+		Thread.sleep(1000);
+		Assert.assertTrue(isElementPresent(xpath(backBtn)),"Back Button not displayed");
+		click(xpath(backBtn));
+		
+		Thread.sleep(12000);
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(InvoiceName))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(InvoiceName))) { Thread.sleep(7000); }
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(TermsandConditionPaymentDetails)), "Terms and Condition not displayed");
+		click(xpath(TermsandConditionPaymentDetails));
+		type(xpath(InvoiceName), getDataFromxls(0, "User_PaymentCPS.xls", 1, 2));
+		type(xpath(InvoiceEmail), getDataFromxls(0, "User_PaymentCPS.xls", 2, 2));
+		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
+		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(ConfirmBtnPaymentDetails)), "Confirm Button Payment A not displayed");
+		click(xpath(ConfirmBtnPaymentDetails));
+		Thread.sleep(10000);
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		
+		waitForElementVisible(xpath(CPSIframe));
+		waitForElementVisible(xpath(CPSIframe));
+		Assert.assertTrue(isElementVisible(xpath(CPSIframe)), "CPS Iframe 2 not displayed");	
+		Thread.sleep(10000);
+		driver.switchTo().frame(driver.findElement(By.xpath(CPSIframe)));
+		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(7000); }
+		isElementVisible(By.xpath(CPSCardNumber));
+		Assert.assertTrue(getValue(xpath(CPSCardNumber)).isEmpty(), "Card Number Not Empty");
+		Assert.assertTrue(getValue(xpath(CPSCardHolderName)).isEmpty(), "Card Holder Name Not Empty");
+		Assert.assertTrue(getValue(xpath(CPSDateExpiry)).isEmpty(), "Date Expiry 1 Not Empty");
+		Assert.assertTrue(getValue(xpath(CPSDateExpiry2)).isEmpty(), "Date Expiry 2 Not Empty");
+		Assert.assertTrue(getValue(xpath(CPSCvc2)).isEmpty(), "CVC Not Empty");
+	}
+	
+	public void Payment_CPS_Kill_widget_Payment_nav_bar() throws Exception{
+		Thread.sleep(10000);
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(TermsandConditionPaymentDetails)), "Terms and Condition not displayed");
+		click(xpath(TermsandConditionPaymentDetails));
+		type(xpath(InvoiceName), getDataFromxls(0, "User_PaymentCPS.xls", 1, 2));
+		type(xpath(InvoiceEmail), getDataFromxls(0, "User_PaymentCPS.xls", 2, 2));
+		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
+		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(ConfirmBtnPaymentDetails)), "Confirm Button Payment A not displayed");
+		click(xpath(ConfirmBtnPaymentDetails));
+		Thread.sleep(10000);
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		waitForElementVisible(xpath(CPSIframe));
+		waitForElementVisible(xpath(CPSIframe));
+		Assert.assertTrue(isElementVisible(xpath(CPSIframe)), "CPS Iframe 1 not displayed");	
+		
+		Thread.sleep(10000);
+		driver.switchTo().frame(driver.findElement(By.xpath(CPSIframe)));
+		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(7000); }
+		isElementVisible(By.xpath(CPSCardNumber));
+		type(xpath(CPSCardNumber), getDataFromxls(0, "User_PaymentCPS.xls", 3, 2).substring(0, 16).concat("111"));
+		type(xpath(CPSCardHolderName), getDataFromxls(0, "User_PaymentCPS.xls", 4, 2));
+		type(xpath(CPSDateExpiry), getDataFromxls(0, "User_PaymentCPS.xls", 5, 2));
+		type(xpath(CPSDateExpiry2), getDataFromxls(0, "User_PaymentCPS.xls", 6, 2));
+		type(xpath(CPSCvc2), getDataFromxls(0, "User_PaymentCPS.xls", 7, 2));
+		
+		driver.switchTo().defaultContent();
+		Thread.sleep(1000);
+		Assert.assertTrue(isElementPresent(xpath(paymentDetailsBar)),"Payment Detail Nav Bar not displayed");
+		click(xpath(paymentDetailsBar));
+		
+		Thread.sleep(12000);
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(InvoiceName))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(InvoiceName))) { Thread.sleep(7000); }
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(TermsandConditionPaymentDetails)), "Terms and Condition not displayed");
+		click(xpath(TermsandConditionPaymentDetails));
+		type(xpath(InvoiceName), getDataFromxls(0, "User_PaymentCPS.xls", 1, 2));
+		type(xpath(InvoiceEmail), getDataFromxls(0, "User_PaymentCPS.xls", 2, 2));
+		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
+		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(ConfirmBtnPaymentDetails)), "Confirm Button Payment A not displayed");
+		click(xpath(ConfirmBtnPaymentDetails));
+		Thread.sleep(10000);
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		waitForElementVisible(xpath(CPSIframe));
+		waitForElementVisible(xpath(CPSIframe));
+		Assert.assertTrue(isElementVisible(xpath(CPSIframe)), "CPS Iframe 2 not displayed");	
+		Thread.sleep(10000);
+		driver.switchTo().frame(driver.findElement(By.xpath(CPSIframe)));
+		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(CPSCardNumber))){ Thread.sleep(7000); }
+		isElementVisible(By.xpath(CPSCardNumber));
+		Assert.assertTrue(getValue(xpath(CPSCardNumber)).isEmpty(), "Card Number Not Empty");
+		Assert.assertTrue(getValue(xpath(CPSCardHolderName)).isEmpty(), "Card Holder Name Not Empty");
+		Assert.assertTrue(getValue(xpath(CPSDateExpiry)).isEmpty(), "Date Expiry 1 Not Empty");
+		Assert.assertTrue(getValue(xpath(CPSDateExpiry2)).isEmpty(), "Date Expiry 2 Not Empty");
+		Assert.assertTrue(getValue(xpath(CPSCvc2)).isEmpty(), "CVC Not Empty");
+	}
+	
+	public void Payment_CPS_Invoice_Field_validated() throws Exception{
+		driver.switchTo().defaultContent();
+		Thread.sleep(1000);
+		Assert.assertTrue(isElementPresent(xpath(paymentDetailsBar)),"Payment Detail Nav Bar not displayed");
+		click(xpath(paymentDetailsBar));
+		
+		Thread.sleep(12000);
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(InvoiceName))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(InvoiceName))) { Thread.sleep(7000); }
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+
+		Assert.assertTrue(isElementVisible(xpath(TermsandConditionPaymentDetails)), "Terms and Condition not displayed");
+		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
+		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(ConfirmBtnPaymentDetails)), "Confirm Button Payment A not displayed");
+		click(xpath(ConfirmBtnPaymentDetails));
+		
+		Thread.sleep(3000);
+		waitForElementVisible(xpath(termAndConditionsErrorPaymentDetails));
+		String styleval = driver.findElement(By.xpath(termAndConditionsErrorPaymentDetails)).getAttribute("style");
+		Assert.assertFalse(styleval.contains("display: none"), "Terms and Condition");
+		Thread.sleep(1000);
+		styleval = driver.findElement(By.xpath(InvoiceNameErrorMessage)).getAttribute("style");
+		Assert.assertFalse(styleval.contains("display: none"), "Invoice Name");
+		Thread.sleep(1000);
+		styleval = driver.findElement(By.xpath(InvoiceEmailErrorMessage)).getAttribute("style");
+		Assert.assertFalse(styleval.contains("display: none"), "Invoice Email");
+		Thread.sleep(1000);
+	}
+	
+	public void Payment_CPS_Displayed_On_Creadit_card_OnCCPreAuth() throws Exception{
+		Thread.sleep(10000);
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(TermsandConditionPaymentDetails)), "Terms and Condition not displayed");
+		click(xpath(TermsandConditionPaymentDetails));
+		type(xpath(InvoiceName), getDataFromxls(0, "User_PaymentCPS.xls", 1, 2));
+		type(xpath(InvoiceEmail), getDataFromxls(0, "User_PaymentCPS.xls", 2, 2));
+		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
+		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(ConfirmBtnPaymentDetails)), "Confirm Button Payment A not displayed");
+		click(xpath(ConfirmBtnPaymentDetails));
+		Thread.sleep(10000);
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		if(!isElementVisible(xpath(CPSIframe))){ Thread.sleep(7000); }
+		waitForElementVisible(xpath(CPSIframe));
+		waitForElementVisible(xpath(CPSIframe));
+		Assert.assertTrue(isElementVisible(xpath(CPSIframe)), "CPS Iframe 1 not displayed");	
+	}
+	
+	public void Payment_CPS_Fields_displayed() throws Exception{
+		Thread.sleep(10000);
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		if(!isElementVisible(xpath(TermsandConditionPaymentDetails))) { Thread.sleep(7000); }
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		waitForElementVisible(xpath(TermsandConditionPaymentDetails));
+		Assert.assertTrue(isElementVisible(xpath(TermsandConditionPaymentDetails)), "Terms and Condition not displayed");
+		Assert.assertTrue(isElementVisible(xpath(InvoiceName)), "Invoice Name not displayed");
+		Assert.assertTrue(isElementVisible(xpath(InvoiceEmail)), "Invoice Email not displayed");
+	}
+	
 }
 
 

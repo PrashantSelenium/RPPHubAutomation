@@ -1,7 +1,5 @@
 package hub.library;
 
-import static org.openqa.selenium.By.xpath;
-
 public class ObjectReference {
 
 	ReadXmlData rxml = new ReadXmlData();
@@ -138,21 +136,21 @@ public class ObjectReference {
  
     //My Account 
     public static String userMyAccount = "//li[@id='myAccount']/div/a";
-    public static String myAccountFN = "//input[@id='firstName']";
-    public static String myAccountLN = "//input[@id='lastName']";
-    public static String myAccountBranchId = "//input[@id='BranchID']";
-    public static String myAccountStaffId = "//input[@id='CompanyID']";
-    public static String myAccountProfId = "//input[@id='ProfessionalIndustryBodyID']";
-    public static String myAccountEmail = "//input[@id='userEmail']";
-    public static String myAccountConfirmEmail = "//input[@id='confirmUserEmail']";
-    public static String myAccountMobile = "//input[@id='mobileNumber']";
-    public static String myAccountPhone = "//input[@id='phoneNumber']";
-    public static String myAccountUsername = "//input[@id='userName']";
-    public static String myAccountPassword = "//input[@id='newPassword']";
-    public static String myAccountConfirmPassword = "//input[@id='confirmUserPass']";
-    public static String myAccountSecurityQuestion = "//input[@id='securityQuestion']";
-    public static String myAccountSecurityAnswer = "//input[@id='securityAnswer']";
-    public static String myAccountUserRole = "//select[@id='userRole']";
+    public static String myAccountFN = "//*[@id='firstName']";
+    public static String myAccountLN = "//*[@id='lastName']";
+    public static String myAccountBranchId = "//*[@id='BranchID']";
+    public static String myAccountStaffId = "//*[@id='CompanyID']";
+    public static String myAccountProfId = "//*[@id='ProfessionalIndustryBodyID']";
+    public static String myAccountEmail = "//*[@id='userEmail']";
+    public static String myAccountConfirmEmail = "//*[@id='confirmUserEmail']";
+    public static String myAccountMobile = "//*[@id='mobileNumber']";
+    public static String myAccountPhone = "//*[@id='phoneNumber']";
+    public static String myAccountUsername = "//*[@id='userName']";
+    public static String myAccountPassword = "//*[@id='newPassword']";
+    public static String myAccountConfirmPassword = "//*[@id='confirmUserPass']";
+    public static String myAccountSecurityQuestion = "//*[@id='securityQuestion']";
+    public static String myAccountSecurityAnswer = "//*[@id='securityAnswer']";
+    public static String myAccountUserRole = "//*[@id='userRole']";
     public static String myAccountSavebtn = "//*[text()='Save']";
     public static String myAccountDialogBoxOK = "//a[text()='OK']";
     public static String myAccountCancelBtn = "//a[text()='Cancel']";
@@ -396,8 +394,8 @@ public class ObjectReference {
     public static String dynamicProductTabLink = "//a[@id='link{?}']";
     public static String propertyType = "//*[@class='propertyType']";
     public static String productNavBar = "//*[@id='flowbar']/div[1]/div/div[1]/div[2]/span[1]";
-    public static String instructionNavBar = "//*[@id='flowbar']/div[1]/div/div[2]/div[2]/span[1]";
-    public static String paymentNavBar = "//*[@id='flowbar']/div[1]/div/div[3]/div[2]/span[1]";
+    public static String instructionNavBar = "//*[@class='topLabel instructionDetailsLink']";
+    public static String paymentNavBar = "//*[@class='topLabel paymentDetailsLink";
     public static String orderNavBar = "//*[@id='flowbar']/div[1]/div/div[4]/div[2]/span[1]";
     public static String reportsTab = "//*[@id='245']";
     public static String valuationsTab = "//*[@id='linkValuations']";
@@ -576,7 +574,7 @@ public class ObjectReference {
     public static String TermsandConditionPaymentDetails = "//*[@id='termsAndConditions']";
     public static String AccountPasswordPaymentDetails = "//*[@id='accountPassword']";
     public static String AccountIDPaymentDetails = "//*[@id='accountId']";
-    public static String ConfirmBtnPaymentDetails = "//*[@id='workspace']/table/tbody/tr[4]/td[2]/div[2]/img";
+    public static String ConfirmBtnPaymentDetails = "//*[@id='hubNavigation_next']";
     public static String PromoLabel = "//*[contains(text(),'Enter Promo Code:')]";
     public static String CreditCardName = "//*[@name='nameForTaxInvoice']";
     public static String CreditCardEmail = "//*[@name='emailForTaxInvoice']";
@@ -588,11 +586,15 @@ public class ObjectReference {
     public static String MainTotalAmount = "//*[@id='mainTotalAmount']";
     public static String InvoiceName = "//*[@name='nameForTaxInvoice']";
     public static String InvoiceEmail = "//*[@name='emailForTaxInvoice']";
+    public static String InvoiceNameErrorMessage = "//*[@class='nameForTaxInvoice errorMessage']";
+    public static String InvoiceEmailErrorMessage = "//*[@class='emailForTaxInvoice errorMessage']";
     public static String PaymentProductName = "(//*[@class='labelText hubHeaderBodyText'])[1]";
     public static String paymentDetailPrice = "//*[@id='purchaseReports']/table/tbody/tr[1]/td[3]";
     public static String paymentDetailTotalPrice = "//*[@id='mainTotalAmount']";
     public static String paymentDetailTitle1 = "//*[@id='purchaseReports']/table/tbody/tr[1]";
     public static String paymentDetailTitle2 = "//*[@id='purchaseReports']/table/tbody/tr[3]";
+    public static String paymentOnAccountFields = "(//*[@class='padding'])[3]";
+    public static String paymentCPSFields = "(//*[@class='padding'])[4]";
 
     //Order Confirmation
     public static String proceedToOrderConfirmation = "//*[text()='Proceed to order confirmation']";
