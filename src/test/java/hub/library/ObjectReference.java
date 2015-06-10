@@ -612,7 +612,7 @@ public class ObjectReference {
     public static String youOrderedLabel = "//*[@id='paymentDetailForm']//*[@class='mainLabel youPurchasedLabel hubHeaderBodyText']";
     public static String youOrderedTotal = "//*[@id='paymentDetailForm']//*[@class='redLabel hubHeaderBodyText']";
     public static String youOrderedItem = "//*[@id='purchaseReports']//*[@class='labelText']";
-    public static String youOrderedPrice = "//*[@id='purchaseReports']//*[@style='text-align: right;']";
+    public static String youOrderedPrice = "(//*[@id='purchaseReports']//td)[2]";
     public static String customerDetailLabel = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[1]/td/label";
     public static String fNameInfoOrderConfirmation = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[1]/div[2]";
     public static String lNameInfoOrderConfirmation = "//*[@id='workspace']/table/tbody/tr[1]/td[2]/div/table/tbody/tr[3]/td/table/tbody/tr/td/div/div[2]/div[2]";
