@@ -647,8 +647,8 @@ public class ObjectReference {
     
     //Footer
     public static String userManual = "//a[@id='userManualDownload']";
-    public static String contactUs = "//*[@id='custservice']/table/tbody/tr[2]/td[2]/table/tbody/tr[1]/td[2]/div/a[2]";
-    public static String feedback = "//*[@id='custservice']/table/tbody/tr[2]/td[2]/table/tbody/tr[1]/td[2]/div/a[3]";
+    public static String contactUs = "//*[@class='contactUsLink hubFooterText']";
+    public static String feedback = "//*[@class='feedbackLink hubFooterText']";
     public static String contactUsPage = "//*[contains(text(),'Contact Us')]";
     public static String feedbackPage = "//*[contains(text(),'Feedback')]";
     public static String poweredByBar = "//*[@id='poweredby']";
