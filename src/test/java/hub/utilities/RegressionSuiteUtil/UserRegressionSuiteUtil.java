@@ -7,7 +7,6 @@ import hub.library.ReadXmlData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 
 import com.thoughtworks.selenium.Selenium;
@@ -378,10 +377,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Thread.sleep(2000);
 		
 		click(xpath(contactUs));
-		Assert.assertTrue(isElementPresent(xpath(contactUsName)));
+		Assert.assertTrue(isElementPresent(xpath(contactUsName)), "Link Navigation - Contact Us not present");
 		driver.findElement(By.id("contactUsName")).sendKeys(Keys.ESCAPE);
 		click(xpath(feedback));
-		Assert.assertTrue(isElementPresent(xpath(feedbackName)));
+		Assert.assertTrue(isElementPresent(xpath(feedbackName)), "Link Navigation - Feedback not present");
 		driver.findElement(By.id("feedbackName")).sendKeys(Keys.ESCAPE);
 	}
 	
@@ -544,9 +543,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(userLoginUsername));
 		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000); }
 		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000); }
-		
+		Thread.sleep(2000); 
 		type(xpath(userLoginUsername), getDataFromxls(0, "User_Login.xls", 1, 1));
 		type(xpath(userLoginPassword), getDataFromxls(0, "User_Login.xls", 2, 1));
+		Thread.sleep(1000); 
 		click(xpath(loginButton));
 
 		waitForElementPresent(xpath(propertySearch));
@@ -581,7 +581,8 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 
 	public void Logout_link() throws Exception{
-		
+		waitForElementPresent(xpath(userLogoutLink));
+		waitForElementVisible(xpath(userLogoutLink));
 		click(xpath(userLogoutLink));
 		waitForElementPresent(xpath(userLoginUsername));
 		waitForElementVisible(xpath(userLoginUsername));
@@ -1903,31 +1904,30 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	public void PropertySearch_Link_Navigation() throws Exception{
 		Successful_login();
 		Link_Navigation();
-		Assert.assertTrue(isElementPresent(xpath(leftLogoReg)));
-		Assert.assertTrue(isElementPresent(xpath(rightLogoReg)));
-		Assert.assertTrue(isElementPresent(xpath(poweredByBar)));
-		
+		Assert.assertTrue(isElementPresent(xpath(leftLogoReg)), "PropertySearch - Left Logo not displayed");
+		Assert.assertTrue(isElementPresent(xpath(rightLogoReg)), "PropertySearch - Right Logo not displayed");
+				
 		click(xpath(home));
 		waitForElementPresent(xpath(propertySearch));
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
-		Assert.assertTrue(isElementPresent(xpath(propertySearch)));
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)), "PropertySearch - SLAS not displayed");
 		
 		click(xpath(myAccount));
 		waitForElementPresent(xpath(myAccountFN));
 		waitForElementVisible(xpath(myAccountFN));
 		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }	
 		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
-		Assert.assertTrue(isElementPresent(xpath(myAccountFN)));
+		Assert.assertTrue(isElementPresent(xpath(myAccountFN)), "PropertySearch - My Account First Name not displayed");
 		
 		click(xpath(myTransactions));
 		Thread.sleep(2000);
-		if(isElementVisible(xpath(myTransactionNoTransactionAvail))){
-			Assert.assertTrue(isElementPresent(xpath(myTransactionNoTransactionAvail)));
+		if(isElementPresent(xpath(myTransactionNoTransactionAvail))){
+			Assert.assertTrue(isElementPresent(xpath(myTransactionNoTransactionAvail)), "PropertySearch - My Transaction not displayed");
 		}
 			else{
-				Assert.assertTrue(isElementPresent(xpath(customerName)));
+				Assert.assertTrue(isElementPresent(xpath(customerName)), "PropertySearch - Customer Name not displayed");
 			}
 	}
 	
@@ -1966,9 +1966,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void CFA_Clear_Button() throws Exception{
-	
+		Thread.sleep(3000);
 		click(xpath(changePropertyAddress));
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		if(isElementPresent(xpath(changePropertyPopupOK))){
 			click(xpath(changePropertyPopupOK));
 			}
@@ -2000,16 +2000,16 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
 		
-		
+		Thread.sleep(2000);
 		click(xpath(userCFAButton));
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		click(xpath(userCFABackSearch));
 		
 		waitForElementPresent(xpath(propertySearch));
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
-		Assert.assertTrue(isElementPresent(xpath(propertySearch)));
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)), "CFA Search BTN - SLAS not displayed");
 	}
 	
 	public void CFA_Not_Triggered_No_UnitStreetLot_Number() throws Exception{
@@ -2030,20 +2030,22 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void CFA_Search_Triggered() throws Exception{
-		
+		Thread.sleep(2000);
 		click(xpath(home));
 		waitForElementPresent(xpath(propertySearch));
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
 		
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		click(xpath(userCFAButton));
+		Thread.sleep(2000);
 		type(xpath(userCFAStreetNumber), getDataFromxls(0, "User_PropertySearch.xls", 1, 2));
 		type(xpath(userCFAStreetName), getDataFromxls(0, "User_PropertySearch.xls", 2, 2));
 		
 		if(getText(xpath(CFASearchtrigger)).isEmpty()){ Thread.sleep(10000); }
 		if(getText(xpath(CFASearchtrigger)).isEmpty()){ Thread.sleep(10000); }
+		Thread.sleep(2000);
 		Assert.assertFalse(getText(xpath(CFASearchtrigger)).isEmpty(), "Search 1");
 		
 		click(xpath(home));
@@ -2052,13 +2054,15 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
 		
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		click(xpath(userCFAButton));
+		Thread.sleep(2000);
 		type(xpath(userCFALotNumber), getDataFromxls(0, "User_PropertySearch.xls", 3, 2));
 		type(xpath(userCFAStreetName), getDataFromxls(0, "User_PropertySearch.xls", 4, 2));
 		
 		if(getText(xpath(CFASearchtrigger)).isEmpty()){ Thread.sleep(10000); }
 		if(getText(xpath(CFASearchtrigger)).isEmpty()){ Thread.sleep(10000); }
+		Thread.sleep(2000);
 		Assert.assertFalse(getText(xpath(CFASearchtrigger)).isEmpty(), "Search 2");
 		
 		click(xpath(home));
@@ -2067,14 +2071,16 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
 		
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		click(xpath(userCFAButton));
+		Thread.sleep(2000);
 		type(xpath(userCFAUnitNumber), getDataFromxls(0, "User_PropertySearch.xls", 5, 2));
 		type(xpath(userCFAStreetNumber), getDataFromxls(0, "User_PropertySearch.xls", 6, 2));
 		type(xpath(userCFAStreetName), getDataFromxls(0, "User_PropertySearch.xls", 7, 2));
 		
 		if(getText(xpath(CFASearchtrigger)).isEmpty()){ Thread.sleep(10000); }
 		if(getText(xpath(CFASearchtrigger)).isEmpty()){ Thread.sleep(10000); }
+		Thread.sleep(2000);
 		Assert.assertFalse(getText(xpath(CFASearchtrigger)).isEmpty(), "Search 3");
 	}
 	
@@ -2326,32 +2332,32 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		
 		
 		click(xpath(userCFAButton));
-		Thread.sleep(1000);
+		Thread.sleep(1500);
 		click(xpath(userCFAConfirm));
-		Thread.sleep(1000);
+		Thread.sleep(1500);
 		click(xpath(userCFABackSearch));
-		Thread.sleep(1000);
+		Thread.sleep(1500);
 		
 		waitForElementPresent(xpath(propertySearch));
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000);}
-		Assert.assertTrue(isElementPresent(xpath(propertySearch)));
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)), "CFA Search btn- SLAS not yet displayed");
 		
 		click(xpath(userCFAButton));
 
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		String styleval = driver.findElement(By.xpath(UnitErrorMessageHidden)).getAttribute("style");
-		Assert.assertTrue(styleval.contains("display: none;"), "Unit number error still displayed");
+		Assert.assertTrue(styleval.contains("none"), "Unit number error still displayed");
 		
 		styleval = driver.findElement(By.xpath(StreetNameErrorMessageHidden)).getAttribute("style");
-		Assert.assertTrue(styleval.contains("display: none;"), "Street number error still displayed");
+		Assert.assertTrue(styleval.contains("none"), "Street number error still displayed");
 		
 		styleval = driver.findElement(By.xpath(StreetTypeErrorMessageHidden)).getAttribute("style");
-		Assert.assertTrue(styleval.contains("display: none;"), "Street Type error still displayed");
+		Assert.assertTrue(styleval.contains("none"), "Street Type error still displayed");
 		
 		styleval = driver.findElement(By.xpath(SuburbErrorMessageHidden)).getAttribute("style");
-		Assert.assertTrue(styleval.contains("display: none;"), "Suburb error still displayed");
+		Assert.assertTrue(styleval.contains("none"), "Suburb error still displayed");
 		
 	}
 	
@@ -2405,34 +2411,36 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	
 	
 	public void CFA_No_address_Matched() throws Exception{
-		
+		Thread.sleep(1000);
 		click(xpath(home));
+		Thread.sleep(2000);
 		waitForElementPresent(xpath(propertySearch));
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
 
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		click(xpath(userCFAButton));
+		Thread.sleep(2000);
 		type(xpath(userCFAUnitNumber), getDataFromxls(0, "User_PropertySearch.xls", 1, 4));
 		type(xpath(userCFAStreetNumber), getDataFromxls(0, "User_PropertySearch.xls", 2, 4));
 		type(xpath(userCFAStreetName), getDataFromxls(0, "User_PropertySearch.xls", 3, 4));
 		type(xpath(userCFAStreetType), getDataFromxls(0, "User_PropertySearch.xls", 4, 4));
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		type(xpath(userCFASuburbList), getDataFromxls(0, "User_PropertySearch.xls", 5, 4));
 		Thread.sleep(3000);
 
-		driver.findElement(By.id("hubSearchAddress_suburbStatePostcode")).sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		driver.findElement(By.id("hubSearchAddress_suburbStatePostcode")).sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
+		click(xpath(CFASuburbSuggestion));
+		Thread.sleep(2000);		
 		Assert.assertEquals(getText(xpath(SorryCFA)), getDataFromxls(0, "User_PropertySearch.xls", 1, 5));
 		
 	}
 	
 	public void CFA_Form_validation() throws Exception{
-		
+		Thread.sleep(2000);
 		click(xpath(home));
+		Thread.sleep(2000);
 		waitForElementPresent(xpath(propertySearch));
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
@@ -2440,6 +2448,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 
 		Thread.sleep(1000);
 		click(xpath(userCFAButton));
+		Thread.sleep(2000);
 		Assert.assertTrue(isElementPresent(xpath(userCFALotNumber)), "Lot Number");
 		Assert.assertTrue(isElementPresent(xpath(userCFAStreetNumber)), "Street Number");
 		Assert.assertTrue(isElementPresent(xpath(userCFAUnitNumber)), "Unit Number");
@@ -2470,15 +2479,16 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void CFA_Different_Property_Type() throws Exception{
-		
+		Thread.sleep(2000);
 		click(xpath(home));
+		Thread.sleep(2000);
 		waitForElementPresent(xpath(propertySearch));
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		click(xpath(userCFAButton));
-		
+		Thread.sleep(2000);
 		int x = 0, y = 7;
 		do{
 			type(xpath(userCFAUnitNumber), getDataFromxls(0, "User_PropertySearch.xls", 2, y));
@@ -2487,7 +2497,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			type(xpath(userCFASuburbList), getDataFromxls(0, "User_PropertySearch.xls", 5, y));
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(userCFASuburbList)).sendKeys(Keys.ENTER);
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			Assert.assertEquals(getText(xpath(IncorrectSuburb)), getDataFromxls(0, "User_PropertySearch.xls", 5, y));
 			
 			Thread.sleep(500);
@@ -2577,24 +2587,23 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	public void Property_Search_Ghost_Text() throws Exception{
 		
 		click(xpath(home));
-		Thread.sleep(2000);
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		waitForElementPresent(xpath(propertySearch));
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
 		
-		Assert.assertTrue(isElementPresent(xpath(propertySearch)));
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)), "Ghost Text - SLAS not Displyed");
 		Assert.assertEquals(getValue(xpath(propertySearch)), getDataFromxls(0, "User_PropertySearch.xls", 1, 25));
 		click(xpath(propertySearch));
+		Thread.sleep(1000);
 		Assert.assertEquals(getValue(xpath(propertySearch)), "");
 	}
 	
 	public void Property_Search_copy_paste() throws Exception{
 		
 		click(xpath(home));
-		Thread.sleep(2000);
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		waitForElementPresent(xpath(propertySearch));
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
@@ -2662,7 +2671,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	    	waitForElementPresent(xpath(userPropertySearch));
 	    	waitForElementVisible(xpath(userPropertySearch));
 	    	Thread.sleep(3000);
-	    	Assert.assertTrue(isElementPresent(xpath(propertySearch)));	    	
+	    	Assert.assertTrue(isElementPresent(xpath(propertySearch)), "Login to Prod selection Property Search not displayed");	    	
 
 	    type(xpath(propertySearch), getDataFromxls(0, "User_ProductSelection.xls", 3, 0));
 		click(xpath(propertySearchbtn));
@@ -2692,10 +2701,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(productNavBar));
 		Thread.sleep(5000);
 			Assert.assertEquals(getDataFromxls(0, "User_ProductSelection.xls", 4, 0), getText(xpath(completeAddress)));
-			Assert.assertTrue(isElementPresent(xpath(productNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(instructionNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(paymentNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(orderNavBar)));
+			Assert.assertTrue(isElementPresent(xpath(productNavBar)), "Login - Product Nav Bar not displayed");
+			Assert.assertTrue(isElementPresent(xpath(instructionNavBar)), "Login - Instruction Nav Bar not displayed");
+			Assert.assertTrue(isElementPresent(xpath(paymentNavBar)), "Login - Payment Nav Bar not displayed");
+			Assert.assertTrue(isElementPresent(xpath(orderNavBar)), "Login - Order Nav Bar not displayed");
 
 		
 		waitForElementPresent(xpath(purchaseBtnSingle));
@@ -2960,26 +2969,29 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void proceedProductSelection() throws Exception {	
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		String ready = (String) js.executeScript("return document.readyState");
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		String ready = (String) js.executeScript("return document.readyState");
+//		Thread.sleep(3000);
+//		if(ready.equalsIgnoreCase("complete")){
+//			
+//			if(isElementPresent(xpath(propertDetailsTile))){
+//			
+//				if(!isElementPresent(xpath(userProceedToProductSelection))){ Thread.sleep(300); }
+//				if(!isElementPresent(xpath(userProceedToProductSelection))){ Thread.sleep(300); }
+//				waitForElementPresent(xpath(userProceedToProductSelection));
+//				waitForElementVisible(xpath(userProceedToProductSelection));
+//				Thread.sleep(3000);
+//				try{
+//					if(isElementPresent(xpath(userProceedToProductSelection))){
+//						click(xpath(userProceedToProductSelection));
+//						}
+//					Thread.sleep(6000);
+//				}catch (AssertionError e) {
+//					fail("Loading of Product Selection is not finished");
+//				}
+//			}
+//		}
 		Thread.sleep(3000);
-		if(ready.equalsIgnoreCase("complete")){
-			
-			if(!isElementPresent(xpath(userProceedToProductSelection))){ Thread.sleep(300); }
-			if(!isElementPresent(xpath(userProceedToProductSelection))){ Thread.sleep(300); }
-			waitForElementPresent(xpath(userProceedToProductSelection));
-			waitForElementVisible(xpath(userProceedToProductSelection));
-			Thread.sleep(3000);
-			try{
-				if(isElementPresent(xpath(userProceedToProductSelection))){
-					click(xpath(userProceedToProductSelection));
-					}
-				Thread.sleep(6000);
-			}catch (AssertionError e) {
-				fail("Loading of Product Selection is not finished");
-			}
-			
-		}
 	}
 	
 	public void startNewTransaction() throws Exception {
@@ -2989,8 +3001,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
         Thread.sleep(3000);	
 	}	
 	public void changeAddressLink() throws Exception {
-	    click(By.linkText("Change property address"));    
-        Thread.sleep(3000);	
+		waitForElementPresent(xpath(changeAddressLink));
+	    click(xpath(changeAddressLink));    
+        Thread.sleep(5000);	
         waitForElementPresent(xpath(userPropertySearch));
 		waitForElementVisible(xpath(userPropertySearch));
 	}	
@@ -3002,6 +3015,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		proceedProductSelection();
 		waitForElementPresent(xpath(productTabsMenu));
 		waitForElementVisible(xpath(productTabsMenu));
+		Thread.sleep(3000);
 		Assert.assertFalse(isElementVisible(xpath(userOriginatorDetails)), "Originator Details should not display on tab not requiring BRE");
 		Logout_link();
 	}
@@ -3042,7 +3056,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(noneApplyCheckboxValuation));
 		click(xpath(avmAckSelect));	
 		click(xpath(userOriginatorToProductSelection));
-		Thread.sleep(20000);
+		Thread.sleep(23000);
+		waitForElementPresent(xpath(shortFormAddToCart));
+		waitForElementVisible(xpath(shortFormAddToCart));
 		Assert.assertTrue(isElementPresent(xpath(shortFormAddToCart)),"Short Form Valuation should be available");
 		click(xpath(shortFormAddToCart));
 		Thread.sleep(1500);
@@ -3173,7 +3189,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void daotaRequired() throws Exception{
-		click(xpath(xButton));
+		//click(xpath(xButton));
 		Thread.sleep(3000);
 		click(xpath(getDataFromxls(0, "User_ProductSelectionOriginator.xls", 2, 0)));
 		Thread.sleep(3000);
@@ -3204,7 +3220,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	
 	public void avmAckRequired() throws Exception{
 		Thread.sleep(3000);
-		click(xpath(xButton));
+		//click(xpath(xButton));
 		Thread.sleep(3000);
 		click(xpath(getDataFromxls(0, "User_ProductSelectionOriginator.xls", 2, 0)));
 		Thread.sleep(3000);
@@ -3224,9 +3240,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	public void loanAppRequired() throws Exception{
 		Thread.sleep(3000);
-		waitForElementVisible(xpath(xButton));
-		waitForElementPresent(xpath(xButton));
-		click(xpath(xButton));
+		//waitForElementVisible(xpath(xButton));
+		//waitForElementPresent(xpath(xButton));
+		//click(xpath(xButton));
 		Thread.sleep(3000);
 		click(xpath(getDataFromxls(0, "User_ProductSelectionOriginator.xls", 2, 0)));
 		Thread.sleep(3000);
@@ -3281,8 +3297,8 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 
 	public void lenderEmpowermentNoRPID() throws Exception{
 		Thread.sleep(5000);
-		click(xpath(xButton));
-		Thread.sleep(3000);
+		//click(xpath(xButton));
+		//Thread.sleep(3000);
 		changeAddressLink();
 		waitForElementVisible(xpath(cantFindAddressbtn));
 		waitForElementPresent(xpath(cantFindAddressbtn));
@@ -3579,7 +3595,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void slas_dynamic(String address) throws Exception {
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		waitForElementPresent(xpath(userPropertySearch));
 		waitForElementVisible(xpath(userPropertySearch));
 		if(!isElementPresent(xpath(userPropertySearch))){ Thread.sleep(3000); }
@@ -3765,6 +3781,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 
 	public void insSpecialChars() throws Exception{
+		Thread.sleep(3000);
 		type(xpath(userCustomerFName), getDataFromxls(0, "User_InstructionDetails.xls", 1, 3));
 		type(xpath(userCustomerLName), getDataFromxls(0, "User_InstructionDetails.xls", 1, 3));
 		type(xpath(userCustomerContact), getDataFromxls(0, "User_InstructionDetails.xls", 3, 3));
@@ -3811,13 +3828,14 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void insSameAsCustomer() throws Exception {
+		Thread.sleep(2000);
 		type(xpath(userCustomerFName), getDataFromxls(0, "User_InstructionDetails.xls", 1, 2));
 		type(xpath(userCustomerLName), getDataFromxls(0, "User_InstructionDetails.xls", 2, 2));
 		type(xpath(userCustomerContact), getDataFromxls(0, "User_InstructionDetails.xls", 3, 2));
 		type(xpath(userCustomerCompany), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
 		
 		click(xpath(userSameAsCustomer));
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		
 		Assert.assertEquals(getText(xpath(accessFName)), getDataFromxls(0, "User_InstructionDetails.xls", 1, 2));
 		Assert.assertEquals(getText(xpath(accessLName)), getDataFromxls(0, "User_InstructionDetails.xls", 2, 2));
@@ -3874,7 +3892,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			slas_dynamic(Address);
 			startNewTransaction();
 			Thread.sleep(1000);
-			proceedProductSelection();
+			//proceedProductSelection();
 								
 			Thread.sleep(2000);
 			waitForElementPresent(xpath(oevppLabel));
@@ -4074,6 +4092,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementPresent(xpath(startNewOrder));
 		waitForElementVisible(xpath(startNewOrder));
 		Assert.assertTrue(isElementPresent(xpath(startNewOrder)), "Start new order not present");
+		click(xpath(startNewOrder));
+		Thread.sleep(3000);
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
 	}
 
 	public void Payment_Validation_Message() throws Exception{

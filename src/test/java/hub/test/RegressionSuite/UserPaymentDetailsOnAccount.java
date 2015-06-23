@@ -24,7 +24,7 @@ public class UserPaymentDetailsOnAccount extends TestInitReference {
     public void init() {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
-           driver.navigate().to("https://dev-bankmelbourne.rppropertyhub.com/login");
+           driver.navigate().to("https://stage-bankmelbourne.rppropertyhub.com/login");
     }
     
     private void setIndexPageDescription() {
@@ -58,6 +58,7 @@ public class UserPaymentDetailsOnAccount extends TestInitReference {
 	public void RT_2290_Payment_Successful_OnAccount_Purchase() throws Exception {
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		if(isElementPresent(xpath(logout))){ util.Logout_link(); Thread.sleep(2000); }
 		util.LoginChannel("cbalender");
 		util.slas_dynamic(getDataFromxls(0, "User_PaymentOnAccount.xls" , 0, 1));
 		util.startNewTransaction();
@@ -69,15 +70,13 @@ public class UserPaymentDetailsOnAccount extends TestInitReference {
 		click(xpath(proceedtoInstuction));
 		util.Instruction_Input_Fields();
 		util.Payment_Successful_OnAccount_Purchase("Proceed");
-		util.Logout_link();
 	}
 	
 	@Test(description="User - Payment Details", priority=3)
 	public void RT_2290_Payment_Validation_Message() throws Exception {
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-		if(isElementPresent(xpath(logout))){ util.Logout_link(); }
-		util.LoginChannel("cbalender");
+		if(!isElementPresent(xpath(propertySearch))){	util.LoginChannel("cbalender"); }
 		util.slas_dynamic(getDataFromxls(0, "User_PaymentOnAccount.xls" , 0, 1));
 		util.startNewTransaction();
 		util.proceedProductSelection();
@@ -111,6 +110,7 @@ public class UserPaymentDetailsOnAccount extends TestInitReference {
 	public void RT_2906_Payment_Product_Names() throws Exception {
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		driver.navigate().to("https://stage-cbalender.rppropertyhub.com/login");
 		util.LoginChannel("cbalender");
 		util.slas_dynamic(getDataFromxls(0, "User_PaymentOnAccount.xls" , 0, 1));
 		util.startNewTransaction();

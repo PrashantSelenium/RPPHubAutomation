@@ -61,12 +61,12 @@ public class TestInitReference extends FunctionReference {
 //            driver = new FirefoxDriver(new FirefoxBinary(), profile);
             
             DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability("browser", "IE");
-            caps.setCapability("browser_version", "8.0");
+            caps.setCapability("browser", "Chrome");
+            caps.setCapability("browser_version", "42.0");
             caps.setCapability("os", "Windows");
             caps.setCapability("os_version", "7");
     	    caps.setCapability("browserstack.debug", "true");
-    	    caps.setCapability("build", "Regression-Automation v4.13");
+    	    caps.setCapability("build", "Regression-Automation v4.16");
     	    caps.setCapability("project", "Hub");
 
     	    driver = new RemoteWebDriver(new URL(remoteUrl), caps);
@@ -79,7 +79,7 @@ public class TestInitReference extends FunctionReference {
             driver = new HtmlUnitDriver(capabilities);
         }
         if (browser.contains("Chrome")) {
-            System.setProperty("webdriver.chrome.driver", "c:\\Selenium\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "chromedriver");
             driver = new ChromeDriver();
         }
         if (browser.contains("InternetExplorer")) {

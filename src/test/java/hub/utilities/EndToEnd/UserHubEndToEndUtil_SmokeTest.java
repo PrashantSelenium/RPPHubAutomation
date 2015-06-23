@@ -36,7 +36,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	//*************************//
 
 	//Set Enviroment to the list above depending from what environment you want to run the test	
-	public String environment = "https://dev-";
+	public String environment = "https://stage-";
 	
 	public UserHubEndToEndUtil_SmokeTest() {
 	}
@@ -224,7 +224,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 			Assert.assertTrue(getText(xpath(HealthCheck)).contains(input[14]));
 		    }
 		    catch(AssertionError e){
-		    	fail(input[0] + " - EVR Service Connection label is not ok");
+		    	fail(input[0] + " - CPS Service Connection label is not ok");
 		    	resultcount++;
 		    	}
 
@@ -337,22 +337,14 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		type(xpath(streetTypeSearchAddress), input[4]);
 		type(xpath(suburbSearchAddress), input[5]);
 		click(xpath(confirmbtnSearchAddress));
-
-//		waitForElementPresent(xpath(completeAddress));
-//		waitForElementVisible(xpath(completeAddress));
-//		waitfor();
-//		try{
-//			Assert.assertEquals(input[6], getText(xpath(completeAddress)));
-//		    }
-//		    catch(AssertionError e){
-//		    	fail(input[0] + " - Incorrect Address");
-//		    	resultcount++;
-//		    	}
+		Thread.sleep(8000);
 		try{
-			Assert.assertTrue(isElementPresent(xpath(home)));
-			Assert.assertTrue(isElementPresent(xpath(myAccount)));
-			Assert.assertTrue(isElementPresent(xpath(myTransactions)));
-			Assert.assertTrue(isElementPresent(xpath(logout)));
+			waitForElementPresent(xpath(oevppLabel));
+			waitForElementVisible(xpath(oevppLabel));
+			waitForElementPresent(xpath(proceedToProductSelection));
+			waitForElementVisible(xpath(proceedToProductSelection));
+			Assert.assertTrue(isElementPresent(xpath(oevppLabel)), "OEVPP Not Displayed");
+			Assert.assertTrue(isElementPresent(xpath(proceedToProductSelection)), "OEVPP Not Displayed");		
 		    }
 		    catch(AssertionError e){
 		    	fail(input[0] + " - Menu validation");
@@ -383,6 +375,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		if(!isElementPresent(xpath(productNavBar)));{ Thread.sleep(2000); }
     	if(!isElementPresent(xpath(productNavBar)));{ Thread.sleep(2000); }
 		try{
+			Thread.sleep(3000);
 			Assert.assertTrue(isElementPresent(xpath(productNavBar)));
 			Assert.assertTrue(isElementPresent(xpath(instructionNavBar)));
 			Assert.assertTrue(isElementPresent(xpath(paymentNavBar)));
@@ -467,19 +460,24 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	
 	public int SingleLineAddress() throws Exception{
 		
+		if(isElementVisible(xpath(oevppLabel)) || isElementPresent(xpath(oevppLabel))){
+			click(xpath(xButton));
+		}	else {
 		waitForElementPresent(xpath(changeAddressLink));
 		waitForElementVisible(xpath(changeAddressLink));
 		click(xpath(changeAddressLink));		
-		Thread.sleep(3000);
+		}
 		
-		waitForElementPresent(xpath(userPropertySearch));
-		waitForElementVisible(xpath(userPropertySearch));
-		if(!isElementPresent(xpath(userPropertySearch)));{ Thread.sleep(2000); }
-    	if(!isElementPresent(xpath(userPropertySearch)));{ Thread.sleep(2000); }
+		Thread.sleep(5000);
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch)));{ Thread.sleep(2000); }
+    	if(!isElementPresent(xpath(propertySearch)));{ Thread.sleep(2000); }
 		
 		type(xpath(propertySearch), input[1]);
-		click(xpath(propertySearchbtn));
-		
+		Thread.sleep(2000);
+		click(xpath(userSearchButton));
+		Thread.sleep(5000);
 		waitForElementPresent(xpath(completeAddress));
 		waitForElementVisible(xpath(completeAddress));
 		if(!isElementPresent(xpath(completeAddress)));{ Thread.sleep(2000); }
@@ -502,33 +500,33 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	
 	public int ProductSelectionValuation() throws Exception{
 		
-		waitForElementPresent(xpath(proceedNextLink));
-		waitForElementVisible(xpath(proceedNextLink));
-		click(xpath(proceedNextLink));
+//		waitForElementPresent(xpath(proceedNextLink));
+//		waitForElementVisible(xpath(proceedNextLink));
+//		click(xpath(proceedNextLink));
 		Thread.sleep(10000);
-		waitForElementPresent(xpath(productNavBar));
-		waitForElementVisible(xpath(productNavBar));
-		if(!isElementVisible(xpath(productNavBar))){ Thread.sleep(7000); }
-		if(!isElementVisible(xpath(productNavBar))){ Thread.sleep(7000); }
-		
-		try{
-			Assert.assertEquals(input[1], getText(xpath(completeAddress)));
-		    }
-		    catch(AssertionError e){
-		    	fail(input[0] + " - Incorrect Address");
-		    	resultcount++;
-		    	}
-
-		try{
-			Assert.assertTrue(isElementPresent(xpath(productNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(instructionNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(paymentNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(orderNavBar)));
-		    }
-		    catch(AssertionError e){
-		    	fail(input[0] + " - Navigation Bar validation");
-		    	resultcount++;
-		    	}
+//		waitForElementPresent(xpath(productNavBar));
+//		waitForElementVisible(xpath(productNavBar));
+//		if(!isElementVisible(xpath(productNavBar))){ Thread.sleep(7000); }
+//		if(!isElementVisible(xpath(productNavBar))){ Thread.sleep(7000); }
+//		
+//		try{
+//			Assert.assertEquals(input[1], getText(xpath(completeAddress)));
+//		    }
+//		    catch(AssertionError e){
+//		    	fail(input[0] + " - Incorrect Address");
+//		    	resultcount++;
+//		    	}
+//
+//		try{
+//			Assert.assertTrue(isElementPresent(xpath(productNavBar)));
+//			Assert.assertTrue(isElementPresent(xpath(instructionNavBar)));
+//			Assert.assertTrue(isElementPresent(xpath(paymentNavBar)));
+//			Assert.assertTrue(isElementPresent(xpath(orderNavBar)));
+//		    }
+//		    catch(AssertionError e){
+//		    	fail(input[0] + " - Navigation Bar validation");
+//		    	resultcount++;
+//		    	}
 		Thread.sleep(2000);
 		if(!isElementPresent(xpath(unitPriceValuation))){
 			
@@ -1047,7 +1045,9 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    dropdown.selectByValue("9");
 	    driver.findElement(By.id("channelId")).sendKeys(Keys.ENTER);
 	    Thread.sleep(2000);
-	    click(xpath(adminPromotionBaseProduct));
+	    driver.findElement(By.id("channelId")).sendKeys(Keys.TAB);
+	    //click(xpath(adminPromotionBaseProduct));
+	    //click(xpath("//*[@value='115']"));
 	    Thread.sleep(500);
 	    driver.findElement(By.id("baseProductId")).sendKeys(Keys.DOWN);
 	    click(xpath(adminPromotionDaySun));
@@ -1166,7 +1166,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    click(xpath(home));
 	    waitForElementPresent(xpath(userPropertySearch));
     	waitForElementVisible(xpath(userPropertySearch));
-    	Thread.sleep(2000);
+    	Thread.sleep(4000);
 		try{
 	    	Assert.assertTrue(isElementPresent(xpath(userPropertySearch)));
 			}
@@ -1180,7 +1180,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 			click(xpath(rpProfessional));
 		    waitForElementPresent(xpath(RPPusername));
 	    	waitForElementVisible(xpath(RPPusername));
-	    	Thread.sleep(2000);
+	    	Thread.sleep(4000);
 			try{
 		    	Assert.assertTrue(isElementPresent(xpath(RPPusername)));
 				}
@@ -1193,7 +1193,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		click(xpath(myAccount));
 	    waitForElementPresent(xpath(myAccountFN));
     	waitForElementVisible(xpath(myAccountFN));
-    	Thread.sleep(2000);
+    	Thread.sleep(4000);
 		try{
 	    	Assert.assertTrue(isElementPresent(xpath(myAccount)));
 			}
@@ -1205,7 +1205,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		click(xpath(myTransactions));
 	    waitForElementPresent(xpath(userMyTransactionList));
     	waitForElementVisible(xpath(userMyTransactionList));
-    	Thread.sleep(2000);
+    	Thread.sleep(4000);
 		try{
 	    	Assert.assertTrue(isElementPresent(xpath(myTransactions)));
 			}
@@ -1249,6 +1249,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    		}
 
 	    type(xpath(propertySearch), input[3]);
+	    Thread.sleep(1000);
 		click(xpath(propertySearchbtn));
 		
 		waitForElementPresent(xpath(completeAddress));
@@ -1268,10 +1269,6 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		click(xpath(pendingTransaction));
 		}
 	
-		waitForElementPresent(xpath(proceedNextLink));
-		waitForElementVisible(xpath(proceedNextLink));
-		Thread.sleep(10000);
-		click(xpath(proceedNextLink));
 		Thread.sleep(10000);
 		waitForElementPresent(xpath(productNavBar));
 		waitForElementVisible(xpath(productNavBar));
@@ -1284,16 +1281,8 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		    	resultcount++;
 		    	}
 
-		try{
-			Assert.assertTrue(isElementPresent(xpath(productNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(instructionNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(paymentNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(orderNavBar)));
-		    }
-		    catch(AssertionError e){
-		    	fail(input[0] + " - Navigation Bar validation");
-		    	resultcount++;
-		    	}
+			Thread.sleep(5000);
+
 		
 		waitForElementPresent(xpath(purchaseBtn));
 		waitForElementVisible(xpath(purchaseBtn));
@@ -1556,9 +1545,6 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		click(xpath(pendingTransaction));
 		}
 	
-		waitForElementPresent(xpath(proceedNextLink));
-		waitForElementVisible(xpath(proceedNextLink));
-		click(xpath(proceedNextLink));
 		Thread.sleep(10000);
 		waitForElementPresent(xpath(productNavBar));
 		waitForElementVisible(xpath(productNavBar));
@@ -1571,16 +1557,8 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		    	resultcount++;
 		    	}
 
-		try{
-			Assert.assertTrue(isElementPresent(xpath(productNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(instructionNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(paymentNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(orderNavBar)));
-		    }
-		    catch(AssertionError e){
-		    	fail(input[0] + " - Navigation Bar validation");
-		    	resultcount++;
-		    	}
+			Thread.sleep(5000);
+
 		
 		if(!getValue(xpath(unitValuation)).equals("7")){
 			int x=0;
@@ -1849,6 +1827,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		    	}
 
 		try{
+			Thread.sleep(3000);
 			Assert.assertTrue(isElementPresent(xpath(productNavBar)));
 			Assert.assertTrue(isElementPresent(xpath(instructionNavBar)));
 			Assert.assertTrue(isElementPresent(xpath(paymentNavBar)));
@@ -2079,7 +2058,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    	waitForElementPresent(xpath(userPropertySearch));
 	    	waitForElementVisible(xpath(userPropertySearch));
 	    	Thread.sleep(3000);
-	    	Assert.assertTrue(isElementPresent(xpath(propertySearch)));	    	
+	    	Assert.assertTrue(isElementPresent(xpath(propertySearch)), "SLAS - Property Search not displayed");	    	
 	    	}
 	    	catch(AssertionError e){
 	    		fail(input[0] + " - Property search is not properly displayed");
@@ -2088,49 +2067,13 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 
 	    type(xpath(propertySearch), input[3]);
 		click(xpath(propertySearchbtn));
-		
-		waitForElementPresent(xpath(completeAddress));
-		waitForElementVisible(xpath(completeAddress));
-		if(!isElementPresent(xpath(completeAddress)));{ Thread.sleep(2000); }
-    	if(!isElementPresent(xpath(completeAddress)));{ Thread.sleep(2000); }
-    	
-	try{
-		Assert.assertEquals(input[4], getText(xpath(completeAddress)));
-    	}
-    	catch(AssertionError e){
-    		fail(input[0] + " - Incorrect Address");
-    		resultcount++;
-    		}
+		Thread.sleep(4000);
 
 	if(isElementPresent(xpath(pendingTransaction))){
 		click(xpath(pendingTransaction));
 		}
 	
-		waitForElementPresent(xpath(proceedNextLink));
-		waitForElementVisible(xpath(proceedNextLink));
-		click(xpath(proceedNextLink));
 		Thread.sleep(10000);
-		waitForElementPresent(xpath(productNavBar));
-		waitForElementVisible(xpath(productNavBar));
-		
-		try{
-			Assert.assertEquals(input[4], getText(xpath(completeAddress)));
-		    }
-		    catch(AssertionError e){
-		    	fail(input[0] + " - Incorrect Address");
-		    	resultcount++;
-		    	}
-
-		try{
-			Assert.assertTrue(isElementPresent(xpath(productNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(instructionNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(paymentNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(orderNavBar)));
-		    }
-		    catch(AssertionError e){
-		    	fail(input[0] + " - Navigation Bar validation");
-		    	resultcount++;
-		    	}
 				
 		type(xpath(unitPriceValuation),input[13].substring(0, 6));
 		if(isElementPresent(xpath(loanAmount))){
@@ -2140,7 +2083,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 			click(xpath(noneApplyCheckboxValuation));
 		}
 		click(xpath(proceedToProductValuation));
-		
+		Thread.sleep(4000);
 		waitForElementPresent(xpath(purchaseBtnSingle));
 		waitForElementVisible(xpath(purchaseBtnSingle));
 		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
@@ -2153,13 +2096,13 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		if(!isElementVisible(xpath(purchaseBtnSingle))){ Thread.sleep(7000); }
 		
 		Assert.assertTrue(isElementPresent(xpath(promotionLogo)), "Promotion Logo is not Displayed");
-			
-			waitForElementPresent(xpath(purchaseBtnSecondLine));
-			waitForElementVisible(xpath(purchaseBtnSecondLine));
 			Thread.sleep(2000);
-			click(xpath(purchaseBtnSecondLine));
+			waitForElementPresent(xpath(purchaseBtnFifthLine));
+			waitForElementVisible(xpath(purchaseBtnFifthLine));
+			Thread.sleep(2000);
+			click(xpath(purchaseBtnFifthLine));
 		
-		Thread.sleep(6000);
+		Thread.sleep(7000);
 		waitForElementPresent(xpath(addToCartLabel));
 		waitForElementVisible(xpath(addToCartLabel));
 		try{
@@ -2275,27 +2218,24 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 			Assert.assertTrue(Price.toString().equals(TotalAmount.toString()));
 			}
 			catch(AssertionError e){
-				fail(input[0] + " - Price is not properly Discounted");
+				fail(input[0] + " - Price is not properly Discounted - Actual Price " + Price + " - Expected Price " + TotalAmount );
 				resultcount++;
 	    		}
-		
+		Thread.sleep(3000);
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
+		waitForElementPresent(xpath(TermsandConditionPaymentDetails));
 		click(xpath(TermsandConditionPaymentDetails));
 		type(xpath(InvoiceName), input[1]);
 		type(xpath(InvoiceEmail), input[11]);
 		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
 		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
 		click(xpath(ConfirmBtnPaymentDetails));
+		Thread.sleep(8000);
+		Assert.assertTrue(isElementPresent(xpath(CPSIframe)), "CPS Iframe not yet displayed");
 		
-		Thread.sleep(4000);
-		if(!isElementPresent(xpath("//iframe[@id='card_payment_iframe']"))){ Thread.sleep(2000); }
-		if(!isElementPresent(xpath("//iframe[@id='card_payment_iframe']"))){ Thread.sleep(2000); }
-		
-		waitForElementPresent(xpath("//iframe[@id='card_payment_iframe']"));
-		waitForElementVisible(xpath("//iframe[@id='card_payment_iframe']"));
-			
-		Thread.sleep(2000);
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='card_payment_iframe']")));
-		isElementVisible(By.xpath("//*[@id='CardNumber']"));
+				
+		Assert.assertTrue(isElementPresent(xpath(CPSCardNumber)), "CPS Card Number not yet displayed");
 		type(xpath("//*[@id='CardNumber']"), input[17].substring(0, 16).concat("111"));
 		type(xpath("//*[@id='CardHolderName']"), input[8]);
 		type(xpath("//*[@id='DateExpiry_1']"), "12");
@@ -2306,13 +2246,11 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		//STOP HERE IF TESTING IN PROD
 		if(environment.contains("dev") || environment.contains("stage"))
 		{
+		Thread.sleep(1000);
 		click(xpath("//*[@id='Add']"));
-				
-		Thread.sleep(5000);
-		if(!isElementPresent(xpath(referenceNumber))){ Thread.sleep(2000); }
-		if(!isElementPresent(xpath(referenceNumber))){ Thread.sleep(2000); }
-		waitForElementPresent(xpath(referenceNumber));
-		waitForElementVisible(xpath(referenceNumber));
+		
+		Thread.sleep(12000);
+		driver.switchTo().defaultContent();		
 		try{
 	    	Assert.assertTrue(isElementPresent(xpath(referenceNumber)));
 			}

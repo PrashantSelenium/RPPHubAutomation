@@ -25,7 +25,7 @@ public class MacquarieBRE extends TestInitReference {
     public void init() {
            ATUReports.setWebDriver(driver); 
            setIndexPageDescription();
-           driver.navigate().to("https://dev-mbms.rppropertyhub.com/Login");
+           driver.navigate().to("https://stage-mbms.rppropertyhub.com/Login");
     }
     
     private void setIndexPageDescription() {

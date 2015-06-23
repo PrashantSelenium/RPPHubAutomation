@@ -48,7 +48,7 @@ public class TestInitReferenceSmokeTest extends FunctionReference {
     public static final String USERNAME = "tooltwist";
     public static final String AUTOMATE_KEY = "9quC1U5hBNqMfkAByiyp";
     public static final String remoteUrl = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
-    //public String remoteUrl = rxml.data("remoteUrl");
+//    public String remoteUrl = rxml.data("remoteUrl");
     
 //    public static final String USERNAME = "support-tooltwist";
 //   	public static final String AUTOMATE_KEY = "69845b25-d4b1-4420-9c59-b1dcf06b479d";
@@ -66,7 +66,7 @@ public class TestInitReferenceSmokeTest extends FunctionReference {
         if (browser.contains("Firefox")) {
             FirefoxProfile profile = new FirefoxProfile();
             profile.setEnableNativeEvents(true);
-            //driver = new FirefoxDriver(new FirefoxBinary(), profile);
+//            driver = new FirefoxDriver(new FirefoxBinary(), profile);
             
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability("browser", "Firefox");
@@ -74,7 +74,7 @@ public class TestInitReferenceSmokeTest extends FunctionReference {
             caps.setCapability("os", "Windows");
             caps.setCapability("os_version", "7");
     	    caps.setCapability("browserstack.debug", "true");
-    	    caps.setCapability("build", "Prod v4.15");
+    	    caps.setCapability("build", "Prod v4.16.1");
     	    caps.setCapability("project", "Hub");
 
     	    driver = new RemoteWebDriver(new URL(remoteUrl), caps);
@@ -87,7 +87,7 @@ public class TestInitReferenceSmokeTest extends FunctionReference {
             driver = new HtmlUnitDriver(capabilities);
         }
         if (browser.contains("Chrome")) {
-            System.setProperty("webdriver.chrome.driver", "c:\\Selenium\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "chromedriver");
             driver = new ChromeDriver();
         }
         if (browser.contains("InternetExplorer")) {
