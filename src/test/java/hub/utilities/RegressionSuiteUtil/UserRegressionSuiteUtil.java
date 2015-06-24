@@ -3655,7 +3655,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementPresent(xpath(propertySearch)), "Change property address is not working");
 	}
 	public void insConstructionFields() throws Exception {
-		click(xpath(logout));
+//		click(xpath(logout));
 		Thread.sleep(3000);
 		Successful_login_CBALender();
 		slas();
@@ -3837,10 +3837,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(userSameAsCustomer));
 		Thread.sleep(2000);
 		
-		Assert.assertEquals(getText(xpath(accessFName)), getDataFromxls(0, "User_InstructionDetails.xls", 1, 2));
-		Assert.assertEquals(getText(xpath(accessLName)), getDataFromxls(0, "User_InstructionDetails.xls", 2, 2));
-		Assert.assertEquals(getText(xpath(accessCompany)), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
-		Assert.assertEquals(getText(xpath(accessContact)), getDataFromxls(0, "User_InstructionDetails.xls", 3, 2));	
+		Assert.assertEquals(getValue(xpath(accessFName)), getDataFromxls(0, "User_InstructionDetails.xls", 1, 2));
+		Assert.assertEquals(getValue(xpath(accessLName)), getDataFromxls(0, "User_InstructionDetails.xls", 2, 2));
+		Assert.assertEquals(getValue(xpath(accessCompany)), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
+		Assert.assertEquals(getValue(xpath(accessContact)), getDataFromxls(0, "User_InstructionDetails.xls", 3, 2));	
 	}
 	
 	public void insCantFindAddress() throws Exception {
