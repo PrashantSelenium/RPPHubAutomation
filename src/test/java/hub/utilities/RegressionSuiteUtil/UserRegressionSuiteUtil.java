@@ -3686,7 +3686,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementPresent(xpath(propertySearch)), "Change property address is not working");
 	}
 	public void insConstructionFields() throws Exception {
-		click(xpath(logout));
+//		click(xpath(logout));
 		Thread.sleep(3000);
 		Successful_login_CBALender();
 		slas();
