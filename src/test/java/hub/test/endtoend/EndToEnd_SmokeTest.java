@@ -159,13 +159,13 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
 			        	else { pass(input[0]); }
 		        break;
 		        
-//			case "CBABROKERx":
-//				resultcount = endtoend.EndToEndCBABroker();
-//			        if (resultcount != 0) { fail(input[0]); } 
-//			        	else { pass(input[0]); }
-//		        break;
+			case "CBABROKERx":
+				resultcount = endtoend.EndToEndCBABroker();
+			        if (resultcount != 0) { fail(input[0]); } 
+			        	else { pass(input[0]); }
+		        break;
 		        
-			case "BUILDVERSION":
+			case "BUILDVERSIONx":
 				resultcount = endtoend.BuildVersion();
 			        if (resultcount != 0) { fail(input[0]); } 
 			        	else { pass(input[0]); }

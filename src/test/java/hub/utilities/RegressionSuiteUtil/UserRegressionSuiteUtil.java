@@ -1749,7 +1749,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(userPropertySearch));
 		waitForElement(userPropertySearch);
 		type(xpath(propertySearch), getDataFromxls(0, "User_CBA_Multi_AVM.xls", 6, 0));
-		click(xpath(propertySearchbtn));
+		Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
 		
 		waitForElementPresent(xpath(completeAddress));
 		waitForElementVisible(xpath(completeAddress));
@@ -2130,7 +2133,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(userPropertySearch));
 		waitForElement(userPropertySearch);
 		type(xpath(propertySearch), getDataFromxls(0, "User_CBA_Multi_AVM.xls", 3, 3));
-		click(xpath(propertySearchbtn));
+		Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
 		
 		waitForElementPresent(xpath(completeAddress));
 		waitForElementVisible(xpath(completeAddress));
@@ -2554,8 +2560,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
  		Assert.assertTrue(styleval.contains("display: none;"), "Searching not displayed");
  		
  		type(xpath(propertySearch),getDataFromxls(0, "User_PropertySearch.xls", 1, 24));
- 		click(xpath(propertySearchbtn));
- 		Thread.sleep(3000);
+ 		Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
  		
  		styleval = driver.findElement(By.xpath(DidYouMean)).getAttribute("style");
  		Assert.assertFalse(styleval.contains("display: none;"), "Searching not displayed");
@@ -2631,8 +2639,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
 		Assert.assertTrue(isElementPresent(xpath(propertySearch)));
         type(xpath(propertySearch), getDataFromxls(0, "User_PropertySearch.xls", 1, 27));
-        click(xpath(propertySearchbtn));
-		Thread.sleep(3000);
+        Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
 		Assert.assertTrue(isElementPresent(xpath(unfortunately_Error_Msg)), "Invalid Property Message is not displayed");
 	}	
 	
@@ -2647,13 +2657,17 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
 		Assert.assertTrue(isElementPresent(xpath(propertySearch)));
         type(xpath(propertySearch), getDataFromxls(0, "User_PropertySearch.xls", 1, 28));
-        click(xpath(propertySearchbtn));
-		Thread.sleep(3000);
+        Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
 		Assert.assertTrue(isElementPresent(xpath(unfortunately_Error_Msg)), "Invalid Property Message is not displayed");
 		Thread.sleep(500);
 		type(xpath(propertySearch), getDataFromxls(0, "User_PropertySearch.xls", 2, 28));
-        click(xpath(propertySearchbtn));
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
 		Assert.assertTrue(isElementPresent(xpath(unfortunately_Error_Msg)), "Invalid Property Message is not displayed");
 		
 	}	
@@ -2674,7 +2688,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	    	Assert.assertTrue(isElementPresent(xpath(propertySearch)), "Login to Prod selection Property Search not displayed");	    	
 
 	    type(xpath(propertySearch), getDataFromxls(0, "User_ProductSelection.xls", 3, 0));
-		click(xpath(propertySearchbtn));
+	    Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
 		
 		waitForElementPresent(xpath(completeAddress));
 		waitForElementVisible(xpath(completeAddress));
@@ -2861,7 +2878,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	
 	public void validate_No_Product_Available_message() throws Exception{	
 	    type(xpath(propertySearch), getDataFromxls(0, "User_ProductSelection.xls", 3, 0));
-		click(xpath(propertySearchbtn));
+	    Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
 		
 		waitForElementPresent(xpath(completeAddress));
 		waitForElementVisible(xpath(completeAddress));
@@ -2917,7 +2937,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	
 	
 	    type(xpath(propertySearch), getDataFromxls(0, "User_ProductSelection.xls", 3, 0));
-		click(xpath(propertySearchbtn));
+	    Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
 		
 		waitForElementPresent(xpath(completeAddress));
 		waitForElementVisible(xpath(completeAddress));
@@ -2964,8 +2987,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			fail("SLAS placeholder text");
 		}
 		type(xpath(userPropertySearch), getDataFromxls(0, "User_ProductSelectionOriginator.xls", 1, 0));		
-		click(xpath(userSearchButton));
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
 	}
 	
 	public void proceedProductSelection() throws Exception {	
@@ -3322,8 +3347,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(userPropertySearch));
 		waitForElementPresent(xpath(userPropertySearch));
 		type(xpath(userPropertySearch), getDataFromxls(0, "User_ProductSelectionOriginator.xls", 1, 38));		
-		click(xpath(userSearchButton));
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
 		startNewTransaction();
 		proceedProductSelection();
 		Assert.assertTrue(isElementVisible(xpath(productLenderEmpowerment)), "Lender Empowerment is not offered");		
@@ -3355,8 +3382,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(userPropertySearch));
 		waitForElementPresent(xpath(userPropertySearch));
 		type(xpath(userPropertySearch), getDataFromxls(0, "User_ProductSelectionOriginator.xls", 1, 38));		
-		click(xpath(userSearchButton));
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
 		startNewTransaction();
 		proceedProductSelection();
 		Assert.assertTrue(isElementVisible(xpath(productLenderEmpowerment)), "Lender Empowerment is not offered");
@@ -3607,7 +3636,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			fail("SLAS placeholder text");
 		}
 		type(xpath(userPropertySearch), address);		
-		click(xpath(userSearchButton));
+		Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
 		Thread.sleep(4000);
 	}
 	
@@ -3837,10 +3868,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(userSameAsCustomer));
 		Thread.sleep(2000);
 		
-		Assert.assertEquals(getText(xpath(accessFName)), getDataFromxls(0, "User_InstructionDetails.xls", 1, 2));
-		Assert.assertEquals(getText(xpath(accessLName)), getDataFromxls(0, "User_InstructionDetails.xls", 2, 2));
-		Assert.assertEquals(getText(xpath(accessCompany)), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
-		Assert.assertEquals(getText(xpath(accessContact)), getDataFromxls(0, "User_InstructionDetails.xls", 3, 2));	
+		Assert.assertEquals(getValue(xpath(accessFName)), getDataFromxls(0, "User_InstructionDetails.xls", 1, 2));
+		Assert.assertEquals(getValue(xpath(accessLName)), getDataFromxls(0, "User_InstructionDetails.xls", 2, 2));
+		Assert.assertEquals(getValue(xpath(accessCompany)), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
+		Assert.assertEquals(getValue(xpath(accessContact)), getDataFromxls(0, "User_InstructionDetails.xls", 3, 2));	
 	}
 	
 	public void insCantFindAddress() throws Exception {

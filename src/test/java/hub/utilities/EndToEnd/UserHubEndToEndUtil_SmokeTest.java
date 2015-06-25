@@ -468,7 +468,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		click(xpath(changeAddressLink));		
 		}
 		
-		Thread.sleep(5000);
+		Thread.sleep(2500);
 		waitForElementPresent(xpath(propertySearch));
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch)));{ Thread.sleep(2000); }
@@ -476,8 +476,9 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		
 		type(xpath(propertySearch), input[1]);
 		Thread.sleep(2000);
-		click(xpath(userSearchButton));
-		Thread.sleep(5000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
 		waitForElementPresent(xpath(completeAddress));
 		waitForElementVisible(xpath(completeAddress));
 		if(!isElementPresent(xpath(completeAddress)));{ Thread.sleep(2000); }
@@ -1249,8 +1250,10 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    		}
 
 	    type(xpath(propertySearch), input[3]);
-	    Thread.sleep(1000);
-		click(xpath(propertySearchbtn));
+		Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
 		
 		waitForElementPresent(xpath(completeAddress));
 		waitForElementVisible(xpath(completeAddress));
@@ -1269,7 +1272,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		click(xpath(pendingTransaction));
 		}
 	
-		Thread.sleep(10000);
+		Thread.sleep(7000);
 		waitForElementPresent(xpath(productNavBar));
 		waitForElementVisible(xpath(productNavBar));
 		
@@ -1526,7 +1529,10 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    		}
 
 	    type(xpath(propertySearch), input[3]);
-		click(xpath(propertySearchbtn));
+		Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
 		
 		waitForElementPresent(xpath(completeAddress));
 		waitForElementVisible(xpath(completeAddress));
@@ -1545,7 +1551,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		click(xpath(pendingTransaction));
 		}
 	
-		Thread.sleep(10000);
+		Thread.sleep(7000);
 		waitForElementPresent(xpath(productNavBar));
 		waitForElementVisible(xpath(productNavBar));
 		
@@ -1558,7 +1564,6 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		    	}
 
 			Thread.sleep(5000);
-
 		
 		if(!getValue(xpath(unitValuation)).equals("7")){
 			int x=0;
@@ -1792,7 +1797,10 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    		}
 
 	    type(xpath(propertySearch), input[3]);
-		click(xpath(propertySearchbtn));
+		Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
+		Thread.sleep(4000);
 		
 		waitForElementPresent(xpath(completeAddress));
 		waitForElementVisible(xpath(completeAddress));
@@ -2066,14 +2074,16 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    		}
 
 	    type(xpath(propertySearch), input[3]);
-		click(xpath(propertySearchbtn));
+		Thread.sleep(2000);
+		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
+		//click(xpath(userSearchButton));
 		Thread.sleep(4000);
-
+		
 	if(isElementPresent(xpath(pendingTransaction))){
 		click(xpath(pendingTransaction));
 		}
 	
-		Thread.sleep(10000);
+		Thread.sleep(7000);
 				
 		type(xpath(unitPriceValuation),input[13].substring(0, 6));
 		if(isElementPresent(xpath(loanAmount))){
@@ -2206,11 +2216,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		
 		type(xpath(PromoField), PromoCode);
 		click(xpath(PromoAddBtn));
-		Thread.sleep(5000);
-		if(!isElementPresent(xpath(PromoField))){ Thread.sleep(3000); }
-		if(!isElementVisible(xpath(PromoField))){ Thread.sleep(3000); }
-		if(!isElementPresent(xpath(PromoField))){ Thread.sleep(3000); }
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 		
 		Double TotalAmount = Double.parseDouble(getText(xpath(MainTotalAmount)).substring(1).trim());
 				
@@ -2252,6 +2258,8 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		Thread.sleep(12000);
 		driver.switchTo().defaultContent();		
 		try{
+			if(!isElementPresent(xpath(referenceNumber))) { Thread.sleep(3000); }
+			if(!isElementVisible(xpath(referenceNumber))) { Thread.sleep(3000); }
 	    	Assert.assertTrue(isElementPresent(xpath(referenceNumber)));
 			}
 			catch(AssertionError e){
