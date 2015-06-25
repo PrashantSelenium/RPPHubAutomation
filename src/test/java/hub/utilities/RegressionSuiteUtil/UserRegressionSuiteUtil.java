@@ -4123,10 +4123,6 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementPresent(xpath(startNewOrder));
 		waitForElementVisible(xpath(startNewOrder));
 		Assert.assertTrue(isElementPresent(xpath(startNewOrder)), "Start new order not present");
-		click(xpath(startNewOrder));
-		Thread.sleep(3000);
-		waitForElementPresent(xpath(propertySearch));
-		waitForElementVisible(xpath(propertySearch));
 	}
 
 	public void Payment_Validation_Message() throws Exception{
