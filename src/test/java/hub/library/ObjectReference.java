@@ -396,7 +396,7 @@ public class ObjectReference {
     public static String propertyType = "//*[@class='propertyType']";
     public static String productNavBar = "//*[@id='flowbar']/div[1]/div/div[1]/div[2]/span[1]";
     public static String instructionNavBar = "//*[@class='topLabel instructionDetailsLink']";
-    public static String paymentNavBar = "//*[@class='topLabel paymentDetailsLink";
+    public static String paymentNavBar = "//*[@class='topLabel paymentDetailsLink']";
     public static String orderNavBar = "//*[@id='flowbar']/div[1]/div/div[4]/div[2]/span[1]";
     public static String reportsTab = "//*[@id='245']";
     public static String valuationsTab = "//*[@id='linkValuations']";

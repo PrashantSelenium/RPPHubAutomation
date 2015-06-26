@@ -2714,9 +2714,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			click(xpath(avmAckSelect));
 			click(xpath(proceedToProductValuation));			
 		}
+		Thread.sleep(7000);
 		waitForElementPresent(xpath(productNavBar));
 		waitForElementVisible(xpath(productNavBar));
-		Thread.sleep(5000);
 			Assert.assertEquals(getDataFromxls(0, "User_ProductSelection.xls", 4, 0), getText(xpath(completeAddress)));
 			Assert.assertTrue(isElementPresent(xpath(productNavBar)), "Login - Product Nav Bar not displayed");
 			Assert.assertTrue(isElementPresent(xpath(instructionNavBar)), "Login - Instruction Nav Bar not displayed");
@@ -2895,8 +2895,6 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			Thread.sleep(4000);
 			}
 		
-		click(xpath(proceedtoProductSelection));
-	
 		Thread.sleep(4000);
 		waitForElementPresent(xpath(unitPriceValuation));
 		waitForElementVisible(xpath(unitPriceValuation));
@@ -3373,7 +3371,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	public void productOnAccount() throws Exception{
 		Assert.assertTrue(isElementVisible(xpath(onAccountDisplay)), "On Account text is not displayed");
-		Assert.assertEquals(getText(xpath(onAccountDisplay)), "Price: On Account");	
+		Assert.assertEquals(getText(xpath(onAccountDisplay)), "Price: $0.00");	
 		Logout_link();
 	}
 
@@ -3438,7 +3436,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		slas();
 		startNewTransaction();
 		proceedProductSelection();
-		Assert.assertEquals(getText(xpath(loanAmountLabel)), "* Loan Amount");
+		Assert.assertEquals(getText(xpath(loanAmountLabel)), "Loan Amount");
 		Assert.assertEquals(getText(xpath(loanAmountDollar)), "$ ");
 		Assert.assertTrue(isElementPresent(xpath(orgLoanAmount)),"Loan Amount field is not present");		
 	}
@@ -4123,10 +4121,6 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementPresent(xpath(startNewOrder));
 		waitForElementVisible(xpath(startNewOrder));
 		Assert.assertTrue(isElementPresent(xpath(startNewOrder)), "Start new order not present");
-		click(xpath(startNewOrder));
-		Thread.sleep(3000);
-		waitForElementPresent(xpath(propertySearch));
-		waitForElementVisible(xpath(propertySearch));
 	}
 
 	public void Payment_Validation_Message() throws Exception{

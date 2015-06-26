@@ -70,6 +70,10 @@ public class UserPaymentDetailsOnAccount extends TestInitReference {
 		click(xpath(proceedtoInstuction));
 		util.Instruction_Input_Fields();
 		util.Payment_Successful_OnAccount_Purchase("Proceed");
+		click(xpath(startNewOrder));
+		Thread.sleep(3000);
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
 	}
 	
 	@Test(description="User - Payment Details", priority=3)
@@ -168,6 +172,10 @@ public class UserPaymentDetailsOnAccount extends TestInitReference {
 		util.Instruction_Input_Fields();
 		Thread.sleep(5000);
 		util.Payment_Successful_OnAccount_Purchase("Confirm");
+		click(xpath(startNewOrder));
+		Thread.sleep(3000);
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
 		util.Logout_link();
 	}
 	
