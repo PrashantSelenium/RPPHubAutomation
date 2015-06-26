@@ -622,7 +622,7 @@ public class ObjectReference {
     public static String startNewOrderBTN = "//*[@id='hubNavigation_next']";
     public static String startNewOrderIcon = "//*[@id='startAnotherOrder']//*[@href='javascript:ReferenceNumber.navigateHome();'][1]";
     public static String startNewOrderLink = "//*[@id='startAnotherOrder']//*[@href='javascript:ReferenceNumber.navigateHome();'][2]";
-    public static String openReportpopup = "//*[@id='hubCboxLoadedContent']//*[@class='hubHeaderBodyText']";
+    public static String openReportpopup = "//*[@class='changeAddress']//*[@class='hubHeaderBodyText']";
     public static String yesBTN = "//*[text()='Yes']";
     public static String noBTN = "//*[text()='No']";
     public static String ocOriginatorEmail = "//*[@class='orderConfirmationDesc'][1]//li[1]";
@@ -644,7 +644,7 @@ public class ObjectReference {
     public static String ocAccessEmail = "(//*[@class='innerDiv']//div[2])[10]";
     public static String ocLoanApp = "(//*[@class='innerDiv']//div[2])[11]";
     public static String ocLoanVal = "(//*[@class='innerDiv']//div[2])[12]";
-    public static String mortgageValuationPopup = "//*[@id='hubCboxLoadedContent']//*[@class='hubHeaderBodyText']";
+    public static String mortgageValuationPopup = "//*[@class='changeAddress']//*[@class='hubHeaderBodyText']";
     
     //Footer
     public static String userManual = "//a[@id='userManualDownload']";
