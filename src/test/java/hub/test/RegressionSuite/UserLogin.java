@@ -69,14 +69,24 @@ public class UserLogin extends TestInitReference {
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.Successful_login();
-        util.Logout_link();
 	}
 	
 	@Test(description="User - Login", priority=5)
+	public void RT_09997_Non_SSO_Logout() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+        util.Logout_link();
+        util.nonSSOLogout();
+        
+	}
+	
+	@Test(description="User - Login", priority=6)
 	public void RT_2569_Register_New_Account_Button() throws Exception {
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.Register_New_Account_Button();
         
 	}
+	
+
 }

@@ -423,6 +423,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000); }
 		Assert.assertEquals(getText(xpath(loginMandatoryFields)), getDataFromxls(0, "User_Login.xls", 4, 0), "Empty Username and Password");
 		Assert.assertEquals(getText(xpath(loginNotEmpty)), getDataFromxls(0, "User_Login.xls", 1, 0), "Empty Username and Password");
+		Assert.assertEquals(getText(xpath(loginMandatoryFields)), "Please complete all mandatory fields.");
 		
 		type(xpath(userLoginPassword), getDataFromxls(0, "User_Login.xls", 3, 0));
 		click(xpath(loginButton));
@@ -433,6 +434,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000); }
 		Assert.assertEquals(getText(xpath(loginMandatoryFields)), getDataFromxls(0, "User_Login.xls", 4, 0), "Empty Username and valid Password");
 		Assert.assertEquals(getText(xpath(loginNotEmpty)), getDataFromxls(0, "User_Login.xls", 1, 0), "Empty Username and valid Password");
+		Assert.assertEquals(getText(xpath(loginMandatoryFields)), "Please complete all mandatory fields.");
 		
 		type(xpath(userLoginUsername), getDataFromxls(0, "User_Login.xls", 2, 0));
 		type(xpath(userLoginPassword), "");
@@ -444,6 +446,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000); }
 		Assert.assertEquals(getText(xpath(loginMandatoryFields)), getDataFromxls(0, "User_Login.xls", 4, 0), "Valid Username and empty Password");
 		Assert.assertEquals(getText(xpath(loginNotEmpty)), getDataFromxls(0, "User_Login.xls", 1, 0), "Valid Username and empty Password");
+		Assert.assertEquals(getText(xpath(loginMandatoryFields)), "Please complete all mandatory fields.");
 
 		type(xpath(userLoginUsername), getDataFromxls(0, "User_Login.xls", 5, 0));
 		type(xpath(userLoginPassword), getDataFromxls(0, "User_Login.xls", 6, 0));
@@ -590,6 +593,11 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
 		Assert.assertTrue(isElementPresent(xpath(userLoginUsername)), "Logout not Successful");
 	}
+	
+	public void nonSSOLogout () throws Exception {
+        Assert.assertFalse(isElementPresent(xpath(ssoLogoutMessage)));
+	}
+	
 	public void Register_New_Account_Button() throws Exception{
 
 		String URL = driver.getCurrentUrl();

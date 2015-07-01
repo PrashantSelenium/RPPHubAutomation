@@ -17,7 +17,7 @@ public class ObjectReference {
     public static String userLogoutLink = "//a[@id='logoutLink']";
     public static String emptyErrorMessage = "Username or Password should not be empty.";
     public static String invalidErrorMessage = "//*[text()='Invalid Username and/or Password, please try again.']";
-    public static String loginMandatoryFields = "//*[text()='Please complete all mandatory fields.']";
+    public static String loginMandatoryFields = "//*[@id='flashMessageContent']";
     public static String loginNotEmpty = "//*[text()='Username and/or Password should not be empty.']";
     public static String registerButton = "(//input[@id='subRegInd'])[1]";
     public static String loginButton = "(//input[@id='subRegInd'])[2]";
@@ -29,6 +29,7 @@ public class ObjectReference {
     public static String register = "//input[@value='Register New User']";
     public static String login_FlashMessage = "//*[@id='flashMessage']";
     public static String LoginButton = "//input[@value='Login']";
+    public static String ssoLogoutMessage = "//*[@class='maint-box']";
     
     //Forgot Password
     public static String forgotPasswordUsername = "//*[@id='user-name']";
@@ -652,7 +653,8 @@ public class ObjectReference {
     public static String feedback = "//*[@class='feedbackLink hubFooterText']";
     public static String contactUsPage = "//*[contains(text(),'Contact Us')]";
     public static String feedbackPage = "//*[contains(text(),'Feedback')]";
-    public static String poweredByBar = "//*[@id='poweredby']";
+//    public static String poweredByBar = "//*[@id='poweredby']";
+    public static String poweredByBar = "(//*[@class='footerPreference']//tbody//tbody)[15]";
    
     //Contact Us
     public static String contactUsName = "//*[@id='contactUsName']";
