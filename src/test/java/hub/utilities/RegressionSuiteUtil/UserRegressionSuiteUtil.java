@@ -3747,6 +3747,41 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	if(isElementPresent(xpath(userCustomerEmail))){
 	type(xpath(userCustomerEmail), getDataFromxls(0, "User_InstructionDetails.xls", 4, 2));
 	}
+	if(isElementPresent(xpath(custCompany))){
+	type(xpath(custCompany), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
+	}
+	if(isElementPresent(xpath(custMiddleNames))){
+	type(xpath(custMiddleNames), getDataFromxls(0, "User_InstructionDetails.xls", 1, 4));
+	}
+	if(isElementPresent(xpath(custMaidenName))){
+	type(xpath(custMaidenName), getDataFromxls(0, "User_InstructionDetails.xls", 2, 4));
+	}
+	if(isElementPresent(xpath(custDriversLicence))){
+	type(xpath(custDriversLicence), getDataFromxls(0, "User_InstructionDetails.xls", 3, 4));
+	}
+	if(isElementPresent(xpath(custAdd))){
+	type(xpath(custAdd), getDataFromxls(0, "User_InstructionDetails.xls", 1, 5));
+	}
+	if(isElementPresent(xpath(custPrevAdd))){
+	type(xpath(custPrevAdd), getDataFromxls(0, "User_InstructionDetails.xls", 1, 5));
+	}
+	if(isElementPresent(xpath(custDateOfBirth))){
+		click(xpath(custDateOfBirth));
+		Thread.sleep(3000);
+		Assert.assertTrue(isElementPresent(xpath(datePicker)));
+		selectOption(xpath(custDatePickerMonth), getDataFromxls(0, "User_InstructionDetails.xls", 1, 6));
+		selectOption(xpath(custDatePickerYear), getDataFromxls(0, "User_InstructionDetails.xls", 3, 6));
+		click(xpath(custDatePickerDay + "[" + getDataFromxls(0, "User_InstructionDetails.xls", 2, 6) + "]"));
+	}
+	if(isElementPresent(xpath(custInspectionDate))){
+		click(xpath(custInspectionDate));
+		Thread.sleep(1000);
+		Assert.assertTrue(isElementPresent(xpath(datePicker)));
+//		selectOption(xpath(custDatePickerMonth), getDataFromxls(0, "User_InstructionDetails.xls", 1, 7));
+//		selectOption(xpath(custDatePickerYear), getDataFromxls(0, "User_InstructionDetails.xls", 3, 7));
+		click(xpath(custDatePickerDay + "[" + getDataFromxls(0, "User_InstructionDetails.xls", 2, 7) + "]"));
+	}
+	
 	if(isElementPresent(xpath(accessFName))){
 	type(xpath(accessFName), getDataFromxls(0, "User_InstructionDetails.xls", 5, 2));
 	}
@@ -3761,6 +3796,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	if(isElementPresent(xpath(accessEmail))){
 	type(xpath(accessEmail), getDataFromxls(0, "User_InstructionDetails.xls", 4, 2));
+	}
+	if(isElementPresent(xpath(accessAdd))){
+	type(xpath(accessAdd), getDataFromxls(0, "User_InstructionDetails.xls", 1, 5));
 	}
 	if(isElementPresent(xpath(consCompName))){
 	type(xpath(consCompName), getDataFromxls(0, "User_InstructionDetails.xls", 7, 2));
@@ -4113,7 +4151,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	public void Payment_Successful_OnAccount_Purchase(String ProceedorConfirm) throws Exception{
 		Thread.sleep(3500);
 		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		if(isElementPresent(xpath(TermsandConditionPaymentDetails))){
 		click(xpath(TermsandConditionPaymentDetails));
 		}
@@ -4758,5 +4796,66 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementVisible(xpath(TermsandConditionPaymentDetails)), "Terms and Condition not displayed");
 		Assert.assertTrue(isElementVisible(xpath(InvoiceName)), "Invoice Name not displayed");
 		Assert.assertTrue(isElementVisible(xpath(InvoiceEmail)), "Invoice Email not displayed");
+	}
+	
+	public void ocVedaIdentity() throws Exception {
+		LoginChannel("acme");
+		Thread.sleep(3000);
+		slas();
+		startNewTransaction();
+		proceedProductSelection();
+		click(xpath(identityVerificationAddToCart));
+		clickToInstruction();
+		fillInsDetails();
+		click(xpath(insNextBtn));
+		Thread.sleep(3500);
+		Payment_Successful_OnAccount_Purchase("confirm");
+		//Verify Identity Verification status
+		Assert.assertTrue(isElementPresent(xpath(vedaResults)), "Veda results form is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(identityVerificationName)), "Identity Verification result is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(identityVerificationResult)), "Identity Verification result is incorrect");
+		Thread.sleep(3500);
+	}
+	public void ocVedaCredit() throws Exception {
+		LoginChannel("acme");
+		Thread.sleep(3000);
+		slas();
+		startNewTransaction();
+		proceedProductSelection();
+		click(xpath(creditScoreAddToCart));
+		clickToInstruction();
+		fillInsDetails();
+		click(xpath(insNextBtn));
+		Thread.sleep(3500);
+		Payment_Successful_OnAccount_Purchase("confirm");
+		Thread.sleep(3500);
+		//Verify Identity Verification status
+		Assert.assertTrue(isElementPresent(xpath(vedaResults)), "Veda results form is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(creditScoreName)), "Identity Verification result is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(creditScoreResult)), "Identity Verification result is incorrect");
+		Thread.sleep(3500);
+	}
+	public void ocVedaResults() throws Exception {
+		LoginChannel("acme");
+		Thread.sleep(3000);
+		slas();
+		startNewTransaction();
+		proceedProductSelection();
+		click(xpath(creditScoreAddToCart));
+		Thread.sleep(2000);
+		click(xpath(identityVerificationAddToCart));
+		clickToInstruction();
+		fillInsDetails();
+		click(xpath(insNextBtn));
+		Thread.sleep(3500);
+		Payment_Successful_OnAccount_Purchase("confirm");
+		Thread.sleep(3500);
+		//Verify Identity Verification status
+		Assert.assertTrue(isElementPresent(xpath(vedaResults)), "Veda results form is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(creditScoreName)), "Identity Verification result is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(creditScoreResult)), "Identity Verification result is incorrect");
+		Assert.assertTrue(isElementPresent(xpath(identityVerificationName)), "Identity Verification result is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(identityVerificationResult)), "Identity Verification result is incorrect");
+		Thread.sleep(3500);
 	}
 }

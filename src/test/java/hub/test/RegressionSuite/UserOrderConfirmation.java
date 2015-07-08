@@ -2,7 +2,10 @@ package hub.test.RegressionSuite;
 
 
 import hub.library.TestInitReference;
+import hub.utilities.RegressionSuiteUtil.AdminRegressionSuiteUtil;
 import hub.utilities.RegressionSuiteUtil.UserRegressionSuiteUtil;
+
+import static org.openqa.selenium.By.xpath;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
@@ -87,5 +90,32 @@ public class UserOrderConfirmation extends TestInitReference {
 	public void RT_03007_Order_Confirmation_Details() throws Exception {		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 			util.ocPropertyDetailsTile();
+			click(xpath(logout));
+	}
+	@Test(description="User - Order Confirmation", priority=11)
+	public void RT_00000_Veda_Results() throws Exception {		
+		AdminRegressionSuiteUtil admutil= new AdminRegressionSuiteUtil();
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+			//Test Identity Verification
+			admutil.adminLogin();
+			admutil.baseProductNavigation();
+			admutil.baseProductSearchIdentity();
+			admutil.configIdentityVerification();
+			click(xpath(adminLinkLogout));
+			Thread.sleep(3000);		
+			util.ocVedaIdentity();
+			
+			//Test Credit Score
+			admutil.adminLogin();
+			admutil.baseProductNavigation();
+			admutil.baseProductSearchCredit();
+			admutil.configIdentityVerification();
+			click(xpath(adminLinkLogout));
+			Thread.sleep(3000);		
+			util.ocVedaCredit();
+			
+			//Test both Identity Verification and Credit Score
+			util.ocVedaResults();
+			
 	}
 }
