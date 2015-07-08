@@ -117,5 +117,9 @@ public class UserOrderConfirmation extends TestInitReference {
 			//Test both Identity Verification and Credit Score
 			util.ocVedaResults();
 			
+			//Test Identity Verification using Mock Service
+			util.identityVerificationMock();
+			
+			
 	}
 }

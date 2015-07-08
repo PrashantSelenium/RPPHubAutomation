@@ -4814,6 +4814,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementPresent(xpath(vedaResults)), "Veda results form is not displayed");
 		Assert.assertTrue(isElementPresent(xpath(identityVerificationName)), "Identity Verification result is not displayed");
 		Assert.assertTrue(isElementPresent(xpath(identityVerificationResult)), "Identity Verification result is incorrect");
+		
 		Thread.sleep(3500);
 	}
 	public void ocVedaCredit() throws Exception {
@@ -4857,5 +4858,34 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementPresent(xpath(identityVerificationName)), "Identity Verification result is not displayed");
 		Assert.assertTrue(isElementPresent(xpath(identityVerificationResult)), "Identity Verification result is incorrect");
 		Thread.sleep(3500);
+	}
+
+	public void identityVerificationMock() throws Exception{
+		LoginChannel("acme");	
+		for(int x=3; x<=9; x++){
+		Thread.sleep(3000);
+		slas_dynamic(getDataFromxls(0, "User_OrderConfirmation.xls", 3, x));
+		startNewTransaction();
+		proceedProductSelection();
+		click(xpath(identityVerificationAddToCart));
+		clickToInstruction();
+		fillInsDetails();
+		click(xpath(insNextBtn));
+		Thread.sleep(3500);
+		Payment_Successful_OnAccount_Purchase("confirm");
+		Thread.sleep(3500);
+		//Verify Identity Verification status
+		Assert.assertTrue(isElementPresent(xpath(vedaResults)), "Veda results form is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(identityVerificationName)), "Identity Verification result is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(identityVerificationResult)), "Identity Verification result is incorrect");
+		Assert.assertEquals(getValue(xpath(identityVerificationName)), getDataFromxls(0, "User_OrderConfirmation.xls", 2, x));
+		String idvResult = getText(xpath(identityVerificationResult));
+		Assert.assertEquals(getValue(xpath(identityVerificationResult)), getDataFromxls(0, "User_OrderConfirmation.xls", 5, x));
+		System.out.println(idvResult);
+		Thread.sleep(3500);
+		click(xpath(startNewOrder));
+		Thread.sleep(4000);
+		}
+		
 	}
 }
