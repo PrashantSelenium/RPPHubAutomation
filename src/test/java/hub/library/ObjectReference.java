@@ -17,7 +17,7 @@ public class ObjectReference {
     public static String userLogoutLink = "//a[@id='logoutLink']";
     public static String emptyErrorMessage = "Username or Password should not be empty.";
     public static String invalidErrorMessage = "//*[text()='Invalid Username and/or Password, please try again.']";
-    public static String loginMandatoryFields = "//*[text()='Please complete all mandatory fields.']";
+    public static String loginMandatoryFields = "//*[@id='flashMessageContent']";
     public static String loginNotEmpty = "//*[text()='Username and/or Password should not be empty.']";
     public static String registerButton = "(//input[@id='subRegInd'])[1]";
     public static String loginButton = "(//input[@id='subRegInd'])[2]";
@@ -29,6 +29,7 @@ public class ObjectReference {
     public static String register = "//input[@value='Register New User']";
     public static String login_FlashMessage = "//*[@id='flashMessage']";
     public static String LoginButton = "//input[@value='Login']";
+    public static String ssoLogoutMessage = "//*[@class='maint-box']";
     
     //Forgot Password
     public static String forgotPasswordUsername = "//*[@id='user-name']";
@@ -311,6 +312,8 @@ public class ObjectReference {
     public static String RPDtataAutovalAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_10']";
     public static String aussieShortFormAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_104']";
     public static String propProfileV3AddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_130']";
+    public static String creditScoreAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_141']";
+    public static String identityVerificationAddToCart = "//*[@class='hubButtonText hubButtonBg purchaseButton_142']";
 
     //User Originator
     public static String userOriginatorDetails = "//div[@id='div_questionnaire']";
@@ -460,6 +463,43 @@ public class ObjectReference {
     public static String userCustomerContact = "//*[@id='13_1_value']";
     public static String userCustomerEmail = "//*[@id='14_1_value']";
     public static String userCustomerCompany = "//*[@id='66_1_value']";
+    public static String custCompanyLabel = "//label[@for='66_1_value']";
+    public static String custCompany = "//*[@id='66_1_value']";
+    public static String custCompanyError = "//*[@class='66_1_value errorMessage']";
+    
+    public static String custMiddleLabel = "//label[@for='70_1_value']";
+    public static String custMiddleNames = "//*[@id='70_1_value']";
+    public static String custMiddleError = "//*[@class='70_1_value errorMessage']";
+    
+    public static String custMaidenLabel = "//label[@for='71_1_value']";
+    public static String custMaidenName = "//*[@id='71_1_value']";
+    public static String custMaidenError = "//*[@class='71_1_value errorMessage']";
+    
+    public static String custDriversLicenceLabel = "//label[@for='73_1_value']";
+    public static String custDriversLicence = "//*[@id='73_1_value']";
+    public static String custDriversLicenceError = "//*[@class='73_1_value errorMessage']";
+
+    public static String custAddLabel = "//label[@for='4_1_value']";
+    public static String custAdd = "//*[@id='4_1_value']";
+    public static String custAddError = "//*[@class='4_1_value errorMessage']";
+    
+    public static String custPrevAddLabel = "//label[@for='74_1_value']";
+    public static String custPrevAdd = "//*[@id='74_1_value']";
+    public static String custPrevAddError = "//*[@class='74_1_value errorMessage']";
+    
+    public static String custDateOfBirthLabel = "//label[@for='72_1_value']";
+    public static String custDateOfBirth = "//*[@id='72_1_value']";
+    public static String custDateOfBirthError = "//*[@class='72_1_value errorMessage']";
+    
+    public static String datePicker = "//*[@id='ui-datepicker-div']";  
+    public static String custDatePickerMonth = "//*[@id='ui-datepicker-div']//*[@class='ui-datepicker-month']";
+    public static String custDatePickerYear = "//*[@id='ui-datepicker-div']//*[@class='ui-datepicker-year']";
+    public static String custDatePickerDay = "(//*[@id='ui-datepicker-div']//*[@class='ui-state-default'])";
+
+    public static String custInspectionLabel = "//label[@for='15_1_value']";
+    public static String custInspectionDate = "//*[@id='15_1_value']";
+    public static String custInspectionError = "//*[@class='15_1_value errorMessage']";
+    
     public static String custFnameError = "//*[@class='1_1_value errorMessage']";
     public static String custLnameError = "//*[@class='2_1_value errorMessage']";
     public static String custContactError = "//*[@class='13_1_value errorMessage']";
@@ -479,6 +519,9 @@ public class ObjectReference {
     public static String accessCompanyError = "//*[@class='19_2_value errorMessage']";
     public static String accessContactError = "//*[@class='21_2_value errorMessage']";
     public static String accessEmailError = "//*[@class='22_2_value errorMessage']";
+    public static String accessAddLabel = "//label[@for='20_2_value']";
+    public static String accessAdd = "//*[@id='20_2_value']";
+    public static String accessAddError = "//*[@class='20_2_value errorMessage']";
     public static String loanApplicationIdLabel = "//label[@for='54_7_value']";
     public static String loanValuationIdLabel = "//label[@for='62_7_value']";    
     public static String loanApplicationId = "//*[@id='54_7_value']";
@@ -645,6 +688,11 @@ public class ObjectReference {
     public static String ocLoanApp = "(//*[@class='innerDiv']//div[2])[11]";
     public static String ocLoanVal = "(//*[@class='innerDiv']//div[2])[12]";
     public static String mortgageValuationPopup = "//*[@class='changeAddress']//*[@class='hubHeaderBodyText']";
+    public static String vedaResults = "//*[@id='resultsForm']";
+    public static String identityVerificationName = "//*[@id='iDMatrixBase']";
+    public static String identityVerificationResult = "//*[@id='iDMatrixResult']";    
+    public static String creditScoreName = "//*[@id='vedaBase']";
+    public static String creditScoreResult = "//*[@id='vedaResult']";
     
     //Footer
     public static String userManual = "//a[@id='userManualDownload']";
@@ -652,7 +700,8 @@ public class ObjectReference {
     public static String feedback = "//*[@class='feedbackLink hubFooterText']";
     public static String contactUsPage = "//*[contains(text(),'Contact Us')]";
     public static String feedbackPage = "//*[contains(text(),'Feedback')]";
-    public static String poweredByBar = "//*[@id='poweredby']";
+//    public static String poweredByBar = "//*[@id='poweredby']";
+    public static String poweredByBar = "(//*[@class='footerPreference']//tbody//tbody)[15]";
    
     //Contact Us
     public static String contactUsName = "//*[@id='contactUsName']";
@@ -858,7 +907,7 @@ public class ObjectReference {
     public static String baseProdTypeFieldLabel = "//*[text()='* Product Type:']";
     public static String baseProdNameField = "//*[@id='baseProductName']";
     public static String baseProdDataGroupField = "//*[@id='baseProductGroupId']";
-    public static String baseProdTypeField = "//*[@id='productType']";
+    public static String baseProdTypeField = "//select[@id='productType']";
     public static String prodTypeReport = "//*[@id='productType']/option[@value='27']";
     public static String prodTypeService = "//*[@id='productType']/option[@value='28']";
     public static String prodTypeProcessedReport = "//*[@id='productType']/option[@value='29']";
@@ -913,6 +962,7 @@ public class ObjectReference {
     public static String baseProductValSubTypeNote = "//*[@id='valSubTypeNote']";
     public static String baseProductSearch = "//*[@id='baseProductSearchTextField']";
     public static String baseProductSearchBtn = "//*[@id='baseProductSearchIcon']";
+    public static String baseProductNameList = "//*[@class='baseProductName']";
     public static String baseProductName = "//*[@id='baseProductName']";
     public static String baseProductBRECheckbox = "//*[@id='isBreRequired']";
     public static String baseProductBREServiceCode = "(//*[@class='breServiceCodeHolder'])[2]";

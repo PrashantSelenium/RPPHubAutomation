@@ -566,6 +566,70 @@ public class AdminRegressionSuiteUtil extends FunctionReference {
 	    	 click(xpath(channelProductSelectionSaveBtn));
 	    	 Assert.assertEquals(getValue(xpath(channelCBALenderEMPValue)), "45");
 	}
+	
+	public void baseProductNavigation() throws Exception {				
+		actionType(xpath(adminProducts), "Products");			
+		waitForElementPresent(xpath(adminBaseProductLink));
+		Assert.assertTrue(isElementPresent(xpath(adminBaseProductLink)),"Base Product Link is not present");
+		click(xpath(adminBaseProductLink));
+		waitForElementPresent(xpath(baseProductHeader));
+		Assert.assertTrue(isElementPresent(xpath(baseProductHeader)),"Base Product screen is not displayed");
+		Thread.sleep(3000);
+	}
+	
+	public void baseProductSearchIdentity() throws Exception {
+		Thread.sleep(3000);
+		type(xpath(baseProductSearch), getDataFromxls(0, "User_OrderConfirmation.xls", 1, 2));
+		click(xpath(baseProductSearchBtn));
+		Thread.sleep(3000);
+	}
+	public void baseProductSearchCredit() throws Exception {
+		Thread.sleep(3000);
+		type(xpath(baseProductSearch), getDataFromxls(0, "User_OrderConfirmation.xls", 1, 1));
+		click(xpath(baseProductSearchBtn));
+		Thread.sleep(3000);
+	}
+	public void configIdentityVerification() throws Exception {
+		actionType(xpath(baseProductNameList), "Name");
+		click(xpath(baseProductEdit));
+		Thread.sleep(3000);
+		if(getValue(xpath(baseProdTypeField))!="Report") {
+			selectOption(xpath(baseProdTypeField), "27");
+		}
+		if(getValue(xpath(baseProdReportSourceField))!="Veda") {
+			selectOption(xpath(baseProdReportSourceField), "49");
+		}
+		if(getValue(xpath(baseProdReportTypeField))!="IDMatrix") {
+			selectOption(xpath(baseProdReportTypeField), "IDMatrix");
+		}
+		click(xpath(baseProdSaveBtn));
+		Thread.sleep(2000);
+		Assert.assertEquals(getValue(xpath(baseProdTypeField)), "27");
+		Assert.assertEquals(getValue(xpath(baseProdReportSourceField)), "49");
+		Assert.assertEquals(getValue(xpath(baseProdReportTypeField)), "IDMatrix");
+		
+	}
+	
+	public void configCreditScore() throws Exception {
+		actionType(xpath(baseProductNameList), "Name");
+		click(xpath(baseProductEdit));
+		Thread.sleep(3000);
+		if(getValue(xpath(baseProdTypeField))!="Report") {
+			selectOption(xpath(baseProdTypeField), "27");
+		}
+		if(getValue(xpath(baseProdReportSourceField))!="Veda") {
+			selectOption(xpath(baseProdReportSourceField), "49");
+		}
+		if(getValue(xpath(baseProdReportTypeField))!="Credit") {
+			selectOption(xpath(baseProdReportTypeField), "Credit");
+		}
+		click(xpath(baseProdSaveBtn));
+		Thread.sleep(2000);
+		Assert.assertEquals(getValue(xpath(baseProdTypeField)), "27");
+		Assert.assertEquals(getValue(xpath(baseProdReportSourceField)), "49");
+		Assert.assertEquals(getValue(xpath(baseProdReportTypeField)), "Credit");
+		
+	}
 }
 	
 
