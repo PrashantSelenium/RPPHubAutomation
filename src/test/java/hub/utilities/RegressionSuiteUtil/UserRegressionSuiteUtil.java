@@ -1,6 +1,11 @@
 package hub.utilities.RegressionSuiteUtil;
 
 import static org.openqa.selenium.By.xpath;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
 
@@ -181,7 +186,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		
 		Assert.assertTrue(isElementPresent(xpath(leftLogoReg)));
 		Assert.assertTrue(isElementPresent(xpath(rightLogoReg)));
-		Assert.assertTrue(isElementPresent(xpath(poweredByBar)));
+		//Assert.assertTrue(isElementPresent(xpath(poweredByBar)));
 		Assert.assertTrue(URL.contains("https"));
 	}
 	
@@ -379,6 +384,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(contactUs));
 		Assert.assertTrue(isElementPresent(xpath(contactUsName)), "Link Navigation - Contact Us not present");
 		driver.findElement(By.id("contactUsName")).sendKeys(Keys.ESCAPE);
+		Thread.sleep(3000);
 		click(xpath(feedback));
 		Assert.assertTrue(isElementPresent(xpath(feedbackName)), "Link Navigation - Feedback not present");
 		driver.findElement(By.id("feedbackName")).sendKeys(Keys.ESCAPE);
@@ -1385,7 +1391,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void Invalid_Contact_Number() throws Exception{
-		
+		if(isElementPresent(xpath(contactUsClosebtn))) { click(xpath(contactUsClosebtn)); }
 		waitForElementPresent(xpath(userLoginUsername));
 		waitForElementVisible(xpath(userLoginUsername));
 		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
@@ -1396,7 +1402,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(contactUsName))){ Thread.sleep(2000); }
 		if(!isElementPresent(xpath(contactUsName))){ Thread.sleep(2000); }
 
-		Assert.assertTrue(isElementPresent(xpath(contactUsName)));		
+		Assert.assertTrue(isElementPresent(xpath(contactUsName)), "Contact us Page is not displayed");		
 		type(xpath(contactUsContactNumber), getDataFromxls(0, "User_ContactUs.xls", 1, 0));		
 		click(xpath(contactUsSendEnquiry));
 		Assert.assertEquals(getText(xpath(contactUsInvalidContactNumber)), getDataFromxls(0, "User_ContactUs.xls", 2, 0), "Incorrect Contact Number validation message");
@@ -1406,6 +1412,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		
 		if(isElementPresent(xpath(contactUsModalBox))){
 			driver.findElement(By.id("contactUsName")).sendKeys(Keys.ESCAPE);
+			Thread.sleep(3000);
 			waitForElementPresent(xpath(userLoginUsername));
 			waitForElementVisible(xpath(userLoginUsername));
 			if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
@@ -1436,6 +1443,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		
 		if(isElementPresent(xpath(contactUsModalBox))){
 			driver.findElement(By.id("contactUsName")).sendKeys(Keys.ESCAPE);
+			Thread.sleep(3000);
 			waitForElementPresent(xpath(userLoginUsername));
 			waitForElementVisible(xpath(userLoginUsername));
 			if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
@@ -1469,6 +1477,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		
 		if(isElementPresent(xpath(contactUsModalBox))){
 			driver.findElement(By.id("contactUsName")).sendKeys(Keys.ESCAPE);
+			Thread.sleep(3000);
 			waitForElementPresent(xpath(userLoginUsername));
 			waitForElementVisible(xpath(userLoginUsername));
 			if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
@@ -1494,9 +1503,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void Close_Contact_Us() throws Exception{
-		
+
 		if(isElementPresent(xpath(contactUsModalBox))){
 			driver.findElement(By.id("contactUsName")).sendKeys(Keys.ESCAPE);
+			Thread.sleep(3000);
 			waitForElementPresent(xpath(userLoginUsername));
 			waitForElementVisible(xpath(userLoginUsername));
 			if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
@@ -1521,9 +1531,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void Contact_Us_Link_Modal_Validation() throws Exception{
-		
+
 		if(isElementPresent(xpath(contactUsModalBox))){
 			driver.findElement(By.id("contactUsName")).sendKeys(Keys.ESCAPE);
+			Thread.sleep(3000);
 			waitForElementPresent(xpath(userLoginUsername));
 			waitForElementVisible(xpath(userLoginUsername));
 			if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
@@ -1542,9 +1553,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void Wheres_My_Reference_Number_Image() throws Exception{
-		
+
 		if(isElementPresent(xpath(contactUsModalBox))){
 			driver.findElement(By.id("contactUsName")).sendKeys(Keys.ESCAPE);
+			Thread.sleep(3000);
 			waitForElementPresent(xpath(userLoginUsername));
 			waitForElementVisible(xpath(userLoginUsername));
 			if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
@@ -1569,9 +1581,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void Send_Inquiry_Color() throws Exception{
-		
+
 		if(isElementPresent(xpath(contactUsModalBox))){
 			driver.findElement(By.id("contactUsName")).sendKeys(Keys.ESCAPE);
+			Thread.sleep(3000);
 			waitForElementPresent(xpath(userLoginUsername));
 			waitForElementVisible(xpath(userLoginUsername));
 			if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
@@ -1592,9 +1605,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void Send_Inquiry_Background_Color() throws Exception{
-		
+
 		if(isElementPresent(xpath(contactUsModalBox))){
 			driver.findElement(By.id("contactUsName")).sendKeys(Keys.ESCAPE);
+			Thread.sleep(3000);
 			waitForElementPresent(xpath(userLoginUsername));
 			waitForElementVisible(xpath(userLoginUsername));
 			if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
@@ -1615,9 +1629,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void One_Checkbox_only() throws Exception{
-		
+
 		if(isElementPresent(xpath(contactUsModalBox))){
 			driver.findElement(By.id("contactUsName")).sendKeys(Keys.ESCAPE);
+			Thread.sleep(3000);
 			waitForElementPresent(xpath(userLoginUsername));
 			waitForElementVisible(xpath(userLoginUsername));
 			if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
@@ -1655,9 +1670,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void Enquiry_Successfully_Sent() throws Exception{
-		
+
 		if(isElementPresent(xpath(contactUsModalBox))){
 			driver.findElement(By.id("contactUsName")).sendKeys(Keys.ESCAPE);
+			Thread.sleep(3000);
 			waitForElementPresent(xpath(userLoginUsername));
 			waitForElementVisible(xpath(userLoginUsername));
 			if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(2000); }
@@ -1695,10 +1711,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void CFA_New_Fields_Validation() throws Exception{
-		
-		Thread.sleep(2000);
 		if(isElementPresent(xpath(contactUsModalBox))){
 			driver.findElement(By.id("contactUsName")).sendKeys(Keys.ESCAPE);
+			Thread.sleep(3000);
 			waitForElementPresent(xpath(userLoginUsername));
 			waitForElementVisible(xpath(userLoginUsername));
 			waitForElement(userLoginUsername);
@@ -2511,7 +2526,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			type(xpath(userCFASuburbList), getDataFromxls(0, "User_PropertySearch.xls", 5, y));
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(userCFASuburbList)).sendKeys(Keys.ENTER);
-			Thread.sleep(2000);
+			Thread.sleep(4000);
+			System.out.println(getText(xpath(IncorrectSuburb)));
+			System.out.println("?>?><?");
+			System.out.println(getValue(xpath(IncorrectSuburb)));
 			Assert.assertEquals(getText(xpath(IncorrectSuburb)), getDataFromxls(0, "User_PropertySearch.xls", 5, y));
 			
 			Thread.sleep(500);
@@ -2563,24 +2581,18 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
-		
-		String styleval = driver.findElement(By.xpath(DidYouMean)).getAttribute("style");
- 		Assert.assertTrue(styleval.contains("display: none;"), "Searching not displayed");
- 		
+				
  		type(xpath(propertySearch),getDataFromxls(0, "User_PropertySearch.xls", 1, 24));
  		Thread.sleep(2000);
 		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
-		//click(xpath(userSearchButton));
-		Thread.sleep(4000);
- 		
- 		styleval = driver.findElement(By.xpath(DidYouMean)).getAttribute("style");
- 		Assert.assertFalse(styleval.contains("display: none;"), "Searching not displayed");
- 		
- 		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 3, 24)));
- 		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 4, 24)));
- 		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 5, 24)));
- 		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 6, 24)));
- 		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 7, 24)));
+		click(xpath(userSearchButton));
+		Thread.sleep(5000);
+ 		 		System.out.println(getText(xpath(DidYouMean)));
+ 		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 3, 24)), "Did you mean #1");
+ 		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 4, 24)), "Did you mean #2");
+ 		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 5, 24)), "Did you mean #3");
+ 		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 6, 24)), "Did you mean #4");
+ 		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 7, 24)), "Did you mean #5");
  		
  		click(xpath(NundraLink));
  		waitForElementPresent(xpath(DidYouMeanListWithPicture));
@@ -2588,7 +2600,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(DidYouMeanListWithPicture))){ Thread.sleep(2000); }	
 		if(!isElementPresent(xpath(DidYouMeanListWithPicture))){ Thread.sleep(2000); }
 		
-		Assert.assertTrue(isElementPresent(xpath(DidYouMeanListWithPicture)));
+		Assert.assertTrue(isElementPresent(xpath(DidYouMeanListWithPicture)), "Did you mean Picture");
  		
 		click(xpath(NundraLinkWithPicture));
 		Thread.sleep(3000);
@@ -2597,7 +2609,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(NundraLotProperty))){ Thread.sleep(2000); }	
 		if(!isElementPresent(xpath(NundraLotProperty))){ Thread.sleep(2000); }
 		
-		Assert.assertTrue(isElementPresent(xpath(NundraLotProperty)));
+		Assert.assertTrue(isElementPresent(xpath(NundraLotProperty)), "Did you mean Nundra lot property");
 	}
 	
 	public void Property_Search_Ghost_Text() throws Exception{
@@ -3192,6 +3204,8 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			Thread.sleep(700);
 			click(xpath(userOriginatorToProductSelection));
 			Thread.sleep(700);
+			click(xpath(userOEVPP));
+			Thread.sleep(1000);
 			Assert.assertEquals(getValue(xpath(userOEVPP)),getDataFromxls(0, "User_ProductSelectionOriginator.xls", 2, y));
 			y++;
 		}while(y!=17);
@@ -3293,6 +3307,8 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Thread.sleep(700);
 		click(xpath(userOriginatorToProductSelection));
 		Thread.sleep(700);
+		click(xpath(userOEVPP));
+		Thread.sleep(1000);
 		Assert.assertEquals(getValue(xpath(orgLoanAmount)), "20,000");
 	}
 
@@ -3450,10 +3466,15 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 
 	public void loanAmountMandatory() throws Exception{
+		Thread.sleep(1500);
+		type(xpath(userOEVPP), "500000");
+		type(xpath(orgLoanAmount), "2");
 		click(xpath(orgLoanAmount));
 		click(xpath(userOriginatorToProductSelection));
-		Assert.assertTrue(isElementVisible(xpath(oevppErrorMsg)),"Error message is not displayed");
-		Assert.assertEquals(getText(xpath(oevppErrorMsg)), " Field should not be empty.");
+		Assert.assertTrue(isElementVisible(xpath(loanAmountErrorOriginatorQuestion)),"Error message is not displayed");
+		Assert.assertEquals(getText(xpath(loanAmountErrorOriginatorQuestion)), " Field should be at least 5 digits.");
+		String styleval = driver.findElement(By.xpath(loanAmountErrorOriginatorQuestion)).getAttribute("style");
+		Assert.assertTrue(styleval.contains("display: block"), "Loan Amont Validation is not displayed");
 	}
 	
 	public void clickToInstruction() throws Exception {
@@ -4111,25 +4132,28 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(isElementPresent(xpath(avm))){ click(xpath(avm)); }
 	}
 	
-	public void Product_Selection_select_Product(String Productline) throws Exception{
+	public void Product_Selection_select_Product(String productLineNumber) throws Exception{
 		Thread.sleep(7000);
 		waitForElementPresent(xpath(purchaseBtnSecondLine));
 		waitForElementVisible(xpath(purchaseBtnSecondLine));
 		Assert.assertTrue(isElementPresent(xpath(purchaseBtnSecondLine)), "2nd Button is not available");
 		
-		if(Productline.contains("1")){ click(xpath(purchaseBtnSingle)) ;}
-		if(Productline.contains("2")){ click(xpath(purchaseBtnSecondLine)) ;}
-		if(Productline.contains("3")){ click(xpath(purchaseBtnThirdLine)) ;}
-		if(Productline.contains("4")){ click(xpath(purchaseBtnFourthLine)) ;}
-		if(Productline.contains("5")){ click(xpath(purchaseBtnFifthLine)) ;}
-		Thread.sleep(3000);		
+		if(productLineNumber.contains("1")){ click(xpath(purchaseBtnSingle)) ;}
+		if(productLineNumber.contains("2")){ click(xpath(purchaseBtnSecondLine)) ;}
+		if(productLineNumber.contains("3")){ click(xpath(purchaseBtnThirdLine)) ;}
+		if(productLineNumber.contains("4")){ click(xpath(purchaseBtnFourthLine)) ;}
+		if(productLineNumber.contains("5")){ click(xpath(purchaseBtnFifthLine)) ;}
+		Thread.sleep(5000);		
 		Assert.assertTrue(isElementPresent(xpath(addToCartLabel)), "Added to cart label not displayed");
 	}
 	
 	public void Instruction_Input_Fields() throws Exception{
-		Thread.sleep(3000);
-		waitForElementPresent(xpath(FnameInstructionDetails));
-		waitForElementVisible(xpath(FnameInstructionDetails));
+		Thread.sleep(5000);
+		
+		Assert.assertTrue(isElementPresent(xpath(FnameInstructionDetails)), "Instruction Input - Fname is not dispayed");
+		Assert.assertTrue(isElementPresent(xpath(LnameInstructionDetails)), "Instruction Input - Lname is not dispayed");
+		Assert.assertTrue(isElementPresent(xpath(MobileInstructionDetails)), "Instruction Input - Mobile is not dispayed");
+		
 		type(xpath(FnameInstructionDetails), getDataFromxls(0, "User_PaymentOnAccount.xls", 3, 1));
 		type(xpath(LnameInstructionDetails), getDataFromxls(0, "User_PaymentOnAccount.xls", 4, 1));
 		type(xpath(MobileInstructionDetails), getDataFromxls(0, "User_PaymentOnAccount.xls", 5, 1));
@@ -4156,7 +4180,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	public void Payment_Successful_OnAccount_Purchase(String ProceedorConfirm) throws Exception{
 		Thread.sleep(3500);
 		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 		if(isElementPresent(xpath(TermsandConditionPaymentDetails))){
 		click(xpath(TermsandConditionPaymentDetails));
 		}
@@ -4496,12 +4520,13 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Thread.sleep(3500);
 	}
 	public void ocPropertyDetailsTile() throws Exception{
+		Thread.sleep(2000);
 		Assert.assertTrue(isElementPresent(xpath(propertDetailsTile)), "Property Details tile is not displayed");
 		Assert.assertTrue(isElementPresent(xpath(userPropertyPhoto)), "Property photo is not displayed");
 		Assert.assertTrue(isElementPresent(xpath(propertyAddress)), "Property address is not displayed");
 		Assert.assertTrue(isElementPresent(xpath(hubReferenceNumberLabel)), "Hub Reference Number is not displayed");
 		Assert.assertTrue(getText(xpath(hubReferenceNumberLabel)).contains("RP Data HUB Reference Number"));
-		System.out.println(getText(xpath(hubReferenceNumber)));
+		//System.out.println(getText(xpath(hubReferenceNumber)));
 		Thread.sleep(2000);
 	}
 
@@ -4906,5 +4931,206 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		x++;
 		}while(x<=9);
 		
+	}
+	
+	public void OriginatorToProductSelectionClickLink() throws Exception {	
+		Thread.sleep(2000);
+		if(isElementPresent(xpath(oevppLabel))){
+			click(xpath(userOriginatorToProductSelection));
+			Thread.sleep(2000);
+		}		
+	}
+	
+	public void PaymentOnAccountInputField(String AccountPassword, String StaffID ) throws Exception {	
+		Thread.sleep(3000);
+		if(isElementPresent(xpath(accountPasswordPaymentDetails))){
+			
+			Assert.assertTrue(isElementPresent(xpath(TermsandConditionPaymentDetails)), "Payment On Account Input - Terms and condition is not Displayed");
+			Assert.assertTrue(isElementPresent(xpath(AccountPasswordPaymentDetails)), "Payment On Account Input - Account Password is not Displayed");
+			Assert.assertTrue(isElementPresent(xpath(staffIDPaymentDetails)), "Payment On Account Input - Staff ID is not Displayed");
+			
+			click(xpath(TermsandConditionPaymentDetails));
+			type(xpath(AccountPasswordPaymentDetails), AccountPassword);
+			type(xpath(staffIDPaymentDetails), StaffID);
+			click(xpath(ConfirmBtnPaymentDetails));
+			Thread.sleep(4000);
+		}		
+	}
+	public void ProceedToInstructionDetails_ClickLink() throws Exception {	
+		Thread.sleep(2000);
+		click(xpath(proceedtoInstuction));
+		Thread.sleep(2000);
+	}
+	
+	public void MyTransaction_SuccessfulTransaction_Displayed() throws Exception {	
+		Thread.sleep(3000);
+		String Refnumber = getText(xpath(hubReferenceNumber));
+		click(xpath(myTransactions));
+		Thread.sleep(3000);
+		Assert.assertTrue(getText(xpath(referenceNumberDetail)).contains(Refnumber), "My Transaction - Successful Transaction Not displayed");
+	}
+	
+	public void MyTransaction_HistoryUploadDocumentBTN_Displayed() throws Exception {	
+		if(!isElementPresent(xpath(referenceNumberDetail))) { click(xpath(myTransactions)); Thread.sleep(3000); }
+		
+		Assert.assertTrue(isElementPresent(xpath(HistoryBTNMyTransaction)), "My Transaction - History button Not displayed");
+		Assert.assertTrue(isElementPresent(xpath(UploadBTNMyTransaction)), "My Transaction - Upload button Transaction Not displayed");
+		Assert.assertTrue(isElementPresent(xpath(DocumentBTNMyTransaction)), "My Transaction - Documents Transaction Not displayed");
+	}
+	
+	public void MyTransaction_MenuNavigation() throws Exception {
+	    Assert.assertTrue(isElementPresent(xpath(home)), "My Transaction - Home Menu is not available");
+		click(xpath(home));
+	   	Thread.sleep(5000);
+	   	click(xpath(home));
+		Thread.sleep(5000);
+    	Assert.assertTrue(isElementPresent(xpath(userPropertySearch)), "My Transaction - Home Menu navigation is not working");
+    	
+	    	click(xpath(myTransactions));
+	    	Thread.sleep(5000);
+			Assert.assertTrue(isElementPresent(xpath(RPPusername)), "My Transaction - My Transaction 1 navigation is not working");
+
+		if(isElementPresent(xpath(rpProfessional)))
+			{
+			click(xpath(rpProfessional));
+	    	Thread.sleep(5000);
+	    	Assert.assertTrue(isElementPresent(xpath(RPPusername)), "My Transaction - RPP navigation is not working");
+	    	
+		    	click(xpath(myTransactions));
+		    	Thread.sleep(5000);
+				Assert.assertTrue(isElementPresent(xpath(RPPusername)), "My Transaction - My Transaction 2 navigation is not working");
+			}
+		
+		click(xpath(myAccount));
+    	Thread.sleep(5000);
+    	Assert.assertTrue(isElementPresent(xpath(myAccount)), "My Transaction - My Account navigation is not working");
+		
+			click(xpath(myTransactions));
+	    	Thread.sleep(5000);
+			Assert.assertTrue(isElementPresent(xpath(RPPusername)), "My Transaction - My Transaction 3 navigation is not working");		
+	}
+	
+	public void MyTransaction_DateAndStatus() throws Exception {
+		Assert.assertTrue(getText(xpath(statusTansactionDetails)).contains("Completed") || 
+				getText(xpath(statusTansactionDetails)).contains("Order Confirmed") ||
+				getText(xpath(statusTansactionDetails)).contains("Valuation Completed") ||
+				getText(xpath(statusTansactionDetails)).contains("Cancelled") ||
+				getText(xpath(statusTansactionDetails)).contains("Instructed") ||
+				getText(xpath(statusTansactionDetails)).contains("Instruction Accepted") ||
+				getText(xpath(statusTansactionDetails)).contains("Instruction Assigned") ||
+				getText(xpath(statusTansactionDetails)).contains("In Progress") ||
+				getText(xpath(statusTansactionDetails)).contains("Service Delayed") ||
+				getText(xpath(statusTansactionDetails)).contains("Property Inspected") ||
+				getText(xpath(statusTansactionDetails)).contains("Service Completed") ||
+				getText(xpath(statusTansactionDetails)).contains("Attach Report To Completed Email") ||
+				getText(xpath(statusTansactionDetails)).contains("Report Retrieved") ||
+				getText(xpath(statusTansactionDetails)).contains("Service Cancelled"), "My Transaction - Status is incorrect");
+		DateFormat dateFormat = new SimpleDateFormat("dd-MM-YYYY");
+		Date date = new Date();
+//		System.out.println(getText(xpath(DateMYTransaction)));
+//		System.out.println(dateFormat.format(date));
+		Assert.assertTrue(getText(xpath(DateMYTransaction)).equals(dateFormat.format(date)), "My Transaction - Date is incorrect");
+	}
+	
+	public void MyTransaction_ColumnNames() throws Exception {
+	    Assert.assertTrue(getText(xpath(customerName)).equals(getDataFromxls(0, "User_MyTransaction.xls", 1, 1)), "My Transaction - Customer Name Label is incorrect");
+	    Assert.assertTrue(getText(xpath(address)).equals(getDataFromxls(0, "User_MyTransaction.xls", 2, 1)), "My Transaction - Address Label is incorrect");
+	    Assert.assertTrue(getText(xpath(serviceType)).equals(getDataFromxls(0, "User_MyTransaction.xls", 3, 1)), "My Transaction - Service Type Label is incorrect");
+	    Assert.assertTrue(getText(xpath(referenceNumberTransaction)).equals(getDataFromxls(0, "User_MyTransaction.xls", 4, 1)), "My Transaction - Reference Number Label is incorrect");
+	    Assert.assertTrue(getText(xpath(dateTransaction)).equals(getDataFromxls(0, "User_MyTransaction.xls", 5, 1)), "My Transaction - Date Label is incorrect");
+	    Assert.assertTrue(getText(xpath(statusTransaction)).equals(getDataFromxls(0, "User_MyTransaction.xls", 6, 1)), "My Transaction - Status Label is incorrect");
+	}
+	
+	public void MyTransaction_CorrectInformation() throws Exception {
+		DateFormat dateFormat = new SimpleDateFormat("dd-MM-YYYY");
+		Date date = new Date();
+		Assert.assertTrue(getText(xpath(customerNameDetail)).equals(getDataFromxls(0, "User_MyTransaction.xls", 1, 2)), "My Transaction - Customer Name is incorrect");
+	    Assert.assertTrue(getText(xpath(addressDetail)).equals(getDataFromxls(0, "User_MyTransaction.xls", 2, 2)), "My Transaction - Address is incorrect");
+	    Assert.assertTrue(getText(xpath(serviceTypeDetail)).equals(getDataFromxls(0, "User_MyTransaction.xls", 3, 2)), "My Transaction - Service Type is incorrect");
+	    Assert.assertTrue(getText(xpath(DateMYTransaction)).equals(dateFormat.format(date)), "My Transaction - Date is incorrect");
+	}
+	
+	public void MyTransaction_HTTPS() throws Exception {
+		String URL = driver.getCurrentUrl();
+		Assert.assertTrue(URL.contains("https"), "My Transaction - URL did not used HTTPS");
+	}
+	
+	public void MyTransaction_NoAvailableTransaction() throws Exception {
+		Thread.sleep(2000);
+		Assert.assertTrue(isElementPresent(xpath(myTransactions)), "My Transaction - My Transaction menu is not yet available");
+		click(xpath(myTransactions));
+		Thread.sleep(2000);
+		Assert.assertTrue(getText(xpath(NoAvailableTransactionMYTransaction)).contains(getDataFromxls(0, "User_MyTransaction.xls", 1, 3)), "My Transaction - No Available Transaction is not displayed");
+	}
+	
+	public void MyTransaction_ValexToolHidden() throws Exception {
+		Assert.assertFalse(isElementPresent(xpath(valexToolMyTransaction)), "My Transaction - Valextool is displayed");
+	}
+
+	public void MyTransaction_ValexToolDisplayed() throws Exception {
+		Thread.sleep(2000);
+		Assert.assertTrue(isElementPresent(xpath(myTransactions)), "My Transaction - My Transaction menu is not yet available");
+		click(xpath(myTransactions));
+		Thread.sleep(2000);
+		Assert.assertTrue(isElementPresent(xpath(valexToolMyTransaction)), "My Transaction - Valextool is not displayed");
+	}
+	
+	public void AdminSetup_ValuationPurpose() throws Exception {
+		AdminLogin();
+		actionType(xpath(adminProducts), "Product Data Group");
+		click(xpath(adminProductDataGroupsLink));
+		Thread.sleep(2000);
+		Assert.assertTrue(isElementPresent(xpath(ProductDataGroupsSearch)), "Admin Setup Valuation Purpose - Product Data Group not displayed");
+		type(xpath(ProductDataGroupsSearch), "Strata Report");
+		click(xpath(ProductDataGroupsSearchBtn));
+		Thread.sleep(2500);
+		Assert.assertTrue(getText(xpath(ProductDataGroupsSearchResult)).contains("Strata Report"), "Admin Setup Valuation Purpose - PDG Search Failed");
+		click(xpath(baseProductEdit));
+		Thread.sleep(5000);
+		if(!isElementPresent(xpath(ProductDataGroupValuationPurposeCheckbox))) { Thread.sleep(5000); }
+		if(!isElementPresent(xpath(ProductDataGroupValuationPurposeCheckbox))) { Thread.sleep(5000); }
+		if(!isElementPresent(xpath(ProductDataGroupValuationPurposeCheckbox))) { Thread.sleep(5000); }
+		Assert.assertTrue(isElementPresent(xpath(ProductDataGroupValuationPurposeCheckbox)), "Admin Setup Valuation Purpose - Valuation Purpose Not Displayed");
+		System.out.println(getValue(xpath("//*[@class='groupActiveQ'])[6]//input//@value")));
+		click(xpath(ProductDataGroupValuationPurposeCheckbox));
+		click(xpath(ProductDataGroupSaveBtn));
+		Thread.sleep(3000);
+	}
+	
+	public void AdminLogin() throws Exception{
+		if(environment.contains("dev")){ driver.navigate().to("dev.rppropertyhub.com/admin"); }
+		if(environment.contains("stage")){ driver.navigate().to("stage.rppropertyhub.com/admin"); }
+		Thread.sleep(2000);
+		Assert.assertTrue(isElementPresent(xpath(adminLoginUsername)), "Admin Login - Username not displayed");
+		Assert.assertTrue(isElementPresent(xpath(adminLoginPassword)), "Admin Login - Password not displayed");
+		Assert.assertTrue(isElementPresent(xpath(adminLoginButton)), "Admin Login - Button not displayed");
+		
+		type(xpath(adminLoginUsername), "portia.canlas@twistresources.com");
+		type(xpath(adminLoginPassword), "482Center");
+		click(xpath(adminLoginButton));
+		Thread.sleep(4000);
+		Assert.assertTrue(isElementPresent(xpath(adminChannelsMenu)), "Admin Login - Home page not displayed");			
+	}
+	
+	public void validateValuationPurposeIsDisplayed() throws Exception {
+		click(xpath(servicesTab));
+		Thread.sleep(2000);
+		Assert.assertTrue(isElementPresent(xpath("VALUATION DROPDOWN")), "Valuation is not Displayed");
+	}
+	
+	public void validateValuationPurposeListing() throws Exception {
+		Assert.assertTrue(isElementPresent(xpath("PleaseSelect")), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath("Pre-Purchase / Pre-Sale ")), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath("Capital Gains Tax Assessment")), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath("Stamp Duty")), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath("Probate")), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath("Financial Reporting (this would include SMSF)")), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath("Rental Assessments")), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath("Expert Witness/Family Law")), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath("Expert Witness/Family LawInsolvency")), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath("Compulsory Acquisition/Resumption")), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath("Insurance assessment")), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath("Unit entitlement assessments (strata)")), "The customer is option is not available");
+		Assert.assertTrue(isElementPresent(xpath("Others")), "The customer is option is not available");
 	}
 }

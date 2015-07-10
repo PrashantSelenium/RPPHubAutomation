@@ -189,7 +189,12 @@ public class ObjectReference {
     public static String referenceNumberDetail = "(//*[@class='referenceNumber'])[2]";
     public static String statusTansactionDetails = "(//*[@class='status'])[3]";
     public static String myTransactionNoTransactionAvail = "//*[text()='No available transactions yet.']";
-
+    public static String HistoryBTNMyTransaction = "(//*[@class='historyIcon'])[1]";
+    public static String UploadBTNMyTransaction = "(//*[@class='uploadIcon'])[1]";
+    public static String DocumentBTNMyTransaction = "(//*[@class='documentsIcon'])[1]";
+    public static String DateMYTransaction = "(//table//tr[2]//td[5])[2]";
+    public static String NoAvailableTransactionMYTransaction = "//*[@class='noPackagesAvailable']";
+    public static String valexToolMyTransaction = "(//*[@class='hubButtonBg userTabs padding5'])[4]";
     //Property Search
     public static String userPropertySearch = "//input[@id='hubSearchAddress']";
     public static String userSearchButton = "//input[@id='hubSearchButton']";
@@ -372,6 +377,7 @@ public class ObjectReference {
     public static String doAnyApplyReverseMortgage ="//*[@id='38']";		
     public static String doAnyApplyServiceManagement ="//*[@id='37']";		
     public static String doAnyApplyStudentStyle ="//*[@id='25']";		
+    public static String loanAmountErrorOriginatorQuestion = "//*[@class='loanAmountValue errorMessage']";
     
     //Product selection
     public static String userAddToCart = "(//input[@id='purchaseButton'])[1]";
@@ -431,6 +437,7 @@ public class ObjectReference {
     public static String proceedToProductValuation = "//*[text()='Proceed to product selection']";
     public static String combanklabel = "//*[text()='CommBank Property Report']";
     public static String loanAmount = "//*[@name='7']";
+    public static String servicesTab = "//*[@id='linkServices']";
  
     //Instruction details
     public static String userProceedToInstructionDetails = "//*[text()='Proceed to instruction details']";  
@@ -993,6 +1000,9 @@ public class ObjectReference {
     public static String ProductDataGroupsLastNameMandatoryCheckbox = "//*[@name='59_1_2_mandatory']";
     public static String ProductDataGroupsContactNumberMandatoryCheckbox = "//*[@name='59_1_13_mandatory']";
     public static String ProductDataGroupsEmailMandatoryCheckbox = "//*[@name='59_1_14_mandatory']";
+    public static String ProductDataGroupSearchResult = "//*[@class='baseProductNameLabel borderLine']";
+    public static String ProductDataGroupValuationPurposeCheckbox = "//*[@name='613CheckBoxActive']";
+    public static String ProductDataGroupSaveBtn = "(//*[@value='Save'])[2]";
     
     //Admin Promotion Code UI List
     public static String adminPromotionLink = "//a[contains(@href, 'n/Promotions/')]";
