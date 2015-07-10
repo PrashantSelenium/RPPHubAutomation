@@ -31,86 +31,86 @@ public class UserPropertySearch extends TestInitReference {
         ATUReports.setAuthorInfo("Automation Tester", Utils.getCurrentTime(),"1.0");
     }
 
-//	@Test(description="User - Property Search", priority=0)
-//	public void RT_02902_PropertySearch_Logout() throws Exception {
-//		
-//		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//		util.Successful_login();
-//		util.Logout_link();
-//	}
-//	
-//	@Test(description="User - Property Search", priority=1)
-//	public void RT_06768_PropertySearch_Link_Navigation() throws Exception {
-//		
-//		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//		util.PropertySearch_Link_Navigation();
-//	} 
-//	
-//	@Test(description="User - Property Search", priority=2)
-//	public void RT_02697_PropertySearch_HTTPS() throws Exception {
-//		
-//		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//		util.PropertySearch_HTTPS();
-//	}
-//	
-//	@Test(description="User - Property Search", priority=3)
-//	public void RT_02566_CFA_Confirm_Button() throws Exception {
-//		
-//		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//		util.CFA_Confirm_Button();
-//	}
-//	
-//	@Test(description="User - Property Search", priority=4)
-//	public void RT_02565_CFA_Clear_Button() throws Exception {
-//		
-//		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//		util.CFA_Clear_Button();
-//	}
-//	
-//	@Test(description="User - Property Search", priority=5)
-//	public void RT_02563_CFA_Back_To_Search_Button() throws Exception {
-//		
-//		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//		util.CFA_Back_To_Search_Button();
-//	}
-//	
-//	@Test(description="User - Property Search", priority=6)
-//	public void RT_02561_CFA_Search_Not_Triggered_No_UnitStreetLot_Number() throws Exception {
-//		
-//		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//		util.CFA_Not_Triggered_No_UnitStreetLot_Number();
-//	}
-//	
-//	@Test(description="User - Property Search", priority=7)
-//	public void RT_02559_CFA_Search_Triggered() throws Exception {
-//		
-//		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//		util.CFA_Search_Triggered();
-//		util.Logout_link();
-//	}
-//	
-//	@Test(description="User - Property Search", priority=8)
-//	public void RT_06771_CFA_Validation_message() throws Exception {
-//		
-//		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//		util.LoginChannel("cbalender");
-//		util.CFA_Validation_message();
-//	}
-//	
-//	@Test(description="User - Property Search", priority=9)
-//	public void RT_02564_CFA_Back_To_Search_Button_back_CFA() throws Exception {
-//		
-//		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//		util.CFA_Back_To_Search_Button_back_CFA();
-//	}
-//	
-//	@Test(description="User - Property Search", priority=10)
-//	public void RT_02568_CFA_mandatory_validation() throws Exception {
-//		
-//		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//		util.CFA_mandatory_validation();
-//		util.Logout_link();
-//	}
+	@Test(description="User - Property Search", priority=0)
+	public void RT_02902_PropertySearch_Logout() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.Successful_login();
+		util.Logout_link();
+	}
+	
+	@Test(description="User - Property Search", priority=1)
+	public void RT_06768_PropertySearch_Link_Navigation() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.PropertySearch_Link_Navigation();
+	} 
+	
+	@Test(description="User - Property Search", priority=2)
+	public void RT_02697_PropertySearch_HTTPS() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.PropertySearch_HTTPS();
+	}
+	
+	@Test(description="User - Property Search", priority=3)
+	public void RT_02566_CFA_Confirm_Button() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.CFA_Confirm_Button();
+	}
+	
+	@Test(description="User - Property Search", priority=4)
+	public void RT_02565_CFA_Clear_Button() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.CFA_Clear_Button();
+	}
+	
+	@Test(description="User - Property Search", priority=5)
+	public void RT_02563_CFA_Back_To_Search_Button() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.CFA_Back_To_Search_Button();
+	}
+	
+	@Test(description="User - Property Search", priority=6)
+	public void RT_02561_CFA_Search_Not_Triggered_No_UnitStreetLot_Number() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.CFA_Not_Triggered_No_UnitStreetLot_Number();
+	}
+	
+	@Test(description="User - Property Search", priority=7)
+	public void RT_02559_CFA_Search_Triggered() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.CFA_Search_Triggered();
+		util.Logout_link();
+	}
+	
+	@Test(description="User - Property Search", priority=8)
+	public void RT_06771_CFA_Validation_message() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.LoginChannel("cbalender");
+		util.CFA_Validation_message();
+	}
+	
+	@Test(description="User - Property Search", priority=9)
+	public void RT_02564_CFA_Back_To_Search_Button_back_CFA() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.CFA_Back_To_Search_Button_back_CFA();
+	}
+	
+	@Test(description="User - Property Search", priority=10)
+	public void RT_02568_CFA_mandatory_validation() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.CFA_mandatory_validation();
+		util.Logout_link();
+	}
 	
 	@Test(description="User - Property Search", priority=11)
 	public void RT_02562_CFA_No_address_Matched() throws Exception {
@@ -163,35 +163,35 @@ public class UserPropertySearch extends TestInitReference {
 		util.Logout_link();
 	}
 	
-//	@Test(description="User - Property Search", priority=18)
-//	public void RT_02549_Property_Search_Ghost_Text() throws Exception {
-//		
-//		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//		util.LoginChannel("cbalender");
-//		util.Property_Search_Ghost_Text();
-//	}
-//	
-//	@Test(description="User - Property Search", priority=19)
-//	public void RT_02551_Property_Search_copy_paste() throws Exception {
-//		
-//		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//		util.Property_Search_copy_paste();
-//	}
-//	
-//
-//	@Test(description="User - Property Search", priority=20)
-//	public void RT_03123_Property_Search_Invalid_Property() throws Exception {
-//		
-//		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//		util.Property_Search_Invalid_Property();
-//	}
-//	
-//	@Test(description="User - Property Search", priority=21)
-//	public void RT_02833_Property_Search_Cannot_Proceed() throws Exception {
-//		
-//		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//		util.Property_Search_Cannot_Proceed();
-//	}
+	@Test(description="User - Property Search", priority=18)
+	public void RT_02549_Property_Search_Ghost_Text() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.LoginChannel("cbalender");
+		util.Property_Search_Ghost_Text();
+	}
+	
+	@Test(description="User - Property Search", priority=19)
+	public void RT_02551_Property_Search_copy_paste() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.Property_Search_copy_paste();
+	}
+	
+
+	@Test(description="User - Property Search", priority=20)
+	public void RT_03123_Property_Search_Invalid_Property() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.Property_Search_Invalid_Property();
+	}
+	
+	@Test(description="User - Property Search", priority=21)
+	public void RT_02833_Property_Search_Cannot_Proceed() throws Exception {
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.Property_Search_Cannot_Proceed();
+	}
 }
 
 
