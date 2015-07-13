@@ -172,6 +172,9 @@ public class ObjectReference {
     public static String myAccountErrorStaffId = "//*[text()=' Staff ID/Broker ID should not be empty.']";
     public static String myAccountErrorBranchId = "//*[text()=' Branch ID should not be empty.']";
     public static String myAccountErrorPasswordNotMatch = "//*[text()='Password does not match.']";
+    public static String myAccountErrorFname = "//*[@class='firstName errorMsg']";
+    public static String myAccountErrorLname = "//*[@class='lastName errorMsg']";
+    
 
     //My Transactions
     public static String userMyTransactions = "//li[@id='myTransactions']/div/a";

@@ -2,7 +2,7 @@ package hub.test.RegressionSuite;
 
 import hub.library.ReadXlsData;
 import hub.library.TestInitReference;
-import hub.utilities.EndtoEndUtil.EndtoEndUtil;
+import hub.utilities.EndToEnd.EndtoEndUtil;
 import hub.utilities.RegressionSuiteUtil.PropertyDetailUtil;
 
 import java.io.IOException;

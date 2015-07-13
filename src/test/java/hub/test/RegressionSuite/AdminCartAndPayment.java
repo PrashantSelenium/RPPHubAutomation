@@ -4,8 +4,6 @@ package hub.test.RegressionSuite;
 import hub.library.TestInitReference;
 import hub.utilities.RegressionSuiteUtil.AdminRegressionSuiteUtil;
 import hub.utilities.EndToEnd.UserHubEndToEndUtil_SmokeTest;
-import hub.utilities.EndtoEndUtil.*;
-
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -37,7 +35,7 @@ public class AdminCartAndPayment extends TestInitReference {
 	@Test(description="User - Cart and Payment", priority=0)
 	public void Validation_AccountPassword_InitialValue() throws Exception {
 		
-		AdminRegressionSuiteUtil util = new AdminRegressionSuiteUtil();
+		//AdminRegressionSuiteUtil util = new AdminRegressionSuiteUtil();
 		//util.Validation_AccountPassword_InitialValue();
 	}
 	

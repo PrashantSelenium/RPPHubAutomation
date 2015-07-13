@@ -34,7 +34,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		//Dev = https://dev-
 		//Production = https://www.
 		
-		public String environment = "https://dev-";
+		public String environment = "https://stage-";
 	
 	public void BranchIDvalidation() throws Exception{
 		
@@ -431,6 +431,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertEquals(getText(xpath(loginNotEmpty)), getDataFromxls(0, "User_Login.xls", 1, 0), "Empty Username and Password");
 		Assert.assertEquals(getText(xpath(loginMandatoryFields)), "Please complete all mandatory fields.");
 		
+		LoginChannel("cbalender");
+		Logout_link();
+		
 		type(xpath(userLoginPassword), getDataFromxls(0, "User_Login.xls", 3, 0));
 		click(xpath(loginButton));
 		
@@ -441,6 +444,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertEquals(getText(xpath(loginMandatoryFields)), getDataFromxls(0, "User_Login.xls", 4, 0), "Empty Username and valid Password");
 		Assert.assertEquals(getText(xpath(loginNotEmpty)), getDataFromxls(0, "User_Login.xls", 1, 0), "Empty Username and valid Password");
 		Assert.assertEquals(getText(xpath(loginMandatoryFields)), "Please complete all mandatory fields.");
+		
+		LoginChannel("cbalender");
+		Logout_link();
 		
 		type(xpath(userLoginUsername), getDataFromxls(0, "User_Login.xls", 2, 0));
 		type(xpath(userLoginPassword), "");
@@ -454,6 +460,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertEquals(getText(xpath(loginNotEmpty)), getDataFromxls(0, "User_Login.xls", 1, 0), "Valid Username and empty Password");
 		Assert.assertEquals(getText(xpath(loginMandatoryFields)), "Please complete all mandatory fields.");
 
+		LoginChannel("cbalender");
+		Logout_link();
+		
 		type(xpath(userLoginUsername), getDataFromxls(0, "User_Login.xls", 5, 0));
 		type(xpath(userLoginPassword), getDataFromxls(0, "User_Login.xls", 6, 0));
 		click(xpath(loginButton));
@@ -463,6 +472,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000); }
 		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000); }
 		Assert.assertEquals(getText(xpath(invalidErrorMessage)), getDataFromxls(0, "User_Login.xls", 7, 0), "Invalid Username and Password");
+		
+		LoginChannel("cbalender");
+		Logout_link();
 		
 		type(xpath(userLoginUsername), getDataFromxls(0, "User_Login.xls", 2, 0));
 		type(xpath(userLoginPassword), getDataFromxls(0, "User_Login.xls", 6, 0));
@@ -474,6 +486,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000); }
 		Assert.assertEquals(getText(xpath(invalidErrorMessage)), getDataFromxls(0, "User_Login.xls", 7, 0), "Valid Username and invalid Password");
 		
+		LoginChannel("cbalender");
+		Logout_link();
+		
 		type(xpath(userLoginUsername), getDataFromxls(0, "User_Login.xls", 5, 0));
 		type(xpath(userLoginPassword), getDataFromxls(0, "User_Login.xls", 3, 0));
 		click(xpath(loginButton));
@@ -483,6 +498,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000); }
 		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000); }
 		Assert.assertEquals(getText(xpath(invalidErrorMessage)), getDataFromxls(0, "User_Login.xls", 7, 0), "Invalid Username and valid Password");
+		
+		LoginChannel("cbalender");
+		Logout_link();
 	}
 	
 	public void Login_InitialDisplay() throws Exception{
@@ -782,10 +800,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		}
 		
 		click(xpath(myAccount));
-		waitForElementPresent(xpath(myAccountFN));
-		waitForElementVisible(xpath(myAccountFN));
-		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
-		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
+		Thread.sleep(4000);
 		
 		Assert.assertTrue(isElementPresent(xpath(myAccountFN)), "My Account button not Functioning");
 		
@@ -834,13 +849,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		driver.findElement(By.id("userRole")).sendKeys(Keys.ENTER);
 		click(xpath(myAccountSavebtn));
 		
-		waitForElementPresent(xpath(myAccountFN));
-		waitForElementVisible(xpath(myAccountFN));
-		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
-		if(!isElementPresent(xpath(myAccountFN))){ Thread.sleep(2000); }
+		Thread.sleep(7000);
 		
-		Assert.assertTrue(isElementPresent(xpath(signUpErrorFN)), "First Name error not Displayed Properly");
-		Assert.assertTrue(isElementPresent(xpath(signUpErrorLN)), "Last Name error not Displayed Properly");
+		Assert.assertTrue(isElementPresent(xpath(myAccountErrorFname)), "First Name error not Displayed Properly");
+		Assert.assertTrue(isElementPresent(xpath(myAccountErrorLname)), "Last Name error not Displayed Properly");
 		Assert.assertTrue(isElementPresent(xpath(signUpErrorEmail)), "Email error not Displayed Properly");
 		//Assert.assertTrue(isElementPresent(xpath(signUpErrorMobile)), "Mobile error not Displayed Properly");
 		//Assert.assertTrue(isElementPresent(xpath(signUpErrorPhone)), "Phone error not Displayed Properly");
@@ -851,7 +863,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		//Assert.assertTrue(isElementPresent(xpath(signUpErrorSecurityAnswer)), "Security Answer error not Displayed Properly");
 		Assert.assertTrue(isElementPresent(xpath(myAccountErrorStaffId)), "Staff ID error not Displayed Properly");
 		Assert.assertTrue(isElementPresent(xpath(myAccountErrorBranchId)), "Branch ID error not Displayed Properly");
-		Assert.assertFalse(isElementPresent(xpath(signUpErrorProfId)), "Body ID error not Displayed Properly");
+		//Assert.assertFalse(isElementPresent(xpath(signUpErrorProfId)), "Body ID error not Displayed Properly");
 		Assert.assertTrue(isElementPresent(xpath(signUpErrorUserRole)), "User Role error not Displayed Properly");
 	}
 	

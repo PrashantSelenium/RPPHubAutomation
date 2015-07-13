@@ -1,4 +1,4 @@
-package hub.utilities.EndtoEndUtil;
+package hub.utilities.EndToEnd;
 
 import static org.openqa.selenium.By.xpath;
 
