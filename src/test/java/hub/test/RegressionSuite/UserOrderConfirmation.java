@@ -115,11 +115,15 @@ public class UserOrderConfirmation extends TestInitReference {
 			util.ocVedaCredit();
 			
 			//Test both Identity Verification and Credit Score
-			util.ocVedaResults();
-			
+			util.ocVedaResults();		
+	}
+	
+	@Test(description="User - Order Confirmation", priority=12)
+	public void RT_00000_Veda_Mock() throws Exception {		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		
 			//Test Identity Verification using Mock Service
 			util.identityVerificationMock();
-			
 			
 	}
 }
