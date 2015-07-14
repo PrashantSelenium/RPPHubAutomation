@@ -4,6 +4,7 @@ import static org.openqa.selenium.By.xpath;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import hub.library.FunctionReference;
@@ -34,7 +35,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		//Dev = https://dev-
 		//Production = https://www.
 		
-		public String environment = "https://stage-";
+		public String environment = "https://dev-";
 	
 	public void BranchIDvalidation() throws Exception{
 		
@@ -5145,6 +5146,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementPresent(xpath("Unit entitlement assessments (strata)")), "The customer is option is not available");
 		Assert.assertTrue(isElementPresent(xpath("Others")), "The customer is option is not available");
 	}
+<<<<<<< HEAD
 	public void identityVerificationIntegration() throws Exception{
 		LoginChannel("acme");	
 		int x=3;
@@ -5157,10 +5159,108 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(identityVerificationAddToCart));
 		clickToInstruction();
 		fillInsDetails();
+=======
+	
+	public void IDMatrics_Input(int x) throws Exception {
+		if(isElementPresent(xpath(userCustomerFName))){
+			type(xpath(userCustomerFName), getDataFromxls(3, "IDMatrics.xls", 5, x));
+			}
+			if(isElementPresent(xpath(userCustomerLName))){
+			type(xpath(userCustomerLName), getDataFromxls(3, "IDMatrics.xls", 7, x));
+			}
+			if(isElementPresent(xpath(userCustomerContact))){
+			type(xpath(userCustomerContact), "1234567890");
+			}
+			if(isElementPresent(xpath(userCustomerEmail))){
+			type(xpath(userCustomerEmail), "test@test.com");
+			}
+			if(isElementPresent(xpath(custCompany))){
+			type(xpath(custCompany), "Testing Company");
+			}
+
+			if(isElementPresent(xpath(custDriversLicence))){
+				if(getDataFromxls(3, "IDMatrics.xls", 15, x).contains("ACT")){ type(xpath(custDriversLicence), getDataFromxls(3, "IDMatrics.xls", 22, 6)); }
+				if(getDataFromxls(3, "IDMatrics.xls", 15, x).contains("NSW")){ type(xpath(custDriversLicence), getDataFromxls(3, "IDMatrics.xls", 22, 7)); }
+				if(getDataFromxls(3, "IDMatrics.xls", 15, x).contains("QLD")){ type(xpath(custDriversLicence), getDataFromxls(3, "IDMatrics.xls", 22, 8)); }
+				if(getDataFromxls(3, "IDMatrics.xls", 15, x).contains("VIC")){ type(xpath(custDriversLicence), getDataFromxls(3, "IDMatrics.xls", 22, 9)); }
+
+			}
+			if(isElementPresent(xpath(custAdd))){
+			type(xpath(custAdd), getDataFromxls(3, "IDMatrics.xls", 19, x));
+			}
+			if(isElementPresent(xpath(custDateOfBirth))){
+				//1984-11-19
+				String Year = getDataFromxls(3, "IDMatrics.xls", 8, x).substring(0,4);
+				String Month = getDataFromxls(3, "IDMatrics.xls", 8, x).substring(5,7);
+				String Day = getDataFromxls(3, "IDMatrics.xls", 8, x).substring(8,10);
+				int NewMonth = Integer.parseInt(Month);
+				NewMonth--;
+				Month = Integer.toString(NewMonth);
+				click(xpath(custDateOfBirth));
+				Thread.sleep(3000);
+				if(!isElementPresent(xpath(datePicker))){ Thread.sleep(3000); }
+				if(!isElementPresent(xpath(datePicker))){ Thread.sleep(3000); }
+				if(!isElementPresent(xpath(datePicker))){ Thread.sleep(3000); }
+				Assert.assertTrue(isElementPresent(xpath(datePicker)));
+				selectOption(xpath(custDatePickerYear), Year);
+				selectOption(xpath(custDatePickerMonth), Month);		
+				click(xpath(custDatePickerDay + "[" + Day + "]"));
+			}
+			if(isElementPresent(xpath(custInspectionDate))){
+				 DateFormat dateFormat= new SimpleDateFormat("dd");
+				 	Calendar c = Calendar.getInstance();    
+			        c.setTime(new Date());
+			        c.add(Calendar.DATE, 3);
+			     
+				click(xpath(custInspectionDate));
+				Thread.sleep(1000);
+				if(!isElementPresent(xpath(datePicker))){ Thread.sleep(3000); }
+				if(!isElementPresent(xpath(datePicker))){ Thread.sleep(3000); }
+				Assert.assertTrue(isElementPresent(xpath(datePicker)));
+				click(xpath(custDatePickerDay + "[" + dateFormat.format(c.getTime()) + "]"));
+			}
+			
+			if(isElementPresent(xpath(accessFName))){
+			type(xpath(accessFName), getDataFromxls(3, "IDMatrics.xls", 5, x));
+			}
+			if(isElementPresent(xpath(accessLName))){
+			type(xpath(accessLName), getDataFromxls(3, "IDMatrics.xls", 7, x));
+			}
+			if(isElementPresent(xpath(accessCompany))){
+			type(xpath(accessCompany), "Test Company");
+			}
+			if(isElementPresent(xpath(accessContact))){
+			type(xpath(accessContact), "234567890");
+			}
+			if(isElementPresent(xpath(accessEmail))){
+			type(xpath(accessEmail), "Test@test.com");
+			}
+			if(isElementPresent(xpath(accessAdd))){
+			type(xpath(accessAdd), getDataFromxls(3, "IDMatrics.xls", 19, x));
+			}
+			
+	}
+	
+	public void IDMatrix() throws Exception{
+
+		LoginChannel("acme");	
+		int x=6;
+		do{
+		slas_dynamic(getDataFromxls(3, "IDMatrics.xls", 19, x));
+		startNewTransaction();
+		Thread.sleep(6000);
+		click(xpath(identityVerificationAddToCart));
+		Thread.sleep(2000);
+		clickToInstruction();
+		Thread.sleep(6000);
+			
+		IDMatrics_Input(x);
+>>>>>>> origin/hub-automation
 		if(isElementPresent(xpath(userCustomerFName))){
 			type(xpath(userCustomerFName), getDataFromxls(0, "User_OrderConfirmation.xls", 6, x));
 			}
 		click(xpath(insNextBtn));
+<<<<<<< HEAD
 		Thread.sleep(3500);
 		Payment_Successful_OnAccount_Purchase("confirm");
 		Thread.sleep(3500);
@@ -5189,4 +5289,38 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	
+=======
+		Thread.sleep(5000);
+		
+		Payment_Successful_OnAccount_Purchase("confirm");
+		Thread.sleep(5000);
+
+		Assert.assertTrue(isElementPresent(xpath(vedaResults)), "Veda results form is not displayed: Row: " + x);
+		System.out.println("Result: " + getText(xpath(identityVerificationResult)) + " Row number:" + x + " PASSED" );
+		click(xpath(startNewOrder));
+		Thread.sleep(6000);
+		x++;
+		
+		}while(x!=30);
+		
+		
+//		String idvName = getText(xpath(identityVerificationName));
+//		String idvResult = getText(xpath(identityVerificationResult));
+//		Assert.assertTrue(isElementPresent(xpath(identityVerificationName)), "Identity Verification result is not displayed");
+//		Assert.assertTrue(isElementPresent(xpath(identityVerificationResult)), "Identity Verification result is incorrect");
+//		try {
+//			Assert.assertEquals(getValue(xpath(identityVerificationName)), getDataFromxls(0, "User_OrderConfirmation.xls", 2, x));
+//		} catch (AssertionError e) {
+//			System.out.println(idvName);
+//		}
+//		try {
+//			Assert.assertEquals(getValue(xpath(identityVerificationResult)), getDataFromxls(0, "User_OrderConfirmation.xls", 5, x));
+//		} catch (AssertionError e) {
+//			System.out.println(idvResult);
+//		}
+//		Thread.sleep(3500);
+//		
+//		Thread.sleep(4000);
+	}
+>>>>>>> origin/hub-automation
 }
