@@ -5145,4 +5145,48 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementPresent(xpath("Unit entitlement assessments (strata)")), "The customer is option is not available");
 		Assert.assertTrue(isElementPresent(xpath("Others")), "The customer is option is not available");
 	}
+	public void identityVerificationIntegration() throws Exception{
+		LoginChannel("acme");	
+		int x=3;
+		do{
+		Thread.sleep(3000);
+		slas_dynamic(getDataFromxls(0, "User_OrderConfirmation.xls", 3, x));
+		startNewTransaction();
+		proceedProductSelection();
+		Thread.sleep(6000);
+		click(xpath(identityVerificationAddToCart));
+		clickToInstruction();
+		fillInsDetails();
+		if(isElementPresent(xpath(userCustomerFName))){
+			type(xpath(userCustomerFName), getDataFromxls(0, "User_OrderConfirmation.xls", 6, x));
+			}
+		click(xpath(insNextBtn));
+		Thread.sleep(3500);
+		Payment_Successful_OnAccount_Purchase("confirm");
+		Thread.sleep(3500);
+		//Verify Identity Verification status
+		Assert.assertTrue(isElementPresent(xpath(vedaResults)), "Veda results form is not displayed");
+		String idvName = getText(xpath(identityVerificationName));
+		String idvResult = getText(xpath(identityVerificationResult));
+		Assert.assertTrue(isElementPresent(xpath(identityVerificationName)), "Identity Verification result is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(identityVerificationResult)), "Identity Verification result is incorrect");
+		try {
+			Assert.assertEquals(getValue(xpath(identityVerificationName)), getDataFromxls(0, "User_OrderConfirmation.xls", 2, x));
+		} catch (AssertionError e) {
+			System.out.println(idvName);
+		}
+		try {
+			Assert.assertEquals(getValue(xpath(identityVerificationResult)), getDataFromxls(0, "User_OrderConfirmation.xls", 5, x));
+		} catch (AssertionError e) {
+			System.out.println(idvResult);
+		}
+		Thread.sleep(3500);
+		click(xpath(startNewOrder));
+		Thread.sleep(4000);
+		x++;
+		}while(x<=9);
+		
+	}
+	
+	
 }
