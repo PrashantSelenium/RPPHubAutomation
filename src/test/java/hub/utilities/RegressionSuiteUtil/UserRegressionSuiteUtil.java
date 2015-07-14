@@ -5146,58 +5146,39 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementPresent(xpath("Unit entitlement assessments (strata)")), "The customer is option is not available");
 		Assert.assertTrue(isElementPresent(xpath("Others")), "The customer is option is not available");
 	}
-<<<<<<< HEAD
-	public void identityVerificationIntegration() throws Exception{
-		LoginChannel("acme");	
-		int x=3;
-		do{
-		Thread.sleep(3000);
-		slas_dynamic(getDataFromxls(0, "User_OrderConfirmation.xls", 3, x));
-		startNewTransaction();
-		proceedProductSelection();
-		Thread.sleep(6000);
-		click(xpath(identityVerificationAddToCart));
-		clickToInstruction();
-		fillInsDetails();
-=======
 	
 	public void IDMatrics_Input(int x) throws Exception {
-		if(isElementPresent(xpath(userCustomerFName))){
-			type(xpath(userCustomerFName), getDataFromxls(3, "IDMatrics.xls", 5, x));
+
+			if(getDataFromxls(0, "IDMatrix.xls", 9, x) != ""){
+			type(xpath(userCustomerFName), getDataFromxls(0, "IDMatrix.xls", 9, x));
 			}
-			if(isElementPresent(xpath(userCustomerLName))){
-			type(xpath(userCustomerLName), getDataFromxls(3, "IDMatrics.xls", 7, x));
+			if(!getDataFromxls(0, "IDMatrix.xls", 10, x).isEmpty()){
+			type(xpath(custMaidenName), getDataFromxls(0, "IDMatrix.xls", 10, x));
 			}
-			if(isElementPresent(xpath(userCustomerContact))){
-			type(xpath(userCustomerContact), "1234567890");
-			}
-			if(isElementPresent(xpath(userCustomerEmail))){
-			type(xpath(userCustomerEmail), "test@test.com");
-			}
-			if(isElementPresent(xpath(custCompany))){
-			type(xpath(custCompany), "Testing Company");
+			if(!getDataFromxls(0, "IDMatrix.xls", 11, x).isEmpty()){
+			type(xpath(userCustomerLName), getDataFromxls(0, "IDMatrix.xls", 11, x));
 			}
 
-			if(isElementPresent(xpath(custDriversLicence))){
-				if(getDataFromxls(3, "IDMatrics.xls", 15, x).contains("ACT")){ type(xpath(custDriversLicence), getDataFromxls(3, "IDMatrics.xls", 22, 6)); }
-				if(getDataFromxls(3, "IDMatrics.xls", 15, x).contains("NSW")){ type(xpath(custDriversLicence), getDataFromxls(3, "IDMatrics.xls", 22, 7)); }
-				if(getDataFromxls(3, "IDMatrics.xls", 15, x).contains("QLD")){ type(xpath(custDriversLicence), getDataFromxls(3, "IDMatrics.xls", 22, 8)); }
-				if(getDataFromxls(3, "IDMatrics.xls", 15, x).contains("VIC")){ type(xpath(custDriversLicence), getDataFromxls(3, "IDMatrics.xls", 22, 9)); }
-
-			}
+//			if(isElementPresent(xpath(custDriversLicence))){
+//				if(getDataFromxls(3, "IDMatrics.xls", 15, x).contains("ACT")){ type(xpath(custDriversLicence), getDataFromxls(3, "IDMatrics.xls", 22, 6)); }
+//				if(getDataFromxls(3, "IDMatrics.xls", 15, x).contains("NSW")){ type(xpath(custDriversLicence), getDataFromxls(3, "IDMatrics.xls", 22, 7)); }
+//				if(getDataFromxls(3, "IDMatrics.xls", 15, x).contains("QLD")){ type(xpath(custDriversLicence), getDataFromxls(3, "IDMatrics.xls", 22, 8)); }
+//				if(getDataFromxls(3, "IDMatrics.xls", 15, x).contains("VIC")){ type(xpath(custDriversLicence), getDataFromxls(3, "IDMatrics.xls", 22, 9)); }
+//
+//			}
 			if(isElementPresent(xpath(custAdd))){
-			type(xpath(custAdd), getDataFromxls(3, "IDMatrics.xls", 19, x));
+			type(xpath(custAdd), getDataFromxls(0, "IDMatrix.xls", 21, x));
 			}
-			if(isElementPresent(xpath(custDateOfBirth))){
+			if(!getDataFromxls(0, "IDMatrix.xls", 12, x).isEmpty()){
 				//1984-11-19
-				String Year = getDataFromxls(3, "IDMatrics.xls", 8, x).substring(0,4);
-				String Month = getDataFromxls(3, "IDMatrics.xls", 8, x).substring(5,7);
-				String Day = getDataFromxls(3, "IDMatrics.xls", 8, x).substring(8,10);
+				String Year = getDataFromxls(0, "IDMatrix.xls", 12, x).substring(0,4);
+				String Month = getDataFromxls(0, "IDMatrix.xls", 12, x).substring(5,7);
+				String Day = getDataFromxls(0, "IDMatrix.xls", 12, x).substring(8,10);
 				int NewMonth = Integer.parseInt(Month);
 				NewMonth--;
 				Month = Integer.toString(NewMonth);
 				click(xpath(custDateOfBirth));
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 				if(!isElementPresent(xpath(datePicker))){ Thread.sleep(3000); }
 				if(!isElementPresent(xpath(datePicker))){ Thread.sleep(3000); }
 				if(!isElementPresent(xpath(datePicker))){ Thread.sleep(3000); }
@@ -5206,38 +5187,19 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 				selectOption(xpath(custDatePickerMonth), Month);		
 				click(xpath(custDatePickerDay + "[" + Day + "]"));
 			}
-			if(isElementPresent(xpath(custInspectionDate))){
-				 DateFormat dateFormat= new SimpleDateFormat("dd");
-				 	Calendar c = Calendar.getInstance();    
-			        c.setTime(new Date());
-			        c.add(Calendar.DATE, 3);
-			     
-				click(xpath(custInspectionDate));
-				Thread.sleep(1000);
-				if(!isElementPresent(xpath(datePicker))){ Thread.sleep(3000); }
-				if(!isElementPresent(xpath(datePicker))){ Thread.sleep(3000); }
-				Assert.assertTrue(isElementPresent(xpath(datePicker)));
-				click(xpath(custDatePickerDay + "[" + dateFormat.format(c.getTime()) + "]"));
-			}
-			
-			if(isElementPresent(xpath(accessFName))){
-			type(xpath(accessFName), getDataFromxls(3, "IDMatrics.xls", 5, x));
-			}
-			if(isElementPresent(xpath(accessLName))){
-			type(xpath(accessLName), getDataFromxls(3, "IDMatrics.xls", 7, x));
-			}
-			if(isElementPresent(xpath(accessCompany))){
-			type(xpath(accessCompany), "Test Company");
-			}
-			if(isElementPresent(xpath(accessContact))){
-			type(xpath(accessContact), "234567890");
-			}
-			if(isElementPresent(xpath(accessEmail))){
-			type(xpath(accessEmail), "Test@test.com");
-			}
-			if(isElementPresent(xpath(accessAdd))){
-			type(xpath(accessAdd), getDataFromxls(3, "IDMatrics.xls", 19, x));
-			}
+//			if(isElementPresent(xpath(custInspectionDate))){
+//				 DateFormat dateFormat= new SimpleDateFormat("dd");
+//				 	Calendar c = Calendar.getInstance();    
+//			        c.setTime(new Date());
+//			        c.add(Calendar.DATE, 3);
+//			     
+//				click(xpath(custInspectionDate));
+//				Thread.sleep(1000);
+//				if(!isElementPresent(xpath(datePicker))){ Thread.sleep(3000); }
+//				if(!isElementPresent(xpath(datePicker))){ Thread.sleep(3000); }
+//				Assert.assertTrue(isElementPresent(xpath(datePicker)));
+//				click(xpath(custDatePickerDay + "[" + dateFormat.format(c.getTime()) + "]"));
+//			}
 			
 	}
 	
@@ -5246,81 +5208,36 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		LoginChannel("acme");	
 		int x=6;
 		do{
-		slas_dynamic(getDataFromxls(3, "IDMatrics.xls", 19, x));
+		slas_dynamic("10 McLaren Crescent Pearce ACT 2607");
 		startNewTransaction();
 		Thread.sleep(6000);
 		click(xpath(identityVerificationAddToCart));
 		Thread.sleep(2000);
 		clickToInstruction();
-		Thread.sleep(6000);
-			
+		Thread.sleep(6000);			
 		IDMatrics_Input(x);
->>>>>>> origin/hub-automation
-		if(isElementPresent(xpath(userCustomerFName))){
-			type(xpath(userCustomerFName), getDataFromxls(0, "User_OrderConfirmation.xls", 6, x));
-			}
+		Thread.sleep(3500);
 		click(xpath(insNextBtn));
-<<<<<<< HEAD
-		Thread.sleep(3500);
-		Payment_Successful_OnAccount_Purchase("confirm");
-		Thread.sleep(3500);
-		//Verify Identity Verification status
-		Assert.assertTrue(isElementPresent(xpath(vedaResults)), "Veda results form is not displayed");
-		String idvName = getText(xpath(identityVerificationName));
-		String idvResult = getText(xpath(identityVerificationResult));
-		Assert.assertTrue(isElementPresent(xpath(identityVerificationName)), "Identity Verification result is not displayed");
-		Assert.assertTrue(isElementPresent(xpath(identityVerificationResult)), "Identity Verification result is incorrect");
-		try {
-			Assert.assertEquals(getValue(xpath(identityVerificationName)), getDataFromxls(0, "User_OrderConfirmation.xls", 2, x));
-		} catch (AssertionError e) {
-			System.out.println(idvName);
-		}
-		try {
-			Assert.assertEquals(getValue(xpath(identityVerificationResult)), getDataFromxls(0, "User_OrderConfirmation.xls", 5, x));
-		} catch (AssertionError e) {
-			System.out.println(idvResult);
-		}
-		Thread.sleep(3500);
-		click(xpath(startNewOrder));
-		Thread.sleep(4000);
-		x++;
-		}while(x<=9);
-		
-	}
-	
-	
-=======
 		Thread.sleep(5000);
 		
 		Payment_Successful_OnAccount_Purchase("confirm");
 		Thread.sleep(5000);
-
+		try{
 		Assert.assertTrue(isElementPresent(xpath(vedaResults)), "Veda results form is not displayed: Row: " + x);
-		System.out.println("Result: " + getText(xpath(identityVerificationResult)) + " Row number:" + x + " PASSED" );
+		Assert.assertTrue(getText(xpath(identityVerificationResult)).contains(getDataFromxls(0, "IDMatrix.xls", 24, x)), "Result: " + getText(xpath(identityVerificationResult)) + " Expected: " + getDataFromxls(0, "IDMatrix.xls", 24, x));
+		System.out.println("Result: " + getText(xpath(identityVerificationResult)) + " Expected: " + getDataFromxls(0, "IDMatrix.xls", 24, x));
+		System.out.println(" Row number:" + x + " PASSED" );
+		} catch (AssertionError e){
+			System.out.println("Result: " + getText(xpath(identityVerificationResult)) + " Expected: " + getDataFromxls(0, "IDMatrix.xls", 24, x));
+			System.out.println(" Row number:" + x + " FAILED" );
+		}
+
+		
 		click(xpath(startNewOrder));
 		Thread.sleep(6000);
 		x++;
 		
-		}while(x!=30);
-		
-		
-//		String idvName = getText(xpath(identityVerificationName));
-//		String idvResult = getText(xpath(identityVerificationResult));
-//		Assert.assertTrue(isElementPresent(xpath(identityVerificationName)), "Identity Verification result is not displayed");
-//		Assert.assertTrue(isElementPresent(xpath(identityVerificationResult)), "Identity Verification result is incorrect");
-//		try {
-//			Assert.assertEquals(getValue(xpath(identityVerificationName)), getDataFromxls(0, "User_OrderConfirmation.xls", 2, x));
-//		} catch (AssertionError e) {
-//			System.out.println(idvName);
-//		}
-//		try {
-//			Assert.assertEquals(getValue(xpath(identityVerificationResult)), getDataFromxls(0, "User_OrderConfirmation.xls", 5, x));
-//		} catch (AssertionError e) {
-//			System.out.println(idvResult);
-//		}
-//		Thread.sleep(3500);
-//		
-//		Thread.sleep(4000);
+		}while(x!=83);
 	}
->>>>>>> origin/hub-automation
+
 }
