@@ -526,12 +526,10 @@ public class FunctionReference extends Results {
     }
     
     public String getDataFromxls(int sheetnumber, String XLSfilename, int row, int column) throws Exception{
-    	
-    	Sheet sheetname;
-
-	    FileInputStream file = new FileInputStream("src/test/java/hub/library/" + XLSfilename);
-	    Workbook datafile = Workbook.getWorkbook(file);
-
+//	    FileInputStream file = new FileInputStream("src/test/java/hub/library/" + XLSfilename);
+//	    Workbook datafile = Workbook.getWorkbook(file);
+	    Workbook datafile = Workbook.getWorkbook(new File("src/test/java/hub/library/" + XLSfilename));
+	    Sheet sheetname;
 	    sheetname = datafile.getSheet(sheetnumber);
 	    String value = sheetname.getCell(row, column).getContents();
 	    return value;

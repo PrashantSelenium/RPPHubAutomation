@@ -4,7 +4,6 @@ import static org.openqa.selenium.By.xpath;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import hub.library.FunctionReference;
@@ -35,7 +34,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		//Dev = https://dev-
 		//Production = https://www.
 		
-		public String environment = "https://dev-";
+		public String environment = "https://stage-";
 	
 	public void BranchIDvalidation() throws Exception{
 		
@@ -2540,9 +2539,6 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(userCFASuburbList)).sendKeys(Keys.ENTER);
 			Thread.sleep(4000);
-			System.out.println(getText(xpath(IncorrectSuburb)));
-			System.out.println("?>?><?");
-			System.out.println(getValue(xpath(IncorrectSuburb)));
 			Assert.assertEquals(getText(xpath(IncorrectSuburb)), getDataFromxls(0, "User_PropertySearch.xls", 5, y));
 			
 			Thread.sleep(500);
@@ -3236,7 +3232,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		int x=1;
 		int y=17;
 		do{
-		System.out.println("Checking "+getDataFromxls(0, "User_ProductSelectionOriginator.xls", 3, y));
+		//System.out.println("Checking "+getDataFromxls(0, "User_ProductSelectionOriginator.xls", 3, y));
 		String excId = getDataFromxls(0, "User_ProductSelectionOriginator.xls", 1, y);
 		String excText = getDataFromxls(0, "User_ProductSelectionOriginator.xls", 2, y);
 		Assert.assertTrue(isElementPresent(xpath("//form[@id='propertyDetailQuestions']//input[@id='"+excId+"']")), excText+" is not present");	
@@ -5153,7 +5149,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			type(xpath(userCustomerFName), getDataFromxls(0, "IDMatrix.xls", 9, x));
 			}
 			if(!getDataFromxls(0, "IDMatrix.xls", 10, x).isEmpty()){
-			type(xpath(custMaidenName), getDataFromxls(0, "IDMatrix.xls", 10, x));
+			type(xpath(custMiddleNames), getDataFromxls(0, "IDMatrix.xls", 10, x));
 			}
 			if(!getDataFromxls(0, "IDMatrix.xls", 11, x).isEmpty()){
 			type(xpath(userCustomerLName), getDataFromxls(0, "IDMatrix.xls", 11, x));
