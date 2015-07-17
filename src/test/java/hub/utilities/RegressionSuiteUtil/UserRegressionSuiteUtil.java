@@ -3994,11 +3994,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 				//CHECK Property Type
 				String Address = "";
 				Address = getDataFromxls(0, "macquarie.xls" , 0, col);
-
-//				if(getDataFromxls(0, "macquarie.xls" , 4, col).contains("house")){ Address = "25 Goundry Street Gateshead NSW 2290"; }
-//				if(getDataFromxls(0, "macquarie.xls" , 4, col).contains("unit")){ Address = "5/67-69 Pile Street Marrickville NSW 2204"; }
-//				if(getDataFromxls(0, "macquarie.xls" , 4, col).contains("vacant land")){ Address = "123 Aurelian Avenue Yalyalup WA 6280"; }
-//				
+				
 			slas_dynamic(Address);
 			startNewTransaction();
 			Thread.sleep(1000);
@@ -5154,6 +5150,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			if(!getDataFromxls(0, "IDMatrix.xls", 11, x).isEmpty()){
 			type(xpath(userCustomerLName), getDataFromxls(0, "IDMatrix.xls", 11, x));
 			}
+			if(!getDataFromxls(0, "IDMatrix.xls", 22, x).isEmpty()){
+				type(xpath(MobileInstructionDetails), getDataFromxls(0, "IDMatrix.xls", 22, x));
+				}
 
 //			if(isElementPresent(xpath(custDriversLicence))){
 //				if(getDataFromxls(3, "IDMatrics.xls", 15, x).contains("ACT")){ type(xpath(custDriversLicence), getDataFromxls(3, "IDMatrics.xls", 22, 6)); }
@@ -5202,7 +5201,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	public void IDMatrix() throws Exception{
 
 		LoginChannel("acme");	
-		int x=6;
+		int x=41;
 		do{
 		slas_dynamic("10 McLaren Crescent Pearce ACT 2607");
 		startNewTransaction();
@@ -5233,7 +5232,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Thread.sleep(6000);
 		x++;
 		
-		}while(x!=83);
+		}while(x!=84);
 	}
 
 }
