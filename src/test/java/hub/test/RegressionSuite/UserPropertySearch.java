@@ -132,12 +132,14 @@ public class UserPropertySearch extends TestInitReference {
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.CFA_Searching_UI();
+		util.Logout_link();
 	}
 	
 	@Test(description="User - Property Search", priority=14)
 	public void RT_02627_CFA_Different_Property_Type() throws Exception {
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.LoginChannel("cbalender");
 		util.CFA_Different_Property_Type();
 	}
 	

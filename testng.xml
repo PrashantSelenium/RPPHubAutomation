@@ -1,5 +1,30 @@
 <suite name="My Test Suite">
+     
      <suite-files>
-        <suite-file path="./testFiles.xml" />
+        <suite-file path="./myAccount.xml" />
+     </suite-files>
+     
+     <suite-files>
+        <suite-file path="./registration.xml" />
+     </suite-files>
+     
+     <suite-files>
+        <suite-file path="./registration.xml" />
+     </suite-files>
+     
+     <suite-files>
+        <suite-file path="./propertySearch.xml" />
+     </suite-files>
+     
+     <suite-files>
+        <suite-file path="./productSelectionOriginatorQuestion.xml" />
+     </suite-files>
+     
+     <suite-files>
+        <suite-file path="./productSelectionOriginatorQuestion.xml" />
+     </suite-files>
+     
+     <suite-files>
+        <suite-file path="./login.xml" />
      </suite-files>
 </suite>

@@ -243,7 +243,8 @@ public class ObjectReference {
     public static String StreetNameErrorMessageHidden = "//*[@class='hubSearchAddress_streetName errorMessage']";
     public static String StreetTypeErrorMessageHidden = "//*[@class='hubSearchAddress_street_Type errorMessage']";
     public static String SuburbErrorMessageHidden = "//*[@class='hubSearchAddress_suburbStatePostcode errorMessage']";
-    public static String IncorrectSuburb = "(//*[@class='acResults'])[2]";
+    public static String IncorrectSuburb = "(//*[@class='acResults'])[2]//li";
+    public static String IncorrectSuburblist = "(//*[@class='acResults'])[2]";
     public static String SorryCFA = "//*[contains(text(),'Sorry, we are still unable to find an address match.')]";
     public static String CFAIndicatorSearching = "//*[@class='cantFindAddIndicator']";
     public static String SuggestedList = "//*[@class='jquery-autocomplete-selected-item acSelect']";
@@ -381,6 +382,7 @@ public class ObjectReference {
     public static String doAnyApplyServiceManagement ="//*[@id='37']";		
     public static String doAnyApplyStudentStyle ="//*[@id='25']";		
     public static String loanAmountErrorOriginatorQuestion = "//*[@class='loanAmountValue errorMessage']";
+    public static String valuationPurpose = "//*[@class='valuationPurpose']";
     
     //Product selection
     public static String userAddToCart = "(//input[@id='purchaseButton'])[1]";
@@ -1161,7 +1163,7 @@ public class ObjectReference {
   public static String RPPusername = "//*[@id='rppUserName']";
   
   //BUILD VERSION
-  public static String BuildVersion = "//*[@id='poweredby']";
+  public static String BuildVersion = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[4]/td[2]/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr[1]/td";
   
 //***********END of OTHERS*****************//
   

@@ -34,7 +34,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		//Dev = https://dev-
 		//Production = https://www.
 		
-		public String environment = "https://stage-";
+		public String environment = "https://dev-";
 	
 	public void BranchIDvalidation() throws Exception{
 		
@@ -64,8 +64,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(staffIDReg))){ Thread.sleep(2000); }
 		
 		String styleval = driver.findElement(By.xpath(signUpErrorConfirmEmailNotMatch)).getAttribute("style");
-		Assert.assertEquals(styleval, "display: block;", "Password not match is not displayed");
-		Assert.assertEquals(getText(xpath(signUpErrorConfirmEmailNotMatch)), getDataFromxls(0, "User_Registration.xls", 1, 0));
+		Assert.assertFalse(styleval.contains("none"),"Password not match is not displayed");
+		//Assert.assertEquals(styleval, "display: block;", "Password not match is not displayed");
+		Assert.assertEquals(getText(xpath(signUpErrorConfirmEmailNotMatch)), getDataFromxls(0, "User_Registration.xls", 2, 0));
     }
 	
 	public void EmailAddress_Validation() throws Exception{
@@ -2521,8 +2522,6 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	
 	public void CFA_Different_Property_Type() throws Exception{
 		Thread.sleep(2000);
-		click(xpath(home));
-		Thread.sleep(2000);
 		waitForElementPresent(xpath(propertySearch));
 		waitForElementVisible(xpath(propertySearch));
 		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
@@ -2538,9 +2537,9 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			type(xpath(userCFASuburbList), getDataFromxls(0, "User_PropertySearch.xls", 5, y));
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(userCFASuburbList)).sendKeys(Keys.ENTER);
-			Thread.sleep(4000);
+			Thread.sleep(4300);			
 			Assert.assertEquals(getText(xpath(IncorrectSuburb)), getDataFromxls(0, "User_PropertySearch.xls", 5, y));
-			
+	
 			Thread.sleep(500);
 			click(xpath(userCFAClear));
 			x++;
@@ -2574,13 +2573,13 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(userCFAButton));
 
 		type(xpath(userCFASuburbList), getDataFromxls(0, "User_PropertySearch.xls", 1, 23));
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 
-		Assert.assertTrue(getText(xpath(IncorrectSuburb)).contains(getDataFromxls(0, "User_PropertySearch.xls", 2, 23)));
-		Assert.assertTrue(getText(xpath(IncorrectSuburb)).contains(getDataFromxls(0, "User_PropertySearch.xls", 3, 23)));
-		Assert.assertTrue(getText(xpath(IncorrectSuburb)).contains(getDataFromxls(0, "User_PropertySearch.xls", 4, 23)));
-		Assert.assertTrue(getText(xpath(IncorrectSuburb)).contains(getDataFromxls(0, "User_PropertySearch.xls", 5, 23)));
-		Assert.assertTrue(getText(xpath(IncorrectSuburb)).contains(getDataFromxls(0, "User_PropertySearch.xls", 6, 23)));
+		Assert.assertTrue(getText(xpath(IncorrectSuburblist)).contains(getDataFromxls(0, "User_PropertySearch.xls", 2, 23)), "CFA - Suggestion 1 XML:" + getDataFromxls(0, "User_PropertySearch.xls", 2, 23) + " UI Value:" + getText(xpath(IncorrectSuburblist)));
+		Assert.assertTrue(getText(xpath(IncorrectSuburblist)).contains(getDataFromxls(0, "User_PropertySearch.xls", 3, 23)), "CFA - Suggestion 2 XML:" + getDataFromxls(0, "User_PropertySearch.xls", 3, 23) + " UI Value:" + getText(xpath(IncorrectSuburblist)));
+		Assert.assertTrue(getText(xpath(IncorrectSuburblist)).contains(getDataFromxls(0, "User_PropertySearch.xls", 4, 23)), "CFA - Suggestion 3 XML:" + getDataFromxls(0, "User_PropertySearch.xls", 4, 23) + " UI Value:" + getText(xpath(IncorrectSuburblist)));
+		Assert.assertTrue(getText(xpath(IncorrectSuburblist)).contains(getDataFromxls(0, "User_PropertySearch.xls", 5, 23)), "CFA - Suggestion 4 XML:" + getDataFromxls(0, "User_PropertySearch.xls", 5, 23) + " UI Value:" + getText(xpath(IncorrectSuburblist)));
+		Assert.assertTrue(getText(xpath(IncorrectSuburblist)).contains(getDataFromxls(0, "User_PropertySearch.xls", 6, 23)), "CFA - Suggestion 5 XML:" + getDataFromxls(0, "User_PropertySearch.xls", 6, 23) + " UI Value:" + getText(xpath(IncorrectSuburblist)));
 	}
 	
 	public void Property_Search_Did_You_Mean() throws Exception{
@@ -2596,7 +2595,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		driver.findElement(By.id("hubSearchAddress")).sendKeys(Keys.ENTER);
 		click(xpath(userSearchButton));
 		Thread.sleep(5000);
- 		 		System.out.println(getText(xpath(DidYouMean)));
+ 		//System.out.println(getText(xpath(DidYouMean)));
  		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 3, 24)), "Did you mean #1");
  		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 4, 24)), "Did you mean #2");
  		Assert.assertTrue(getText(xpath(DidYouMean)).contains(getDataFromxls(0, "User_PropertySearch.xls", 5, 24)), "Did you mean #3");
@@ -2623,18 +2622,15 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	
 	public void Property_Search_Ghost_Text() throws Exception{
 		
-		click(xpath(home));
-		Thread.sleep(4000);
-		waitForElementPresent(xpath(propertySearch));
-		waitForElementVisible(xpath(propertySearch));
-		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }	
-		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(2000); }
-		
+		Thread.sleep(5000);
 		Assert.assertTrue(isElementPresent(xpath(propertySearch)), "Ghost Text - SLAS not Displyed");
-		Assert.assertEquals(getValue(xpath(propertySearch)), getDataFromxls(0, "User_PropertySearch.xls", 1, 25));
+		Assert.assertTrue(!getValue(xpath(propertySearch)).isEmpty(), "Ghost Text - Ghost Text is not available");
+		String xml = getDataFromxls(0, "User_PropertySearch.xls", 1, 25);
+		String UIval = getValue(xpath(propertySearch));
+
 		click(xpath(propertySearch));
 		Thread.sleep(1000);
-		Assert.assertEquals(getValue(xpath(propertySearch)), "");
+		Assert.assertEquals(UIval, xml, "Property Search - Ghost Text incorrect Message");
 	}
 	
 	public void Property_Search_copy_paste() throws Exception{
@@ -5096,7 +5092,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		if(!isElementPresent(xpath(ProductDataGroupValuationPurposeCheckbox))) { Thread.sleep(5000); }
 		if(!isElementPresent(xpath(ProductDataGroupValuationPurposeCheckbox))) { Thread.sleep(5000); }
 		Assert.assertTrue(isElementPresent(xpath(ProductDataGroupValuationPurposeCheckbox)), "Admin Setup Valuation Purpose - Valuation Purpose Not Displayed");
-		System.out.println(getValue(xpath("//*[@class='groupActiveQ'])[6]//input//@value")));
+		//System.out.println(getValue(xpath("//*[@class='groupActiveQ'])[6]//input//@value")));
 		click(xpath(ProductDataGroupValuationPurposeCheckbox));
 		click(xpath(ProductDataGroupSaveBtn));
 		Thread.sleep(3000);
@@ -5105,6 +5101,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	public void AdminLogin() throws Exception{
 		if(environment.contains("dev")){ driver.navigate().to("dev.rppropertyhub.com/admin"); }
 		if(environment.contains("stage")){ driver.navigate().to("stage.rppropertyhub.com/admin"); }
+		if(!environment.contains("stage")  && !environment.contains("dev")){ driver.navigate().to("stage.rppropertyhub.com/admin"); }
 		Thread.sleep(2000);
 		Assert.assertTrue(isElementPresent(xpath(adminLoginUsername)), "Admin Login - Username not displayed");
 		Assert.assertTrue(isElementPresent(xpath(adminLoginPassword)), "Admin Login - Password not displayed");
@@ -5120,7 +5117,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	public void validateValuationPurposeIsDisplayed() throws Exception {
 		click(xpath(servicesTab));
 		Thread.sleep(2000);
-		Assert.assertTrue(isElementPresent(xpath("VALUATION DROPDOWN")), "Valuation is not Displayed");
+		Assert.assertTrue(isElementPresent(xpath(valuationPurpose)), "Valuation is not Displayed");
 	}
 	
 	public void validateValuationPurposeListing() throws Exception {
@@ -5201,7 +5198,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	public void IDMatrix() throws Exception{
 
 		LoginChannel("acme");	
-		int x=41;
+		int x=57;
 		do{
 		slas_dynamic("10 McLaren Crescent Pearce ACT 2607");
 		startNewTransaction();

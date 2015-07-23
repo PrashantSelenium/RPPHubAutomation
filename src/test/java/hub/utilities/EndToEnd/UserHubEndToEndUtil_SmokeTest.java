@@ -36,7 +36,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	//*************************//
 
 	//Set Enviroment to the list above depending from what environment you want to run the test	
-	public String environment = "https://stage-";
+	public String environment = "https://dev-";
 	
 	public UserHubEndToEndUtil_SmokeTest() {
 	}
@@ -225,6 +225,14 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		    }
 		    catch(AssertionError e){
 		    	fail(input[0] + " - CPS Service Connection label is not ok");
+		    	resultcount++;
+		    	}
+		
+		try{
+			Assert.assertTrue(getText(xpath(HealthCheck)).contains(input[15]));
+		    }
+		    catch(AssertionError e){
+		    	fail(input[0] + " - Rulex Service Connection label is not ok");
 		    	resultcount++;
 		    	}
 

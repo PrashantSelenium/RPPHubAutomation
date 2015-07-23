@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Login" parallel="tests" thread-count="2">
+
+<test name="T_01">
+    <classes>
+        <class name="hub.test.RegressionSuite.UserLogin" ></class>
+    </classes>
+</test>
+</suite>
