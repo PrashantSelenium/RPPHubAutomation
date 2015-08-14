@@ -630,6 +630,69 @@ public class AdminRegressionSuiteUtil extends FunctionReference {
 		Assert.assertEquals(getValue(xpath(baseProdReportTypeField)), "Credit");
 		
 	}
+	
+public int validateProceedProductSelection() throws Exception{
+		
+		waitForElementPresent(xpath(proceedNextLink));
+		waitForElementVisible(xpath(proceedNextLink));
+		click(xpath(proceedNextLink));
+		
+		waitForElementPresent(xpath(productNavBar));
+		waitForElementVisible(xpath(productNavBar));
+		if(!isElementPresent(xpath(completeAddress)));{ Thread.sleep(2000); }
+    	if(!isElementPresent(xpath(completeAddress)));{ Thread.sleep(2000); }
+    	
+		if(!isElementPresent(xpath(productNavBar)));{ Thread.sleep(2000); }
+    	if(!isElementPresent(xpath(productNavBar)));{ Thread.sleep(2000); }
+		try{
+			Thread.sleep(3000);
+			Assert.assertTrue(isElementPresent(xpath(productNavBar)));
+			Assert.assertTrue(isElementPresent(xpath(instructionNavBar)));
+			Assert.assertTrue(isElementPresent(xpath(paymentNavBar)));
+			Assert.assertTrue(isElementPresent(xpath(orderNavBar)));
+		    }
+		    catch(AssertionError e){
+		    	fail("Navigation Bar validation");
+		    	resultcount++;
+		    	}
+		
+		if(!isElementPresent(xpath(unitPriceValuation))){
+
+					waitForElementPresent(xpath(valuationsTab));
+					waitForElementVisible(xpath(valuationsTab));			
+			    	if(!isElementPresent(xpath(valuationsTab)));{ Thread.sleep(5000); }
+			    	if(!isElementPresent(xpath(valuationsTab)));{ Thread.sleep(5000); }	    		
+					Assert.assertTrue(isElementPresent(xpath(valuationsTab)));
+
+				waitForElementPresent(xpath(cbatitle));
+				waitForElementVisible(xpath(cbatitle));
+				waitForElementPresent(xpath(cbatitlestatus));
+				waitForElementVisible(xpath(cbatitlestatus));
+				
+				if(!isElementPresent(xpath(cbatitle)));{ Thread.sleep(2000); }
+		    	if(!isElementPresent(xpath(cbatitle)));{ Thread.sleep(2000); }
+		    	if(!isElementPresent(xpath(cbatitlestatus)));{ Thread.sleep(2000); }
+		    	if(!isElementPresent(xpath(cbatitlestatus)));{ Thread.sleep(2000); }
+				
+		}else
+			{
+			type(xpath(unitPriceValuation), "500000");
+			click(xpath(noneApplyCheckboxValuation));
+			click(xpath(avm));
+			click(xpath(proceedToProductValuation));
+			Thread.sleep(5000);
+			waitForElementPresent(xpath(purchaseBtn));
+			waitForElementVisible(xpath(purchaseBtn));
+				try{
+					Assert.assertEquals(getValue(xpath(purchaseBtn)), "Not Available");
+				    }
+				    catch(AssertionError e){
+				    	fail("Not Redirected to product selection page");
+				    	resultcount++;
+				    	}
+			}
+		return resultcount;
+	}
 }
 	
 

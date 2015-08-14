@@ -1,6 +1,7 @@
 package hub.utilities.EndToEnd;
 
 import static org.openqa.selenium.By.xpath;
+import hub.utilities.RegressionSuiteUtil.UserRegressionSuiteUtil;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -11,6 +12,7 @@ import hub.library.ReadXmlData;
 
 import org.testng.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 
@@ -36,7 +38,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	//*************************//
 
 	//Set Enviroment to the list above depending from what environment you want to run the test	
-	public String environment = "https://dev-";
+	public String environment = "https://stage-";
 	
 	public UserHubEndToEndUtil_SmokeTest() {
 	}
@@ -362,107 +364,35 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		return resultcount;
 	}
 	
-	public int validateProceedProductSelection() throws Exception{
-		
-		waitForElementPresent(xpath(proceedNextLink));
-		waitForElementVisible(xpath(proceedNextLink));
-		click(xpath(proceedNextLink));
-		
-		waitForElementPresent(xpath(productNavBar));
-		waitForElementVisible(xpath(productNavBar));
-		if(!isElementPresent(xpath(completeAddress)));{ Thread.sleep(2000); }
-    	if(!isElementPresent(xpath(completeAddress)));{ Thread.sleep(2000); }
-    	
+	public int CFACombank() throws Exception{
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.LoginChannel("cbabroker");
+		click(xpath(userCFAButton));
+		Thread.sleep(3000);
 		try{
-			Assert.assertEquals(input[1], getText(xpath(completeAddress)));
-		    }
-		    catch(AssertionError e){
-		    	fail(input[0] + " - Incorrect Address");
-		    	resultcount++;
-		    	}
-		if(!isElementPresent(xpath(productNavBar)));{ Thread.sleep(2000); }
-    	if(!isElementPresent(xpath(productNavBar)));{ Thread.sleep(2000); }
-		try{
-			Thread.sleep(3000);
-			Assert.assertTrue(isElementPresent(xpath(productNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(instructionNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(paymentNavBar)));
-			Assert.assertTrue(isElementPresent(xpath(orderNavBar)));
-		    }
-		    catch(AssertionError e){
-		    	fail(input[0] + " - Navigation Bar validation");
-		    	resultcount++;
-		    	}
-		
-		if(!isElementPresent(xpath(unitPriceValuation))){
-				try{
-//					waitForElementPresent(xpath(reportsTab));
-//					waitForElementVisible(xpath(reportsTab));
-//					if(!isElementPresent(xpath(reportsTab)));{ Thread.sleep(5000); }
-//			    	if(!isElementPresent(xpath(reportsTab)));{ Thread.sleep(5000); }
-//			    	Assert.assertTrue(isElementPresent(xpath(reportsTab)));
-			    	
-					waitForElementPresent(xpath(valuationsTab));
-					waitForElementVisible(xpath(valuationsTab));			
-			    	if(!isElementPresent(xpath(valuationsTab)));{ Thread.sleep(5000); }
-			    	if(!isElementPresent(xpath(valuationsTab)));{ Thread.sleep(5000); }	    	
-					
-					Assert.assertTrue(isElementPresent(xpath(valuationsTab)));
-				    }
-				    catch(AssertionError e){
-				    	fail(input[0] + " - Tab validation");
-				    	resultcount++;
-				    	}
-//				try{
-//					String selectedtab = driver.findElement(By.xpath(reportsTab)).getCssValue("background-color");
-//					Assert.assertEquals(selectedtab, input[2]);
-//				    }
-//				    catch(AssertionError e){
-//				    	fail(input[0] + " - Navigation Bar validation");
-//				    	resultcount++;
-//				    	}
-				
-				waitForElementPresent(xpath(cbatitle));
-				waitForElementVisible(xpath(cbatitle));
-				waitForElementPresent(xpath(cbatitlestatus));
-				waitForElementVisible(xpath(cbatitlestatus));
-				
-				if(!isElementPresent(xpath(cbatitle)));{ Thread.sleep(2000); }
-		    	if(!isElementPresent(xpath(cbatitle)));{ Thread.sleep(2000); }
-		    	if(!isElementPresent(xpath(cbatitlestatus)));{ Thread.sleep(2000); }
-		    	if(!isElementPresent(xpath(cbatitlestatus)));{ Thread.sleep(2000); }
-				
-				try{
-					Assert.assertTrue(getText(xpath(cbatitle)).contains(input[3]));
-				    }
-				    catch(AssertionError e){
-				    	fail(input[0] + " - CBA title validation");
-				    	resultcount++;
-				    	}
-				try{
-					Assert.assertEquals(getText(xpath(cbatitlestatus)), input[4]);
-				    }
-				    catch(AssertionError e){
-				    	fail(input[0] + " - CBA Status validation");
-				    	resultcount++;
-				    	}
-		}else
-			{
-			type(xpath(unitPriceValuation), input[7].substring(0, 6));
-			click(xpath(noneApplyCheckboxValuation));
-			click(xpath(avm));
-			click(xpath(proceedToProductValuation));
-			Thread.sleep(5000);
-			waitForElementPresent(xpath(purchaseBtn));
-			waitForElementVisible(xpath(purchaseBtn));
-				try{
-					Assert.assertEquals(getValue(xpath(purchaseBtn)), "Not Available");
-				    }
-				    catch(AssertionError e){
-				    	fail(input[0] + " - Not Redirected to product selection page");
-				    	resultcount++;
-				    	}
+		Assert.assertTrue(isElementPresent(xpath(userCFAConfirm)), "CFA Combank - Confirm button is not displayed");
 			}
+			catch(AssertionError e){
+		    	fail(input[0] + " - Confirm button is not displayed");
+		    	resultcount++;
+		    	}
+		
+		type(xpath(unitNumberSearchAddress), input[1].substring(0, 1));
+		type(xpath(streetNumberSearchAddress), input[2].substring(0,2));
+		type(xpath(streetNameSearchAddress), input[3]);
+		type(xpath(streetTypeSearchAddress), input[4]);
+		type(xpath(suburbSearchAddress), input[5]);
+		click(xpath(confirmbtnSearchAddress));
+		
+		try{
+			Thread.sleep(12000);
+			Assert.assertTrue(getText(xpath(propertyNotProvided)).contains(input[7]), "ComBank CFA - Incorrect Message for Combank");	
+		    }
+		    catch(AssertionError e){
+		    	fail(input[0] + " - ComBank CFA - Incorrect Message for Combank");
+		    	resultcount++;
+		    	}
+		
 		return resultcount;
 	}
 	
@@ -1796,7 +1726,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    try{
 	    	waitForElementPresent(xpath(userPropertySearch));
 	    	waitForElementVisible(xpath(userPropertySearch));
-	    	Thread.sleep(3000);
+	    	Thread.sleep(5000);
 	    	Assert.assertTrue(isElementPresent(xpath(propertySearch)));	    	
 	    	}
 	    	catch(AssertionError e){
@@ -1810,8 +1740,6 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		//click(xpath(userSearchButton));
 		Thread.sleep(4000);
 		
-		waitForElementPresent(xpath(completeAddress));
-		waitForElementVisible(xpath(completeAddress));
 		if(!isElementPresent(xpath(completeAddress)));{ Thread.sleep(2000); }
     	if(!isElementPresent(xpath(completeAddress)));{ Thread.sleep(2000); }
     	
@@ -1827,9 +1755,9 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		click(xpath(pendingTransaction));
 		}
 	
-		waitForElementPresent(xpath(proceedNextLink));
-		waitForElementVisible(xpath(proceedNextLink));
-		click(xpath(proceedNextLink));
+//		waitForElementPresent(xpath(proceedNextLink));
+//		waitForElementVisible(xpath(proceedNextLink));
+//		click(xpath(proceedNextLink));
 		Thread.sleep(10000);
 		waitForElementPresent(xpath(productNavBar));
 		waitForElementVisible(xpath(productNavBar));
@@ -1921,7 +1849,6 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 
 		type(xpath(FnameInstructionDetails), input[7]);
 		type(xpath(LnameInstructionDetails), input[8]);
-		type(xpath(MobileInstructionDetails), input[12].substring(0, 9));
 		
 		waitForElementPresent(xpath(NextBtnInstructionDetails));
 		waitForElementVisible(xpath(NextBtnInstructionDetails));
@@ -2244,24 +2171,24 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		waitForElementPresent(xpath(ConfirmBtnPaymentDetails));
 		waitForElementVisible(xpath(ConfirmBtnPaymentDetails));
 		click(xpath(ConfirmBtnPaymentDetails));
-		Thread.sleep(8000);
+		Thread.sleep(25000);
 		Assert.assertTrue(isElementPresent(xpath(CPSIframe)), "CPS Iframe not yet displayed");
 		
-		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='card_payment_iframe']")));
+		driver.switchTo().frame(driver.findElement(By.xpath(CPSIframe)));
 				
 		Assert.assertTrue(isElementPresent(xpath(CPSCardNumber)), "CPS Card Number not yet displayed");
-		type(xpath("//*[@id='CardNumber']"), input[17].substring(0, 16).concat("111"));
-		type(xpath("//*[@id='CardHolderName']"), input[8]);
-		type(xpath("//*[@id='DateExpiry_1']"), "12");
-		type(xpath("//*[@id='DateExpiry_2']"), "15");
-		type(xpath("//*[@id='Cvc2']"), "1234");
+		type(xpath(CPSCardNumber), input[17].substring(0, 16).concat("111"));
+		type(xpath(CPSCardHolderName), input[8]);
+		type(xpath(CPSDateExpiry), "12");
+		type(xpath(CPSDateExpiry2), "15");
+		type(xpath(CPSCvc2), "1234");
 		
 		
 		//STOP HERE IF TESTING IN PROD
 		if(environment.contains("dev") || environment.contains("stage"))
 		{
 		Thread.sleep(1000);
-		click(xpath("//*[@id='Add']"));
+		click(xpath(CPSAddbtn));
 		
 		Thread.sleep(12000);
 		driver.switchTo().defaultContent();		
@@ -2329,4 +2256,216 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		return resultcount;
 		
 	}
+	
+	public int ResetPassword() throws Exception{
+		
+			driver.navigate().to(environment.concat("acme.rppropertyhub.com"));
+			if(isElementPresent(xpath(logout))){ click(xpath(logout)); }
+			Thread.sleep(3000);
+			try{
+				Assert.assertTrue(isElementPresent(xpath(userForgotPasswordBtn)), "Reset Password - Forgot Password Button is not displayed");
+			} catch(AssertionError e){
+		    	fail(input[0] + " - Forgot Password Button is not displayed");
+		    	resultcount++;
+		    	}	
+			click(xpath(userForgotPasswordBtn));
+			type(xpath(forgotPasswordUsername), input[1]);
+			type(xpath(forgotPasswordEmail), input[2]);
+			click(xpath(userResetPasswordBtn));
+			Thread.sleep(7000);
+			try{
+				Assert.assertTrue(isElementPresent(xpath(ForgotPasswordImageVerification)), "Reset Password - Forgot Password Image Verification is not displayed");
+			} catch(AssertionError e){
+		    	fail(input[0] + " - Forgot Password Image Verification is not displayed");
+		    	resultcount++;
+		    	}	
+			//Login to Gmail
+			driver.navigate().to("http://mail.google.com/");
+			try{
+				Assert.assertTrue(isElementPresent(xpath(gmailEmail)), "Reset Password - Gmail Email is not displayed");
+			} catch(AssertionError e){
+		    	fail(input[0] + " - Gmail Email is not displayed");
+		    	resultcount++;
+		    	}	
+			type(xpath(gmailEmail), input[2]);
+			click(xpath(gmailNextBtn));
+			Thread.sleep(2000);
+			try{
+				Assert.assertTrue(isElementPresent(xpath(gmailPassword)), "Reset Password - Gmail Password is not displayed");
+			} catch(AssertionError e){
+				fail(input[0] + " - Gmail Password is not displayed");
+				resultcount++;
+				}	
+			type(xpath(gmailPassword), input[4]);
+			click(xpath(gmailSignInBtn));
+			Thread.sleep(6000);
+			try{
+				Assert.assertTrue(isElementPresent(xpath(gmailInboxlink)), "Reset Password - Gmail Inbox is not displayed");
+			} catch(AssertionError e){
+		    	fail(input[0] + " - Gmail Inbox is not displayed");
+		    	resultcount++;
+		    	}	
+			click(xpath(gmailTopInbox));
+			Thread.sleep(3000);
+			try{
+				Assert.assertTrue(isElementPresent(xpath(gmailHubLink)), "Reset Password - Gmail Hub link is not displayed");
+			} catch(AssertionError e){
+		    	fail(input[0] + " - Gmail Hub link is not displayed");
+		    	resultcount++;
+		    	}	
+			//Go back to Hub Reset Password
+			String URL = driver.findElement(xpath(gmailHubLink)).getAttribute("href");
+			driver.navigate().to(URL);
+			Thread.sleep(3000);
+			try{
+				Assert.assertTrue(isElementPresent(xpath(userResetPasswordNewPass)), "Reset Password - New Password field is not displayed");
+			} catch(AssertionError e){
+		    	fail(input[0] + " - New Password field is not displayed");
+		    	resultcount++;
+		    	}	
+			type(xpath(userResetPasswordNewPass), input[3]);
+			type(xpath(userResetPasswordConfirmPass), input[3]);
+			Thread.sleep(1000);
+			click(xpath(resetPasswordBtn));
+			Thread.sleep(5000);
+			try{
+				Assert.assertTrue(getText(xpath(flashMessage)).contains(input[5]), "Reset Password - Reset Password not Succesful");
+			} catch(AssertionError e){
+		    	fail(input[0] + " - Reset Password not Succesful");
+		    	resultcount++;
+		    	}	
+		return resultcount;		
+	}
+	
+	public int identityVerification() throws Exception{
+		resultcount = 0;	
+		 
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.LoginChannel("acme");
+		util.slas_dynamic(input[1]);
+		Thread.sleep(2000);
+		util.startNewTransaction();
+		util.Product_Selection_select_Product("4");
+		util.ProceedToInstructionDetails_ClickLink();
+		util.Instruction_Input_Fields();
+		util.Payment_Successful_OnAccount_Purchase("Confirm");
+		Thread.sleep(2000);
+		try{
+			Assert.assertTrue(isElementPresent(xpath(identityVerificationResult)), "Identity Verification - Result is not Displayed");			
+		    }
+		    catch(AssertionError e){
+		    	fail(input[0] + " - Result is not displayed");
+		    	resultcount++;
+		    	}		
+		return resultcount;		
+	}
+	
+	public int propertyTitle() throws Exception{
+		resultcount = 0;	
+		
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.LoginChannel("class");
+		driver.navigate().to(environment.concat("class.rppropertyhub.com/ProductSelection?propertyId=7003499"));
+		util.startNewTransaction();
+		Assert.assertTrue(isElementPresent(xpath(userOEVPP)), "Property Title - OEVPP is not displayed");
+		type(xpath(userOEVPP), input[1]);
+		click(xpath(userOriginatorToProductSelection));
+		Thread.sleep(10000);		
+		Assert.assertTrue(isElementPresent(xpath(landTitlesTab)), "Property Title - Land Title tab is not displayed");
+		click(xpath(landTitlesTab));
+		Thread.sleep(10000);
+		click(xpath(purchaseBtnSecondLine));
+		util.ProceedToInstructionDetails_ClickLink();
+		util.Instruction_Input_Fields();
+		Thread.sleep(10000);
+		Assert.assertTrue(isElementPresent(xpath(TermsandConditionPaymentDetails)), "Terms and Condition not yet displayed");
+		click(xpath(TermsandConditionPaymentDetails));
+		type(xpath(InvoiceName), input[2]);
+		type(xpath(InvoiceEmail), input[3]);
+		click(xpath(ConfirmBtnPaymentDetails));
+		Thread.sleep(15000);
+		Assert.assertTrue(isElementPresent(xpath(CPSIframe)), "CPS Iframe not yet displayed");
+		
+		driver.switchTo().frame(driver.findElement(By.xpath(CPSIframe)));
+				
+		Assert.assertTrue(isElementPresent(xpath(CPSCardNumber)), "CPS Card Number not yet displayed");
+		type(xpath(CPSCardNumber), input[4].substring(0, 16).concat("111"));
+		type(xpath(CPSCardHolderName), input[5]);
+		type(xpath(CPSDateExpiry), "12");
+		type(xpath(CPSDateExpiry2), "15");
+		type(xpath(CPSCvc2), "1234");	
+		
+		//STOP HERE IF TESTING IN PROD
+		if(environment.contains("dev") || environment.contains("stage"))
+		{
+		Thread.sleep(1000);
+		click(xpath(CPSAddbtn));
+		
+		Thread.sleep(12000);
+		driver.switchTo().defaultContent();		
+		try{
+			if(!isElementPresent(xpath(referenceNumber))) { Thread.sleep(3000); }
+			if(!isElementVisible(xpath(referenceNumber))) { Thread.sleep(3000); }
+	    	Assert.assertTrue(isElementPresent(xpath(referenceNumber)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Reference Number is not Displayed");
+				resultcount++;
+	    		}
+		try{
+	    	Assert.assertTrue(isElementPresent(xpath(downloadPDF)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Download PDF is not Displayed");
+				resultcount++;
+	    		}
+		try{
+	    	Assert.assertTrue(isElementPresent(xpath(startNewOrder)));
+			}
+			catch(AssertionError e){
+				fail(input[0] + " - Start New Order is not Displayed");
+				resultcount++;
+	    		}
+		}
+		return resultcount;		
+	}
+	
+	public int rulex() throws Exception{
+		resultcount = 0;
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		util.LoginChannel("mbms");
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			String ready = (String) js.executeScript("return document.readyState");
+			
+			if(ready.equalsIgnoreCase("complete")){
+				
+			util.slas_dynamic(input[2]);
+			util.startNewTransaction();
+			Thread.sleep(5000);					
+			type(xpath(userOEVPP), input[5]);
+			type(xpath(loanAmount), input[6]);
+			
+		//LOAN Purpose					
+			click(xpath(loanPurchase));
+		//DO ANY APPLY
+			click(xpath(noneApplyCheckboxValuation));			
+			click(xpath(userOriginatorToProductSelection));
+			Thread.sleep(12000);
+
+			JavascriptExecutor js2 = (JavascriptExecutor) driver;
+			String ready2 = (String) js2.executeScript("return document.readyState");
+			
+			if(ready2.equalsIgnoreCase("complete")){				
+													
+					try{
+						Assert.assertTrue(getText(xpath(ProductPrice)).contains(input[1]), "Rulex - Incorrect Product returned by Rulex");
+						
+					} catch (AssertionError e) {
+						fail(input[0] + " - Incorrect Product returned by Rulex");
+						resultcount++;
+					}
+				}
+			}		
+			return resultcount;	
+	}	
 }

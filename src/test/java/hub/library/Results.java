@@ -5,11 +5,11 @@ import java.util.Arrays;
 public class Results extends ObjectReference {
 
     public void pass(String value) {
-        System.out.println("PASS - " + value);
+        System.out.println("PASSED - " + value);
     }
 
     public void fail(String value) {
-        java.lang.System.err.println("FAIL - " + value);
+        java.lang.System.err.println("FAILED - " + value);
     }
     
     public void logInput(String[] input) {	

@@ -76,6 +76,18 @@ public class ObjectReference {
     public static String userResetPasswordButton = "//input[@value='Reset Password']";
     public static String ForgotPassword = "//input[@value='Forgot My Password!']";    
     public static String userOTPLabel = "//*[@class='one-time-password']";
+    public static String ForgotPasswordImageVerification = "//*[@class='img-center']";
+    public static String resetPasswordBtn = "//input[@id='resetPassword']";
+        
+    //Google mail
+    public static String gmailEmail = "//*[@id='Email']";
+    public static String gmailNextBtn = "//*[@id='next']";
+    public static String gmailPassword = "//*[@id='Passwd']";
+    public static String gmailSignInBtn = "//*[@id='signIn']";
+    public static String gmailInboxlink = "//a[@href='https://mail.google.com/mail/#inbox']";
+    public static String gmailTopInbox = "(//*[@class='zA zE'])[1]";
+    public static String gmailHubLink = "//blockquote//font//a[contains(@href, 'acme')]";
+ 
     
     //Signup page
     public static String registrationForm = "//form[@id='hubRegisForm']";
@@ -381,6 +393,8 @@ public class ObjectReference {
     public static String doAnyApplyReverseMortgage ="//*[@id='38']";		
     public static String doAnyApplyServiceManagement ="//*[@id='37']";		
     public static String doAnyApplyStudentStyle ="//*[@id='25']";		
+    public static String doAnyApplyFamilyGuarantee ="//*[@id='50']";
+    public static String doAnyApplySMSF ="//*[@id='51']";
     public static String loanAmountErrorOriginatorQuestion = "//*[@class='loanAmountValue errorMessage']";
     public static String valuationPurpose = "//*[@class='valuationPurpose']";
     
@@ -443,6 +457,8 @@ public class ObjectReference {
     public static String combanklabel = "//*[text()='CommBank Property Report']";
     public static String loanAmount = "//*[@name='7']";
     public static String servicesTab = "//*[@id='linkServices']";
+    public static String propertyNotProvided = "//div//p//span[@class='hubHeaderBodyText']";
+    public static String landTitlesTab = "//*[@id='linkLand_Titles']";
  
     //Instruction details
     public static String userProceedToInstructionDetails = "//*[text()='Proceed to instruction details']";  
@@ -621,11 +637,12 @@ public class ObjectReference {
     public static String accountPasswordErrorPaymentDetails = "//*[@class='accountPasswordError errorMessage']";		
     public static String staffIDErrorPaymentDetails = "//*[@class='accountIdError errorMessage']";
     public static String CPSIframe = "//iframe[@id='card_payment_iframe']";
-    public static String CPSCardNumber = "//*[@id='CardNumber']";
-    public static String CPSCardHolderName = "//*[@id='CardHolderName']";
-    public static String CPSDateExpiry = "//*[@id='DateExpiry_1']";
-    public static String CPSDateExpiry2 = "//*[@id='DateExpiry_2']";
-    public static String CPSCvc2 = "//*[@id='Cvc2']";
+    public static String CPSCardNumber = "//*[@name='CardNumber']";
+    public static String CPSCardHolderName = "//*[@name='CardHolderName']";
+    public static String CPSDateExpiry = "//*[@name='DateExpiry_1']";
+    public static String CPSDateExpiry2 = "//*[@name='DateExpiry_2']";
+    public static String CPSCvc2 = "//*[@name='Cvc2']";
+    public static String CPSAddbtn = "//*[@id='clicked12725']";    
     public static String LabelPaymentDetails = "//*[@id='paymenDetailForm']/ul/li[1]/label";
     public static String TermsandConditionPaymentDetails = "//*[@id='termsAndConditions']";
     public static String AccountPasswordPaymentDetails = "//*[@id='accountPassword']";

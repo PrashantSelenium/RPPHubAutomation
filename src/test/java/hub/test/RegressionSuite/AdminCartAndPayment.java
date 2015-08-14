@@ -54,7 +54,7 @@ public class AdminCartAndPayment extends TestInitReference {
 
 		util.SuccessfulLogin();
 		util.validateCantFindAddress();
-		util.validateProceedProductSelection();
+		util2.validateProceedProductSelection();
 		util.SingleLineAddress();
 		util.ProductSelectionValuation();
 		util.instructionDetails();
@@ -70,7 +70,7 @@ public class AdminCartAndPayment extends TestInitReference {
 		
 		util.SuccessfulLogin();
 		util.validateCantFindAddress();
-		util.validateProceedProductSelection();
+		util2.validateProceedProductSelection();
 		util.SingleLineAddress();
 		util.ProductSelectionValuation();
 		util.instructionDetails();
@@ -86,7 +86,7 @@ public class AdminCartAndPayment extends TestInitReference {
 		
 		util.SuccessfulLogin();
 		util.validateCantFindAddress();
-		util.validateProceedProductSelection();
+		util2.validateProceedProductSelection();
 		util.SingleLineAddress();
 		util.ProductSelectionValuation();
 		util.instructionDetails();
@@ -102,7 +102,7 @@ public class AdminCartAndPayment extends TestInitReference {
 		
 		util.SuccessfulLogin();
 		util.validateCantFindAddress();
-		util.validateProceedProductSelection();
+		util2.validateProceedProductSelection();
 		util.SingleLineAddress();
 		util.ProductSelectionValuation();
 		util.instructionDetails();

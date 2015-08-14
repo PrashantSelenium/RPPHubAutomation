@@ -5,6 +5,7 @@ import static org.openqa.selenium.By.xpath;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Properties;
 
 import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
@@ -15,6 +16,9 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
 import com.thoughtworks.selenium.Selenium;
+
+import javax.mail.*;  
+import javax.mail.internet.*;  
 
 public class UserRegressionSuiteUtil extends FunctionReference {
 	ReadXmlData rxml = new ReadXmlData();
@@ -34,7 +38,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		//Dev = https://dev-
 		//Production = https://www.
 		
-		public String environment = "https://dev-";
+		public String environment = "https://stage-";
 	
 	public void BranchIDvalidation() throws Exception{
 		
@@ -3506,7 +3510,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	
 	public void insBackBtn() throws Exception {
 		Successful_login_CBALender();
-		slas();
+		slas_dynamic("56 Maxwell Avenue Gorokan NSW 2263");
 		startNewTransaction();
 		proceedProductSelection();
 		breShortForm();
@@ -3721,7 +3725,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 //		click(xpath(logout));
 		Thread.sleep(3000);
 		Successful_login_CBALender();
-		slas();
+		slas_dynamic("56 Maxwell Avenue Gorokan NSW 2263");
 		startNewTransaction();
 		proceedProductSelection();
 		breConstruction();
@@ -3911,7 +3915,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		click(xpath(logout));
 		LoginChannel("class");
 		Thread.sleep(3000);
-		slas();
+		slas_dynamic("56 Maxwell Avenue Gorokan NSW 2263");
 		startNewTransaction();
 		proceedProductSelection();
 		breDesktopValuation();
@@ -3972,8 +3976,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 
 	public void MacquarieBRE_CorrectProduct() throws Exception{
-		int num = 1;
-		int col = 3;
+		int col = 78;
 		int x = 0;
 		
 		do{
@@ -4062,18 +4065,20 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			if(!getDataFromxls(0, "macquarie.xls" , 11, col).isEmpty()){ click(xpath(doAnyApplyDevelopmentSite)); }
 			if(!getDataFromxls(0, "macquarie.xls" , 12, col).isEmpty()){ click(xpath(doAnyApplyDHA)); }
 			if(!getDataFromxls(0, "macquarie.xls" , 13, col).isEmpty()){ click(xpath(doAnyApplyDisplayHome)); }
-			if(!getDataFromxls(0, "macquarie.xls" , 14, col).isEmpty()){ click(xpath(doAnyApplyLeasehold)); }
-			if(!getDataFromxls(0, "macquarie.xls" , 15, col).isEmpty()){ click(xpath(doAnyApplyMultipleDwelling)); }
-			if(!getDataFromxls(0, "macquarie.xls" , 16, col).isEmpty()){ click(xpath(doAnyApplyNonResidential)); }
-			if(!getDataFromxls(0, "macquarie.xls" , 17, col).isEmpty()){ click(xpath(doAnyApplyNonHabitable)); }
-			if(!getDataFromxls(0, "macquarie.xls" , 18, col).isEmpty()){ click(xpath(doAnyApplyOffThePlan)); }
-			if(!getDataFromxls(0, "macquarie.xls" , 19, col).isEmpty()){ click(xpath(doAnyApplyPropertyBeing)); }
-			if(!getDataFromxls(0, "macquarie.xls" , 20, col).isEmpty()){ click(xpath(doAnyApplyPropertySize40ha)); }
-			if(!getDataFromxls(0, "macquarie.xls" , 21, col).isEmpty()){ click(xpath(doAnyApplyPropertySize50haor22ha)); }
-			if(!getDataFromxls(0, "macquarie.xls" , 22, col).isEmpty()){ click(xpath(doAnyApplyReverseMortgage)); }
-			if(!getDataFromxls(0, "macquarie.xls" , 23, col).isEmpty()){ click(xpath(doAnyApplyServiceManagement)); }
-			if(!getDataFromxls(0, "macquarie.xls" , 24, col).isEmpty()){ click(xpath(doAnyApplyStudentStyle)); }
-			if(!getDataFromxls(0, "macquarie.xls" , 25, col).isEmpty()){ click(xpath(noneApplyCheckboxValuation)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 14, col).isEmpty()){ click(xpath(doAnyApplyFamilyGuarantee)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 15, col).isEmpty()){ click(xpath(doAnyApplyLeasehold)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 16, col).isEmpty()){ click(xpath(doAnyApplyMultipleDwelling)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 17, col).isEmpty()){ click(xpath(doAnyApplyNonResidential)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 18, col).isEmpty()){ click(xpath(doAnyApplyNonHabitable)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 19, col).isEmpty()){ click(xpath(doAnyApplyOffThePlan)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 20, col).isEmpty()){ click(xpath(doAnyApplyPropertyBeing)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 21, col).isEmpty()){ click(xpath(doAnyApplyPropertySize40ha)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 22, col).isEmpty()){ click(xpath(doAnyApplyPropertySize50haor22ha)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 23, col).isEmpty()){ click(xpath(doAnyApplyReverseMortgage)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 24, col).isEmpty()){ click(xpath(doAnyApplySMSF)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 25, col).isEmpty()){ click(xpath(doAnyApplyServiceManagement)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 26, col).isEmpty()){ click(xpath(doAnyApplyStudentStyle)); }
+			if(!getDataFromxls(0, "macquarie.xls" , 27, col).isEmpty()){ click(xpath(noneApplyCheckboxValuation)); }
 			
 			
 			click(xpath(userOriginatorToProductSelection));
@@ -4089,8 +4094,8 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			if(ready2.equalsIgnoreCase("complete")){
 				
 				
-				if(getDataFromxls(0, "macquarie.xls" , 1, col).contains("No Product")){
-					System.out.println("Test #" + num + " Passed" );
+				if(getDataFromxls(0, "macquarie.xls" , 1, col).contains(getText(xpath(ProductPrice)))){
+					System.out.println("Test #" + col + " Passed");
 				}
 				else{
 									
@@ -4101,7 +4106,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 					Thread.sleep(3000);
 					try{
 						Assert.assertTrue(getText(xpath(ProductPrice)).contains(getDataFromxls(0, "macquarie.xls" , 1, col)), "Product Return is ".concat(getText(xpath(ProductPrice))).concat(".. Expected Product is").concat(getDataFromxls(0, "macquarie.xls" , 1, col)).concat("/////"));
-						System.out.println("Test #" + getDataFromxls(0, "macquarie.xls" , 3, col) + " Passed "  );
+						System.out.println("Test #" + getDataFromxls(0, "macquarie.xls" , 3, col) + " Passed ");
 					} catch (AssertionError e) {
 						fail("Test #" + getDataFromxls(0, "macquarie.xls" , 3, col) + " - Product Return is ".concat(getText(xpath(ProductPrice))).concat(".. Expected Product is ").concat(getDataFromxls(0, "macquarie.xls" , 1, col)));
 					}
@@ -4111,7 +4116,6 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			click(xpath(changeAddressLink));
 			
 			col++;
-			num++;
 			x++;
 			}
 		}while(x<=200);		
@@ -4349,7 +4353,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		//STOP HERE IF TESTING IN PROD
 		if(environment.contains("dev") || environment.contains("stage"))
 		{
-		click(xpath("//*[@id='Add']"));
+		click(xpath(CPSAddbtn));
 				
 		Thread.sleep(5000);
 		if(!isElementPresent(xpath(referenceNumber))){ Thread.sleep(2000); }
@@ -5231,5 +5235,42 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		
 		}while(x!=84);
 	}
+	
+	
+	public void SendAutomationReport() throws Exception{
 
+		String to="arvin.twano@tooltwist.com";//change accordingly  
+		  
+		  //Get the session object  
+		  Properties props = new Properties();  
+		  props.put("mail.smtp.host", "smtp.gmail.com");  
+		  props.put("mail.smtp.socketFactory.port", "465");  
+		  props.put("mail.smtp.socketFactory.class",  
+		            "javax.net.ssl.SSLSocketFactory");  
+		  props.put("mail.smtp.auth", "true");  
+		  props.put("mail.smtp.port", "465");  
+		   
+		  Session session = Session.getDefaultInstance(props,  
+		   new javax.mail.Authenticator() {  
+		   protected PasswordAuthentication getPasswordAuthentication() {  
+		   return new PasswordAuthentication("twistqatest@gmail.com","twist123");//change accordingly  
+		   }  
+		  });  
+		   
+		  //compose message  
+		  try {  
+		   MimeMessage message = new MimeMessage(session);  
+		   message.setFrom(new InternetAddress("arvin.twano@tooltwist.com"));//change accordingly  
+		   message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));  
+		   message.setSubject("Hello");  
+		   message.setText("Testing.......");  
+		     
+		   //send message  
+		   Transport.send(message);  
+		  
+		   System.out.println("message sent successfully");  
+		   
+		  } catch (MessagingException e) {throw new RuntimeException(e);}  
+		   
+		 }  
 }
