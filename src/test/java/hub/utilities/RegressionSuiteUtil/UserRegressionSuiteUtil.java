@@ -5272,5 +5272,42 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		   
 		  } catch (MessagingException e) {throw new RuntimeException(e);}  
 		   
-		 }  
+		 } 
+	
+	public void AMPusers() throws Exception{
+		driver.navigate().to(environment.concat("amp.rppropertyhub.com/Login"));
+		int x=1;
+		do{
+		waitForElementPresent(xpath(userLoginUsername));
+		waitForElementVisible(xpath(userLoginUsername));
+		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000); }
+		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000); }
+		Thread.sleep(2000); 
+		type(xpath(userLoginUsername), getDataFromxls(0, "AMPusers.xls", 0, x));
+		type(xpath(userLoginPassword), "q1w2e3r4t5y6");
+		Thread.sleep(1000); 
+		click(xpath(loginButton));
+
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(3000); }
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(3000); }
+		
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)), "Login not Successful");
+		click(xpath(myAccount));
+		Thread.sleep(3000);
+		System.out.println(getDataFromxls(0, "AMPusers.xls", 1, x));
+		System.out.println(getDataFromxls(0, "AMPusers.xls", 2, x));
+		System.out.println(getDataFromxls(0, "AMPusers.xls", 3, x));
+		System.out.println(getDataFromxls(0, "AMPusers.xls", 4, x));
+		Assert.assertEquals(getValue(xpath(myAccountFN)), getDataFromxls(0, "AMPusers.xls", 1, x));
+		Assert.assertEquals(getValue(xpath(myAccountLN)), getDataFromxls(0, "AMPusers.xls", 2, x));		
+		Assert.assertEquals(getValue(xpath(myAccountEmail)), getDataFromxls(0, "AMPusers.xls", 3, x));
+	//	Assert.assertEquals(getValue(xpath(myAccountBranchId)), getDataFromxls(0, "AMPusers.xls", 4, x));
+		click(xpath(logout));
+		Thread.sleep(2000);
+
+		x++;
+	}while(x!=1000);
+	}	
 }
