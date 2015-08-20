@@ -5,32 +5,32 @@ import hub.utilities.RegressionSuiteUtil.UserRegressionSuiteUtil;
 
 import org.junit.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
+//import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import atu.testng.reports.ATUReports;
-import atu.testng.reports.listeners.ATUReportsListener;
-import atu.testng.reports.listeners.ConfigurationListener;
-import atu.testng.reports.listeners.MethodListener;
-import atu.testng.reports.utils.Utils;
+//import atu.testng.reports.ATUReports;
+//import atu.testng.reports.listeners.ATUReportsListener;
+//import atu.testng.reports.listeners.ConfigurationListener;
+//import atu.testng.reports.listeners.MethodListener;
+//import atu.testng.reports.utils.Utils;
 import static org.openqa.selenium.By.xpath;
-@Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
+//@Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
 public class UserPaymentDetailsCPS extends TestInitReference {
-	{
-		System.setProperty("atu.reporter.config", ATULocation);
-	}
+//	{
+//		System.setProperty("atu.reporter.config", ATULocation);
+//	}
 	    
     @BeforeClass
     public void init() {
-           ATUReports.setWebDriver(driver);
-           setIndexPageDescription();
+//           ATUReports.setWebDriver(driver);
+//           setIndexPageDescription();
            driver.navigate().to("https://stage-bankmelbourne.rppropertyhub.com/login");
     }
     
-    private void setIndexPageDescription() {
-        ATUReports.indexPageDescription = "Hub";
-        ATUReports.setAuthorInfo("Automation Tester", Utils.getCurrentTime(),"1.0");
-    }
+//    private void setIndexPageDescription() {
+//        ATUReports.indexPageDescription = "Hub";
+//        ATUReports.setAuthorInfo("Automation Tester", Utils.getCurrentTime(),"1.0");
+//    }
 
 	@Test(description="User - Payment Details", priority=0)
 	public void RT_08834_Payment_CPS_Successful_Transaction() throws Exception {

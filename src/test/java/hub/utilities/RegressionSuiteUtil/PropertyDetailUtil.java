@@ -11,7 +11,7 @@ import org.testng.Assert;
 
 import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
-import atu.testng.reports.ATUReports;
+//import atu.testng.reports.ATUReports;
 
 import com.thoughtworks.selenium.Selenium;
 
@@ -63,9 +63,9 @@ public class PropertyDetailUtil extends FunctionReference{
 				
 				try {
 					Assert.assertTrue(isElementPresent(xpath(userPropertySearch)));
-					ATUReports.add("Login", "Username and Password","Proceed to property search","PASSED",true);
+//					ATUReports.add("Login", "Username and Password","Proceed to property search","PASSED",true);
 				} catch (AssertionError e) {
-					ATUReports.add("Login","Username and Password","Proceed to property search","FAILED", true);
+//					ATUReports.add("Login","Username and Password","Proceed to property search","FAILED", true);
 					resultcount++;
 				}
 			
@@ -381,7 +381,7 @@ public class PropertyDetailUtil extends FunctionReference{
 			
 			if (resultcount != 0) {
 					fail(testCase);
-					ATUReports.add("FAILED", true);
+//					ATUReports.add("FAILED", true);
 				} else {
 					pass(testCase);
 				}
@@ -408,7 +408,7 @@ public class PropertyDetailUtil extends FunctionReference{
 		    
 		    if (resultcount != 0) {
 				fail(testCase);
-				ATUReports.add("FAILED", true);
+//				ATUReports.add("FAILED", true);
 			} else {
 				pass(testCase);
 			}
@@ -439,7 +439,7 @@ public class PropertyDetailUtil extends FunctionReference{
 		    
 		    if (resultcount != 0) {
 				fail(testCase);
-				ATUReports.add("FAILED", true);
+//				ATUReports.add("FAILED", true);
 			} else {
 				pass(testCase);
 			}
@@ -469,7 +469,7 @@ public class PropertyDetailUtil extends FunctionReference{
 		    
 		    if (resultcount != 0) {
 				fail(testCase);
-				ATUReports.add("FAILED", true);
+//				ATUReports.add("FAILED", true);
 			} else {
 				pass(testCase);
 			}
@@ -499,7 +499,7 @@ public class PropertyDetailUtil extends FunctionReference{
 		    
 		    if (resultcount != 0) {
 				fail(testCase);
-				ATUReports.add("FAILED", true);
+//				ATUReports.add("FAILED", true);
 			} else {
 				pass(testCase);
 			}
@@ -529,7 +529,7 @@ public class PropertyDetailUtil extends FunctionReference{
 		    
 		    if (resultcount != 0) {
 				fail(testCase);
-				ATUReports.add("FAILED", true);
+//				ATUReports.add("FAILED", true);
 			} else {
 				pass(testCase);
 			}
@@ -559,7 +559,7 @@ public class PropertyDetailUtil extends FunctionReference{
 			
 			
 		    if (resultcount != 0) {
-		    	ATUReports.add("FAILED", true);
+//		    	ATUReports.add("FAILED", true);
 				fail(testCase);
 			} else {
 				pass(testCase);
@@ -587,7 +587,7 @@ public class PropertyDetailUtil extends FunctionReference{
 				Assert.assertEquals("Add to cart", getValue(xpath(addToCart)));
 			} catch (AssertionError e) {
 				fail("Add to cart");
-				ATUReports.add("FAILED", true);
+//				ATUReports.add("FAILED", true);
 				resultcount++;
 			}
 			click(xpath(addToCart));
@@ -622,7 +622,7 @@ public class PropertyDetailUtil extends FunctionReference{
 		    
 		    if (resultcount != 0) {
 				fail(testCase);
-				ATUReports.add("FAILED", true);
+//				ATUReports.add("FAILED", true);
 			} else {
 				pass(testCase);
 			}
@@ -644,7 +644,7 @@ public class PropertyDetailUtil extends FunctionReference{
 			Assert.assertTrue(isElementPresent(xpath(userLogoutLink)));
 		} catch (Exception e) {
 			fail("Logout link");
-			ATUReports.add("FAILED", true);
+//			ATUReports.add("FAILED", true);
 			resultcount++;
 		}
 		click(xpath(userLogoutLink));

@@ -9,7 +9,7 @@ import org.testng.Assert;
 
 import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
-import atu.testng.reports.ATUReports;
+//import atu.testng.reports.ATUReports;
 
 import com.thoughtworks.selenium.Selenium;
 
@@ -135,9 +135,9 @@ public class EndtoEndUtil extends FunctionReference{
 				
 				try {
 					Assert.assertTrue(isElementPresent(xpath(userPropertySearch)));
-					ATUReports.add("Login", "Username and Password","Proceed to property search","PASSED",true);
+					//ATUReports.add("Login", "Username and Password","Proceed to property search","PASSED",true);
 				} catch (AssertionError e) {
-					ATUReports.add("Login","Username and Password","Proceed to property search","FAILED", true);
+					//ATUReports.add("Login","Username and Password","Proceed to property search","FAILED", true);
 					resultcount++;
 				}
 			}
@@ -222,7 +222,7 @@ public class EndtoEndUtil extends FunctionReference{
 			
 			if (resultcount != 0) {
 					fail(testCase);
-					ATUReports.add("FAILED", true);
+					//ATUReports.add("FAILED", true);
 				} else {
 					pass(testCase);
 				}
@@ -250,7 +250,7 @@ public class EndtoEndUtil extends FunctionReference{
 		    
 		    if (resultcount != 0) {
 				fail(testCase);
-				ATUReports.add("FAILED", true);
+				//ATUReports.add("FAILED", true);
 			} else {
 				pass(testCase);
 			}
@@ -280,7 +280,7 @@ public class EndtoEndUtil extends FunctionReference{
 			
 			
 		    if (resultcount != 0) {
-		    	ATUReports.add("FAILED", true);
+		    	//ATUReports.add("FAILED", true);
 				fail(testCase);
 			} else {
 				pass(testCase);
@@ -319,7 +319,7 @@ public class EndtoEndUtil extends FunctionReference{
 				Assert.assertTrue(isElementPresent(xpath(userOriginatorDetails)));
 			} catch (AssertionError e) {
 				fail("Originator Details modal");
-				ATUReports.add("FAILED", true);
+				//ATUReports.add("FAILED", true);
 				resultcount++;
 			}
 			String oevpp = input[13];
@@ -431,7 +431,7 @@ public class EndtoEndUtil extends FunctionReference{
 				Assert.assertEquals("Add to cart", getValue(xpath(addToCart)));
 			} catch (AssertionError e) {
 				fail("Add to cart");
-				ATUReports.add("FAILED", true);
+				//ATUReports.add("FAILED", true);
 				resultcount++;
 			}
 			click(xpath(addToCart));
@@ -461,7 +461,7 @@ public class EndtoEndUtil extends FunctionReference{
 				Assert.assertEquals("(1)", getText(xpath(userCart)));
 			} catch (AssertionError e) {
 				fail("Cart count");
-				ATUReports.add("FAILED", true);
+				//ATUReports.add("FAILED", true);
 				resultcount++;
 			}
 			
@@ -500,7 +500,7 @@ public class EndtoEndUtil extends FunctionReference{
 				Assert.assertTrue(isElementPresent(xpath(userInstructionDetails)));
 			} catch (AssertionError e) {
 				fail(testCase);
-				ATUReports.add("FAILED", true);
+				//ATUReports.add("FAILED", true);
 				resultcount++;
 			}
 			
@@ -613,7 +613,7 @@ public class EndtoEndUtil extends FunctionReference{
 				Assert.assertEquals(input[20], getText(xpath(userPaymentItem)));
 			} catch (AssertionError e) {
 				fail("Item on Cart");
-				ATUReports.add("FAILED", true);
+				//ATUReports.add("FAILED", true);
 				resultcount++;
 			}
 			
@@ -695,7 +695,7 @@ public class EndtoEndUtil extends FunctionReference{
 					Assert.assertTrue(isElementPresent(xpath(userMortgagePopup)));
 				} catch (AssertionError e) {
 					fail("Mortgage Valuation Popup");
-					ATUReports.add("FAILED", true);
+					//ATUReports.add("FAILED", true);
 					resultcount++;
 				}
 				
@@ -726,7 +726,7 @@ public void regressionOrderConfirmationDetails() throws Exception {
 	        Assert.assertTrue(isElementPresent(By.cssSelector("label.bold")));
 	      } catch (AssertionError e) {
 			fail("Hub Reference");
-			ATUReports.add("FAILED", true);
+			//ATUReports.add("FAILED", true);
 			resultcount++;
 	      }
 	    
@@ -734,14 +734,14 @@ public void regressionOrderConfirmationDetails() throws Exception {
 	    	Assert.assertTrue(isElementPresent(By.linkText("Download PDF")));
 	      } catch (AssertionError e) {
 			fail("Download PDF link");
-			ATUReports.add("FAILED", true);
+			//ATUReports.add("FAILED", true);
 			resultcount++;
 	      }
 	    try {
 	        Assert.assertTrue(isElementPresent(By.linkText("Start new order")));
 	      } catch (AssertionError e) {
 			fail("Start new order link");
-			ATUReports.add("FAILED", true);
+			//ATUReports.add("FAILED", true);
 			resultcount++;
 	      }
 	    
@@ -751,7 +751,7 @@ public void regressionOrderConfirmationDetails() throws Exception {
 	        Assert.assertEquals(input[20], getText(xpath(userOrderItem)));
 	      } catch (Error e) {
 			fail(testCase);
-			ATUReports.add("FAILED", true);
+			//ATUReports.add("FAILED", true);
 			resultcount++;
 	      }
 	    
@@ -775,7 +775,7 @@ public void testDownloadPDF() throws Exception{
 		Assert.assertTrue(isElementPresent(By.linkText("Download PDF")));
 	} catch (Exception e) {
 		fail("Logout link");
-		ATUReports.add("FAILED", true);
+		//ATUReports.add("FAILED", true);
 		resultcount++;
 	}
 	
@@ -805,7 +805,7 @@ public void testPopup() throws Exception{
 				click(xpath("//*[@id='hubCboxClose']"));
 			} catch (Exception e) {
 				fail("Pop up");
-				ATUReports.add("FAILED", true);
+				//ATUReports.add("FAILED", true);
 				resultcount++;
 			}
 	   }else {
@@ -813,7 +813,7 @@ public void testPopup() throws Exception{
 				Assert.assertFalse(isElementPresent(xpath("//*[@id='hubCboxLoadedContent']/div")));
 			} catch (Exception e) {
 				fail("Pop up");
-				ATUReports.add("FAILED", true);
+				//ATUReports.add("FAILED", true);
 				resultcount++;
 			}
 	   }
@@ -839,7 +839,7 @@ public void testPopup() throws Exception{
 			Assert.assertTrue(isElementPresent(xpath(userLogoutLink)));
 		} catch (Exception e) {
 			fail("Logout link");
-			ATUReports.add("FAILED", true);
+			//ATUReports.add("FAILED", true);
 			resultcount++;
 		}
 		click(xpath(userLogoutLink));
