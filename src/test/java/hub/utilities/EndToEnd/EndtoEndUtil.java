@@ -2,41 +2,16 @@ package hub.utilities.EndToEnd;
 
 import static org.openqa.selenium.By.xpath;
 
-import java.awt.Robot;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
 import atu.testng.reports.ATUReports;
-import atu.testng.reports.utils.SettingsFile;
-//import atu.testrecorder.ATUTestRecorder;
 
 import com.thoughtworks.selenium.Selenium;
-
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.awt.image.RenderedImage;
-import java.io.File;
-import java.net.URL;
-
-import javax.imageio.ImageIO;
-import javax.imageio.stream.ImageInputStream;
-
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-
-import com.asprise.util.ocr.OCR;
-import com.aspose.ocr.*;
 
 public class EndtoEndUtil extends FunctionReference{
 	ReadXmlData rxml = new ReadXmlData();
@@ -75,9 +50,9 @@ public class EndtoEndUtil extends FunctionReference{
 				fail(input[0] + " - Not Redirected in Register Page");
 				resultcount++;
 				}	
-		OcrEngine ocr = new OcrEngine();
+		//OcrEngine ocr = new OcrEngine();
 		
-		String imgUrl = driver.findElement(xpath(signupCaptchaImg)).getAttribute("src");
+		//String imgUrl = driver.findElement(xpath(signupCaptchaImg)).getAttribute("src");
 //		String captcha = driver.manage().getCookieNamed("myrp_cptr").getValue();
 //		System.out.println(captcha);
 //		URL url = new URL(imgUrl);

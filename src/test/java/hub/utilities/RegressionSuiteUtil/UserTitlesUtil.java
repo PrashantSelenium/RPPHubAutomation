@@ -6,13 +6,11 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
-
 import hub.library.FunctionReference;
-import hub.utilities.RegressionSuiteUtil.*;;
 
 public class UserTitlesUtil extends FunctionReference{
 	private String[] input = null;
-	private String testCase = "";
+	public String testCase = "";
 	public UserTitlesUtil(String [] i){
 		input = i;
 	}
