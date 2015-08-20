@@ -68,12 +68,6 @@
             <artifactId>pdfbox</artifactId>
             <version>1.7.0</version>
         </dependency>
-        <!-- <dependency>
-            <groupId>org.monte</groupId>
-            <artifactId>monte-screen-recorder</artifactId>
-            <version>0.7.5</version>
-            <scope>test</scope>
-        </dependency> -->
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
@@ -90,7 +84,7 @@
     <build>
         <resources>
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>src/test/java/hub/test/endtoend/</directory>
                 <filtering>true</filtering>
             </resource>
         </resources>
