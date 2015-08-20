@@ -123,7 +123,7 @@
                         </suiteXmlFiles-->
                         
                         <suiteXmlFiles>
-                            <suiteXmlFile>continuousTesting.xml</suiteXmlFile>
+                            <suiteXmlFile>testng.xml</suiteXmlFile>
                         </suiteXmlFiles>
                         
                         <argLine>-XX:MaxPermSize=128m</argLine>
