@@ -3,7 +3,6 @@ package hub.utilities.RegressionSuiteUtil;
 import static org.openqa.selenium.By.xpath;
 import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
-import hub.utilities.RegressionSuiteUtil.UserRegressionSuiteUtil;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

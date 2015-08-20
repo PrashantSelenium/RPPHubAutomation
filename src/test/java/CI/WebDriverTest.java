@@ -1,9 +1,24 @@
-package hub.test.endtoend;
+package CI;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import java.lang.reflect.Method;
 import java.net.URL;
 
-import org.junit.Before;
 import org.junit.runners.Parameterized.Parameters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -21,8 +36,8 @@ public class WebDriverTest {
     //@Parameters{("support-tooltwist", "69845b25-d4b1-4420-9c59-b1dcf06b479d", "os", "browser", "browserVersion")};
     }
     
-    @Before
-    public void setUp(@Optional("support-tooltwist") String username,
+    @BeforeMethod
+	public void setUp(@Optional("support-tooltwist") String username,
                       @Optional("69845b25-d4b1-4420-9c59-b1dcf06b479d") String key,
                       @Optional("xp") String os,
                       @Optional("Firefox") String browser,
@@ -46,7 +61,7 @@ public class WebDriverTest {
     public void webDriver() throws Exception {
         // Make the browser get the page and check its title
         driver.get("http://www.amazon.com/");
-        assertEquals("Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more", driver.getTitle());
+        AssertJUnit.assertEquals("Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more", driver.getTitle());
     }
 
     private void assertEquals(String string, String title) {

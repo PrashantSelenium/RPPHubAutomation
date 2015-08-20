@@ -118,9 +118,14 @@
                         <!--</suiteXmlFiles>-->
                         <!-- Suite file injectio
                            n parameter from command line -->
-                        <suiteXmlFiles>
+                        <!--  suiteXmlFiles>
                             <suiteXmlFile>${suiteFile}</suiteXmlFile>
+                        </suiteXmlFiles-->
+                        
+                        <suiteXmlFiles>
+                            <suiteXmlFile>continuousTesting.xml</suiteXmlFile>
                         </suiteXmlFiles>
+                        
                         <argLine>-XX:MaxPermSize=128m</argLine>
                     </configuration>
                 </plugin>

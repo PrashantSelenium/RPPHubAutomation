@@ -16,7 +16,7 @@ import atu.testng.reports.utils.Utils;
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
 public class UserContactUs extends TestInitReference {
 	{
-		System.setProperty("atu.reporter.config", "/tooltwist/eclipse/RPPHub/conf/atu.properties");
+		System.setProperty("atu.reporter.config", ATULocation);
 	}
 	    
     @BeforeClass
@@ -121,10 +121,7 @@ public class UserContactUs extends TestInitReference {
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
 		util.CFA_New_Fields_Validation();
-	}
-	
-	
-	
+	}	
 }
 
 

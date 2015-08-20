@@ -38,7 +38,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		//Dev = https://dev-
 		//Production = https://www.
 		
-		public String environment = "https://stage-";
+		public String environment = "https://dev-";
 	
 	public void BranchIDvalidation() throws Exception{
 		

@@ -6,12 +6,7 @@ import hub.utilities.EndToEnd.EndtoEndUtil;
 
 import java.io.IOException;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
@@ -33,7 +28,7 @@ public class EndtoEnd extends TestInitReference {
 	String testCase = "Smoke Test";
 	
 	@Test(description="Smoke Test", dataProvider = "Data-Provider-Function")
-	public void testEndtoEnd(Class clzz, String[] input) {
+	public void testEndtoEnd(Class<?> clzz, String[] input) {
 		String testcase = "Testing Testcase - " + input[0] + " : " + input[27];
 		log(testcase);
 		logInput(input);

@@ -5,11 +5,7 @@ import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.testng.Assert;
-
-import atu.testng.reports.ATUReports;
 
 import com.thoughtworks.selenium.Selenium;
 

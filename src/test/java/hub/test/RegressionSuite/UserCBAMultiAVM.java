@@ -16,7 +16,7 @@ import atu.testng.reports.utils.Utils;
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
 public class UserCBAMultiAVM extends TestInitReference {
 	{
-		System.setProperty("atu.reporter.config", "/tooltwist/eclipse/RPPHub/conf/atu.properties");
+		System.setProperty("atu.reporter.config", ATULocation);
 	}
 	    
     @BeforeClass

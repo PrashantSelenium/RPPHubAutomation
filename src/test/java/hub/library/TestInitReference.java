@@ -62,11 +62,11 @@ public class TestInitReference extends FunctionReference {
             
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability("browser", "Firefox");
-            caps.setCapability("browser_version", "28.0");
+            caps.setCapability("browser_version", "39.0");
             caps.setCapability("os", "Windows");
             caps.setCapability("os_version", "7");
     	    caps.setCapability("browserstack.debug", "true");
-    	    caps.setCapability("build", "Regression Test Run");
+    	    caps.setCapability("build", "Regression - v4.17.1");
     	    caps.setCapability("project", "Hub");
 
     	    driver = new RemoteWebDriver(new URL(remoteUrl), caps);

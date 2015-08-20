@@ -8,6 +8,7 @@ public class ObjectReference {
     public String local_url = rxml.data("local_url");
  
 ////USER PAGE////
+    public static String ATULocation = "/tooltwist/eclipse/RPPHubAutomation/conf/atu.properties";
     
     //User login Page
     public static String userLoginUsername = "//input[@id='userName']";

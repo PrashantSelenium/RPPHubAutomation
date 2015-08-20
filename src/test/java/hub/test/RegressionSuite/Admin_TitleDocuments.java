@@ -21,7 +21,7 @@ import atu.testng.reports.utils.Utils;
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
 public class Admin_TitleDocuments extends TestInitReference {
 	{
-		System.setProperty("atu.reporter.config", "/tooltwist/eclipse/RPPHub/conf/atu.properties");
+		System.setProperty("atu.reporter.config", ATULocation);
 	}
 
 	@Test(description="Admin - Title Documents", dataProvider = "Data-Provider-Function", priority=0)

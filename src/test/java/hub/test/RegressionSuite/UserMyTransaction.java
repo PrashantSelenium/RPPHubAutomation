@@ -16,14 +16,13 @@ import atu.testng.reports.utils.Utils;
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
 public class UserMyTransaction extends TestInitReference {
 	{
-		System.setProperty("atu.reporter.config", "/tooltwist/eclipse/RPPHub/conf/atu.properties");
+		System.setProperty("atu.reporter.config", ATULocation);
 	}
 	    
     @BeforeClass
     public void init() {
            ATUReports.setWebDriver(driver);
            setIndexPageDescription();
-           //driver.navigate().to("https://stage-acme.rppropertyhub.com/signup");
            driver.get("https://stage-acme.rppropertyhub.com/signup");
     }
     

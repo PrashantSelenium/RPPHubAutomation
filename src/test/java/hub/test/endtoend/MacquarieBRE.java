@@ -1,7 +1,5 @@
 package hub.test.endtoend;
 
-
-
 import hub.library.TestInitReference;
 import hub.utilities.RegressionSuiteUtil.UserRegressionSuiteUtil;
 
@@ -18,7 +16,7 @@ import atu.testng.reports.utils.Utils;
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
 public class MacquarieBRE extends TestInitReference {
 	{
-		System.setProperty("atu.reporter.config", "/tooltwist/eclipse/RPPHub/conf/atu.properties");
+		System.setProperty("atu.reporter.config", ATULocation);
 	}
 	    
     @BeforeClass

@@ -17,7 +17,7 @@ import atu.testng.reports.utils.Utils;
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
 public class UserProductSelection extends TestInitReference {
 	{
-		System.setProperty("atu.reporter.config", "/tooltwist/eclipse/RPPHub/conf/atu.properties");
+		System.setProperty("atu.reporter.config", ATULocation);
 	}
 	    
     @BeforeClass
@@ -162,80 +162,3 @@ public class UserProductSelection extends TestInitReference {
 		util.Logout_link();
 	}	
 }
-
-//@Test(description="User - Product Selection", priority=0)
-//public void RT_02619_No_Prompt_Originator_Details() throws Exception {		
-//	UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//	util.noPromptOriginatorDetails();	
-//}
-//@Test(description="User - Product Selection", priority=1)
-//public void RT_02654_Prompt_Originator_Details() throws Exception {		
-//	UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//	util.promptOriginatorDetails();	
-//}
-//@Test(description="User - Product Selection", priority=2)
-//public void RT_02269_Proceed_Product_Selection_Link() throws Exception {		
-//	UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//	util.originatorToProductSelection();	
-//}
-//@Test(description="User - Product Selection", priority=3)
-//public void RT_03117_Information_Icon_Hover() throws Exception {		
-//	UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//	util.informationIcon();	
-//}
-//@Test(description="User - Product Selection", priority=4)
-//public void RT_03107_Property_Type_Field() throws Exception {		
-//	UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//	util.propertyType();	
-//}
-//@Test(description="User - Product Selection", priority=5)
-//public void RT_02678_OEVPP_Required_Numeric() throws Exception {		
-//	UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//	util.oevppRequiredNumeric();	
-//}
-////TO INVESTIGATE/////////////////////////////////////////////////////////////////////
-//@Test(description="User - Product Selection", priority=6)
-//public void RT_02375_OEVPP_Formatted() throws Exception {		
-//	UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//	util.oevppFormatted();	
-//}
-//@Test(description="User - Product Selection", priority=7)
-//public void RT_08844_Loan_Amount_Not_Active() throws Exception {		
-//	UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//	util.loanAmountNotActive();
-//}
-//@Test(description="User - Product Selection", priority=8)
-//public void RT_02977_DAOTA_Exclusions() throws Exception {		
-//	UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//	util.daotaPropertyExclusions();	
-//}
-//@Test(description="User - Product Selection", priority=9)
-//public void RT_03108_DAOTA_Required() throws Exception {		
-//	UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//	util.daotaRequired();	
-//}
-//@Test(description="User - Product Selection", priority=10)
-//public void RT_Loan_Purpose() throws Exception {		
-//	UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//	util.loanPurpose();
-//}
-//@Test(description="User - Product Selection", priority=11)
-//public void RT_03109_AVM_Ack_Display() throws Exception {		
-//	UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//	util.avmAckDisplay();
-//}
-//@Test(description="User - Product Selection", priority=12)
-//public void RT_03110_AVM_Ack_Required() throws Exception {		
-//	UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//	util.avmAckRequired();
-//}
-//@Test(description="User - Product Selection", priority=13)
-//public void RT_03111_AVM_Ack_Replaced() throws Exception {		
-//	UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//	util.loanAppDisplay();
-//}
-//@Test(description="User - Product Selection", priority=14)
-//public void RT_Loan_App_Required() throws Exception {		
-//	UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-//	util.loanAppRequired();
-//}

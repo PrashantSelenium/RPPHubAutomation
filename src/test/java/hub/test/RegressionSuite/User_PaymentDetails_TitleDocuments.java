@@ -20,7 +20,7 @@ import hub.utilities.RegressionSuiteUtil.UserTitlesUtil;
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
 public class User_PaymentDetails_TitleDocuments extends TestInitReference {
 	{
-		System.setProperty("atu.reporter.config", "/tooltwist/eclipse/RPPHub/conf/atu.properties");
+		System.setProperty("atu.reporter.config", ATULocation);
 	}
 
 public class PaymentDetails_TitleDocuments extends TestInitReference{
