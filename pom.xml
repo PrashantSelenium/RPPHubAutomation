@@ -121,18 +121,8 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.16</version>
                     <configuration>
-                        <!--<redirectTestOutputToFile>true</redire5tTestOutputToFile>-->
-                        <!--<suiteXmlFiles>-->
-                        <!--<suiteXmlFile>src/test/resources/ABNTestSuite.xml</suiteXmlFile>-->
-                        <!--</suiteXmlFiles>-->
-                        <!-- Suite file injectio
-                           n parameter from command line -->
-                        <!--  suiteXmlFiles>
-                            <suiteXmlFile>${suiteFile}</suiteXmlFile>
-                        </suiteXmlFiles-->
-                        
                         <suiteXmlFiles>
-                            <suiteXmlFile>testng.xml</suiteXmlFile>
+                            <suiteXmlFile>continuesTest.xml</suiteXmlFile>
                         </suiteXmlFiles>
                         
                         <argLine>-XX:MaxPermSize=128m</argLine>
