@@ -1,42 +1,42 @@
 <suite name="My Test Suite">
      
      <suite-files>
-        <suite-file path="/testSuites/myAccount.xml" />
+        <suite-file path="./testSuites/myAccount.xml" />
      </suite-files>
      
      <suite-files>
-        <suite-file path="/testSuites/registration.xml" />
+        <suite-file path="./testSuites/registration.xml" />
      </suite-files>
      
      <suite-files>
-        <suite-file path="/testSuites/propertySearch.xml" />
+        <suite-file path="./testSuites/propertySearch.xml" />
      </suite-files>
      
      <suite-files>
-        <suite-file path="/testSuites/productSelectionOriginatorQuestion.xml" />
+        <suite-file path="./testSuites/productSelectionOriginatorQuestion.xml" />
      </suite-files>
      
      <suite-files>
-        <suite-file path="/testSuites/productSelection.xml" />
+        <suite-file path="./testSuites/productSelection.xml" />
      </suite-files>
      
      <suite-files>
-        <suite-file path="/testSuites/instructionDetails.xml" />
+        <suite-file path="./testSuites/instructionDetails.xml" />
      </suite-files>
      
      <suite-files>
-        <suite-file path="/testSuites/paymentDetailsOnAccount.xml" />
+        <suite-file path="./testSuites/paymentDetailsOnAccount.xml" />
      </suite-files>
      
      <suite-files>
-        <suite-file path="/testSuites/paymentDetailsCPS.xml" />
+        <suite-file path="./testSuites/paymentDetailsCPS.xml" />
      </suite-files>
      
      <suite-files>
-        <suite-file path="/testSuites/orderConfirmation.xml" />
+        <suite-file path="./testSuites/orderConfirmation.xml" />
      </suite-files>
      
      <suite-files>
-        <suite-file path="/testSuites/login.xml" />
+        <suite-file path="./testSuites/login.xml" />
      </suite-files>
 </suite>

@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payment Details CPS" parallel="tests" thread-count="2">
+
+<test name="T_01">
+    <classes>
+        <class name="hub.test.RegressionSuite.UserPaymentDetailsOnAccount" ></class>
+    </classes>
+</test>
+
+</suite>
