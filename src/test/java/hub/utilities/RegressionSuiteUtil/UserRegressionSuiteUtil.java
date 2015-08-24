@@ -5,7 +5,7 @@ import static org.openqa.selenium.By.xpath;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Properties;
+//import java.util.Properties;
 
 import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
@@ -17,8 +17,8 @@ import org.testng.Assert;
 
 import com.thoughtworks.selenium.Selenium;
 
-import javax.mail.*;  
-import javax.mail.internet.*;  
+//import javax.mail.*;  
+//import javax.mail.internet.*;  
 
 public class UserRegressionSuiteUtil extends FunctionReference {
 	ReadXmlData rxml = new ReadXmlData();
@@ -5237,42 +5237,42 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	
-	public void SendAutomationReport() throws Exception{
-
-		String to="arvin.twano@tooltwist.com";//change accordingly  
-		  
-		  //Get the session object  
-		  Properties props = new Properties();  
-		  props.put("mail.smtp.host", "smtp.gmail.com");  
-		  props.put("mail.smtp.socketFactory.port", "465");  
-		  props.put("mail.smtp.socketFactory.class",  
-		            "javax.net.ssl.SSLSocketFactory");  
-		  props.put("mail.smtp.auth", "true");  
-		  props.put("mail.smtp.port", "465");  
-		   
-		  Session session = Session.getDefaultInstance(props,  
-		   new javax.mail.Authenticator() {  
-		   protected PasswordAuthentication getPasswordAuthentication() {  
-		   return new PasswordAuthentication("twistqatest@gmail.com","twist123");//change accordingly  
-		   }  
-		  });  
-		   
-		  //compose message  
-		  try {  
-		   MimeMessage message = new MimeMessage(session);  
-		   message.setFrom(new InternetAddress("arvin.twano@tooltwist.com"));//change accordingly  
-		   message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));  
-		   message.setSubject("Hello");  
-		   message.setText("Testing.......");  
-		     
-		   //send message  
-		   Transport.send(message);  
-		  
-		   System.out.println("message sent successfully");  
-		   
-		  } catch (MessagingException e) {throw new RuntimeException(e);}  
-		   
-		 } 
+//	public void SendAutomationReport() throws Exception{
+//
+//		String to="arvin.twano@tooltwist.com";//change accordingly  
+//		  
+//		  //Get the session object  
+//		  Properties props = new Properties();  
+//		  props.put("mail.smtp.host", "smtp.gmail.com");  
+//		  props.put("mail.smtp.socketFactory.port", "465");  
+//		  props.put("mail.smtp.socketFactory.class",  
+//		            "javax.net.ssl.SSLSocketFactory");  
+//		  props.put("mail.smtp.auth", "true");  
+//		  props.put("mail.smtp.port", "465");  
+//		   
+//		  Session session = Session.getDefaultInstance(props,  
+//		   new javax.mail.Authenticator() {  
+//		   protected PasswordAuthentication getPasswordAuthentication() {  
+//		   return new PasswordAuthentication("twistqatest@gmail.com","twist123");//change accordingly  
+//		   }  
+//		  });  
+//		   
+//		  //compose message  
+//		  try {  
+//		   MimeMessage message = new MimeMessage(session);  
+//		   message.setFrom(new InternetAddress("arvin.twano@tooltwist.com"));//change accordingly  
+//		   message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));  
+//		   message.setSubject("Hello");  
+//		   message.setText("Testing.......");  
+//		     
+//		   //send message  
+//		   Transport.send(message);  
+//		  
+//		   System.out.println("message sent successfully");  
+//		   
+//		  } catch (MessagingException e) {throw new RuntimeException(e);}  
+//		   
+//		 } 
 	
 	public void AMPusers() throws Exception{
 		driver.navigate().to(environment.concat("amp.rppropertyhub.com/Login"));

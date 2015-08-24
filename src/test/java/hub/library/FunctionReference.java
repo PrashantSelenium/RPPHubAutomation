@@ -18,7 +18,7 @@ import jxl.Workbook;
 
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.util.PDFTextStripper;
-import org.monte.screenrecorder.ScreenRecorder;
+//import org.monte.screenrecorder.ScreenRecorder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -39,7 +39,7 @@ public class FunctionReference extends Results {
 
     protected static ReadXmlData rxml = new ReadXmlData();
     public static WebDriver driver;
-    public static ScreenRecorder screenRecorder;
+//    public static ScreenRecorder screenRecorder;
     public static String browser = rxml.data("browser");
     public int resultcount = 0;
 
