@@ -27,7 +27,7 @@ public class UserMyAccount extends TestInitReference {
            driver.navigate().to("https://dev-acme.rppropertyhub.com/login");
     }
     
-    private void setIndexPageDescription() {
+    private void setIndexPageDescription() { 
         ATUReports.indexPageDescription = "Hub";
         ATUReports.setAuthorInfo("Automation Tester", Utils.getCurrentTime(),"1.0");
     }

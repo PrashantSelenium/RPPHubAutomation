@@ -8,7 +8,8 @@ public class ObjectReference {
     public String local_url = rxml.data("local_url");
  
 ////USER PAGE////
-    public static String ATULocation = "/tooltwist/eclipse/RPPHubAutomation/conf/atu.properties";
+    //public static String ATULocation = "/tooltwist/eclipse/RPPHubAutomation/conf/atu.properties";
+    public static String ATULocation = "/tooltwist/eclipse/RPPHubxxx/conf/atu.properties";
     
     //User login Page
     public static String userLoginUsername = "//input[@id='userName']";
@@ -567,7 +568,7 @@ public class ObjectReference {
     public static String userSameAsCustomer = "//*[@id='checkbox_16_2_value']";
     public static String accessSameAsLabel = "//label[@for='16_2_value']";    
     public static String insAddress = "//*[@id='4_1_value']";
-    public static String insCantFindAddress = "//*[@id='5_1_value']";
+    public static String insCantFindAddress = "//*[@id='checkbox_5_1_value']";
     public static String insLotUnitNumber = "//*[@id='6_1_value']";
     public static String insStreetNumber = "//*[@id='7_1_value']";
     public static String insStreetName = "//*[@id='8_1_value']";
@@ -643,7 +644,7 @@ public class ObjectReference {
     public static String CPSDateExpiry = "//*[@name='DateExpiry_1']";
     public static String CPSDateExpiry2 = "//*[@name='DateExpiry_2']";
     public static String CPSCvc2 = "//*[@name='Cvc2']";
-    public static String CPSAddbtn = "//*[@id='clicked12725']";    
+    public static String CPSAddbtn = "//*[@id='clicked13140']";    
     public static String LabelPaymentDetails = "//*[@id='paymenDetailForm']/ul/li[1]/label";
     public static String TermsandConditionPaymentDetails = "//*[@id='termsAndConditions']";
     public static String AccountPasswordPaymentDetails = "//*[@id='accountPassword']";
@@ -1181,10 +1182,16 @@ public class ObjectReference {
   public static String RPPusername = "//*[@id='rppUserName']";
   
   //BUILD VERSION
-  public static String BuildVersion = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[4]/td[2]/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr[1]/td";
+  public static String BuildVersion = "//*[@class='buildVersion']";
   
 //***********END of OTHERS*****************//
   
+  public static String Hash = "//*[contains(text(),'hash')]";
+  public static String authenticationFailed = "//*[text()='Authentication Failed']";
+  
+  //*****************ME BANKK****************//
+  public static String MEAutomatedValuation = "//*[text()='ME Bank Automated Valuation']";
+  public static String MEShortFormValuation = "//*[text()='ME Bank Short Form Valuation']";
 }
 
 

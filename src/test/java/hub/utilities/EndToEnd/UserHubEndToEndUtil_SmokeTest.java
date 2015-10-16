@@ -146,13 +146,13 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		    	fail(input[0] + " - Shared Storage Access Connection label is not ok");
 		    	resultcount++;
 		    	}
-		try{
-			Assert.assertTrue(getText(xpath(HealthCheck)).contains(input[4]));
-		    }
-		    catch(AssertionError e){
-		    	fail(input[0] + " - Payment Connection label is not ok");
-		    	resultcount++;
-		    	}
+//		try{//Merchant	
+//			Assert.assertTrue(getText(xpath(HealthCheck)).contains(input[4]));
+//		    }
+//		    catch(AssertionError e){
+//		    	fail(input[0] + " - Payment Connection label is not ok");
+//		    	resultcount++;
+//		    	}
 		try{
 			Assert.assertTrue(getText(xpath(HealthCheck)).contains(input[7]));
 		    }
@@ -365,8 +365,8 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	}
 	
 	public int CFACombank() throws Exception{
-		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-		util.LoginChannel("cbabroker");
+		
+		LoginChannelSmokeTest("cbabroker");
 		click(xpath(userCFAButton));
 		Thread.sleep(3000);
 		try{
@@ -1058,9 +1058,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    		}
 
 	    click(xpath(myAccount));
-	    waitForElementPresent(xpath(myAccountFN));
-    	waitForElementVisible(xpath(myAccountFN));
-    	Thread.sleep(500);
+    	Thread.sleep(5000);
     	if(!isElementPresent(xpath(myAccountFN)));{ Thread.sleep(5000); }
     	if(!isElementPresent(xpath(myAccountFN)));{ Thread.sleep(5000); }
     	
@@ -1075,14 +1073,12 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	    	type(xpath(myAccountFN), input[3]);
 	    	type(xpath(myAccountLN), input[4]);
 	    	click(xpath(myAccountSavebtn));
-	    	Thread.sleep(3000);
+	    	Thread.sleep(5000);
 	    	
 	    	if(!isElementPresent(xpath(myAccountDialogBoxOK)));{ Thread.sleep(5000); }
 	    	click(xpath(myAccountDialogBoxOK));
-	    	
-	    	waitForElementPresent(xpath(myAccountFN));
-	    	waitForElementVisible(xpath(myAccountFN));
-	    	Thread.sleep(500);
+
+	    	Thread.sleep(5000);
 	    	if(!isElementPresent(xpath(myAccountFN)));{ Thread.sleep(5000); }
 	    	if(!isElementPresent(xpath(myAccountFN)));{ Thread.sleep(5000); }
 	    	
@@ -1170,22 +1166,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		alertvalidation();
 		alertAccept();
 		
-		waitForElementPresent(xpath(userLoginUsername));
-		waitForElementVisible(xpath(userLoginUsername));
-		Thread.sleep(3000);
-		type(xpath(userLoginUsername), input[1]);
-		type(xpath(userLoginPassword), input[2].substring(0,8));
-	    click(xpath(LoginButton));
-	    try{
-	    	waitForElementPresent(xpath(userPropertySearch));
-	    	waitForElementVisible(xpath(userPropertySearch));
-	    	Thread.sleep(3000);
-	    	Assert.assertTrue(isElementPresent(xpath(propertySearch)));	    	
-	    	}
-	    	catch(AssertionError e){
-	    		fail(input[0] + " - Property search is not properly displayed");
-	    		resultcount++;
-	    		}
+		LoginChannelSmokeTest(channel);
 
 	    type(xpath(propertySearch), input[3]);
 		Thread.sleep(2000);
@@ -1449,22 +1430,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		alertvalidation();
 		alertAccept();
 		
-		waitForElementPresent(xpath(userLoginUsername));
-		waitForElementVisible(xpath(userLoginUsername));
-		Thread.sleep(3000);
-		type(xpath(userLoginUsername), input[1]);
-		type(xpath(userLoginPassword), input[2].substring(0,8));
-	    click(xpath(LoginButton));
-	    try{
-	    	waitForElementPresent(xpath(userPropertySearch));
-	    	waitForElementVisible(xpath(userPropertySearch));
-	    	Thread.sleep(3000);
-	    	Assert.assertTrue(isElementPresent(xpath(propertySearch)));	    	
-	    	}
-	    	catch(AssertionError e){
-	    		fail(input[0] + " - Property search is not properly displayed");
-	    		resultcount++;
-	    		}
+		LoginChannelSmokeTest("aussieselect");
 
 	    type(xpath(propertySearch), input[3]);
 		Thread.sleep(2000);
@@ -1985,28 +1951,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		alertAccept();
 		Thread.sleep(3000);
 		
-		if(isElementPresent(xpath(propertySearch))){
-			click(xpath(logout));
-			Thread.sleep(3000);
-		}
-		
-			waitForElementPresent(xpath(userLoginUsername));
-			waitForElementVisible(xpath(userLoginUsername));
-			Thread.sleep(3000);
-			type(xpath(userLoginUsername), input[1]);
-			type(xpath(userLoginPassword), input[2].substring(0,8));
-		    click(xpath(LoginButton));
-		
-	    try{
-	    	waitForElementPresent(xpath(userPropertySearch));
-	    	waitForElementVisible(xpath(userPropertySearch));
-	    	Thread.sleep(3000);
-	    	Assert.assertTrue(isElementPresent(xpath(propertySearch)), "SLAS - Property Search not displayed");	    	
-	    	}
-	    	catch(AssertionError e){
-	    		fail(input[0] + " - Property search is not properly displayed");
-	    		resultcount++;
-	    		}
+		LoginChannelSmokeTest("class");
 
 	    type(xpath(propertySearch), input[3]);
 		Thread.sleep(2000);
@@ -2150,6 +2095,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		Double Price = RegularPrice / 2;
 		
 		type(xpath(PromoField), PromoCode);
+		Thread.sleep(500);
 		click(xpath(PromoAddBtn));
 		Thread.sleep(15000);
 		
@@ -2261,7 +2207,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		
 			driver.navigate().to(environment.concat("acme.rppropertyhub.com"));
 			if(isElementPresent(xpath(logout))){ click(xpath(logout)); }
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			try{
 				Assert.assertTrue(isElementPresent(xpath(userForgotPasswordBtn)), "Reset Password - Forgot Password Button is not displayed");
 			} catch(AssertionError e){
@@ -2272,7 +2218,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 			type(xpath(forgotPasswordUsername), input[1]);
 			type(xpath(forgotPasswordEmail), input[2]);
 			click(xpath(userResetPasswordBtn));
-			Thread.sleep(7000);
+			Thread.sleep(8000);
 			try{
 				Assert.assertTrue(isElementPresent(xpath(ForgotPasswordImageVerification)), "Reset Password - Forgot Password Image Verification is not displayed");
 			} catch(AssertionError e){
@@ -2281,59 +2227,59 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		    	}	
 			//Login to Gmail
 			driver.navigate().to("http://mail.google.com/");
-			try{
-				Assert.assertTrue(isElementPresent(xpath(gmailEmail)), "Reset Password - Gmail Email is not displayed");
-			} catch(AssertionError e){
-		    	fail(input[0] + " - Gmail Email is not displayed");
-		    	resultcount++;
-		    	}	
-			type(xpath(gmailEmail), input[2]);
-			click(xpath(gmailNextBtn));
-			Thread.sleep(2000);
-			try{
-				Assert.assertTrue(isElementPresent(xpath(gmailPassword)), "Reset Password - Gmail Password is not displayed");
-			} catch(AssertionError e){
-				fail(input[0] + " - Gmail Password is not displayed");
-				resultcount++;
-				}	
-			type(xpath(gmailPassword), input[4]);
-			click(xpath(gmailSignInBtn));
-			Thread.sleep(6000);
-			try{
-				Assert.assertTrue(isElementPresent(xpath(gmailInboxlink)), "Reset Password - Gmail Inbox is not displayed");
-			} catch(AssertionError e){
-		    	fail(input[0] + " - Gmail Inbox is not displayed");
-		    	resultcount++;
-		    	}	
-			click(xpath(gmailTopInbox));
-			Thread.sleep(3000);
-			try{
-				Assert.assertTrue(isElementPresent(xpath(gmailHubLink)), "Reset Password - Gmail Hub link is not displayed");
-			} catch(AssertionError e){
-		    	fail(input[0] + " - Gmail Hub link is not displayed");
-		    	resultcount++;
-		    	}	
-			//Go back to Hub Reset Password
-			String URL = driver.findElement(xpath(gmailHubLink)).getAttribute("href");
-			driver.navigate().to(URL);
-			Thread.sleep(3000);
-			try{
-				Assert.assertTrue(isElementPresent(xpath(userResetPasswordNewPass)), "Reset Password - New Password field is not displayed");
-			} catch(AssertionError e){
-		    	fail(input[0] + " - New Password field is not displayed");
-		    	resultcount++;
-		    	}	
-			type(xpath(userResetPasswordNewPass), input[3]);
-			type(xpath(userResetPasswordConfirmPass), input[3]);
-			Thread.sleep(1000);
-			click(xpath(resetPasswordBtn));
-			Thread.sleep(5000);
-			try{
-				Assert.assertTrue(getText(xpath(flashMessage)).contains(input[5]), "Reset Password - Reset Password not Succesful");
-			} catch(AssertionError e){
-		    	fail(input[0] + " - Reset Password not Succesful");
-		    	resultcount++;
-		    	}	
+//			try{
+//				Assert.assertTrue(isElementPresent(xpath(gmailEmail)), "Reset Password - Gmail Email is not displayed");
+//			} catch(AssertionError e){
+//		    	fail(input[0] + " - Gmail Email is not displayed");
+//		    	resultcount++;
+//		    	}	
+//			type(xpath(gmailEmail), input[2]);
+//			click(xpath(gmailNextBtn));
+//			Thread.sleep(2000);
+//			try{
+//				Assert.assertTrue(isElementPresent(xpath(gmailPassword)), "Reset Password - Gmail Password is not displayed");
+//			} catch(AssertionError e){
+//				fail(input[0] + " - Gmail Password is not displayed");
+//				resultcount++;
+//				}	
+//			type(xpath(gmailPassword), input[4]);
+//			click(xpath(gmailSignInBtn));
+//			Thread.sleep(6000);
+//			try{
+//				Assert.assertTrue(isElementPresent(xpath(gmailInboxlink)), "Reset Password - Gmail Inbox is not displayed");
+//			} catch(AssertionError e){
+//		    	fail(input[0] + " - Gmail Inbox is not displayed");
+//		    	resultcount++;
+//		    	}	
+//			click(xpath(gmailTopInbox));
+//			Thread.sleep(3000);
+//			try{
+//				Assert.assertTrue(isElementPresent(xpath(gmailHubLink)), "Reset Password - Gmail Hub link is not displayed");
+//			} catch(AssertionError e){
+//		    	fail(input[0] + " - Gmail Hub link is not displayed");
+//		    	resultcount++;
+//		    	}	
+//			//Go back to Hub Reset Password
+//			String URL = driver.findElement(xpath(gmailHubLink)).getAttribute("href");
+//			driver.navigate().to(URL);
+//			Thread.sleep(3000);
+//			try{
+//				Assert.assertTrue(isElementPresent(xpath(userResetPasswordNewPass)), "Reset Password - New Password field is not displayed");
+//			} catch(AssertionError e){
+//		    	fail(input[0] + " - New Password field is not displayed");
+//		    	resultcount++;
+//		    	}	
+//			type(xpath(userResetPasswordNewPass), input[3]);
+//			type(xpath(userResetPasswordConfirmPass), input[3]);
+//			Thread.sleep(1000);
+//			click(xpath(resetPasswordBtn));
+//			Thread.sleep(5000);
+//			try{
+//				Assert.assertTrue(getText(xpath(flashMessage)).contains(input[5]), "Reset Password - Reset Password not Succesful");
+//			} catch(AssertionError e){
+//		    	fail(input[0] + " - Reset Password not Succesful");
+//		    	resultcount++;
+//		    	}	
 		return resultcount;		
 	}
 	
@@ -2341,7 +2287,7 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		resultcount = 0;	
 		 
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-		util.LoginChannel("acme");
+		LoginChannelSmokeTest("acme");
 		util.slas_dynamic(input[1]);
 		Thread.sleep(2000);
 		util.startNewTransaction();
@@ -2364,11 +2310,12 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		resultcount = 0;	
 		
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-		util.LoginChannel("class");
+		LoginChannelSmokeTest("class");
 		driver.navigate().to(environment.concat("class.rppropertyhub.com/ProductSelection?propertyId=7003499"));
 		util.startNewTransaction();
 		Assert.assertTrue(isElementPresent(xpath(userOEVPP)), "Property Title - OEVPP is not displayed");
-		type(xpath(userOEVPP), input[1]);
+		type(xpath(userOEVPP), "500000");
+		Thread.sleep(2000);
 		click(xpath(userOriginatorToProductSelection));
 		Thread.sleep(10000);		
 		Assert.assertTrue(isElementPresent(xpath(landTitlesTab)), "Property Title - Land Title tab is not displayed");
@@ -2380,8 +2327,8 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		Thread.sleep(10000);
 		Assert.assertTrue(isElementPresent(xpath(TermsandConditionPaymentDetails)), "Terms and Condition not yet displayed");
 		click(xpath(TermsandConditionPaymentDetails));
-		type(xpath(InvoiceName), input[2]);
-		type(xpath(InvoiceEmail), input[3]);
+		type(xpath(InvoiceName), "Arvin");
+		type(xpath(InvoiceEmail), "arvin.twano@tooltwist.com");
 		click(xpath(ConfirmBtnPaymentDetails));
 		Thread.sleep(15000);
 		Assert.assertTrue(isElementPresent(xpath(CPSIframe)), "CPS Iframe not yet displayed");
@@ -2389,8 +2336,8 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 		driver.switchTo().frame(driver.findElement(By.xpath(CPSIframe)));
 				
 		Assert.assertTrue(isElementPresent(xpath(CPSCardNumber)), "CPS Card Number not yet displayed");
-		type(xpath(CPSCardNumber), input[4].substring(0, 16).concat("111"));
-		type(xpath(CPSCardHolderName), input[5]);
+		type(xpath(CPSCardNumber), "4111111111111111");
+		type(xpath(CPSCardHolderName), "Arvin");
 		type(xpath(CPSDateExpiry), "12");
 		type(xpath(CPSDateExpiry2), "15");
 		type(xpath(CPSCvc2), "1234");	
@@ -2433,39 +2380,59 @@ public class UserHubEndToEndUtil_SmokeTest extends FunctionReference {
 	public int rulex() throws Exception{
 		resultcount = 0;
 		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
-		util.LoginChannel("mbms");
+		LoginChannelSmokeTest("mbms");
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			String ready = (String) js.executeScript("return document.readyState");
 			
 			if(ready.equalsIgnoreCase("complete")){
 				
 			util.slas_dynamic(input[2]);
-			util.startNewTransaction();
-			Thread.sleep(5000);					
+			util.startNewTransaction();		
 			type(xpath(userOEVPP), input[5]);
-			type(xpath(loanAmount), input[6]);
-			
-		//LOAN Purpose					
+			type(xpath(loanAmount), input[6]);			
 			click(xpath(loanPurchase));
-		//DO ANY APPLY
 			click(xpath(noneApplyCheckboxValuation));			
 			click(xpath(userOriginatorToProductSelection));
-			Thread.sleep(12000);
-
-			JavascriptExecutor js2 = (JavascriptExecutor) driver;
-			String ready2 = (String) js2.executeScript("return document.readyState");
 			
-			if(ready2.equalsIgnoreCase("complete")){				
-													
 					try{
-						Assert.assertTrue(getText(xpath(ProductPrice)).contains(input[1]), "Rulex - Incorrect Product returned by Rulex");
+						if(getText(xpath(ProductPrice)).equals("")){ Thread.sleep(5000);	}
+						if(getText(xpath(ProductPrice)).equals("")){ Thread.sleep(5000);	}
+						if(getText(xpath(ProductPrice)).equals("")){ Thread.sleep(5000);	}
+						if(getText(xpath(ProductPrice)).equals("")){ Thread.sleep(5000);	}
+						if(getText(xpath(ProductPrice)).equals("")){ Thread.sleep(5000);	}
+						Assert.assertTrue(getText(xpath(ProductPrice)).contains(input[1]), "Rulex - Incorrect Product returned by Rulex. Value" + getText(xpath(ProductPrice)));
 						
 					} catch (AssertionError e) {
 						fail(input[0] + " - Incorrect Product returned by Rulex");
 						resultcount++;
 					}
-				}
-			}		
+				}	
 			return resultcount;	
 	}	
+	
+	public void LoginChannelSmokeTest(String Channel) throws Exception{
+
+		driver.navigate().to(environment.concat(Channel.concat(".rppropertyhub.com/login")));
+		
+		if(isElementPresent(xpath(logout))){
+			click(xpath(logout));
+			Thread.sleep(1000);
+		}
+		waitForElementPresent(xpath(userLoginUsername));
+		waitForElementVisible(xpath(userLoginUsername));
+		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000); }
+		if(!isElementPresent(xpath(userLoginUsername))){ Thread.sleep(3000); }
+		Thread.sleep(2000); 
+		type(xpath(userLoginUsername), getDataFromxls(0, "User_Login.xls", 1, 1));
+		type(xpath(userLoginPassword), getDataFromxls(0, "User_Login.xls", 2, 1));
+		Thread.sleep(1000); 
+		click(xpath(loginButton));
+
+		waitForElementPresent(xpath(propertySearch));
+		waitForElementVisible(xpath(propertySearch));
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(3000); }
+		if(!isElementPresent(xpath(propertySearch))){ Thread.sleep(3000); }
+		
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)), "Login not Successful");
+	}
 }

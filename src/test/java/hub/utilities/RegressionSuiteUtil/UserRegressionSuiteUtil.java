@@ -2,14 +2,18 @@ package hub.utilities.RegressionSuiteUtil;
 
 import static org.openqa.selenium.By.xpath;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 //import java.util.Properties;
 
+
 import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
 
+import org.apache.http.client.methods.HttpPost;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -17,9 +21,16 @@ import org.testng.Assert;
 
 import com.thoughtworks.selenium.Selenium;
 
-//import javax.mail.*;  
-//import javax.mail.internet.*;  
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpParams;
+import org.json.JSONObject;
 
+
+@SuppressWarnings("deprecation")
 public class UserRegressionSuiteUtil extends FunctionReference {
 	ReadXmlData rxml = new ReadXmlData();
 	String rpDataRed = rxml.data("rpDataRed");
@@ -3404,7 +3415,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	public void productOnAccount() throws Exception{
 		Assert.assertTrue(isElementVisible(xpath(onAccountDisplay)), "On Account text is not displayed");
-		Assert.assertEquals(getText(xpath(onAccountDisplay)), "Price: $0.00");	
+		Assert.assertEquals(getText(xpath(onAccountDisplay)), "Price: On Account");	
 		Logout_link();
 	}
 
@@ -3722,9 +3733,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertTrue(isElementPresent(xpath(propertySearch)), "Change property address is not working");
 	}
 	public void insConstructionFields() throws Exception {
-//		click(xpath(logout));
-		Thread.sleep(3000);
-		Successful_login_CBALender();
+		LoginChannel("cbalender");
 		slas_dynamic("56 Maxwell Avenue Gorokan NSW 2263");
 		startNewTransaction();
 		proceedProductSelection();
@@ -5310,4 +5319,141 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		x++;
 	}while(x!=1000);
 	}	
+	
+	public String[] getHash() throws Exception{
+		driver.navigate().to("http://dev.rppropertyhub.com/servlet/hubAuthenticationTest?op=getHash&apiKey=k1GUC-4je9C64E1ncQ2BqMLZrlBJIfDejWjOWI&apiSecret=IYnlX-BoqJUYvcvjACTPiIkheD2hvnR5dYvClb&channelUrl=www.bglcorp.com");
+		Thread.sleep(2000);
+		String unfiltered = getText(xpath(Hash));
+		System.out.println(unfiltered);
+		
+		String []splitterString=unfiltered.split("\"");
+		String hash = splitterString[3];
+		String timestamp = splitterString[10].substring(1, 14); 
+		String[] arrString = {hash, timestamp};
+		return arrString;
+	}
+	
+	public String getAuthToken(String timestamp, String hash) throws Exception{
+		String authToken = "";
+		String url = "https://dev.rppropertyhub.com/ttsvr/api/hub/authorize";
+		HttpPost getRequest = new HttpPost(url);
+		getRequest.addHeader("Content-Type", "application/json");
+		
+		StringBuffer json = new StringBuffer();
+		json.append("{\"hash\":\""+timestamp+"\",\"timestamp\":\""+hash+"\", \"channelUrl\": \"www.bglcorp.com\"}");
+		getRequest.setEntity(new StringEntity(json.toString()));
+		
+		HttpParams httpParams = new BasicHttpParams();
+		@SuppressWarnings({ "resource" })
+		HttpClient client = new DefaultHttpClient(httpParams);
+		
+		
+		HttpResponse response = client.execute(getRequest);
+		
+		
+		String outputResponse = "";
+		String output = "";
+		try {
+			BufferedReader reader = null;
+			if(response.getEntity() != null) {
+				reader = new BufferedReader((new InputStreamReader(response.getEntity().getContent())));
+				while ((output = reader.readLine()) != null) {
+					outputResponse += output;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		JSONObject jsonObj = new JSONObject(outputResponse);
+		authToken = jsonObj.getString("auth_token");
+		
+		return authToken;
+	}
+	
+	public String getAccessToken(String authToken, String username, String password) throws Exception{
+		String url = "https://dev.rppropertyhub.com/ttsvr/api/hub/login";
+		HttpPost getRequest = new HttpPost(url);
+		getRequest.addHeader("Content-Type", "application/json");
+		
+		StringBuffer json = new StringBuffer();
+		json.append("{\"authorizationToken\":\""+authToken+"\", \"userName\":\""+username+"\", \"password\" : \""+password+"\"}");
+		getRequest.setEntity(new StringEntity(json.toString()));
+		
+		HttpParams httpParams = new BasicHttpParams();
+		@SuppressWarnings({ "resource" })
+		HttpClient client = new DefaultHttpClient(httpParams);
+		
+		
+		HttpResponse response = client.execute(getRequest);
+		
+		
+		String outputResponse = "";
+		String output = "";
+		try {
+			BufferedReader reader = null;
+			if(response.getEntity() != null) {
+				reader = new BufferedReader((new InputStreamReader(response.getEntity().getContent())));
+				while ((output = reader.readLine()) != null) {
+					outputResponse += output;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		JSONObject jsonObj = new JSONObject(outputResponse);
+		authToken = jsonObj.getString("access_token");
+		
+		return authToken;
+	}
+	
+	public void validDeepLink(String accessToken) throws Exception{
+		DateFormat dateFormat = new SimpleDateFormat("ddMMYYYYss");
+		Date date = new Date();
+		System.out.println(dateFormat.format(date));
+		driver.navigate().to(environment.concat("bgl.rppropertyhub.com/PropertySearch?accessToken=".concat(accessToken).concat("&refNum=").concat(dateFormat.format(date))));
+		Assert.assertTrue(isElementPresent(xpath(propertySearch)),"User is not logged in");		
+	}
+	
+	public void invalidDeepLink(String accessToken) throws Exception{
+		DateFormat dateFormat = new SimpleDateFormat("ddMMYYYYss");
+		Date date = new Date();
+		System.out.println(dateFormat.format(date));
+		driver.navigate().to(environment.concat("bgl.rppropertyhub.com/PropertySearch?accessToken=".concat(accessToken).concat("&refNum=").concat(dateFormat.format(date))));
+		Assert.assertTrue(isElementPresent(xpath(authenticationFailed)),"Deep Link - Invalid Access Token");
+	}
+	
+	public void multipleProductMEBank() throws Exception{
+		Thread.sleep(3000);
+		Assert.assertTrue(isElementPresent(xpath(oevppLabel)), "ME Bank - Originator is not yet displayed");
+		type(xpath(userOEVPP),getDataFromxls(0, "userMEBank.xls", 2, 0));
+		click(xpath(userNoneApply));
+		click(xpath(userOriginatorToProductSelection));
+		Thread.sleep(10000);
+		Assert.assertTrue(isElementPresent(xpath(MEShortFormValuation)), "ME Bank - Short Form valuation is not displayed");
+		Assert.assertTrue(isElementPresent(xpath(MEAutomatedValuation)), "ME Bank - Automated valuation is not displayed");
+	}
+	
+	public void singleProductMEBank() throws Exception{
+		Thread.sleep(3000);
+		Assert.assertTrue(isElementPresent(xpath(oevppLabel)), "ME Bank - Originator is not yet displayed");
+		type(xpath(userOEVPP),getDataFromxls(0, "userMEBank.xls", 2, 1));
+		click(xpath(userNoneApply));
+		click(xpath(userOriginatorToProductSelection));
+		Thread.sleep(10000);
+		Assert.assertTrue(isElementPresent(xpath(MEShortFormValuation)), "ME Bank - Short Form valuation is not displayed");
+		Assert.assertFalse(isElementPresent(xpath(MEAutomatedValuation)), "ME Bank - Automated valuation is displayed");
+	}
+	public void noProductMEBank() throws Exception{
+		Thread.sleep(3000);
+		Assert.assertTrue(isElementPresent(xpath(oevppLabel)), "ME Bank - Originator is not yet displayed");
+		type(xpath(userOEVPP),getDataFromxls(0, "userMEBank.xls", 2, 2));
+		click(xpath(daotaCompanyTitle));
+		click(xpath(userOriginatorToProductSelection));
+		Thread.sleep(10000);
+		Assert.assertFalse(isElementPresent(xpath(MEShortFormValuation)), "ME Bank - Short Form valuation is displayed");
+		Assert.assertFalse(isElementPresent(xpath(MEAutomatedValuation)), "ME Bank - Automated valuation is displayed");
+	}
 }
+
