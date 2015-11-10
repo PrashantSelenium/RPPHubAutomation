@@ -10,6 +10,10 @@ import java.util.Date;
 //import java.util.Properties;
 
 
+
+
+
+
 import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
 
@@ -49,7 +53,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		//Dev = https://dev-
 		//Production = https://www.
 		
-		public String environment = "https://dev-";
+		public String environment = "https://stage-";
 	
 	public void BranchIDvalidation() throws Exception{
 		
@@ -3985,7 +3989,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 
 	public void MacquarieBRE_CorrectProduct() throws Exception{
-		int col = 78;
+		int col = 84;
 		int x = 0;
 		
 		do{
@@ -4005,12 +4009,8 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 				
 			slas_dynamic(Address);
 			startNewTransaction();
-			Thread.sleep(1000);
-			//proceedProductSelection();
-								
-			Thread.sleep(2000);
-			waitForElementPresent(xpath(oevppLabel));
-			waitForElementVisible(xpath(oevppLabel));
+			Thread.sleep(5000);
+			waitInSecond(60, oevppLabel);
 			
 			if(getDataFromxls(0, "macquarie.xls" , 4, col).contains("unit")){ 
 				click(xpath(propertyType));
@@ -4057,6 +4057,8 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 				driver.findElement(By.xpath(propertyType)).sendKeys(Keys.ENTER);
 			}
 			
+			Thread.sleep(6000);
+			waitInSecond(60, userOEVPP);			
 			type(xpath(userOEVPP), getDataFromxls(0, "macquarie.xls" , 5, col));
 			type(xpath(loanAmount), getDataFromxls(0, "macquarie.xls" , 6, col));
 			
@@ -4088,34 +4090,24 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 			if(!getDataFromxls(0, "macquarie.xls" , 25, col).isEmpty()){ click(xpath(doAnyApplyServiceManagement)); }
 			if(!getDataFromxls(0, "macquarie.xls" , 26, col).isEmpty()){ click(xpath(doAnyApplyStudentStyle)); }
 			if(!getDataFromxls(0, "macquarie.xls" , 27, col).isEmpty()){ click(xpath(noneApplyCheckboxValuation)); }
-			
-			
+					
 			click(xpath(userOriginatorToProductSelection));
-			Thread.sleep(5000);
-			Thread.sleep(7000);
-			waitForElementPresent(xpath(tabValuations));
-			waitForElementVisible(xpath(tabValuations));
-			Thread.sleep(5000);
 			
 			JavascriptExecutor js2 = (JavascriptExecutor) driver;
 			String ready2 = (String) js2.executeScript("return document.readyState");
 			
 			if(ready2.equalsIgnoreCase("complete")){
 				
-				
+				Thread.sleep(10000);
+				waitInSecond(20, tabValuations);
 				if(getDataFromxls(0, "macquarie.xls" , 1, col).contains(getText(xpath(ProductPrice)))){
 					System.out.println("Test #" + col + " Passed");
 				}
 				else{
-									
-					if(!isElementPresent(xpath(purchaseBtnSingle))){Thread.sleep(3000);	}
-					if(!isElementPresent(xpath(purchaseBtnSingle))){Thread.sleep(3000);	}
-					if(!isElementPresent(xpath(purchaseBtnSingle))){Thread.sleep(3000);	}
-					if(!isElementPresent(xpath(purchaseBtnSingle))){Thread.sleep(3000);	}
-					Thread.sleep(3000);
+					waitInSecond(60, purchaseBtnSingle);
 					try{
 						Assert.assertTrue(getText(xpath(ProductPrice)).contains(getDataFromxls(0, "macquarie.xls" , 1, col)), "Product Return is ".concat(getText(xpath(ProductPrice))).concat(".. Expected Product is").concat(getDataFromxls(0, "macquarie.xls" , 1, col)).concat("/////"));
-						System.out.println("Test #" + getDataFromxls(0, "macquarie.xls" , 3, col) + " Passed ");
+						System.out.println("Test #" + col + " Passed ");
 					} catch (AssertionError e) {
 						fail("Test #" + getDataFromxls(0, "macquarie.xls" , 3, col) + " - Product Return is ".concat(getText(xpath(ProductPrice))).concat(".. Expected Product is ").concat(getDataFromxls(0, "macquarie.xls" , 1, col)));
 					}
@@ -4971,7 +4963,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		}		
 	}
 	public void ProceedToInstructionDetails_ClickLink() throws Exception {	
-		Thread.sleep(2000);
+		waitInSecond(5, proceedtoInstuction);	
 		click(xpath(proceedtoInstuction));
 		Thread.sleep(2000);
 	}
@@ -5090,7 +5082,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 	}
 	
 	public void AdminSetup_ValuationPurpose() throws Exception {
-		AdminLogin();
+		adminLogin();
 		actionType(xpath(adminProducts), "Product Data Group");
 		click(xpath(adminProductDataGroupsLink));
 		Thread.sleep(2000);
@@ -5111,10 +5103,10 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Thread.sleep(3000);
 	}
 	
-	public void AdminLogin() throws Exception{
-		if(environment.contains("dev")){ driver.navigate().to("dev.rppropertyhub.com/admin"); }
-		if(environment.contains("stage")){ driver.navigate().to("stage.rppropertyhub.com/admin"); }
-		if(!environment.contains("stage")  && !environment.contains("dev")){ driver.navigate().to("stage.rppropertyhub.com/admin"); }
+	public void adminLogin() throws Exception{
+		if(environment.contains("dev")){ driver.navigate().to("https://dev.rppropertyhub.com/admin"); }
+		if(environment.contains("stage")){ driver.navigate().to("https://stage.rppropertyhub.com/admin"); }
+		if(!environment.contains("stage")  && !environment.contains("dev")){ driver.navigate().to("https://www.rppropertyhub.com/admin"); }
 		Thread.sleep(2000);
 		Assert.assertTrue(isElementPresent(xpath(adminLoginUsername)), "Admin Login - Username not displayed");
 		Assert.assertTrue(isElementPresent(xpath(adminLoginPassword)), "Admin Login - Password not displayed");
@@ -5123,7 +5115,7 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		type(xpath(adminLoginUsername), "portia.canlas@twistresources.com");
 		type(xpath(adminLoginPassword), "482Center");
 		click(xpath(adminLoginButton));
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 		Assert.assertTrue(isElementPresent(xpath(adminChannelsMenu)), "Admin Login - Home page not displayed");			
 	}
 	
@@ -5455,5 +5447,59 @@ public class UserRegressionSuiteUtil extends FunctionReference {
 		Assert.assertFalse(isElementPresent(xpath(MEShortFormValuation)), "ME Bank - Short Form valuation is displayed");
 		Assert.assertFalse(isElementPresent(xpath(MEAutomatedValuation)), "ME Bank - Automated valuation is displayed");
 	}
+	
+	public void adminNavigationToChannelDetails() throws Exception{
+		actionType(xpath(adminChannels), "Channel List");
+	    click(xpath(adminChannelList));
+	    Thread.sleep(3000);
+	    Assert.assertTrue(isElementPresent(xpath(channelListSearchField)), "Admin Channel List navigation - Not navigated to Channel List");
+	}
+	
+	public void adminchannelsearch(String channel) throws Exception{
+		type(xpath(channelListSearchField), channel);
+		click(xpath(channelListSearchBtn));
+	    Thread.sleep(3000);
+	    Assert.assertTrue(getText(xpath(channelURLlinkResult)).contains(channel), "Admin Channel List Search Channel - Incorrect Search Result");
+	}
+		
+	public boolean validationChannelField() throws Exception{
+		adminLogin();
+		adminNavigationToChannelDetails();
+		adminchannelsearch("acme");
+		actionType(xpath(channelResultAcme), "ACME");
+	    click(xpath(baseProductEdit));
+		Assert.assertTrue(isElementPresent(xpath(channelListFloorNumber)), "Admin Channel List - Channel details is not displayed");
+		Thread.sleep(3000);
+		try{
+			Assert.assertTrue(isElementPresent(xpath(channelListChannelType1)), "Channel Details - Channel Type 1 is not displayed");
+			Assert.assertTrue(isElementPresent(xpath(channelListChannelType2)), "Channel Details - Channel Type 2 is not displayed");
+			Assert.assertTrue(getValue(xpath(channelListChannelIsActive)).equals("true"), "Channel Details - Channel Type is not enabled");
+			return true;
+		} catch (AssertionError e) {
+			return false;
+			}		
+	}
+	
+	public void adminEnableField(String Field) throws Exception{
+		if(Field.contains("Channel")){	
+			click(xpath(channelListChannelActiveCheckbox));		}
+		Thread.sleep(3000);
+		click(xpath(channelDetailSaveBtn));
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		Thread.sleep(7000);
+		Assert.assertTrue(getValue(xpath(channelListChannelIsActive)).equals("true"), "Channel Details - Channel Type is not enabled");
+	}
+	
+	public void validationchannelField() throws Exception{
+		driver.navigate().to(environment.concat("acme.rppropertyhub.com/signup"));
+		Thread.sleep(3000);
+		Assert.assertTrue(isElementPresent(xpath(registrationChannelType)), "Registration - Channel Type is not displayed");
+		LoginChannel("acme");
+		click(xpath(myAccount));
+		Thread.sleep(3000);
+		Assert.assertTrue(isElementPresent(xpath(registrationChannelType)), "My Account - Channel Type is not displayed");
+	}
+	
 }
 

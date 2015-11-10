@@ -145,6 +145,18 @@ public class UserRegistration extends TestInitReference {
 		util.Validation_code_error();
 	}
 	
+	@Test(description="User - Registration", priority=16)
+	public void  Validation_channel_field() throws Exception {
+
+		UserRegressionSuiteUtil util = new UserRegressionSuiteUtil();
+		Boolean isChannelTypeFieldActive = util.validationChannelField();
+		if(isChannelTypeFieldActive){}
+		else{
+			util.adminEnableField("Channel");
+		}
+		util.validationchannelField();
+	}
+	
 }
 
 

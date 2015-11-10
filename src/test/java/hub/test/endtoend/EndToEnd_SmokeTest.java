@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.Assert;
 import org.testng.AssertJUnit;
+
 import hub.library.ReadXlsData;
 import hub.library.TestInitReferenceSmokeTest;
 import hub.utilities.EndToEnd.*;
@@ -52,14 +53,20 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
 		}
 
 	    @BeforeClass
-	    public void init() {
+	    public void init() throws Exception {
 	           ATUReports.setWebDriver(driver);
 	           setIndexPageDescription();
-	           driver.navigate().to("https://stage-cbalender.rppropertyhub.com/login");
+	           //Print Start Time
+	           UserHubEndToEndUtil_SmokeTest endtoend = new UserHubEndToEndUtil_SmokeTest();
+		    	System.out.println("*****START TIME: " + endtoend.getCurrentDate() + "*****");	        
+	           driver.navigate().to("https://dev-cbalender.rppropertyhub.com/login");         
 	    }
 	    
 	    @AfterClass
-	    public void closedriver(){
+	    public void closedriver() throws Exception{
+	    	//Print End Time
+	    	UserHubEndToEndUtil_SmokeTest endtoend = new UserHubEndToEndUtil_SmokeTest();
+	    	System.out.println("*****END TIME: " + endtoend.getCurrentDate() + "*****");
 	    	driver.quit();
 	    }
 	    
@@ -70,8 +77,9 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
 	
 	@Test(description="End To End Smoke Test", dataProvider = "Data-Provider-Function")
 	public void testLogin(Class<?> clzz, String[] input) {
-
+		Date started = new Date();
 		try {
+			
 			UserHubEndToEndUtil_SmokeTest endtoend = new UserHubEndToEndUtil_SmokeTest(input);
 					
 			switch (input[0].toUpperCase()) {
@@ -289,7 +297,7 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
 			        	Assert.fail(input[0]); } 
 			        	else { passed(input[0], "24"); }
 		        break;   
-	        
+//	        
 //			case "IDENTITYVERIFICATION":
 //				System.out.println("In Progress - " + input[0]);
 //				resultcount = endtoend.identityVerification();
@@ -309,6 +317,10 @@ public class EndToEnd_SmokeTest extends TestInitReferenceSmokeTest {
 			e.printStackTrace();
 	        AssertJUnit.fail("Exception was thrown");
 		}
-
+		
+		Date ended = new Date();
+		long totalInMilli = ended.getTime() - started.getTime();
+		totalInMilli = totalInMilli / 1000;
+		System.out.println("#Total Seconds Per Test:" + totalInMilli + "#");
 	}
 }

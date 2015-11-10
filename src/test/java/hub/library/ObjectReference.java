@@ -148,6 +148,7 @@ public class ObjectReference {
     public static String myAccountSuggestion1 = "//*[text()='jennifer-acme2']";
     public static String myAccountSuggestion2 = "//*[text()='jennifer-acme3']";
     public static String myAccountSuggestion3 = "//*[text()='jennifer-acme4']";
+    public static String registrationChannelType = "//*[@id='channelTypeLookupIdContainer']";
  
     //My Account 
     public static String userMyAccount = "//li[@id='myAccount']/div/a";
@@ -644,7 +645,7 @@ public class ObjectReference {
     public static String CPSDateExpiry = "//*[@name='DateExpiry_1']";
     public static String CPSDateExpiry2 = "//*[@name='DateExpiry_2']";
     public static String CPSCvc2 = "//*[@name='Cvc2']";
-    public static String CPSAddbtn = "//*[@id='clicked13140']";    
+    public static String CPSAddbtn = "//*[@type='submit']";    
     public static String LabelPaymentDetails = "//*[@id='paymenDetailForm']/ul/li[1]/label";
     public static String TermsandConditionPaymentDetails = "//*[@id='termsAndConditions']";
     public static String AccountPasswordPaymentDetails = "//*[@id='accountPassword']";
@@ -906,6 +907,7 @@ public class ObjectReference {
     public static String channelPropertyAddressNav = "//a[text()='Property Address']";
     public static String channelSearchBtn = "//*[@id='channelSingleLineSearchIcon']";
     public static String channelResult = "//*[text()=' Commonwealth Bank (Lender)']";
+    public static String channelResultAcme = "//*[text()=' ACME']";
     public static String channelPropertyProfilerReport = "//a[text()='Property Profiler']";
     public static String channelContainer = "//*[@class='list_item_container']";
     public static String channelCBALenderEMPValue = "//*[@id='110_breCodeValue']";
@@ -917,6 +919,13 @@ public class ObjectReference {
     public static String propAddressAVMOption1 = "id='avmSource1'";
     public static String propAddressAVMOption2 = "id='avmSource1'";
     public static String channelListProductSelectionTab = "//*[contains(text(),'Product Selection')]";
+    public static String channelURLlinkResult = "//a[@class='admin_channel_link']";
+    public static String channelListFloorNumber = "//*[@id='floorNumber']";
+    public static String channelListChannelType1 = "//*[@id='channelTypeList1']";
+    public static String channelListChannelType2 = "//*[@id='channelTypeList2']";
+    public static String channelListChannelIsActive = "//*[@id='isChannelActiveValue']";
+    public static String channelListChannelActiveCheckbox = "//*[@id='isChannelActive']";   
+    public static String channelDetailSaveBtn = "//*[@value='Save']";
     
     //Admin Products - Base Products
     public static String adminBaseProductLink = "//a[contains(@href, 'n/Base-Products/')]";

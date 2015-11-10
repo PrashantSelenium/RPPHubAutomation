@@ -539,5 +539,17 @@ public class FunctionReference extends Results {
 		if(!isElementPresent(xpath(element))){ Thread.sleep(7000); }	
 	
 	}
+    
+    public void waitInSecond(int num, String xpathval ) throws InterruptedException {
+        
+    	do{
+    		if(!(driver.findElements(By.xpath(xpathval)).size() != 0)){ 
+    			Thread.sleep(1000);
+    			}
+        	num--;
+        }while(num != 0);
+        	
+    }
+
         
 }
